@@ -1,0 +1,626 @@
+[
+  {
+    "id": "ai",
+    "label": "AI / ML Engineer",
+    "field": "AI & Data",
+    "soc": "15-2051.00",
+    "research": "machine learning",
+    "description": "Build and deploy intelligent systems.",
+    "topics": [
+      {
+        "id": "ai-0",
+        "title": "Python Foundations",
+        "description": "Write functions, use packages and cleanly structure Python programs.",
+        "prerequisites": [],
+        "hours": 3,
+        "resource": "https://docs.python.org/3/tutorial/",
+        "project": "Build a reusable data-processing CLI.",
+        "category": "coding"
+      },
+      {
+        "id": "ai-1",
+        "title": "Data Handling",
+        "description": "Explore datasets with pandas, NumPy and clean missing values.",
+        "prerequisites": [
+          "Python Foundations"
+        ],
+        "hours": 4,
+        "resource": "https://pandas.pydata.org/docs/getting_started/index.html",
+        "project": "Create a reproducible data-cleaning notebook.",
+        "category": "data"
+      },
+      {
+        "id": "ai-2",
+        "title": "Statistics & Evaluation",
+        "description": "Learn probability, train-test splits and trustworthy metrics.",
+        "prerequisites": [
+          "Data Handling"
+        ],
+        "hours": 5,
+        "resource": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+        "project": "Compare classifiers using cross-validation.",
+        "category": "math"
+      },
+      {
+        "id": "ai-3",
+        "title": "Classical Machine Learning",
+        "description": "Train supervised models and explain validation results.",
+        "prerequisites": [
+          "Statistics & Evaluation"
+        ],
+        "hours": 5,
+        "resource": "https://scikit-learn.org/stable/supervised_learning.html",
+        "project": "Build and evaluate an SVM classification project.",
+        "category": "modeling"
+      },
+      {
+        "id": "ai-4",
+        "title": "Neural Networks",
+        "description": "Understand layers, optimization and backpropagation.",
+        "prerequisites": [
+          "Classical Machine Learning"
+        ],
+        "hours": 6,
+        "resource": "https://pytorch.org/tutorials/beginner/basics/intro.html",
+        "project": "Train a small neural network with a test set.",
+        "category": "modeling"
+      },
+      {
+        "id": "ai-5",
+        "title": "Attention & Transformers",
+        "description": "Study attention, tokenization and representation learning.",
+        "prerequisites": [
+          "Neural Networks"
+        ],
+        "hours": 6,
+        "resource": "https://huggingface.co/learn/llm-course/chapter1/1",
+        "project": "Explain and implement an attention-based workflow.",
+        "category": "research"
+      },
+      {
+        "id": "ai-6",
+        "title": "Retrieval-Augmented Applications",
+        "description": "Combine document retrieval, generation and grounded evaluation.",
+        "prerequisites": [
+          "Attention & Transformers"
+        ],
+        "hours": 5,
+        "resource": "https://huggingface.co/learn/cookbook/en/advanced_rag",
+        "project": "Build a cited document QA prototype.",
+        "category": "research"
+      },
+      {
+        "id": "ai-7",
+        "title": "ML Deployment",
+        "description": "Serve a validated model using APIs and versioned artifacts.",
+        "prerequisites": [
+          "Classical Machine Learning"
+        ],
+        "hours": 4,
+        "resource": "https://fastapi.tiangolo.com/tutorial/",
+        "project": "Deploy a model-backed API with input checks.",
+        "category": "engineering"
+      }
+    ]
+  },
+  {
+    "id": "ds",
+    "label": "Data Scientist",
+    "field": "Analytics",
+    "soc": "15-2051.00",
+    "research": "data science",
+    "description": "Turn data into reliable insights and predictive decisions.",
+    "topics": [
+      {
+        "id": "ds-0",
+        "title": "Python Foundations",
+        "description": "Understand core Python, functions and packages.",
+        "prerequisites": [],
+        "hours": 3,
+        "resource": "https://docs.python.org/3/tutorial/",
+        "project": "Create a repeatable data parser.",
+        "category": "coding"
+      },
+      {
+        "id": "ds-1",
+        "title": "Data Wrangling",
+        "description": "Clean and join datasets using pandas.",
+        "prerequisites": [
+          "Python Foundations"
+        ],
+        "hours": 4,
+        "resource": "https://pandas.pydata.org/docs/getting_started/index.html",
+        "project": "Deliver a cleaned and documented dataset.",
+        "category": "data"
+      },
+      {
+        "id": "ds-2",
+        "title": "Statistics & Hypothesis Testing",
+        "description": "Study inference, uncertainty, assumptions and effect sizes.",
+        "prerequisites": [
+          "Data Wrangling"
+        ],
+        "hours": 5,
+        "resource": "https://www.itl.nist.gov/div898/handbook/",
+        "project": "Run a defensible hypothesis-testing analysis.",
+        "category": "math"
+      },
+      {
+        "id": "ds-3",
+        "title": "Data Visualization & Storytelling",
+        "description": "Produce clear plots and explain limitations.",
+        "prerequisites": [
+          "Data Wrangling"
+        ],
+        "hours": 3,
+        "resource": "https://matplotlib.org/stable/tutorials/index.html",
+        "project": "Write a one-page evidence-based report.",
+        "category": "design"
+      },
+      {
+        "id": "ds-4",
+        "title": "PCA & Clustering",
+        "description": "Discover patterns and evaluate meaningful clusters.",
+        "prerequisites": [
+          "Statistics & Hypothesis Testing"
+        ],
+        "hours": 4,
+        "resource": "https://scikit-learn.org/stable/modules/clustering.html",
+        "project": "Segment real observations using PCA and K-Means.",
+        "category": "modeling"
+      },
+      {
+        "id": "ds-5",
+        "title": "Predictive Modeling",
+        "description": "Train regression and classification models with leakage-safe validation.",
+        "prerequisites": [
+          "Statistics & Hypothesis Testing"
+        ],
+        "hours": 6,
+        "resource": "https://scikit-learn.org/stable/supervised_learning.html",
+        "project": "Compare baseline, SVM and ensemble models.",
+        "category": "modeling"
+      },
+      {
+        "id": "ds-6",
+        "title": "Experimentation",
+        "description": "Design A/B tests and reason about causal assumptions.",
+        "prerequisites": [
+          "Statistics & Hypothesis Testing"
+        ],
+        "hours": 5,
+        "resource": "https://www.itl.nist.gov/div898/handbook/",
+        "project": "Design and critique a realistic experiment.",
+        "category": "research"
+      },
+      {
+        "id": "ds-7",
+        "title": "Interactive Data Product",
+        "description": "Expose results through a small, usable app.",
+        "prerequisites": [
+          "Predictive Modeling"
+        ],
+        "hours": 4,
+        "resource": "https://docs.streamlit.io/get-started",
+        "project": "Ship an interactive ML decision tool.",
+        "category": "engineering"
+      }
+    ]
+  },
+  {
+    "id": "software",
+    "label": "Software Developer",
+    "field": "Software",
+    "soc": "15-1252.00",
+    "research": "software engineering",
+    "description": "Design, implement and maintain reliable software.",
+    "topics": [
+      {
+        "id": "software-0",
+        "title": "Programming Fundamentals",
+        "description": "Practice variables, functions, tests and algorithms.",
+        "prerequisites": [],
+        "hours": 4,
+        "resource": "https://docs.python.org/3/tutorial/",
+        "project": "Write a useful command-line utility.",
+        "category": "coding"
+      },
+      {
+        "id": "software-1",
+        "title": "Git & Collaboration",
+        "description": "Understand version control, branches, code reviews.",
+        "prerequisites": [
+          "Programming Fundamentals"
+        ],
+        "hours": 3,
+        "resource": "https://docs.github.com/en/get-started",
+        "project": "Publish a well-documented repository.",
+        "category": "engineering"
+      },
+      {
+        "id": "software-2",
+        "title": "Web Fundamentals",
+        "description": "Learn HTML, CSS, JavaScript and browser basics.",
+        "prerequisites": [
+          "Programming Fundamentals"
+        ],
+        "hours": 5,
+        "resource": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+        "project": "Build an accessible responsive website.",
+        "category": "design"
+      },
+      {
+        "id": "software-3",
+        "title": "Backend APIs",
+        "description": "Learn HTTP, REST, routing and validation.",
+        "prerequisites": [
+          "Web Fundamentals"
+        ],
+        "hours": 5,
+        "resource": "https://fastapi.tiangolo.com/tutorial/",
+        "project": "Create and document a REST API.",
+        "category": "engineering"
+      },
+      {
+        "id": "software-4",
+        "title": "Databases & SQL",
+        "description": "Model data, queries and constraints.",
+        "prerequisites": [
+          "Programming Fundamentals"
+        ],
+        "hours": 4,
+        "resource": "https://www.postgresql.org/docs/current/tutorial.html",
+        "project": "Build a relational CRUD application.",
+        "category": "data"
+      },
+      {
+        "id": "software-5",
+        "title": "Testing & CI",
+        "description": "Write unit tests and automate safe checks.",
+        "prerequisites": [
+          "Git & Collaboration"
+        ],
+        "hours": 4,
+        "resource": "https://docs.github.com/en/actions",
+        "project": "Add tests and CI to an existing project.",
+        "category": "engineering"
+      },
+      {
+        "id": "software-6",
+        "title": "System Design Basics",
+        "description": "Explore caching, reliability and scaling trade-offs.",
+        "prerequisites": [
+          "Backend APIs",
+          "Databases & SQL"
+        ],
+        "hours": 6,
+        "resource": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+        "project": "Draw and document a working architecture.",
+        "category": "research"
+      },
+      {
+        "id": "software-7",
+        "title": "Deployment",
+        "description": "Put a tested application online responsibly.",
+        "prerequisites": [
+          "Testing & CI",
+          "Backend APIs"
+        ],
+        "hours": 4,
+        "resource": "https://docs.docker.com/get-started/",
+        "project": "Deploy a containerized service.",
+        "category": "engineering"
+      }
+    ]
+  },
+  {
+    "id": "cyber",
+    "label": "Cybersecurity Analyst",
+    "field": "Security",
+    "soc": "15-1212.00",
+    "research": "computer security",
+    "description": "Secure systems and investigate threats responsibly.",
+    "topics": [
+      {
+        "id": "cyber-0",
+        "title": "Networking Fundamentals",
+        "description": "Learn IP, DNS, HTTPS, ports and routing.",
+        "prerequisites": [],
+        "hours": 4,
+        "resource": "https://www.cloudflare.com/learning/network-layer/what-is-a-computer-network/",
+        "project": "Explain a secure client-server connection.",
+        "category": "engineering"
+      },
+      {
+        "id": "cyber-1",
+        "title": "Linux & Shell",
+        "description": "Use basic commands, files, permissions and logs.",
+        "prerequisites": [],
+        "hours": 4,
+        "resource": "https://linuxjourney.com/",
+        "project": "Analyze a sample system log.",
+        "category": "coding"
+      },
+      {
+        "id": "cyber-2",
+        "title": "Python Automation",
+        "description": "Parse logs and automate benign security checks.",
+        "prerequisites": [
+          "Linux & Shell"
+        ],
+        "hours": 4,
+        "resource": "https://docs.python.org/3/tutorial/",
+        "project": "Build a log-analysis tool.",
+        "category": "coding"
+      },
+      {
+        "id": "cyber-3",
+        "title": "Identity & Access Control",
+        "description": "Explore authentication, permissions and least privilege.",
+        "prerequisites": [
+          "Networking Fundamentals"
+        ],
+        "hours": 4,
+        "resource": "https://owasp.org/www-project-top-ten/",
+        "project": "Review account security of a sample app.",
+        "category": "security"
+      },
+      {
+        "id": "cyber-4",
+        "title": "Web Security",
+        "description": "Understand common application vulnerabilities and mitigations.",
+        "prerequisites": [
+          "Identity & Access Control"
+        ],
+        "hours": 6,
+        "resource": "https://owasp.org/www-project-top-ten/",
+        "project": "Create a secure-coding checklist.",
+        "category": "security"
+      },
+      {
+        "id": "cyber-5",
+        "title": "Threat Analysis",
+        "description": "Triaging alerts and interpreting event evidence.",
+        "prerequisites": [
+          "Python Automation",
+          "Networking Fundamentals"
+        ],
+        "hours": 5,
+        "resource": "https://attack.mitre.org/",
+        "project": "Write an incident investigation report.",
+        "category": "research"
+      },
+      {
+        "id": "cyber-6",
+        "title": "Security Analytics",
+        "description": "Use SVM or anomaly models on documented event datasets.",
+        "prerequisites": [
+          "Threat Analysis"
+        ],
+        "hours": 5,
+        "resource": "https://scikit-learn.org/stable/modules/outlier_detection.html",
+        "project": "Build an explainable anomaly-analysis prototype.",
+        "category": "modeling"
+      },
+      {
+        "id": "cyber-7",
+        "title": "Security Portfolio",
+        "description": "Document responsible analysis, tests and remediation.",
+        "prerequisites": [
+          "Web Security"
+        ],
+        "hours": 3,
+        "resource": "https://docs.github.com/en/get-started",
+        "project": "Publish a sanitized security case study.",
+        "category": "engineering"
+      }
+    ]
+  },
+  {
+    "id": "cloud",
+    "label": "Cloud Engineer",
+    "field": "Cloud",
+    "soc": "15-1244.00",
+    "research": "cloud computing",
+    "description": "Deploy scalable, secure software infrastructure.",
+    "topics": [
+      {
+        "id": "cloud-0",
+        "title": "Linux & Networking",
+        "description": "Understand shells, services, DNS and TCP/IP.",
+        "prerequisites": [],
+        "hours": 5,
+        "resource": "https://linuxjourney.com/",
+        "project": "Configure a basic Linux web server.",
+        "category": "engineering"
+      },
+      {
+        "id": "cloud-1",
+        "title": "Programming for Automation",
+        "description": "Use Python to automate repetitive tasks.",
+        "prerequisites": [],
+        "hours": 4,
+        "resource": "https://docs.python.org/3/tutorial/",
+        "project": "Create a reliable automation script.",
+        "category": "coding"
+      },
+      {
+        "id": "cloud-2",
+        "title": "Git & CI",
+        "description": "Manage infrastructure code changes and validation.",
+        "prerequisites": [
+          "Programming for Automation"
+        ],
+        "hours": 4,
+        "resource": "https://docs.github.com/en/actions",
+        "project": "Automate linting and tests.",
+        "category": "engineering"
+      },
+      {
+        "id": "cloud-3",
+        "title": "Cloud Fundamentals",
+        "description": "Understand compute, storage, identity and regions.",
+        "prerequisites": [
+          "Linux & Networking"
+        ],
+        "hours": 5,
+        "resource": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html",
+        "project": "Diagram a secure three-tier app.",
+        "category": "engineering"
+      },
+      {
+        "id": "cloud-4",
+        "title": "Containers",
+        "description": "Create reproducible builds and run services.",
+        "prerequisites": [
+          "Cloud Fundamentals"
+        ],
+        "hours": 4,
+        "resource": "https://docs.docker.com/get-started/",
+        "project": "Containerize a simple backend.",
+        "category": "engineering"
+      },
+      {
+        "id": "cloud-5",
+        "title": "Infrastructure as Code",
+        "description": "Describe and version infrastructure declaratively.",
+        "prerequisites": [
+          "Cloud Fundamentals",
+          "Git & CI"
+        ],
+        "hours": 5,
+        "resource": "https://developer.hashicorp.com/terraform/tutorials",
+        "project": "Create a reviewable infrastructure plan.",
+        "category": "coding"
+      },
+      {
+        "id": "cloud-6",
+        "title": "Monitoring & Costs",
+        "description": "Measure reliability, usage and cloud spending.",
+        "prerequisites": [
+          "Containers"
+        ],
+        "hours": 4,
+        "resource": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html",
+        "project": "Produce a metrics and budget report.",
+        "category": "data"
+      },
+      {
+        "id": "cloud-7",
+        "title": "Production Deployment",
+        "description": "Deploy a tested service with rollback documentation.",
+        "prerequisites": [
+          "Containers",
+          "Git & CI"
+        ],
+        "hours": 5,
+        "resource": "https://docs.docker.com/get-started/",
+        "project": "Ship a monitored demo service.",
+        "category": "engineering"
+      }
+    ]
+  },
+  {
+    "id": "product",
+    "label": "Product / Business Analyst",
+    "field": "Product",
+    "soc": "13-1111.00",
+    "research": "product analytics",
+    "description": "Use customer and operational evidence to improve products.",
+    "topics": [
+      {
+        "id": "product-0",
+        "title": "Spreadsheet & Data Basics",
+        "description": "Understand tables, metrics and cleaning.",
+        "prerequisites": [],
+        "hours": 3,
+        "resource": "https://support.microsoft.com/en-us/excel",
+        "project": "Create a reliable KPI worksheet.",
+        "category": "data"
+      },
+      {
+        "id": "product-1",
+        "title": "SQL & Data Queries",
+        "description": "Filter, group and join operational records.",
+        "prerequisites": [
+          "Spreadsheet & Data Basics"
+        ],
+        "hours": 4,
+        "resource": "https://www.postgresql.org/docs/current/tutorial.html",
+        "project": "Build a product metrics report.",
+        "category": "data"
+      },
+      {
+        "id": "product-2",
+        "title": "Statistics for Decisions",
+        "description": "Interpret variation, samples and uncertainty.",
+        "prerequisites": [
+          "Spreadsheet & Data Basics"
+        ],
+        "hours": 4,
+        "resource": "https://www.itl.nist.gov/div898/handbook/",
+        "project": "Analyze metric change with uncertainty.",
+        "category": "math"
+      },
+      {
+        "id": "product-3",
+        "title": "User Research",
+        "description": "Organize interviews and avoid sampling bias.",
+        "prerequisites": [],
+        "hours": 3,
+        "resource": "https://www.nngroup.com/articles/which-ux-research-methods/",
+        "project": "Prepare a small research protocol.",
+        "category": "research"
+      },
+      {
+        "id": "product-4",
+        "title": "Customer Segmentation",
+        "description": "Use K-Means to understand customer behavior groups.",
+        "prerequisites": [
+          "SQL & Data Queries"
+        ],
+        "hours": 4,
+        "resource": "https://scikit-learn.org/stable/modules/clustering.html",
+        "project": "Evaluate customer segments on real data.",
+        "category": "modeling"
+      },
+      {
+        "id": "product-5",
+        "title": "Experiment Design",
+        "description": "Propose measurable product experiments.",
+        "prerequisites": [
+          "Statistics for Decisions",
+          "User Research"
+        ],
+        "hours": 5,
+        "resource": "https://www.itl.nist.gov/div898/handbook/",
+        "project": "Write an A/B testing plan.",
+        "category": "research"
+      },
+      {
+        "id": "product-6",
+        "title": "Product Storytelling",
+        "description": "Turn findings into concise decisions and proposals.",
+        "prerequisites": [
+          "Customer Segmentation"
+        ],
+        "hours": 3,
+        "resource": "https://www.nngroup.com/articles/",
+        "project": "Present evidence-backed feature priorities.",
+        "category": "design"
+      },
+      {
+        "id": "product-7",
+        "title": "Portfolio Case Study",
+        "description": "Explain a complete product decision with evidence.",
+        "prerequisites": [
+          "Experiment Design"
+        ],
+        "hours": 4,
+        "resource": "https://docs.github.com/en/get-started",
+        "project": "Publish an anonymized product case study.",
+        "category": "engineering"
+      }
+    ]
+  }
+]
