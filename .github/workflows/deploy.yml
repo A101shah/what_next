@@ -1,0 +1,54 @@
+name: Build verified intelligence and publish WhatNext AI
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install ML dependencies
+        run: pip install -r requirements.txt
+      - name: Build O*NET occupational ML dataset
+        run: python scripts/build_data.py
+      - name: Fetch real recent research
+        run: python scripts/update_news.py
+      - name: Check generated files
+        run: |
+          python -m compileall -q scripts
+          python -m json.tool data/model.json > /dev/null
+          python -m json.tool data/research.json > /dev/null
+          python -m json.tool data/paths.json > /dev/null
+          test -s data/model.json
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Publish Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
