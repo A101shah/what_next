@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="WhatNext AI — Know what to learn next. A personal knowledge GPS for students.">
+  <meta name="theme-color" content="#0b1020">
+  <title>WhatNext AI — Your Knowledge GPS</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" aria-label="Main navigation">
+    <a class="brand" href="#overview"><span class="brand-icon">↗</span><span>whatnext<span class="brand-dot">.</span><small>YOUR KNOWLEDGE GPS</small></span></a>
+    <div class="nav-label">WORKSPACE</div>
+    <nav class="nav">
+      <button class="nav-item active" data-view="overview"><span class="nav-icon">◈</span> Overview</button>
+      <button class="nav-item" data-view="roadmap"><span class="nav-icon">⌁</span> Learning roadmap</button>
+      <button class="nav-item" data-view="pulse"><span class="nav-icon">◎</span> World pulse <span class="new-dot"></span></button>
+      <button class="nav-item" data-view="career"><span class="nav-icon">▤</span> Career studio</button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="side-note"><div class="side-note-head">✦ Small steps, big direction.</div><p>One meaningful skill at a time. Your path adapts as you grow.</p></div>
+      <div class="side-source">BUILT ON REAL DATA<br><span>O*NET · OpenAlex · scikit-learn</span></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-menu" id="mobile-menu" aria-label="Toggle navigation">☰</button>
+      <div class="breadcrumb">MY WORKSPACE <span>/</span> <strong id="current-view">Overview</strong></div>
+      <div class="header-right"><span class="live-tag"><i></i> Learning intelligence</span><span class="avatar" id="avatar">S</span></div>
+    </header>
+
+    <div class="content">
+      <section class="view active" id="view-overview">
+        <div class="eyebrow">YOUR PERSONAL KNOWLEDGE GPS <span class="eyebrow-line"></span></div>
+        <div class="heading-row"><div><h1 id="welcome">The future is yours to build<span class="accent">.</span></h1><p class="lead">A clearer direction for your next learning move.</p></div><button class="subtle-btn" data-go="roadmap">Explore roadmap ↗</button></div>
+
+        <div class="hero-grid">
+          <article class="next-card"><div class="light-orb"></div>
+            <div class="card-kicker"><span class="diamond">✦</span> YOUR RECOMMENDED NEXT MOVE <span class="method-label">Prerequisite-aware</span></div>
+            <div id="next-content"><h2>Finding your next step...</h2></div>
+          </article>
+          <article class="stats-panel">
+            <div class="card-kicker muted">YOUR LEARNING SNAPSHOT</div>
+            <div class="stat-row"><div><div class="stat-value" id="progress-value">0%</div><div class="stat-label">Path completed</div></div><div class="ring" id="progress-ring"><span>↗</span></div></div>
+            <div class="separator"></div>
+            <div class="mini-stat"><span>Skills completed</span><strong id="skills-value">0 / 8</strong></div>
+            <div class="mini-stat"><span>Study time / week</span><strong id="hours-value">7 hours</strong></div>
+            <div class="mini-stat"><span>Current destination</span><strong id="destination-value">AI / ML Engineer</strong></div>
+          </article>
+        </div>
+
+        <div class="section-head"><div><h2>Your navigation system</h2><p>Three signals. One clear next step.</p></div></div>
+        <div class="signal-grid">
+          <article class="signal-card"><span class="signal-icon indigo">01</span><h3>Where you are</h3><p>Your self-reported skills and completed learning milestones shape your current position.</p><button class="text-link" data-go="profile">Update my profile →</button></article>
+          <article class="signal-card"><span class="signal-icon violet">02</span><h3>Where you're going</h3><p>Your selected career goal determines relevant topics and prerequisite order.</p><button class="text-link" data-go="roadmap">See my pathway →</button></article>
+          <article class="signal-card"><span class="signal-icon mint">03</span><h3>What's changing</h3><p>Real research publications are monitored and linked to your area of interest.</p><button class="text-link" data-go="pulse">Explore discoveries →</button></article>
+        </div>
+
+        <div class="lower-grid">
+          <article class="panel" id="career-neighborhood"><div class="panel-title"><div><h3>Nearby career paths</h3><p>Real occupational similarity · K-Means</p></div><span class="model-pill">ML</span></div><div id="neighbors-content" class="quiet-state">Loading occupational data...</div></article>
+          <article class="panel"><div class="panel-title"><div><h3>Fresh from your field</h3><p>Source-linked research, not hype</p></div><button class="small-link" data-go="pulse">View all ↗</button></div><div id="preview-research" class="quiet-state">Checking verified sources...</div></article>
+        </div>
+      </section>
+
+      <section class="view" id="view-roadmap">
+        <div class="eyebrow">A ROUTE MADE FOR YOU <span class="eyebrow-line"></span></div><div class="heading-row"><div><h1>Your learning roadmap<span class="accent">.</span></h1><p class="lead">Know what comes next, why it matters, and what to build.</p></div><button class="subtle-btn" data-go="profile">Adjust direction ↗</button></div>
+        <div class="roadmap-banner"><div><span class="card-kicker">CURRENT DESTINATION</span><h2 id="roadmap-role">AI / ML Engineer</h2><p id="roadmap-subtitle">A prerequisite-aware pathway built one step at a time.</p></div><div class="roadmap-progress"><strong id="roadmap-percent">0%</strong><span>completed</span></div></div>
+        <div class="section-head"><div><h2>Your step-by-step path</h2><p>Finish the prerequisites before advancing. All resources link to original publishers.</p></div></div>
+        <div id="roadmap-list" class="steps"></div>
+      </section>
+
+      <section class="view" id="view-pulse">
+        <div class="eyebrow">REAL-WORLD KNOWLEDGE <span class="eyebrow-line"></span></div><div class="heading-row"><div><h1>The world is moving<span class="accent">.</span></h1><p class="lead">Discover what's new in your field without chasing every trend.</p></div><span class="outlined-tag">OpenAlex research index</span></div>
+        <div class="info-banner"><span>✦</span><p>These are real publication records with links and dates—not AI-written news. Publication does not automatically mean that you must change your learning plan.</p></div>
+        <div class="section-head"><div><h2 id="pulse-heading">Research that may interest you</h2><p id="pulse-updated">Latest verified refresh: checking...</p></div></div>
+        <div id="research-list" class="research-grid"></div>
+        <div class="source-footnote">Research metadata: <a href="https://openalex.org/" target="_blank" rel="noopener noreferrer">OpenAlex</a>. Your roadmap only changes when your prerequisites and goals support that decision.</div>
+      </section>
+
+      <section class="view" id="view-career">
+        <div class="eyebrow">FROM LEARNING TO PROOF <span class="eyebrow-line"></span></div><div class="heading-row"><div><h1>Make your progress count<span class="accent">.</span></h1><p class="lead">Create an honest, editable resume from the work you've actually done.</p></div></div>
+        <div class="career-layout">
+          <article class="panel resume-editor"><div class="panel-title"><div><h3>Resume details</h3><p>Only what you enter will appear; no invented achievements.</p></div></div>
+            <label for="resume-name">Full name</label><input id="resume-name" placeholder="Your full name" maxlength="90" autocomplete="name">
+            <label for="resume-email">Email</label><input id="resume-email" type="email" placeholder="you@example.com" maxlength="120" autocomplete="email">
+            <label for="resume-about">Professional summary</label><textarea id="resume-about" rows="3" maxlength="500" placeholder="Describe your interests, experience and direction in your own words."></textarea>
+            <label for="resume-education">Education</label><textarea id="resume-education" rows="2" maxlength="300" placeholder="Degree, university, dates"></textarea>
+            <label for="resume-projects">Real projects and achievements <small>(one per line)</small></label><textarea id="resume-projects" rows="5" maxlength="1600" placeholder="Project — what you built, your contribution, and measurable outcomes"></textarea>
+            <p class="input-hint">Completed pathway topics are self-reported. Only add skills you can genuinely demonstrate.</p>
+            <div class="button-row"><button class="primary-btn" id="download-resume">Export resume HTML ↗</button><button class="outline-btn" id="print-resume">Print / Save PDF</button></div>
+          </article>
+          <article class="panel resume-preview-panel"><div class="panel-title"><div><h3>Live preview</h3><p>Clean, readable, recruiter-friendly layout</p></div></div><div id="resume-preview" class="resume-paper"></div></article>
+        </div>
+      </section>
+
+      <section class="view" id="view-profile">
+        <div class="eyebrow">LET'S FIND YOUR STARTING POINT <span class="eyebrow-line"></span></div><div class="heading-row"><div><h1>Tell us where you are<span class="accent">.</span></h1><p class="lead">A few honest inputs give your knowledge GPS a useful starting point.</p></div></div>
+        <form id="profile-form" class="profile-panel">
+          <div class="profile-grid">
+            <div class="field"><label for="student-name">What should we call you?</label><input id="student-name" placeholder="First name" maxlength="60"></div>
+            <div class="field"><label for="career-select">Your destination</label><select id="career-select"></select></div>
+            <div class="field full"><label for="hours-range">Time you can realistically study: <strong id="hours-label">7 hours/week</strong></label><input type="range" id="hours-range" min="1" max="25" value="7"></div>
+          </div>
+          <div class="form-divider"></div>
+          <h3>Which topics interest you most?</h3><p class="form-help">Interest helps us prioritize among ready-to-learn topics.</p><div id="interests-list" class="chip-list"></div>
+          <div class="form-divider"></div>
+          <h3>Which skills have you actually learned?</h3><p class="form-help">Select only topics you're confident you understand. You can update this later.</p><div id="known-skills" class="known-grid"></div>
+          <div class="form-actions"><button type="submit" class="primary-btn">Save my direction →</button><span>Stored locally in this browser, not on a server.</span></div>
+        </form>
+      </section>
+    </div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
