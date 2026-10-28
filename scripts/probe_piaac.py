@@ -21,13 +21,13 @@ for country,file in [("Estonia","prgestp2.csv"),("United States","prgusap2.csv")
             reader=csv.DictReader(io.TextIOWrapper(resp,encoding="utf-8-sig"),delimiter=";")
             cols=reader.fieldnames
             print("COUNTRY",country,"FIELDS",len(cols),"SIZE",resp.headers.get("Content-Length"))
-            present=[v for v in ["CNTRYID","ISCO08_C","ISCO08_L","EDLEVEL3","C2_D05","D2_Q12a","B2_Q01","B2_D01d","B2_D03d","SPFWT0","SPFWT","W_FNL","AGE_R","GENDER_R"] if v in cols]
+            present=[v for v in ["CNTRYID","ISCO08_C","ISCO08_L","ISCO1C","ISCO2C","EDFIELD","EDLEVEL3","ICTWORKC2","C2_D05","D2_Q12a","B2_Q01","B2_D01d","B2_D03d","SPFWT0","SPFWT","W_FNL","AGE_R","GENDER_R"] if v in cols]
             print("PRESENT",present)
             print("ALL_RELEVANT",[v for v in cols if re.search(r"(ISCO|ISCED|EDLEVEL|EDFIELD|FOS|W_FNL|SPFWT|WEIGHT|PVLIT|PVNUM|B2_D0)",v,re.I)][:100])
             seen={v:set() for v in present}
             examples=[]
             for i,row in enumerate(reader):
-                if i>=100:break
+                if i>=400:break
                 for key in present:
                     if len(seen[key])<20:seen[key].add(row.get(key,""))
                 if i<1:examples.append({k:row.get(k) for k in present})
