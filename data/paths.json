@@ -101,7 +101,8 @@
         "project": "Deploy a model-backed API with input checks.",
         "category": "engineering"
       }
-    ]
+    ],
+    "isco2": "25"
   },
   {
     "id": "ds",
@@ -205,7 +206,8 @@
         "project": "Ship an interactive ML decision tool.",
         "category": "engineering"
       }
-    ]
+    ],
+    "isco2": "25"
   },
   {
     "id": "software",
@@ -311,7 +313,8 @@
         "project": "Deploy a containerized service.",
         "category": "engineering"
       }
-    ]
+    ],
+    "isco2": "25"
   },
   {
     "id": "cyber",
@@ -414,7 +417,8 @@
         "project": "Publish a sanitized security case study.",
         "category": "engineering"
       }
-    ]
+    ],
+    "isco2": "25"
   },
   {
     "id": "cloud",
@@ -518,7 +522,8 @@
         "project": "Ship a monitored demo service.",
         "category": "engineering"
       }
-    ]
+    ],
+    "isco2": "25"
   },
   {
     "id": "product",
@@ -621,6 +626,7 @@
         "project": "Publish an anonymized product case study.",
         "category": "engineering"
       }
-    ]
+    ],
+    "isco2": "24"
   }
 ]
