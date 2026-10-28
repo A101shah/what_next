@@ -11,6 +11,7 @@ import math
 import re
 import time
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -199,26 +200,33 @@ def main():
     field_labels, codebook = read_codebook()
     results = {}
     excluded = {}
-    for country, file in COUNTRIES.items():
-        try:
-            result = process_country(country, file, field_labels)
-            if result["published_groups"] == 0:
-                excluded[country] = "No reportable occupation-family groups in this public-use file."
-                continue
-            results[country] = result
-            print(country, result["employed_valid_family_records"],
-                  "employed observations /", result["published_groups"], "groups")
-        except Exception as exc:
-            excluded[country] = type(exc).__name__ + ": " + str(exc)[:160]
-            print("Country unavailable:", country, excluded[country], flush=True)
+    # Official files are large; bounded concurrency shortens the first build.
+    with ThreadPoolExecutor(max_workers=3) as pool:
+        requests = {
+            pool.submit(process_country, country, file, field_labels): country
+            for country, file in COUNTRIES.items()
+        }
+        for future in as_completed(requests):
+            country = requests[future]
+            try:
+                result = future.result()
+                if not result["published_groups"]:
+                    excluded[country] = "No reportable occupation-family groups in this public-use file."
+                    continue
+                results[country] = result
+                print(country, result["employed_valid_family_records"],
+                      "employed observations /", result["published_groups"], "groups", flush=True)
+            except Exception as exc:
+                excluded[country] = type(exc).__name__ + ": " + str(exc)[:160]
+                print("Country unavailable:", country, excluded[country], flush=True)
     if len(results) < 2:
         raise RuntimeError("Fewer than two official countries produced valid data; refusing to fabricate results.")
     payload = {
         "dataset": "OECD PIAAC 2023 Cycle 2 Public Use Files",
         "source_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
         "generated_utc": datetime.now(timezone.utc).isoformat(),
-        "countries": results,
-        "excluded": excluded,
+        "countries": dict(sorted(results.items())),
+        "excluded": dict(sorted(excluded.items())),
         "codebook": codebook,
         "method": "Within each country and ISCO-08 2-digit occupational family: weighted percentages using SPFWT0 on nonmissing education outcomes. No pooled cross-country comparisons. Not replicate-weighted variance estimates.",
         "limitations": [
