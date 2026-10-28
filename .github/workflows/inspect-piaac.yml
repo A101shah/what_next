@@ -1,4 +1,4 @@
-name: Inspect official PIAAC dataset schema
+name: Validate OECD career evidence builder
 on:
   push:
     paths: ['scripts/probe_piaac.py','.github/workflows/inspect-piaac.yml']
@@ -12,4 +12,5 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install openpyxl
-      - run: python scripts/probe_piaac.py
+      - run: python scripts/build_careers.py
+      - run: python -m json.tool data/careers.json > /dev/null
