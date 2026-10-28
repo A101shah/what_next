@@ -32,6 +32,13 @@ jobs:
           cache: pip
       - name: Install ML dependencies
         run: pip install -r requirements.txt
+      - name: Cache public OECD survey files
+        uses: actions/cache@v4
+        with:
+          path: .cache/piaac
+          key: piaac-cycle2-oct2026-public-use-v1
+      - name: Build OECD PIAAC real-worker evidence
+        run: python scripts/build_careers.py
       - name: Build O*NET occupational ML dataset
         run: python scripts/build_data.py
       - name: Fetch real recent research
@@ -41,10 +48,17 @@ jobs:
       - name: Check generated files
         run: |
           python -m compileall -q scripts
+          python -m json.tool data/careers.json > /dev/null
           python -m json.tool data/model.json > /dev/null
           python -m json.tool data/research.json > /dev/null
           python -m json.tool data/paths.json > /dev/null
           test -s data/model.json
+          python -c 'import json; d=json.load(open("data/careers.json")); assert len(d["countries"]) >= 2; assert all(g["n"]>=25 for c in d["countries"].values() for g in c["groups"].values())'
+      - name: Stage only public app assets
+        run: |
+          mkdir -p site/data
+          cp index.html styles.css app.js site/
+          cp data/paths.json data/model.json data/research.json data/careers.json site/data/
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
@@ -52,7 +66,7 @@ jobs:
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: site
       - name: Publish Pages
         id: deployment
         uses: actions/deploy-pages@v4
