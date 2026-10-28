@@ -12,7 +12,7 @@ const INTERESTS = [
   {id:"security",label:"Cybersecurity"}
 ];
 const state = {
-  paths: [], model: null, news: null, view: "overview",
+  paths: [], model: null, news: null, careers: null, evidenceCountry: null, evidenceFamily: null, view: "overview",
   profile: {name:"",career:"ai",hours:7,interests:[],completed:[],resume:{email:"",about:"",education:"",projects:""}}
 };
 const $ = selector => document.querySelector(selector);
@@ -58,8 +58,8 @@ async function loadOptional(url) {
 }
 async function start() {
   restore();
-  const [paths,model,news] = await Promise.all([
-    loadOptional("data/paths.json"),loadOptional("data/model.json"),loadOptional("data/research.json")
+  const [paths,model,news,careers] = await Promise.all([
+    loadOptional("data/paths.json"),loadOptional("data/model.json"),loadOptional("data/research.json"),loadOptional("data/careers.json")
   ]);
   if (!Array.isArray(paths) || !paths.length) {
     $("#next-content").innerHTML = "<h2>Unable to load learning paths.</h2><p>Open this website using a web server and check data/paths.json.</p>";
@@ -68,6 +68,7 @@ async function start() {
   state.paths = paths;
   state.model = model && Array.isArray(model.occupations) ? model : null;
   state.news = news && news.items ? news : null;
+  state.careers = careers && careers.countries ? careers : null;
   if (!state.paths.some(path=>path.id===state.profile.career)) state.profile.career=state.paths[0].id;
   bindActions();
   renderProfileForm();
@@ -84,7 +85,7 @@ function navigate(view) {
     node.classList.toggle("active",active);
     if(active)node.setAttribute("aria-current","page");else node.removeAttribute("aria-current");
   });
-  const names={overview:"Overview",roadmap:"Learning roadmap",pulse:"World pulse",career:"Career studio",profile:"Your profile"};
+  const names={overview:"Overview",roadmap:"Learning roadmap",pulse:"World pulse",evidence:"Career evidence",career:"Career studio",profile:"Your profile"};
   $("#current-view").textContent=names[view]||"Overview";
   $(".sidebar").classList.remove("open");
   if (view==="profile") renderProfileForm();
@@ -94,6 +95,8 @@ function bindActions(){
   $$("[data-view]").forEach(node=>node.addEventListener("click",()=>navigate(node.dataset.view)));
   $$("[data-go]").forEach(node=>node.addEventListener("click",()=>navigate(node.dataset.go)));
   $("#mobile-menu").addEventListener("click",()=>$(".sidebar").classList.toggle("open"));
+  $("#evidence-country").addEventListener("change",event=>{state.evidenceCountry=event.target.value;state.evidenceFamily=null;renderCareerEvidence(currentPath());});
+  $("#evidence-family").addEventListener("change",event=>{state.evidenceFamily=event.target.value;renderCareerEvidence(currentPath());});
   $("#profile-form").addEventListener("submit",saveProfile);
   $("#career-select").addEventListener("change",()=>drawKnownSkills($("#career-select").value));
   $("#hours-range").addEventListener("input",()=>{
@@ -158,6 +161,7 @@ function saveProfile(event) {
   ];
   state.profile.name=$("#student-name").value.trim().slice(0,60);
   state.profile.career=path;
+  state.evidenceFamily=null;
   state.profile.hours=Number($("#hours-range").value);
   state.profile.interests=$$("#interests-list .selected").map(x=>x.dataset.interest);
   persist();
@@ -212,6 +216,7 @@ function render() {
   renderRoadmap(path);
   renderResearch(path);
   renderNeighbors(path);
+  renderCareerEvidence(path);
   renderResume();
 }
 function renderRoadmap(path) {
@@ -260,6 +265,81 @@ function renderResearch(path){
     '</h3><p>'+clean(p.date)+' · '+clean(p.venue||"OpenAlex indexed publication")+'</p><a target="_blank" rel="noopener noreferrer" href="'+safeLink(p.url)+'">Read original publication ↗</a></article>'
   ).join("") : '<div class="panel">'+empty+'</div>';
 }
+
+/**
+ * Real OECD PIAAC 2023 evidence.
+ * These are observed education distributions, not supervised career-success
+ * predictions. The prerequisite roadmap is deliberately NOT retrained on them.
+ */
+function renderCareerEvidence(path) {
+  const countries = state.careers && state.careers.countries;
+  const countryPicker = $("#evidence-country");
+  const familyPicker = $("#evidence-family");
+  if (!countries || !Object.keys(countries).length) {
+    countryPicker.innerHTML='<option>No verified country data available</option>';
+    familyPicker.innerHTML='<option>Not available</option>';
+    countryPicker.disabled = true;
+    familyPicker.disabled = true;
+    const message="OECD workforce analysis is unavailable. We will not invent career statistics. Check the official source and the data build status.";
+    $("#evidence-preview").textContent=message;
+    $("#roadmap-evidence").textContent=message;
+    $("#evidence-stats").textContent=message;
+    $("#evidence-fields").textContent="No published verified observations.";
+    $("#evidence-levels").textContent="No published verified observations.";
+    $("#evidence-data-note").innerHTML='<a href="https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html" target="_blank" rel="noopener noreferrer">OECD PIAAC 2023 source ↗</a>';
+    return;
+  }
+  const keys=Object.keys(countries).filter(key=>countries[key] && countries[key].groups && Object.keys(countries[key].groups).length);
+  if (!keys.length) {
+    $("#evidence-preview").textContent="No reportable country groups were returned by OECD.";
+    return;
+  }
+  if (!keys.includes(state.evidenceCountry)) {
+    state.evidenceCountry=keys.find(key=>countries[key].groups[path.isco2]) || keys[0];
+  }
+  const current=state.evidenceCountry;
+  const groups=countries[current].groups;
+  const ids=Object.keys(groups);
+  if (!ids.includes(state.evidenceFamily)) {
+    state.evidenceFamily=ids.includes(path.isco2)?path.isco2:ids[0];
+  }
+  const selected=groups[state.evidenceFamily];
+  countryPicker.disabled=false;
+  familyPicker.disabled=false;
+  countryPicker.innerHTML=keys.map(key=>
+    '<option value="'+clean(key)+'" '+(key===current?'selected':'')+'>'+clean(key)+'</option>'
+  ).join("");
+  familyPicker.innerHTML=ids.map(code=>
+    '<option value="'+clean(code)+'" '+(code===state.evidenceFamily?'selected':'')+'>'+clean(groups[code].title)+'</option>'
+  ).join("");
+  const percentageBars=items=>{
+    if (!items || !items.length) return '<p class="quiet-state">This indicator was suppressed or had too few valid responses to display.</p>';
+    return items.slice(0,7).map(item=>{
+      const number=Number(item.pct);
+      const percent=Number.isFinite(number)?Math.max(0,Math.min(100,number)):0;
+      return '<div class="metric-line"><div class="metric-label"><span>'+clean(item.label)+'</span><strong>'+percent.toFixed(1)+'%</strong></div>'+
+        '<div class="metric-track"><div class="metric-fill" style="width:'+percent.toFixed(1)+'%"></div></div></div>';
+    }).join("");
+  };
+  $("#evidence-stats").innerHTML='<div class="card-kicker">OBSERVED WORKFORCE EVIDENCE · '+clean(current.toUpperCase())+'</div>'+
+    '<h2>'+clean(selected.title)+'</h2><p><strong>'+clean(selected.n)+'</strong> actual employed survey respondents in this occupational family · 2023 survey. Grouped records only; individual identities are never displayed.</p>';
+  $("#evidence-fields").innerHTML=percentageBars(selected.fields);
+  $("#evidence-levels").innerHTML=percentageBars(selected.levels);
+  const top=selected.fields && selected.fields[0];
+  const detail=top?('The most frequently observed field among valid responses was '+top.label+' ('+top.pct.toFixed(1)+'%).'):
+    "Education-field information was not reportable for this group.";
+  const familyNote=state.evidenceFamily===path.isco2?
+    "This is the broad occupational family associated with your selected career, not an exact match to a job title.":
+    "You are exploring a different occupational family from your selected career.";
+  $("#evidence-preview").textContent=selected.n+" observed employed respondents · "+selected.title+" · "+current;
+  $("#roadmap-evidence").textContent=detail+" "+familyNote+" It provides context, not a mandatory qualification or a reason to skip prerequisites.";
+  const link=countries[current].source;
+  $("#evidence-data-note").innerHTML='<strong>How to read this:</strong> '+
+    'Education-field distribution is based on '+clean(selected.study_field_n)+' valid sample responses; education-level distribution on '+clean(selected.education_level_n)+
+    '. Percentages use the official final survey weight within each country and occupation family, and may have different denominators. '+
+    'Small samples, nonresponse and privacy suppression can limit comparisons. No uncertainty intervals were calculated.<p style="margin-top:9px">Source: <a target="_blank" rel="noopener noreferrer" href="'+safeLink(link)+'">Original OECD PIAAC country CSV ↗</a> · '+clean(familyNote)+'</p>';
+}
+
 function fillResumeFields() {
   $("#resume-name").value=state.profile.name||"";
   $("#resume-email").value=state.profile.resume.email||"";
