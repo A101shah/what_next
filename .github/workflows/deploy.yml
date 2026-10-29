@@ -8,7 +8,7 @@ on:
     - cron: "17 3 * * *"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -54,6 +54,21 @@ jobs:
           python -m json.tool data/paths.json > /dev/null
           test -s data/model.json
           python -c 'import json; d=json.load(open("data/careers.json")); assert len(d["countries"]) >= 2; assert all(g["n"]>=25 for c in d["countries"].values() for g in c["groups"].values())'
+      # Vercel deploys from Git, while Pages deploys from this job's artifact.
+      # Commit only the verified, aggregated JSON so both hosts serve identical data.
+      # GitHub Actions token pushes do not recursively trigger another Actions run.
+      - name: Sync verified static data for Vercel
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/model.json data/careers.json data/research.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data: publish verified career and research snapshots [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "Snapshots already up to date"
+          fi
       - name: Stage only public app assets
         run: |
           mkdir -p site/data
