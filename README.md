@@ -26,6 +26,7 @@ pip install -r requirements.txt
 python scripts/build_data.py
 python scripts/build_careers.py
 python scripts/update_news.py
+python -m unittest discover -s tests -v
 ```
 
 The model build fetches O*NET occupational and essential-skill CSVs **directly from the official O*NET Resource Center**, and fits scikit-learn StandardScaler, PCA and K-Means to the observed occupational ratings. The resulting `data/model.json` contains cluster membership and PCA coordinates—not fake student-learning labels. Refresh fails clearly if upstream data cannot be obtained or parsed. It never fabricates fallback observations.
@@ -42,6 +43,16 @@ We filter **employed respondents** (`C2_D05 == 1`) and valid **ISCO-08 two-digit
 Only the grouped JSON is published. Raw PIAAC respondent files are processed by GitHub Actions and kept out of the deployed website; `.cache/piaac` is not included in the publish directory.
 
 Source: [OECD PIAAC Cycle 2 PUF and international codebook](https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html). World Bank STEP is a potential later source but **not yet integrated**.
+
+## Deploy on GitHub Pages and Vercel (same GitHub repository)
+
+- **GitHub Pages** runs `.github/workflows/deploy.yml` daily and for each push. It downloads official O*NET / OECD PIAAC / OpenAlex records, builds and validates grouped JSON, stages only the public static files, then publishes the app.
+- **Vercel** can be linked to `A101shah/what_next` with **Framework Preset: Other**, **Root Directory: .**, and **Build Command: none**. The `vercel.json` file disables framework detection for this plain HTML/CSS/JS app.
+- The GitHub workflow **commits only the three verified output files** `data/model.json`, `data/careers.json`, and `data/research.json` to `main` using the GitHub Actions bot. Therefore, Vercel's Git import receives the same real observations as the Pages build. A data refresh does not create an infinite GitHub Actions loop.
+- The original large respondent CSVs are cached **only in CI**, never committed or hosted. No individual respondent data is published.
+- The student profile and resume remain in browser-local storage; they will **not automatically sync across the two domains or devices**.
+
+Verify both hosting providers after deployment; GitHub Pages and Vercel have separate URLs and deployment histories.
 
 ## Deploy on GitHub Pages
 An included GitHub Actions workflow prepares the data and publishes the static website on pushes to `main`, plus a scheduled daily update. Enable **Settings → Pages → Build and deployment → GitHub Actions** once, if not already selected. After a successful deployment the expected URL is https://a101shah.github.io/what_next/ .
