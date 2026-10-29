@@ -1,0 +1,9270 @@
+{
+  "source": "O*NET 31.0 Database",
+  "source_url": "https://www.onetcenter.org/database.html",
+  "generated_utc": "2026-10-29T14:13:58.555861+00:00",
+  "model": "StandardScaler → PCA (visualization) + KMeans (occupational clustering)",
+  "data_note": "Real occupation-level skill ratings; NOT student-specific skill mastery or verified course sequencing.",
+  "n_occupations": 231,
+  "n_skills": 10,
+  "n_clusters": 6,
+  "silhouette": 0.187,
+  "files": {
+    "occupation_data.csv": {
+      "url": "https://www.onetcenter.org/dl_files/database/db_31_0_csv/occupation_data.csv",
+      "sha256": "a09eae1d6609686e44e05b7290993a1c8b523d8ca224bc0eedc194c855c3ee02",
+      "rows": 1016
+    },
+    "essential_skills.csv": {
+      "url": "https://www.onetcenter.org/dl_files/database/db_31_0_csv/essential_skills.csv",
+      "sha256": "68c4d31d8c55077238395dca40cc4e6d32e6a608b5474bb8264b1f98ae415bd7",
+      "rows": 18200
+    },
+    "software_skills.csv": {
+      "url": "https://www.onetcenter.org/dl_files/database/db_31_0_csv/software_skills.csv",
+      "sha256": "6aabb96b464288db849580e6510530efff3f80e25dde2bb23f1fc36bb526b016",
+      "rows": 31821
+    }
+  },
+  "occupations": [
+    {
+      "code": "11-1011.00",
+      "title": "Chief Executives",
+      "cluster": 0,
+      "pca": [
+        3.292,
+        -0.63
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.38
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.25
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Writing",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-1011.03",
+      "title": "Chief Sustainability Officers",
+      "cluster": 0,
+      "pca": [
+        2.536,
+        -0.473
+      ],
+      "skills": [
+        {
+          "name": "Writing",
+          "importance": 4.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-1021.00",
+      "title": "General and Operations Managers",
+      "cluster": 2,
+      "pca": [
+        1.196,
+        -1.241
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.62
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-2011.00",
+      "title": "Advertising and Promotions Managers",
+      "cluster": 5,
+      "pca": [
+        0.809,
+        -1.18
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.12
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-2021.00",
+      "title": "Marketing Managers",
+      "cluster": 0,
+      "pca": [
+        1.553,
+        -0.764
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.12
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-2022.00",
+      "title": "Sales Managers",
+      "cluster": 0,
+      "pca": [
+        1.442,
+        -0.77
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.62
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-2032.00",
+      "title": "Public Relations Managers",
+      "cluster": 5,
+      "pca": [
+        1.65,
+        -1.977
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 4.25
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.12
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.62
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.5
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-2033.00",
+      "title": "Fundraising Managers",
+      "cluster": 5,
+      "pca": [
+        0.635,
+        -0.751
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 4.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3012.00",
+      "title": "Administrative Services Managers",
+      "cluster": 5,
+      "pca": [
+        -0.101,
+        -1.819
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3013.00",
+      "title": "Facilities Managers",
+      "cluster": 2,
+      "pca": [
+        -0.634,
+        -0.779
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3013.01",
+      "title": "Security Managers",
+      "cluster": 0,
+      "pca": [
+        2.518,
+        -1.491
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.25
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.12
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.62
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3021.00",
+      "title": "Computer and Information Systems Managers",
+      "cluster": 0,
+      "pca": [
+        1.702,
+        -0.494
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3031.00",
+      "title": "Financial Managers",
+      "cluster": 0,
+      "pca": [
+        1.492,
+        -0.542
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.75
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.5
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3031.01",
+      "title": "Treasurers and Controllers",
+      "cluster": 0,
+      "pca": [
+        2.002,
+        -0.185
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Mathematics",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3031.03",
+      "title": "Investment Fund Managers",
+      "cluster": 5,
+      "pca": [
+        1.153,
+        -0.485
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.62
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.5
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3051.00",
+      "title": "Industrial Production Managers",
+      "cluster": 0,
+      "pca": [
+        1.889,
+        -0.391
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.62
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3051.01",
+      "title": "Quality Control Systems Managers",
+      "cluster": 0,
+      "pca": [
+        1.36,
+        -0.121
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.62
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3051.02",
+      "title": "Geothermal Production Managers",
+      "cluster": 2,
+      "pca": [
+        1.063,
+        0.537
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.62
+        },
+        {
+          "name": "Writing",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.5
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3051.03",
+      "title": "Biofuels Production Managers",
+      "cluster": 2,
+      "pca": [
+        0.471,
+        0.715
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3051.04",
+      "title": "Biomass Power Plant Managers",
+      "cluster": 2,
+      "pca": [
+        0.393,
+        -0.045
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3051.06",
+      "title": "Hydroelectric Production Managers",
+      "cluster": 0,
+      "pca": [
+        2.075,
+        0.111
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.12
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.62
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 3.62
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3061.00",
+      "title": "Purchasing Managers",
+      "cluster": 2,
+      "pca": [
+        0.774,
+        -1.338
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3071.00",
+      "title": "Transportation, Storage, and Distribution Managers",
+      "cluster": 2,
+      "pca": [
+        0.363,
+        -1.096
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.62
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.62
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3071.04",
+      "title": "Supply Chain Managers",
+      "cluster": 0,
+      "pca": [
+        1.717,
+        -1.181
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3111.00",
+      "title": "Compensation and Benefits Managers",
+      "cluster": 5,
+      "pca": [
+        1.324,
+        -1.031
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3121.00",
+      "title": "Human Resources Managers",
+      "cluster": 0,
+      "pca": [
+        4.129,
+        -1.686
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.38
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.25
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.25
+        },
+        {
+          "name": "Writing",
+          "importance": 4.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 4.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-3131.00",
+      "title": "Training and Development Managers",
+      "cluster": 0,
+      "pca": [
+        2.582,
+        -1.298
+      ],
+      "skills": [
+        {
+          "name": "Learning Strategies",
+          "importance": 4.25
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9013.00",
+      "title": "Farmers, Ranchers, and Other Agricultural Managers",
+      "cluster": 2,
+      "pca": [
+        -0.432,
+        0.512
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9021.00",
+      "title": "Construction Managers",
+      "cluster": 0,
+      "pca": [
+        1.981,
+        0.218
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9031.00",
+      "title": "Education and Childcare Administrators, Preschool and Daycare",
+      "cluster": 0,
+      "pca": [
+        2.767,
+        -0.895
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.88
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 3.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9032.00",
+      "title": "Education Administrators, Kindergarten through Secondary",
+      "cluster": 0,
+      "pca": [
+        8.271,
+        -2.414
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.88
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 4.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.75
+        },
+        {
+          "name": "Writing",
+          "importance": 4.62
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 4.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9033.00",
+      "title": "Education Administrators, Postsecondary",
+      "cluster": 0,
+      "pca": [
+        3.143,
+        -1.019
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9041.00",
+      "title": "Architectural and Engineering Managers",
+      "cluster": 3,
+      "pca": [
+        2.657,
+        0.7
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9041.01",
+      "title": "Biofuels/Biodiesel Technology and Product Development Managers",
+      "cluster": 1,
+      "pca": [
+        -1.208,
+        1.371
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.62
+        },
+        {
+          "name": "Writing",
+          "importance": 3.62
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9051.00",
+      "title": "Food Service Managers",
+      "cluster": 2,
+      "pca": [
+        -0.601,
+        -0.862
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9071.00",
+      "title": "Gambling Managers",
+      "cluster": 2,
+      "pca": [
+        0.592,
+        -0.255
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.62
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.5
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9072.00",
+      "title": "Entertainment and Recreation Managers, Except Gambling",
+      "cluster": 2,
+      "pca": [
+        -0.007,
+        -1.535
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9081.00",
+      "title": "Lodging Managers",
+      "cluster": 0,
+      "pca": [
+        1.545,
+        -1.797
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.12
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9111.00",
+      "title": "Medical and Health Services Managers",
+      "cluster": 0,
+      "pca": [
+        2.788,
+        -0.454
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 4.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9121.00",
+      "title": "Natural Sciences Managers",
+      "cluster": 3,
+      "pca": [
+        2.474,
+        0.991
+      ],
+      "skills": [
+        {
+          "name": "Science",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9121.01",
+      "title": "Clinical Research Coordinators",
+      "cluster": 3,
+      "pca": [
+        1.205,
+        0.04
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9121.02",
+      "title": "Water Resource Specialists",
+      "cluster": 3,
+      "pca": [
+        1.368,
+        0.504
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9131.00",
+      "title": "Postmasters and Mail Superintendents",
+      "cluster": 2,
+      "pca": [
+        0.589,
+        -1.255
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.75
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 3.38
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9141.00",
+      "title": "Property, Real Estate, and Community Association Managers",
+      "cluster": 5,
+      "pca": [
+        0.079,
+        -0.909
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9151.00",
+      "title": "Social and Community Service Managers",
+      "cluster": 0,
+      "pca": [
+        1.565,
+        -0.356
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9161.00",
+      "title": "Emergency Management Directors",
+      "cluster": 0,
+      "pca": [
+        3.018,
+        -0.894
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 4.0
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 3.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9171.00",
+      "title": "Funeral Home Managers",
+      "cluster": 1,
+      "pca": [
+        -2.16,
+        -0.728
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.62
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.5
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.5
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        },
+        {
+          "name": "Active Learning",
+          "importance": 2.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9179.01",
+      "title": "Fitness and Wellness Coordinators",
+      "cluster": 2,
+      "pca": [
+        -0.586,
+        -1.111
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.62
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.62
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9179.02",
+      "title": "Spa Managers",
+      "cluster": 2,
+      "pca": [
+        0.223,
+        -1.075
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.62
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.38
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9199.01",
+      "title": "Regulatory Affairs Managers",
+      "cluster": 5,
+      "pca": [
+        1.635,
+        -0.846
+      ],
+      "skills": [
+        {
+          "name": "Writing",
+          "importance": 4.25
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.5
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9199.02",
+      "title": "Compliance Managers",
+      "cluster": 0,
+      "pca": [
+        1.418,
+        -1.394
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9199.08",
+      "title": "Loss Prevention Managers",
+      "cluster": 0,
+      "pca": [
+        1.64,
+        -1.467
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9199.09",
+      "title": "Wind Energy Operations Managers",
+      "cluster": 2,
+      "pca": [
+        0.586,
+        -0.631
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9199.10",
+      "title": "Wind Energy Development Managers",
+      "cluster": 5,
+      "pca": [
+        0.402,
+        -0.109
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "11-9199.11",
+      "title": "Brownfield Redevelopment Specialists and Site Managers",
+      "cluster": 3,
+      "pca": [
+        1.698,
+        0.723
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.62
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1011.00",
+      "title": "Agents and Business Managers of Artists, Performers, and Athletes",
+      "cluster": 5,
+      "pca": [
+        -0.351,
+        -1.201
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.5
+        },
+        {
+          "name": "Monitoring",
+          "importance": 2.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1021.00",
+      "title": "Buyers and Purchasing Agents, Farm Products",
+      "cluster": 1,
+      "pca": [
+        -1.743,
+        -0.313
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.75
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.5
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1022.00",
+      "title": "Wholesale and Retail Buyers, Except Farm Products",
+      "cluster": 2,
+      "pca": [
+        -0.427,
+        -0.37
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1023.00",
+      "title": "Purchasing Agents, Except Wholesale, Retail, and Farm Products",
+      "cluster": 0,
+      "pca": [
+        1.916,
+        -1.061
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1031.00",
+      "title": "Claims Adjusters, Examiners, and Investigators",
+      "cluster": 5,
+      "pca": [
+        0.241,
+        -0.704
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.62
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1032.00",
+      "title": "Insurance Appraisers, Auto Damage",
+      "cluster": 4,
+      "pca": [
+        -3.591,
+        -0.384
+      ],
+      "skills": [
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.75
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.5
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 2.88
+        },
+        {
+          "name": "Mathematics",
+          "importance": 2.62
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1041.00",
+      "title": "Compliance Officers",
+      "cluster": 2,
+      "pca": [
+        -1.047,
+        -1.768
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.5
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1041.01",
+      "title": "Environmental Compliance Inspectors",
+      "cluster": 3,
+      "pca": [
+        1.731,
+        0.548
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1041.03",
+      "title": "Equal Opportunity Representatives and Officers",
+      "cluster": 5,
+      "pca": [
+        1.801,
+        -1.285
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.25
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1041.04",
+      "title": "Government Property Inspectors and Investigators",
+      "cluster": 5,
+      "pca": [
+        1.483,
+        -0.697
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.5
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1041.06",
+      "title": "Coroners",
+      "cluster": 3,
+      "pca": [
+        1.164,
+        0.328
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 4.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        },
+        {
+          "name": "Science",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1041.07",
+      "title": "Regulatory Affairs Specialists",
+      "cluster": 5,
+      "pca": [
+        1.418,
+        -0.755
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1041.08",
+      "title": "Customs Brokers",
+      "cluster": 5,
+      "pca": [
+        0.054,
+        -1.033
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1051.00",
+      "title": "Cost Estimators",
+      "cluster": 5,
+      "pca": [
+        -0.286,
+        0.565
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Mathematics",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1071.00",
+      "title": "Human Resources Specialists",
+      "cluster": 5,
+      "pca": [
+        0.22,
+        -1.931
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1074.00",
+      "title": "Farm Labor Contractors",
+      "cluster": 4,
+      "pca": [
+        -6.743,
+        -0.514
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 2.75
+        },
+        {
+          "name": "Writing",
+          "importance": 2.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 2.5
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1075.00",
+      "title": "Labor Relations Specialists",
+      "cluster": 5,
+      "pca": [
+        1.759,
+        -2.312
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.38
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.25
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.5
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1081.00",
+      "title": "Logisticians",
+      "cluster": 2,
+      "pca": [
+        0.783,
+        -0.367
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.5
+        },
+        {
+          "name": "Writing",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1081.01",
+      "title": "Logistics Engineers",
+      "cluster": 3,
+      "pca": [
+        2.258,
+        1.118
+      ],
+      "skills": [
+        {
+          "name": "Writing",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Mathematics",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1081.02",
+      "title": "Logistics Analysts",
+      "cluster": 2,
+      "pca": [
+        0.073,
+        -0.269
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1082.00",
+      "title": "Project Management Specialists",
+      "cluster": 2,
+      "pca": [
+        -0.713,
+        -0.38
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.62
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.62
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.5
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.5
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1111.00",
+      "title": "Management Analysts",
+      "cluster": 0,
+      "pca": [
+        1.956,
+        -0.81
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1121.00",
+      "title": "Meeting, Convention, and Event Planners",
+      "cluster": 5,
+      "pca": [
+        -0.078,
+        -1.27
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1131.00",
+      "title": "Fundraisers",
+      "cluster": 5,
+      "pca": [
+        0.66,
+        -0.912
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1141.00",
+      "title": "Compensation, Benefits, and Job Analysis Specialists",
+      "cluster": 5,
+      "pca": [
+        -0.333,
+        -0.02
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1151.00",
+      "title": "Training and Development Specialists",
+      "cluster": 0,
+      "pca": [
+        2.879,
+        -1.866
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 4.38
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1161.00",
+      "title": "Market Research Analysts and Marketing Specialists",
+      "cluster": 5,
+      "pca": [
+        1.269,
+        0.072
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1161.01",
+      "title": "Search Marketing Strategists",
+      "cluster": 2,
+      "pca": [
+        -0.272,
+        -0.376
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1199.04",
+      "title": "Business Continuity Planners",
+      "cluster": 0,
+      "pca": [
+        2.454,
+        -1.222
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.62
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1199.05",
+      "title": "Sustainability Specialists",
+      "cluster": 5,
+      "pca": [
+        1.002,
+        -0.354
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1199.06",
+      "title": "Online Merchants",
+      "cluster": 1,
+      "pca": [
+        -2.987,
+        0.09
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.5
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.5
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.5
+        },
+        {
+          "name": "Writing",
+          "importance": 3.38
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-1199.07",
+      "title": "Security Management Specialists",
+      "cluster": 2,
+      "pca": [
+        0.746,
+        -1.411
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.12
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.62
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-2011.00",
+      "title": "Accountants and Auditors",
+      "cluster": 1,
+      "pca": [
+        -1.734,
+        0.503
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.5
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.5
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.38
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-2022.00",
+      "title": "Appraisers of Personal and Business Property",
+      "cluster": 1,
+      "pca": [
+        -2.497,
+        0.531
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.62
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.38
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        },
+        {
+          "name": "Mathematics",
+          "importance": 2.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-2023.00",
+      "title": "Appraisers and Assessors of Real Estate",
+      "cluster": 1,
+      "pca": [
+        -3.568,
+        -0.168
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.5
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.5
+        },
+        {
+          "name": "Writing",
+          "importance": 3.38
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.38
+        },
+        {
+          "name": "Monitoring",
+          "importance": 2.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 2.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-2031.00",
+      "title": "Budget Analysts",
+      "cluster": 1,
+      "pca": [
+        -1.171,
+        0.656
+      ],
+      "skills": [
+        {
+          "name": "Mathematics",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-2041.00",
+      "title": "Credit Analysts",
+      "cluster": 1,
+      "pca": [
+        -1.713,
+        0.941
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.62
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.5
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.38
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-2052.00",
+      "title": "Personal Financial Advisors",
+      "cluster": 5,
+      "pca": [
+        0.856,
+        -0.49
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.12
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-2053.00",
+      "title": "Insurance Underwriters",
+      "cluster": 1,
+      "pca": [
+        -1.241,
+        -0.225
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-2061.00",
+      "title": "Financial Examiners",
+      "cluster": 0,
+      "pca": [
+        2.631,
+        -0.499
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.62
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-2071.00",
+      "title": "Credit Counselors",
+      "cluster": 5,
+      "pca": [
+        0.543,
+        -0.488
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-2072.00",
+      "title": "Loan Officers",
+      "cluster": 5,
+      "pca": [
+        -0.746,
+        -0.737
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.38
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-2081.00",
+      "title": "Tax Examiners and Collectors, and Revenue Agents",
+      "cluster": 5,
+      "pca": [
+        0.016,
+        -0.783
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-2082.00",
+      "title": "Tax Preparers",
+      "cluster": 1,
+      "pca": [
+        -2.28,
+        -0.122
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.5
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.12
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        },
+        {
+          "name": "Writing",
+          "importance": 3.0
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-2099.01",
+      "title": "Financial Quantitative Analysts",
+      "cluster": 3,
+      "pca": [
+        0.953,
+        1.711
+      ],
+      "skills": [
+        {
+          "name": "Mathematics",
+          "importance": 4.38
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "13-2099.04",
+      "title": "Fraud Examiners, Investigators and Analysts",
+      "cluster": 5,
+      "pca": [
+        2.267,
+        -1.185
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.25
+        },
+        {
+          "name": "Writing",
+          "importance": 4.25
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.88
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1211.00",
+      "title": "Computer Systems Analysts",
+      "cluster": 2,
+      "pca": [
+        0.315,
+        0.108
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.62
+        },
+        {
+          "name": "Writing",
+          "importance": 3.38
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1211.01",
+      "title": "Health Informatics Specialists",
+      "cluster": 0,
+      "pca": [
+        3.002,
+        -0.45
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.38
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1212.00",
+      "title": "Information Security Analysts",
+      "cluster": 2,
+      "pca": [
+        -0.527,
+        -0.474
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1221.00",
+      "title": "Computer and Information Research Scientists",
+      "cluster": 3,
+      "pca": [
+        -0.16,
+        1.745
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.5
+        },
+        {
+          "name": "Writing",
+          "importance": 3.38
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1231.00",
+      "title": "Computer Network Support Specialists",
+      "cluster": 1,
+      "pca": [
+        -2.961,
+        0.203
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.5
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.38
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.25
+        },
+        {
+          "name": "Writing",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1232.00",
+      "title": "Computer User Support Specialists",
+      "cluster": 5,
+      "pca": [
+        -0.168,
+        -1.296
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1241.00",
+      "title": "Computer Network Architects",
+      "cluster": 1,
+      "pca": [
+        -0.023,
+        0.665
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.62
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1241.01",
+      "title": "Telecommunications Engineering Specialists",
+      "cluster": 1,
+      "pca": [
+        -1.146,
+        0.466
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.62
+        },
+        {
+          "name": "Writing",
+          "importance": 3.38
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1242.00",
+      "title": "Database Administrators",
+      "cluster": 1,
+      "pca": [
+        -0.76,
+        0.649
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.5
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.38
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1243.00",
+      "title": "Database Architects",
+      "cluster": 1,
+      "pca": [
+        -1.402,
+        0.787
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.5
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1243.01",
+      "title": "Data Warehousing Specialists",
+      "cluster": 1,
+      "pca": [
+        -2.094,
+        0.948
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.5
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.38
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1244.00",
+      "title": "Network and Computer Systems Administrators",
+      "cluster": 2,
+      "pca": [
+        -0.605,
+        -0.034
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        },
+        {
+          "name": "Writing",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1251.00",
+      "title": "Computer Programmers",
+      "cluster": 1,
+      "pca": [
+        -2.653,
+        1.555
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.38
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.12
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.12
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1252.00",
+      "title": "Software Developers",
+      "cluster": 1,
+      "pca": [
+        -2.383,
+        1.414
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.38
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1253.00",
+      "title": "Software Quality Assurance Analysts and Testers",
+      "cluster": 2,
+      "pca": [
+        0.449,
+        -0.018
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1254.00",
+      "title": "Web Developers",
+      "cluster": 1,
+      "pca": [
+        -2.037,
+        0.946
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.5
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.25
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1255.00",
+      "title": "Web and Digital Interface Designers",
+      "cluster": 1,
+      "pca": [
+        -2.913,
+        0.631
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1255.01",
+      "title": "Video Game Designers",
+      "cluster": 1,
+      "pca": [
+        -1.381,
+        0.194
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.5
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1299.01",
+      "title": "Web Administrators",
+      "cluster": 1,
+      "pca": [
+        -1.117,
+        -0.035
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1299.02",
+      "title": "Geographic Information Systems Technologists and Technicians",
+      "cluster": 1,
+      "pca": [
+        -1.875,
+        0.627
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.5
+        },
+        {
+          "name": "Writing",
+          "importance": 3.38
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.38
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1299.03",
+      "title": "Document Management Specialists",
+      "cluster": 2,
+      "pca": [
+        -0.949,
+        -0.669
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1299.04",
+      "title": "Penetration Testers",
+      "cluster": 5,
+      "pca": [
+        1.043,
+        -0.18
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.38
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.62
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.5
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1299.05",
+      "title": "Information Security Engineers",
+      "cluster": 2,
+      "pca": [
+        0.144,
+        -0.555
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.62
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.62
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1299.06",
+      "title": "Digital Forensics Analysts",
+      "cluster": 1,
+      "pca": [
+        -2.089,
+        -0.252
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.5
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1299.07",
+      "title": "Blockchain Engineers",
+      "cluster": 1,
+      "pca": [
+        -1.102,
+        1.183
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.5
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.25
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1299.08",
+      "title": "Computer Systems Engineers/Architects",
+      "cluster": 3,
+      "pca": [
+        1.551,
+        0.454
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.62
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.5
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-1299.09",
+      "title": "Information Technology Project Managers",
+      "cluster": 5,
+      "pca": [
+        1.479,
+        -0.333
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-2011.00",
+      "title": "Actuaries",
+      "cluster": 3,
+      "pca": [
+        1.081,
+        1.072
+      ],
+      "skills": [
+        {
+          "name": "Mathematics",
+          "importance": 4.38
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-2021.00",
+      "title": "Mathematicians",
+      "cluster": 3,
+      "pca": [
+        1.064,
+        4.411
+      ],
+      "skills": [
+        {
+          "name": "Mathematics",
+          "importance": 5.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.62
+        },
+        {
+          "name": "Science",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-2031.00",
+      "title": "Operations Research Analysts",
+      "cluster": 3,
+      "pca": [
+        2.081,
+        2.154
+      ],
+      "skills": [
+        {
+          "name": "Mathematics",
+          "importance": 4.5
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-2041.00",
+      "title": "Statisticians",
+      "cluster": 3,
+      "pca": [
+        1.816,
+        2.851
+      ],
+      "skills": [
+        {
+          "name": "Mathematics",
+          "importance": 4.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-2041.01",
+      "title": "Biostatisticians",
+      "cluster": 3,
+      "pca": [
+        2.546,
+        2.863
+      ],
+      "skills": [
+        {
+          "name": "Mathematics",
+          "importance": 4.62
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Science",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-2051.00",
+      "title": "Data Scientists",
+      "cluster": 3,
+      "pca": [
+        0.475,
+        2.565
+      ],
+      "skills": [
+        {
+          "name": "Mathematics",
+          "importance": 4.38
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.25
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.5
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-2051.01",
+      "title": "Business Intelligence Analysts",
+      "cluster": 5,
+      "pca": [
+        1.035,
+        0.287
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.5
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-2051.02",
+      "title": "Clinical Data Managers",
+      "cluster": 3,
+      "pca": [
+        1.179,
+        0.621
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.62
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.62
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "15-2099.01",
+      "title": "Bioinformatics Technicians",
+      "cluster": 1,
+      "pca": [
+        -1.323,
+        1.875
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.5
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.5
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.38
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-1011.00",
+      "title": "Architects, Except Landscape and Naval",
+      "cluster": 3,
+      "pca": [
+        2.547,
+        0.86
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.25
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-1012.00",
+      "title": "Landscape Architects",
+      "cluster": 5,
+      "pca": [
+        1.164,
+        0.115
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.12
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.5
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-1021.00",
+      "title": "Cartographers and Photogrammetrists",
+      "cluster": 1,
+      "pca": [
+        -2.029,
+        0.914
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-1022.00",
+      "title": "Surveyors",
+      "cluster": 3,
+      "pca": [
+        -0.376,
+        1.902
+      ],
+      "skills": [
+        {
+          "name": "Mathematics",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-1022.01",
+      "title": "Geodetic Surveyors",
+      "cluster": 3,
+      "pca": [
+        0.533,
+        2.088
+      ],
+      "skills": [
+        {
+          "name": "Mathematics",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.62
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2011.00",
+      "title": "Aerospace Engineers",
+      "cluster": 3,
+      "pca": [
+        2.873,
+        2.183
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Mathematics",
+          "importance": 4.0
+        },
+        {
+          "name": "Science",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2021.00",
+      "title": "Agricultural Engineers",
+      "cluster": 3,
+      "pca": [
+        1.201,
+        1.187
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.75
+        },
+        {
+          "name": "Science",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2031.00",
+      "title": "Bioengineers and Biomedical Engineers",
+      "cluster": 3,
+      "pca": [
+        2.574,
+        1.53
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.88
+        },
+        {
+          "name": "Science",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2041.00",
+      "title": "Chemical Engineers",
+      "cluster": 3,
+      "pca": [
+        0.043,
+        3.645
+      ],
+      "skills": [
+        {
+          "name": "Science",
+          "importance": 4.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.88
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2051.00",
+      "title": "Civil Engineers",
+      "cluster": 3,
+      "pca": [
+        0.392,
+        1.783
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Science",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2051.01",
+      "title": "Transportation Engineers",
+      "cluster": 3,
+      "pca": [
+        1.248,
+        1.382
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2051.02",
+      "title": "Water/Wastewater Engineers",
+      "cluster": 3,
+      "pca": [
+        1.533,
+        1.642
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.62
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2061.00",
+      "title": "Computer Hardware Engineers",
+      "cluster": 3,
+      "pca": [
+        1.198,
+        0.965
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2071.00",
+      "title": "Electrical Engineers",
+      "cluster": 3,
+      "pca": [
+        2.002,
+        0.991
+      ],
+      "skills": [
+        {
+          "name": "Writing",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.5
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2072.00",
+      "title": "Electronics Engineers, Except Computer",
+      "cluster": 3,
+      "pca": [
+        0.437,
+        1.161
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.5
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2072.01",
+      "title": "Radio Frequency Identification Device Specialists",
+      "cluster": 1,
+      "pca": [
+        -1.522,
+        -0.02
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.75
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.62
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2081.00",
+      "title": "Environmental Engineers",
+      "cluster": 3,
+      "pca": [
+        2.476,
+        0.76
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2111.00",
+      "title": "Health and Safety Engineers, Except Mining Safety Engineers and Inspectors",
+      "cluster": 2,
+      "pca": [
+        0.13,
+        0.326
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2111.02",
+      "title": "Fire-Prevention and Protection Engineers",
+      "cluster": 3,
+      "pca": [
+        2.104,
+        1.383
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.25
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.88
+        },
+        {
+          "name": "Science",
+          "importance": 3.62
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2112.00",
+      "title": "Industrial Engineers",
+      "cluster": 5,
+      "pca": [
+        0.662,
+        0.067
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2112.01",
+      "title": "Human Factors Engineers and Ergonomists",
+      "cluster": 3,
+      "pca": [
+        2.331,
+        0.93
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.5
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2112.02",
+      "title": "Validation Engineers",
+      "cluster": 3,
+      "pca": [
+        1.824,
+        0.825
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Science",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2112.03",
+      "title": "Manufacturing Engineers",
+      "cluster": 3,
+      "pca": [
+        1.78,
+        1.248
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Mathematics",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2121.00",
+      "title": "Marine Engineers and Naval Architects",
+      "cluster": 3,
+      "pca": [
+        0.963,
+        1.913
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.75
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.62
+        },
+        {
+          "name": "Science",
+          "importance": 3.5
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2131.00",
+      "title": "Materials Engineers",
+      "cluster": 3,
+      "pca": [
+        2.193,
+        2.038
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Mathematics",
+          "importance": 4.0
+        },
+        {
+          "name": "Science",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2141.00",
+      "title": "Mechanical Engineers",
+      "cluster": 3,
+      "pca": [
+        0.088,
+        2.349
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.75
+        },
+        {
+          "name": "Science",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.5
+        },
+        {
+          "name": "Writing",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2141.01",
+      "title": "Fuel Cell Engineers",
+      "cluster": 3,
+      "pca": [
+        1.309,
+        1.968
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.75
+        },
+        {
+          "name": "Science",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.62
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2141.02",
+      "title": "Automotive Engineers",
+      "cluster": 3,
+      "pca": [
+        1.063,
+        1.893
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2151.00",
+      "title": "Mining and Geological Engineers, Including Mining Safety Engineers",
+      "cluster": 3,
+      "pca": [
+        2.106,
+        1.322
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2161.00",
+      "title": "Nuclear Engineers",
+      "cluster": 3,
+      "pca": [
+        2.852,
+        2.159
+      ],
+      "skills": [
+        {
+          "name": "Science",
+          "importance": 4.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Mathematics",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 4.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2171.00",
+      "title": "Petroleum Engineers",
+      "cluster": 3,
+      "pca": [
+        1.871,
+        1.031
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2199.03",
+      "title": "Energy Engineers, Except Wind and Solar",
+      "cluster": 3,
+      "pca": [
+        2.812,
+        1.806
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2199.05",
+      "title": "Mechatronics Engineers",
+      "cluster": 1,
+      "pca": [
+        -0.461,
+        1.466
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.62
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.5
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.38
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2199.06",
+      "title": "Microsystems Engineers",
+      "cluster": 3,
+      "pca": [
+        1.59,
+        1.341
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Science",
+          "importance": 3.62
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.62
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2199.07",
+      "title": "Photonics Engineers",
+      "cluster": 3,
+      "pca": [
+        0.721,
+        2.115
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.62
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2199.08",
+      "title": "Robotics Engineers",
+      "cluster": 3,
+      "pca": [
+        1.544,
+        1.775
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2199.09",
+      "title": "Nanosystems Engineers",
+      "cluster": 3,
+      "pca": [
+        2.233,
+        2.045
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Science",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2199.10",
+      "title": "Wind Energy Engineers",
+      "cluster": 1,
+      "pca": [
+        -1.446,
+        2.418
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.38
+        },
+        {
+          "name": "Writing",
+          "importance": 3.38
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.38
+        },
+        {
+          "name": "Science",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-2199.11",
+      "title": "Solar Energy Systems Engineers",
+      "cluster": 3,
+      "pca": [
+        0.698,
+        1.289
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.38
+        },
+        {
+          "name": "Science",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-3011.00",
+      "title": "Architectural and Civil Drafters",
+      "cluster": 1,
+      "pca": [
+        -2.262,
+        1.087
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.5
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.25
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-3012.00",
+      "title": "Electrical and Electronics Drafters",
+      "cluster": 1,
+      "pca": [
+        -2.732,
+        0.491
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.62
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.5
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.38
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-3013.00",
+      "title": "Mechanical Drafters",
+      "cluster": 1,
+      "pca": [
+        -3.816,
+        1.514
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 3.38
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.25
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.12
+        },
+        {
+          "name": "Writing",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-3021.00",
+      "title": "Aerospace Engineering and Operations Technologists and Technicians",
+      "cluster": 1,
+      "pca": [
+        -1.36,
+        1.3
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.62
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        },
+        {
+          "name": "Science",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-3022.00",
+      "title": "Civil Engineering Technologists and Technicians",
+      "cluster": 1,
+      "pca": [
+        -1.78,
+        1.663
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.62
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.38
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-3023.00",
+      "title": "Electrical and Electronic Engineering Technologists and Technicians",
+      "cluster": 1,
+      "pca": [
+        -2.015,
+        0.977
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.38
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.38
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-3024.00",
+      "title": "Electro-Mechanical and Mechatronics Technologists and Technicians",
+      "cluster": 1,
+      "pca": [
+        -2.957,
+        1.701
+      ],
+      "skills": [
+        {
+          "name": "Monitoring",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.62
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.12
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.12
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-3024.01",
+      "title": "Robotics Technicians",
+      "cluster": 1,
+      "pca": [
+        -1.111,
+        1.213
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-3025.00",
+      "title": "Environmental Engineering Technologists and Technicians",
+      "cluster": 3,
+      "pca": [
+        0.047,
+        1.474
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.38
+        },
+        {
+          "name": "Science",
+          "importance": 3.38
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-3026.00",
+      "title": "Industrial Engineering Technologists and Technicians",
+      "cluster": 1,
+      "pca": [
+        -1.332,
+        1.514
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.12
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.12
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-3026.01",
+      "title": "Nanotechnology Engineering Technologists and Technicians",
+      "cluster": 3,
+      "pca": [
+        0.486,
+        2.157
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.62
+        },
+        {
+          "name": "Science",
+          "importance": 3.62
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.38
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-3027.00",
+      "title": "Mechanical Engineering Technologists and Technicians",
+      "cluster": 1,
+      "pca": [
+        -0.984,
+        1.205
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Writing",
+          "importance": 3.5
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-3027.01",
+      "title": "Automotive Engineering Technicians",
+      "cluster": 1,
+      "pca": [
+        -3.025,
+        1.518
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.62
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.5
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.25
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-3029.01",
+      "title": "Non-Destructive Testing Specialists",
+      "cluster": 1,
+      "pca": [
+        -1.418,
+        1.477
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.62
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.5
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-3029.08",
+      "title": "Photonics Technicians",
+      "cluster": 1,
+      "pca": [
+        -3.101,
+        1.205
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.38
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.25
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "17-3031.00",
+      "title": "Surveying and Mapping Technicians",
+      "cluster": 1,
+      "pca": [
+        -3.795,
+        2.044
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.62
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.5
+        },
+        {
+          "name": "Mathematics",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.0
+        },
+        {
+          "name": "Writing",
+          "importance": 2.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-1011.00",
+      "title": "Art Directors",
+      "cluster": 2,
+      "pca": [
+        -0.53,
+        -1.601
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-1012.00",
+      "title": "Craft Artists",
+      "cluster": 4,
+      "pca": [
+        -6.843,
+        0.231
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 3.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.0
+        },
+        {
+          "name": "Writing",
+          "importance": 2.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 2.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-1013.00",
+      "title": "Fine Artists, Including Painters, Sculptors, and Illustrators",
+      "cluster": 4,
+      "pca": [
+        -5.712,
+        0.317
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.0
+        },
+        {
+          "name": "Writing",
+          "importance": 2.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 2.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-1014.00",
+      "title": "Special Effects Artists and Animators",
+      "cluster": 1,
+      "pca": [
+        -2.142,
+        -0.831
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.25
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-1021.00",
+      "title": "Commercial and Industrial Designers",
+      "cluster": 1,
+      "pca": [
+        -1.296,
+        0.305
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.5
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-1022.00",
+      "title": "Fashion Designers",
+      "cluster": 2,
+      "pca": [
+        -0.003,
+        -1.427
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.62
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.5
+        },
+        {
+          "name": "Writing",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-1023.00",
+      "title": "Floral Designers",
+      "cluster": 4,
+      "pca": [
+        -4.902,
+        -1.488
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 2.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 2.88
+        },
+        {
+          "name": "Writing",
+          "importance": 2.62
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-1024.00",
+      "title": "Graphic Designers",
+      "cluster": 4,
+      "pca": [
+        -3.571,
+        -1.103
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.38
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-1025.00",
+      "title": "Interior Designers",
+      "cluster": 5,
+      "pca": [
+        -0.027,
+        -0.845
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-1026.00",
+      "title": "Merchandise Displayers and Window Trimmers",
+      "cluster": 4,
+      "pca": [
+        -5.379,
+        -0.456
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.5
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.25
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.25
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.0
+        },
+        {
+          "name": "Writing",
+          "importance": 2.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 2.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 2.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-1027.00",
+      "title": "Set and Exhibit Designers",
+      "cluster": 1,
+      "pca": [
+        -0.91,
+        -0.158
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-2011.00",
+      "title": "Actors",
+      "cluster": 4,
+      "pca": [
+        -3.197,
+        -2.699
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.12
+        },
+        {
+          "name": "Active Learning",
+          "importance": 2.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 2.88
+        },
+        {
+          "name": "Writing",
+          "importance": 2.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-2012.00",
+      "title": "Producers and Directors",
+      "cluster": 0,
+      "pca": [
+        1.672,
+        -2.208
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.38
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-2012.03",
+      "title": "Media Programming Directors",
+      "cluster": 0,
+      "pca": [
+        1.967,
+        -1.723
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 4.25
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-2012.04",
+      "title": "Talent Directors",
+      "cluster": 2,
+      "pca": [
+        -0.724,
+        -1.645
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.38
+        },
+        {
+          "name": "Writing",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-2012.05",
+      "title": "Media Technical Directors/Managers",
+      "cluster": 2,
+      "pca": [
+        0.371,
+        -2.039
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.62
+        },
+        {
+          "name": "Writing",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-2021.00",
+      "title": "Athletes and Sports Competitors",
+      "cluster": 4,
+      "pca": [
+        -2.619,
+        -0.88
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.25
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.12
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.0
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 2.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-2022.00",
+      "title": "Coaches and Scouts",
+      "cluster": 0,
+      "pca": [
+        3.079,
+        -2.09
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 4.38
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 4.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-2023.00",
+      "title": "Umpires, Referees, and Other Sports Officials",
+      "cluster": 4,
+      "pca": [
+        -4.114,
+        -0.09
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.0
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-2031.00",
+      "title": "Dancers",
+      "cluster": 4,
+      "pca": [
+        -7.214,
+        -0.704
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.25
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 2.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 2.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 2.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 2.75
+        },
+        {
+          "name": "Writing",
+          "importance": 2.5
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-2032.00",
+      "title": "Choreographers",
+      "cluster": 2,
+      "pca": [
+        -1.238,
+        -2.45
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.75
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 3.62
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.5
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-2041.00",
+      "title": "Music Directors and Composers",
+      "cluster": 1,
+      "pca": [
+        -1.844,
+        -1.249
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.88
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.5
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.5
+        },
+        {
+          "name": "Writing",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-2042.00",
+      "title": "Musicians and Singers",
+      "cluster": 4,
+      "pca": [
+        -5.483,
+        -0.869
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 3.38
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.25
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.0
+        },
+        {
+          "name": "Writing",
+          "importance": 2.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 2.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-2091.00",
+      "title": "Disc Jockeys, Except Radio",
+      "cluster": 4,
+      "pca": [
+        -5.699,
+        -0.912
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.25
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.0
+        },
+        {
+          "name": "Writing",
+          "importance": 2.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 2.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-3011.00",
+      "title": "Broadcast Announcers and Radio Disc Jockeys",
+      "cluster": 5,
+      "pca": [
+        -1.275,
+        -2.622
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 4.75
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-3023.00",
+      "title": "News Analysts, Reporters, and Journalists",
+      "cluster": 5,
+      "pca": [
+        2.137,
+        -2.539
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.5
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.38
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.25
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 4.12
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-3031.00",
+      "title": "Public Relations Specialists",
+      "cluster": 5,
+      "pca": [
+        0.568,
+        -1.776
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.12
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.12
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.38
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-3041.00",
+      "title": "Editors",
+      "cluster": 5,
+      "pca": [
+        1.98,
+        -2.005
+      ],
+      "skills": [
+        {
+          "name": "Reading Comprehension",
+          "importance": 5.0
+        },
+        {
+          "name": "Writing",
+          "importance": 4.38
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Speaking",
+          "importance": 4.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.25
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-3042.00",
+      "title": "Technical Writers",
+      "cluster": 5,
+      "pca": [
+        -0.367,
+        -1.71
+      ],
+      "skills": [
+        {
+          "name": "Writing",
+          "importance": 4.88
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-3043.00",
+      "title": "Writers and Authors",
+      "cluster": 5,
+      "pca": [
+        -0.632,
+        -2.167
+      ],
+      "skills": [
+        {
+          "name": "Writing",
+          "importance": 5.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 2.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-3043.05",
+      "title": "Poets, Lyricists and Creative Writers",
+      "cluster": 5,
+      "pca": [
+        0.417,
+        -1.34
+      ],
+      "skills": [
+        {
+          "name": "Writing",
+          "importance": 4.75
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 4.25
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.88
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.75
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.62
+        },
+        {
+          "name": "Learning Strategies",
+          "importance": 2.75
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-3091.00",
+      "title": "Interpreters and Translators",
+      "cluster": 2,
+      "pca": [
+        -0.071,
+        -2.347
+      ],
+      "skills": [
+        {
+          "name": "Speaking",
+          "importance": 4.12
+        },
+        {
+          "name": "Active Listening",
+          "importance": 4.0
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.88
+        },
+        {
+          "name": "Writing",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.62
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.62
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-3092.00",
+      "title": "Court Reporters and Simultaneous Captioners",
+      "cluster": 4,
+      "pca": [
+        -5.488,
+        -2.387
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 4.25
+        },
+        {
+          "name": "Writing",
+          "importance": 3.62
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.5
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.0
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.0
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 2.75
+        },
+        {
+          "name": "Active Learning",
+          "importance": 2.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-4011.00",
+      "title": "Audio and Video Technicians",
+      "cluster": 4,
+      "pca": [
+        -3.62,
+        -0.37
+      ],
+      "skills": [
+        {
+          "name": "Monitoring",
+          "importance": 3.75
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.5
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.5
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.12
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.12
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-4012.00",
+      "title": "Broadcast Technicians",
+      "cluster": 1,
+      "pca": [
+        -2.315,
+        0.397
+      ],
+      "skills": [
+        {
+          "name": "Critical Thinking",
+          "importance": 3.88
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.88
+        },
+        {
+          "name": "Active Listening",
+          "importance": 3.62
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.25
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-4014.00",
+      "title": "Sound Engineering Technicians",
+      "cluster": 4,
+      "pca": [
+        -3.12,
+        -0.867
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.62
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.5
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.25
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-4021.00",
+      "title": "Photographers",
+      "cluster": 4,
+      "pca": [
+        -3.537,
+        -1.149
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.75
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.12
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.12
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        },
+        {
+          "name": "Writing",
+          "importance": 2.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-4031.00",
+      "title": "Camera Operators, Television, Video, and Film",
+      "cluster": 4,
+      "pca": [
+        -4.363,
+        -1.255
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.25
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.25
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.12
+        },
+        {
+          "name": "Writing",
+          "importance": 2.88
+        },
+        {
+          "name": "Active Learning",
+          "importance": 2.88
+        }
+      ],
+      "tools": []
+    },
+    {
+      "code": "27-4032.00",
+      "title": "Film and Video Editors",
+      "cluster": 4,
+      "pca": [
+        -3.307,
+        -0.994
+      ],
+      "skills": [
+        {
+          "name": "Active Listening",
+          "importance": 3.75
+        },
+        {
+          "name": "Critical Thinking",
+          "importance": 3.5
+        },
+        {
+          "name": "Reading Comprehension",
+          "importance": 3.38
+        },
+        {
+          "name": "Speaking",
+          "importance": 3.25
+        },
+        {
+          "name": "Active Learning",
+          "importance": 3.25
+        },
+        {
+          "name": "Writing",
+          "importance": 3.12
+        },
+        {
+          "name": "Monitoring",
+          "importance": 3.0
+        }
+      ],
+      "tools": []
+    }
+  ]
+}

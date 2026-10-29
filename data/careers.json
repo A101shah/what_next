@@ -1,0 +1,3639 @@
+{
+  "dataset": "OECD PIAAC 2023 Cycle 2 Public Use Files",
+  "source_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+  "generated_utc": "2026-10-29T14:13:51.322283+00:00",
+  "countries": {
+    "Chile": {
+      "groups": {
+        "12": {
+          "title": "Administrative and commercial managers",
+          "n": 37,
+          "education_level_n": 37,
+          "study_field_n": 37,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 87.2
+            },
+            {
+              "label": "Medium",
+              "pct": 12.8
+            }
+          ],
+          "fields": [
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 21.3
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 19.1
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 15.1
+            },
+            {
+              "label": "Health",
+              "pct": 11.7
+            },
+            {
+              "label": "Construction",
+              "pct": 11.0
+            },
+            {
+              "label": "Law",
+              "pct": 7.8
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 5.1
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 3.6
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 2.0
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 1.5
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 1.2
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 0.6
+            }
+          ]
+        },
+        "13": {
+          "title": "Production and specialized services managers",
+          "n": 80,
+          "education_level_n": 80,
+          "study_field_n": 75,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 75.1
+            },
+            {
+              "label": "Medium",
+              "pct": 13.0
+            },
+            {
+              "label": "Low",
+              "pct": 11.8
+            }
+          ],
+          "fields": [
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 28.5
+            },
+            {
+              "label": "Construction",
+              "pct": 11.7
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 11.4
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 10.3
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 8.1
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 6.4
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 5.8
+            },
+            {
+              "label": "Health",
+              "pct": 4.9
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 4.6
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 4.1
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 2.2
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 1.5
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 0.3
+            }
+          ]
+        },
+        "21": {
+          "title": "Science and engineering professionals",
+          "n": 81,
+          "education_level_n": 81,
+          "study_field_n": 81,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 93.1
+            },
+            {
+              "label": "Medium",
+              "pct": 6.9
+            }
+          ],
+          "fields": [
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 29.2
+            },
+            {
+              "label": "Construction",
+              "pct": 18.9
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 10.5
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 10.0
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 10.0
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 7.8
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 5.2
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 4.2
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 3.2
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 0.9
+            }
+          ]
+        },
+        "22": {
+          "title": "Health professionals",
+          "n": 97,
+          "education_level_n": 97,
+          "study_field_n": 96,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 97.6
+            },
+            {
+              "label": "Medium",
+              "pct": 1.4
+            },
+            {
+              "label": "Low",
+              "pct": 1.0
+            }
+          ],
+          "fields": [
+            {
+              "label": "Health",
+              "pct": 76.1
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 10.6
+            },
+            {
+              "label": "Construction",
+              "pct": 5.6
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 4.7
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 1.4
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 1.4
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 0.2
+            },
+            {
+              "label": "Law",
+              "pct": 0.1
+            }
+          ]
+        },
+        "23": {
+          "title": "Teaching professionals",
+          "n": 165,
+          "education_level_n": 165,
+          "study_field_n": 165,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 91.1
+            },
+            {
+              "label": "Medium",
+              "pct": 8.9
+            }
+          ],
+          "fields": [
+            {
+              "label": "Education and Teacher Training",
+              "pct": 63.5
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 6.7
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 5.2
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 4.5
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 4.2
+            },
+            {
+              "label": "Welfare",
+              "pct": 3.0
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 2.4
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 2.2
+            },
+            {
+              "label": "Health",
+              "pct": 2.1
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 2.0
+            },
+            {
+              "label": "Construction",
+              "pct": 1.9
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 1.2
+            },
+            {
+              "label": "Law",
+              "pct": 0.6
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 0.3
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 0.2
+            }
+          ]
+        },
+        "24": {
+          "title": "Business and administration professionals",
+          "n": 72,
+          "education_level_n": 72,
+          "study_field_n": 72,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 86.1
+            },
+            {
+              "label": "Medium",
+              "pct": 13.9
+            }
+          ],
+          "fields": [
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 50.8
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 11.0
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 8.6
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 5.8
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 5.5
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 3.8
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 3.4
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 3.4
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 2.1
+            },
+            {
+              "label": "Law",
+              "pct": 2.0
+            },
+            {
+              "label": "Health",
+              "pct": 1.8
+            },
+            {
+              "label": "Welfare",
+              "pct": 1.4
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 0.6
+            }
+          ]
+        },
+        "25": {
+          "title": "Information and communications technology professionals",
+          "n": 34,
+          "education_level_n": 34,
+          "study_field_n": 34,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 98.4
+            },
+            {
+              "label": "Medium",
+              "pct": 1.6
+            }
+          ],
+          "fields": [
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 88.5
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 4.5
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 3.3
+            },
+            {
+              "label": "Law",
+              "pct": 2.7
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 1.0
+            }
+          ]
+        },
+        "26": {
+          "title": "Legal, social and cultural professionals",
+          "n": 89,
+          "education_level_n": 89,
+          "study_field_n": 88,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 93.7
+            },
+            {
+              "label": "Medium",
+              "pct": 5.7
+            },
+            {
+              "label": "Low",
+              "pct": 0.5
+            }
+          ],
+          "fields": [
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 31.3
+            },
+            {
+              "label": "Law",
+              "pct": 20.4
+            },
+            {
+              "label": "Welfare",
+              "pct": 12.4
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 9.4
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 7.2
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 6.1
+            },
+            {
+              "label": "Health",
+              "pct": 5.0
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 3.9
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 3.8
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 0.5
+            }
+          ]
+        },
+        "31": {
+          "title": "Science and engineering associate professionals",
+          "n": 114,
+          "education_level_n": 114,
+          "study_field_n": 100,
+          "levels": [
+            {
+              "label": "Medium",
+              "pct": 49.6
+            },
+            {
+              "label": "High",
+              "pct": 38.7
+            },
+            {
+              "label": "Low",
+              "pct": 11.8
+            }
+          ],
+          "fields": [
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 32.9
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 21.5
+            },
+            {
+              "label": "Construction",
+              "pct": 16.5
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 13.3
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 3.8
+            },
+            {
+              "label": "Health",
+              "pct": 3.6
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 2.4
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 1.9
+            },
+            {
+              "label": "Law",
+              "pct": 1.4
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 1.4
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 1.3
+            }
+          ]
+        },
+        "32": {
+          "title": "Health associate professionals",
+          "n": 106,
+          "education_level_n": 106,
+          "study_field_n": 105,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 83.2
+            },
+            {
+              "label": "Medium",
+              "pct": 16.2
+            },
+            {
+              "label": "Low",
+              "pct": 0.6
+            }
+          ],
+          "fields": [
+            {
+              "label": "Health",
+              "pct": 73.3
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 8.2
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 4.6
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 3.1
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 2.9
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 2.2
+            },
+            {
+              "label": "Construction",
+              "pct": 1.3
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 1.3
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 1.2
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 0.8
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 0.7
+            },
+            {
+              "label": "Welfare",
+              "pct": 0.3
+            }
+          ]
+        },
+        "33": {
+          "title": "Business and administration associate professionals",
+          "n": 209,
+          "education_level_n": 209,
+          "study_field_n": 200,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 61.9
+            },
+            {
+              "label": "Medium",
+              "pct": 32.4
+            },
+            {
+              "label": "Low",
+              "pct": 5.7
+            }
+          ],
+          "fields": [
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 47.9
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 17.3
+            },
+            {
+              "label": "Health",
+              "pct": 6.1
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 5.8
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 4.5
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 3.5
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 2.9
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 2.7
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 2.5
+            },
+            {
+              "label": "Welfare",
+              "pct": 2.0
+            },
+            {
+              "label": "Law",
+              "pct": 1.6
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 1.2
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 0.7
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 0.6
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 0.4
+            },
+            {
+              "label": "Construction",
+              "pct": 0.3
+            }
+          ]
+        },
+        "35": {
+          "title": "Information and communications technicians",
+          "n": 27,
+          "education_level_n": 27,
+          "study_field_n": 26,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 65.5
+            },
+            {
+              "label": "Medium",
+              "pct": 34.5
+            }
+          ],
+          "fields": [
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 66.7
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 16.1
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 15.3
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 1.9
+            }
+          ]
+        }
+      },
+      "source": "https://webfs.oecd.org/piaac/cy2-puf-data/CSV/prgchlp2.csv",
+      "sha256": "2691391bb2e596138e27324dd8e0392dc7ca37f11377fec24daaff6618a8d4b2",
+      "employed_valid_family_records": 1111,
+      "published_groups": 12
+    },
+    "Italy": {
+      "groups": {
+        "13": {
+          "title": "Production and specialized services managers",
+          "n": 38,
+          "education_level_n": 38,
+          "study_field_n": 27,
+          "levels": [
+            {
+              "label": "Medium",
+              "pct": 42.2
+            },
+            {
+              "label": "Low",
+              "pct": 31.9
+            },
+            {
+              "label": "High",
+              "pct": 25.9
+            }
+          ],
+          "fields": [
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 31.3
+            },
+            {
+              "label": "Construction",
+              "pct": 26.3
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 9.0
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 8.9
+            },
+            {
+              "label": "Welfare",
+              "pct": 6.4
+            },
+            {
+              "label": "Law",
+              "pct": 4.5
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 3.2
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 3.2
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 2.7
+            },
+            {
+              "label": "Health",
+              "pct": 2.3
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 2.2
+            }
+          ]
+        },
+        "21": {
+          "title": "Science and engineering professionals",
+          "n": 59,
+          "education_level_n": 59,
+          "study_field_n": 57,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 68.5
+            },
+            {
+              "label": "Medium",
+              "pct": 28.1
+            },
+            {
+              "label": "Low",
+              "pct": 3.4
+            }
+          ],
+          "fields": [
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 42.3
+            },
+            {
+              "label": "Construction",
+              "pct": 19.3
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 13.8
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 8.3
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 8.0
+            },
+            {
+              "label": "Health",
+              "pct": 3.1
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 2.3
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 2.2
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 0.8
+            }
+          ]
+        },
+        "22": {
+          "title": "Health professionals",
+          "n": 42,
+          "education_level_n": 42,
+          "study_field_n": 42,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 87.5
+            },
+            {
+              "label": "Medium",
+              "pct": 12.5
+            }
+          ],
+          "fields": [
+            {
+              "label": "Health",
+              "pct": 83.8
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 6.7
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 4.0
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 3.3
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 1.1
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 1.0
+            }
+          ]
+        },
+        "23": {
+          "title": "Teaching professionals",
+          "n": 127,
+          "education_level_n": 127,
+          "study_field_n": 124,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 75.8
+            },
+            {
+              "label": "Medium",
+              "pct": 24.2
+            }
+          ],
+          "fields": [
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 26.3
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 22.1
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 17.9
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 6.6
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 5.9
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 4.3
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 3.5
+            },
+            {
+              "label": "Health",
+              "pct": 3.5
+            },
+            {
+              "label": "Construction",
+              "pct": 2.7
+            },
+            {
+              "label": "Law",
+              "pct": 2.7
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 2.1
+            },
+            {
+              "label": "Welfare",
+              "pct": 1.6
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 0.7
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 0.2
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 0.1
+            }
+          ]
+        },
+        "24": {
+          "title": "Business and administration professionals",
+          "n": 78,
+          "education_level_n": 78,
+          "study_field_n": 72,
+          "levels": [
+            {
+              "label": "Medium",
+              "pct": 53.4
+            },
+            {
+              "label": "High",
+              "pct": 43.7
+            },
+            {
+              "label": "Low",
+              "pct": 2.9
+            }
+          ],
+          "fields": [
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 44.2
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 30.8
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 8.0
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 6.7
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 6.6
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 1.3
+            },
+            {
+              "label": "Law",
+              "pct": 1.3
+            },
+            {
+              "label": "Health",
+              "pct": 1.2
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 0.1
+            }
+          ]
+        },
+        "25": {
+          "title": "Information and communications technology professionals",
+          "n": 40,
+          "education_level_n": 40,
+          "study_field_n": 38,
+          "levels": [
+            {
+              "label": "Medium",
+              "pct": 52.8
+            },
+            {
+              "label": "High",
+              "pct": 47.2
+            }
+          ],
+          "fields": [
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 37.3
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 27.6
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 15.7
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 6.9
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 5.1
+            },
+            {
+              "label": "Construction",
+              "pct": 4.3
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 2.9
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 0.2
+            }
+          ]
+        },
+        "26": {
+          "title": "Legal, social and cultural professionals",
+          "n": 57,
+          "education_level_n": 57,
+          "study_field_n": 56,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 82.5
+            },
+            {
+              "label": "Medium",
+              "pct": 17.3
+            },
+            {
+              "label": "Low",
+              "pct": 0.2
+            }
+          ],
+          "fields": [
+            {
+              "label": "Law",
+              "pct": 36.7
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 25.6
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 16.4
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 10.1
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 4.9
+            },
+            {
+              "label": "Welfare",
+              "pct": 3.1
+            },
+            {
+              "label": "Health",
+              "pct": 2.6
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 0.8
+            }
+          ]
+        },
+        "31": {
+          "title": "Science and engineering associate professionals",
+          "n": 57,
+          "education_level_n": 57,
+          "study_field_n": 48,
+          "levels": [
+            {
+              "label": "Medium",
+              "pct": 61.4
+            },
+            {
+              "label": "High",
+              "pct": 31.4
+            },
+            {
+              "label": "Low",
+              "pct": 7.2
+            }
+          ],
+          "fields": [
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 31.9
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 29.6
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 11.3
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 8.9
+            },
+            {
+              "label": "Construction",
+              "pct": 8.3
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 5.9
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 3.8
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 0.2
+            }
+          ]
+        },
+        "32": {
+          "title": "Health associate professionals",
+          "n": 114,
+          "education_level_n": 114,
+          "study_field_n": 94,
+          "levels": [
+            {
+              "label": "Medium",
+              "pct": 45.9
+            },
+            {
+              "label": "High",
+              "pct": 32.6
+            },
+            {
+              "label": "Low",
+              "pct": 21.5
+            }
+          ],
+          "fields": [
+            {
+              "label": "Health",
+              "pct": 42.9
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 25.0
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 7.3
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 5.4
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 4.6
+            },
+            {
+              "label": "Welfare",
+              "pct": 4.4
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 3.7
+            },
+            {
+              "label": "Law",
+              "pct": 2.8
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 1.6
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 1.0
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 0.9
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 0.5
+            }
+          ]
+        },
+        "33": {
+          "title": "Business and administration associate professionals",
+          "n": 193,
+          "education_level_n": 193,
+          "study_field_n": 179,
+          "levels": [
+            {
+              "label": "Medium",
+              "pct": 66.1
+            },
+            {
+              "label": "High",
+              "pct": 30.0
+            },
+            {
+              "label": "Low",
+              "pct": 3.8
+            }
+          ],
+          "fields": [
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 47.1
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 19.8
+            },
+            {
+              "label": "Construction",
+              "pct": 6.8
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 4.5
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 4.5
+            },
+            {
+              "label": "Law",
+              "pct": 3.7
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 3.6
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 3.2
+            },
+            {
+              "label": "Health",
+              "pct": 1.5
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 1.2
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 1.1
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 1.1
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 1.0
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 0.8
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 0.2
+            }
+          ]
+        },
+        "35": {
+          "title": "Information and communications technicians",
+          "n": 26,
+          "education_level_n": 26,
+          "study_field_n": 23,
+          "levels": [
+            {
+              "label": "Medium",
+              "pct": 43.7
+            },
+            {
+              "label": "High",
+              "pct": 36.0
+            },
+            {
+              "label": "Low",
+              "pct": 20.3
+            }
+          ],
+          "fields": [
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 33.7
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 20.6
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 20.5
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 13.8
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 6.3
+            },
+            {
+              "label": "Law",
+              "pct": 5.0
+            }
+          ]
+        }
+      },
+      "source": "https://webfs.oecd.org/piaac/cy2-puf-data/CSV/prgitap2.csv",
+      "sha256": "bb3aa95c03cb90f37113839d280e6b1e3156b6633537617b5b653ba4dfd73884",
+      "employed_valid_family_records": 841,
+      "published_groups": 11
+    },
+    "Poland": {
+      "groups": {
+        "12": {
+          "title": "Administrative and commercial managers",
+          "n": 40,
+          "education_level_n": 40,
+          "study_field_n": 40,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 65.5
+            },
+            {
+              "label": "Medium",
+              "pct": 34.5
+            }
+          ],
+          "fields": [
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 34.7
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 19.2
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 10.5
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 8.8
+            },
+            {
+              "label": "Construction",
+              "pct": 6.4
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 4.0
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 3.4
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 3.4
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 2.9
+            },
+            {
+              "label": "Health",
+              "pct": 2.5
+            },
+            {
+              "label": "Law",
+              "pct": 2.3
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 1.9
+            }
+          ]
+        },
+        "13": {
+          "title": "Production and specialized services managers",
+          "n": 85,
+          "education_level_n": 85,
+          "study_field_n": 85,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 60.6
+            },
+            {
+              "label": "Medium",
+              "pct": 39.4
+            }
+          ],
+          "fields": [
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 22.3
+            },
+            {
+              "label": "Construction",
+              "pct": 21.9
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 16.0
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 6.7
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 6.1
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 5.8
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 5.0
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 4.9
+            },
+            {
+              "label": "Health",
+              "pct": 3.4
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 2.8
+            },
+            {
+              "label": "Welfare",
+              "pct": 2.3
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 2.3
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 0.7
+            }
+          ]
+        },
+        "21": {
+          "title": "Science and engineering professionals",
+          "n": 70,
+          "education_level_n": 70,
+          "study_field_n": 70,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 88.8
+            },
+            {
+              "label": "Medium",
+              "pct": 11.2
+            }
+          ],
+          "fields": [
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 27.4
+            },
+            {
+              "label": "Construction",
+              "pct": 18.0
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 11.2
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 10.3
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 6.4
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 6.0
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 5.8
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 4.1
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 3.1
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 2.5
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 2.4
+            },
+            {
+              "label": "Health",
+              "pct": 1.7
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 1.0
+            }
+          ]
+        },
+        "22": {
+          "title": "Health professionals",
+          "n": 105,
+          "education_level_n": 105,
+          "study_field_n": 105,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 75.6
+            },
+            {
+              "label": "Medium",
+              "pct": 24.4
+            }
+          ],
+          "fields": [
+            {
+              "label": "Health",
+              "pct": 86.3
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 3.3
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 1.9
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 1.9
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 1.7
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 1.5
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 1.1
+            },
+            {
+              "label": "Welfare",
+              "pct": 0.9
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 0.7
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 0.6
+            }
+          ]
+        },
+        "23": {
+          "title": "Teaching professionals",
+          "n": 152,
+          "education_level_n": 152,
+          "study_field_n": 152,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 95.6
+            },
+            {
+              "label": "Medium",
+              "pct": 4.4
+            }
+          ],
+          "fields": [
+            {
+              "label": "Education and Teacher Training",
+              "pct": 55.4
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 18.9
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 6.9
+            },
+            {
+              "label": "Welfare",
+              "pct": 4.6
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 3.1
+            },
+            {
+              "label": "Construction",
+              "pct": 2.8
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 2.6
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 2.5
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 1.2
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 1.2
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 0.8
+            }
+          ]
+        },
+        "24": {
+          "title": "Business and administration professionals",
+          "n": 84,
+          "education_level_n": 84,
+          "study_field_n": 83,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 79.3
+            },
+            {
+              "label": "Medium",
+              "pct": 19.9
+            },
+            {
+              "label": "Low",
+              "pct": 0.8
+            }
+          ],
+          "fields": [
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 54.6
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 9.3
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 6.6
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 5.2
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 4.1
+            },
+            {
+              "label": "Construction",
+              "pct": 3.4
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 2.8
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 2.7
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 2.6
+            },
+            {
+              "label": "Welfare",
+              "pct": 2.5
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 2.1
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 1.8
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 1.3
+            },
+            {
+              "label": "Health",
+              "pct": 1.1
+            }
+          ]
+        },
+        "25": {
+          "title": "Information and communications technology professionals",
+          "n": 67,
+          "education_level_n": 67,
+          "study_field_n": 66,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 85.0
+            },
+            {
+              "label": "Medium",
+              "pct": 15.0
+            }
+          ],
+          "fields": [
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 71.4
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 11.7
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 9.0
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 3.2
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 2.5
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 1.1
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 1.1
+            }
+          ]
+        },
+        "26": {
+          "title": "Legal, social and cultural professionals",
+          "n": 44,
+          "education_level_n": 44,
+          "study_field_n": 44,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 88.7
+            },
+            {
+              "label": "Medium",
+              "pct": 11.3
+            }
+          ],
+          "fields": [
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 23.8
+            },
+            {
+              "label": "Law",
+              "pct": 22.8
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 17.4
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 10.4
+            },
+            {
+              "label": "Welfare",
+              "pct": 6.1
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 5.1
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 4.3
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 2.7
+            },
+            {
+              "label": "Health",
+              "pct": 2.7
+            },
+            {
+              "label": "Construction",
+              "pct": 1.7
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 1.7
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 1.3
+            }
+          ]
+        },
+        "31": {
+          "title": "Science and engineering associate professionals",
+          "n": 66,
+          "education_level_n": 66,
+          "study_field_n": 66,
+          "levels": [
+            {
+              "label": "Medium",
+              "pct": 56.0
+            },
+            {
+              "label": "High",
+              "pct": 44.0
+            }
+          ],
+          "fields": [
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 38.5
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 14.7
+            },
+            {
+              "label": "Construction",
+              "pct": 11.7
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 11.7
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 6.7
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 4.6
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 3.8
+            },
+            {
+              "label": "Health",
+              "pct": 1.8
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 1.5
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 1.3
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 1.3
+            },
+            {
+              "label": "Law",
+              "pct": 1.3
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 1.1
+            }
+          ]
+        },
+        "32": {
+          "title": "Health associate professionals",
+          "n": 26,
+          "education_level_n": 26,
+          "study_field_n": 26,
+          "levels": [
+            {
+              "label": "Medium",
+              "pct": 51.9
+            },
+            {
+              "label": "High",
+              "pct": 48.1
+            }
+          ],
+          "fields": [
+            {
+              "label": "Health",
+              "pct": 46.1
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 17.8
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 9.8
+            },
+            {
+              "label": "Construction",
+              "pct": 7.5
+            },
+            {
+              "label": "Welfare",
+              "pct": 5.5
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 2.9
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 2.9
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 2.6
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 2.5
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 2.4
+            }
+          ]
+        },
+        "33": {
+          "title": "Business and administration associate professionals",
+          "n": 201,
+          "education_level_n": 201,
+          "study_field_n": 200,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 70.6
+            },
+            {
+              "label": "Medium",
+              "pct": 29.0
+            },
+            {
+              "label": "Low",
+              "pct": 0.4
+            }
+          ],
+          "fields": [
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 54.0
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 7.2
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 6.8
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 5.5
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 4.3
+            },
+            {
+              "label": "Law",
+              "pct": 3.1
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 3.1
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 2.8
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 2.7
+            },
+            {
+              "label": "Construction",
+              "pct": 2.5
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 2.4
+            },
+            {
+              "label": "Health",
+              "pct": 2.2
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 1.8
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 1.1
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 0.6
+            }
+          ]
+        }
+      },
+      "source": "https://webfs.oecd.org/piaac/cy2-puf-data/CSV/prgpolp2.csv",
+      "sha256": "ca4ac78265db5b713d27701ff9d8857a6bcd7a1994d2ac8486a5be891b7ad7ae",
+      "employed_valid_family_records": 957,
+      "published_groups": 11
+    },
+    "Singapore": {
+      "groups": {
+        "12": {
+          "title": "Administrative and commercial managers",
+          "n": 350,
+          "education_level_n": 350,
+          "study_field_n": 345,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 89.3
+            },
+            {
+              "label": "Medium",
+              "pct": 9.6
+            },
+            {
+              "label": "Low",
+              "pct": 1.1
+            }
+          ],
+          "fields": [
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 54.4
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 13.4
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 8.4
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 4.4
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 3.6
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 3.0
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 2.9
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 2.6
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 2.6
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 2.3
+            },
+            {
+              "label": "Health",
+              "pct": 1.0
+            },
+            {
+              "label": "Construction",
+              "pct": 0.8
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 0.3
+            },
+            {
+              "label": "Welfare",
+              "pct": 0.3
+            }
+          ]
+        },
+        "13": {
+          "title": "Production and specialized services managers",
+          "n": 368,
+          "education_level_n": 368,
+          "study_field_n": 363,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 84.5
+            },
+            {
+              "label": "Medium",
+              "pct": 14.2
+            },
+            {
+              "label": "Low",
+              "pct": 1.3
+            }
+          ],
+          "fields": [
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 27.8
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 26.1
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 15.2
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 10.4
+            },
+            {
+              "label": "Construction",
+              "pct": 6.3
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 3.8
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 2.3
+            },
+            {
+              "label": "Health",
+              "pct": 2.2
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 1.8
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 1.3
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 0.8
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 0.7
+            },
+            {
+              "label": "Law",
+              "pct": 0.6
+            },
+            {
+              "label": "Welfare",
+              "pct": 0.5
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 0.3
+            }
+          ]
+        },
+        "21": {
+          "title": "Science and engineering professionals",
+          "n": 196,
+          "education_level_n": 196,
+          "study_field_n": 196,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 94.6
+            },
+            {
+              "label": "Medium",
+              "pct": 5.4
+            }
+          ],
+          "fields": [
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 37.1
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 13.9
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 11.1
+            },
+            {
+              "label": "Construction",
+              "pct": 8.7
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 8.2
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 6.2
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 5.6
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 4.1
+            },
+            {
+              "label": "Health",
+              "pct": 3.2
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 1.0
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 0.6
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 0.5
+            }
+          ]
+        },
+        "22": {
+          "title": "Health professionals",
+          "n": 78,
+          "education_level_n": 78,
+          "study_field_n": 78,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 97.1
+            },
+            {
+              "label": "Medium",
+              "pct": 2.9
+            }
+          ],
+          "fields": [
+            {
+              "label": "Health",
+              "pct": 91.8
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 2.9
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 1.7
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 1.3
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 1.2
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 1.2
+            }
+          ]
+        },
+        "23": {
+          "title": "Teaching professionals",
+          "n": 207,
+          "education_level_n": 207,
+          "study_field_n": 207,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 92.7
+            },
+            {
+              "label": "Medium",
+              "pct": 7.3
+            }
+          ],
+          "fields": [
+            {
+              "label": "Education and Teacher Training",
+              "pct": 43.2
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 15.8
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 10.5
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 6.9
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 5.3
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 4.2
+            },
+            {
+              "label": "Health",
+              "pct": 3.7
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 3.4
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 2.5
+            },
+            {
+              "label": "Welfare",
+              "pct": 1.3
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 1.2
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 0.9
+            },
+            {
+              "label": "Construction",
+              "pct": 0.6
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 0.4
+            }
+          ]
+        },
+        "24": {
+          "title": "Business and administration professionals",
+          "n": 264,
+          "education_level_n": 264,
+          "study_field_n": 264,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 94.6
+            },
+            {
+              "label": "Medium",
+              "pct": 5.4
+            }
+          ],
+          "fields": [
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 58.9
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 9.1
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 5.1
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 4.9
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 4.2
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 3.9
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 3.5
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 3.4
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 3.0
+            },
+            {
+              "label": "Construction",
+              "pct": 1.5
+            },
+            {
+              "label": "Health",
+              "pct": 1.3
+            },
+            {
+              "label": "Law",
+              "pct": 0.5
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 0.4
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 0.4
+            }
+          ]
+        },
+        "25": {
+          "title": "Information and communications technology professionals",
+          "n": 127,
+          "education_level_n": 127,
+          "study_field_n": 127,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 97.1
+            },
+            {
+              "label": "Medium",
+              "pct": 2.9
+            }
+          ],
+          "fields": [
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 53.9
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 22.3
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 13.6
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 3.6
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 2.6
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 1.5
+            },
+            {
+              "label": "Construction",
+              "pct": 1.2
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 0.7
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 0.5
+            }
+          ]
+        },
+        "26": {
+          "title": "Legal, social and cultural professionals",
+          "n": 59,
+          "education_level_n": 59,
+          "study_field_n": 59,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 95.7
+            },
+            {
+              "label": "Medium",
+              "pct": 4.3
+            }
+          ],
+          "fields": [
+            {
+              "label": "Law",
+              "pct": 18.9
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 16.8
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 14.1
+            },
+            {
+              "label": "Welfare",
+              "pct": 11.6
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 9.5
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 9.2
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 6.8
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 4.3
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 3.3
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 2.9
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 2.6
+            }
+          ]
+        },
+        "31": {
+          "title": "Science and engineering associate professionals",
+          "n": 228,
+          "education_level_n": 228,
+          "study_field_n": 212,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 53.4
+            },
+            {
+              "label": "Medium",
+              "pct": 41.3
+            },
+            {
+              "label": "Low",
+              "pct": 5.4
+            }
+          ],
+          "fields": [
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 50.7
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 25.0
+            },
+            {
+              "label": "Construction",
+              "pct": 5.6
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 5.0
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 5.0
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 3.4
+            },
+            {
+              "label": "Health",
+              "pct": 1.2
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 1.2
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 0.9
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 0.9
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 0.4
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 0.3
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 0.3
+            }
+          ]
+        },
+        "32": {
+          "title": "Health associate professionals",
+          "n": 41,
+          "education_level_n": 41,
+          "study_field_n": 39,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 56.4
+            },
+            {
+              "label": "Medium",
+              "pct": 39.9
+            },
+            {
+              "label": "Low",
+              "pct": 3.7
+            }
+          ],
+          "fields": [
+            {
+              "label": "Health",
+              "pct": 33.2
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 28.1
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 11.5
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 10.5
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 9.1
+            },
+            {
+              "label": "Construction",
+              "pct": 5.5
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 2.1
+            }
+          ]
+        },
+        "33": {
+          "title": "Business and administration associate professionals",
+          "n": 353,
+          "education_level_n": 353,
+          "study_field_n": 345,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 65.4
+            },
+            {
+              "label": "Medium",
+              "pct": 32.8
+            },
+            {
+              "label": "Low",
+              "pct": 1.8
+            }
+          ],
+          "fields": [
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 45.3
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 25.2
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 10.6
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 3.1
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 3.0
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 2.7
+            },
+            {
+              "label": "Construction",
+              "pct": 2.0
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 2.0
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 1.7
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 1.2
+            },
+            {
+              "label": "Law",
+              "pct": 1.0
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 0.8
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 0.7
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 0.4
+            },
+            {
+              "label": "Health",
+              "pct": 0.3
+            }
+          ]
+        },
+        "35": {
+          "title": "Information and communications technicians",
+          "n": 36,
+          "education_level_n": 36,
+          "study_field_n": 36,
+          "levels": [
+            {
+              "label": "High",
+              "pct": 70.6
+            },
+            {
+              "label": "Medium",
+              "pct": 29.4
+            }
+          ],
+          "fields": [
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 35.9
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 21.6
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 18.5
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 6.6
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 4.0
+            },
+            {
+              "label": "Construction",
+              "pct": 3.1
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 2.7
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 2.7
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 2.5
+            },
+            {
+              "label": "Health",
+              "pct": 2.4
+            }
+          ]
+        }
+      },
+      "source": "https://webfs.oecd.org/piaac/cy2-puf-data/CSV/prgsgpp2.csv",
+      "sha256": "2219362cf6e82113d78aa3399c13fd64cec7fb3b09b31195100c01ef11200d71",
+      "employed_valid_family_records": 2307,
+      "published_groups": 12
+    },
+    "United States": {
+      "groups": {
+        "12": {
+          "title": "Administrative and commercial managers",
+          "n": 100,
+          "education_level_n": 0,
+          "study_field_n": 100,
+          "levels": [],
+          "fields": [
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 33.6
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 17.7
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 11.4
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 8.4
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 8.0
+            },
+            {
+              "label": "Law",
+              "pct": 4.3
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 4.0
+            },
+            {
+              "label": "Construction",
+              "pct": 3.1
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 2.7
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 2.3
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 2.3
+            },
+            {
+              "label": "Health",
+              "pct": 1.6
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 0.6
+            }
+          ]
+        },
+        "13": {
+          "title": "Production and specialized services managers",
+          "n": 112,
+          "education_level_n": 0,
+          "study_field_n": 111,
+          "levels": [],
+          "fields": [
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 21.6
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 20.9
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 10.6
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 9.1
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 7.7
+            },
+            {
+              "label": "Health",
+              "pct": 6.9
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 6.2
+            },
+            {
+              "label": "Construction",
+              "pct": 4.4
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 3.7
+            },
+            {
+              "label": "Law",
+              "pct": 2.8
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 2.4
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 2.0
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 0.8
+            },
+            {
+              "label": "Welfare",
+              "pct": 0.5
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 0.4
+            }
+          ]
+        },
+        "21": {
+          "title": "Science and engineering professionals",
+          "n": 90,
+          "education_level_n": 0,
+          "study_field_n": 90,
+          "levels": [],
+          "fields": [
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 38.5
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 23.3
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 10.5
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 10.4
+            },
+            {
+              "label": "Construction",
+              "pct": 5.7
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 5.3
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 2.8
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 1.4
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 1.3
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 0.9
+            }
+          ]
+        },
+        "22": {
+          "title": "Health professionals",
+          "n": 113,
+          "education_level_n": 0,
+          "study_field_n": 112,
+          "levels": [],
+          "fields": [
+            {
+              "label": "Health",
+              "pct": 72.7
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 9.8
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 4.1
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 4.0
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 3.7
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 2.6
+            },
+            {
+              "label": "Welfare",
+              "pct": 2.3
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 0.5
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 0.4
+            }
+          ]
+        },
+        "23": {
+          "title": "Teaching professionals",
+          "n": 160,
+          "education_level_n": 0,
+          "study_field_n": 155,
+          "levels": [],
+          "fields": [
+            {
+              "label": "Education and Teacher Training",
+              "pct": 41.4
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 14.2
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 10.3
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 7.4
+            },
+            {
+              "label": "Health",
+              "pct": 6.4
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 5.2
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 4.0
+            },
+            {
+              "label": "Welfare",
+              "pct": 3.7
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 3.0
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 2.4
+            },
+            {
+              "label": "Law",
+              "pct": 1.1
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 0.8
+            },
+            {
+              "label": "Construction",
+              "pct": 0.1
+            }
+          ]
+        },
+        "24": {
+          "title": "Business and administration professionals",
+          "n": 119,
+          "education_level_n": 0,
+          "study_field_n": 118,
+          "levels": [],
+          "fields": [
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 50.8
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 8.8
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 8.5
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 5.1
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 4.8
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 3.9
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 3.6
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 3.6
+            },
+            {
+              "label": "Construction",
+              "pct": 2.9
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 2.9
+            },
+            {
+              "label": "Law",
+              "pct": 1.7
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 1.2
+            },
+            {
+              "label": "Health",
+              "pct": 1.0
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 0.8
+            },
+            {
+              "label": "Welfare",
+              "pct": 0.4
+            }
+          ]
+        },
+        "25": {
+          "title": "Information and communications technology professionals",
+          "n": 112,
+          "education_level_n": 0,
+          "study_field_n": 112,
+          "levels": [],
+          "fields": [
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 48.5
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 16.3
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 11.7
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 8.7
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 7.2
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 2.3
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 1.8
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 1.7
+            },
+            {
+              "label": "Health",
+              "pct": 1.0
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 0.7
+            }
+          ]
+        },
+        "26": {
+          "title": "Legal, social and cultural professionals",
+          "n": 93,
+          "education_level_n": 0,
+          "study_field_n": 92,
+          "levels": [],
+          "fields": [
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 22.6
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 19.1
+            },
+            {
+              "label": "Law",
+              "pct": 14.7
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 11.1
+            },
+            {
+              "label": "Health",
+              "pct": 8.6
+            },
+            {
+              "label": "Welfare",
+              "pct": 5.4
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 5.2
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 4.7
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 2.6
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 2.3
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 1.9
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 1.1
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 0.5
+            }
+          ]
+        },
+        "31": {
+          "title": "Science and engineering associate professionals",
+          "n": 88,
+          "education_level_n": 0,
+          "study_field_n": 82,
+          "levels": [],
+          "fields": [
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 41.9
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 14.4
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 9.3
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 6.2
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 5.8
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 5.5
+            },
+            {
+              "label": "Security and Transport",
+              "pct": 4.8
+            },
+            {
+              "label": "Health",
+              "pct": 3.8
+            },
+            {
+              "label": "Construction",
+              "pct": 3.8
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 2.4
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 1.7
+            },
+            {
+              "label": "Law",
+              "pct": 0.6
+            }
+          ]
+        },
+        "32": {
+          "title": "Health associate professionals",
+          "n": 105,
+          "education_level_n": 0,
+          "study_field_n": 102,
+          "levels": [],
+          "fields": [
+            {
+              "label": "Health",
+              "pct": 51.4
+            },
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 20.9
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 7.9
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 6.0
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 3.6
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 2.5
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 2.4
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 2.2
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 1.5
+            },
+            {
+              "label": "Construction",
+              "pct": 0.9
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 0.7
+            }
+          ]
+        },
+        "33": {
+          "title": "Business and administration associate professionals",
+          "n": 191,
+          "education_level_n": 0,
+          "study_field_n": 189,
+          "levels": [],
+          "fields": [
+            {
+              "label": "No main area of study or emphasis, it was a general education programme",
+              "pct": 30.2
+            },
+            {
+              "label": "Economics, Business and Administration",
+              "pct": 19.6
+            },
+            {
+              "label": "Natural Sciences, Mathematics and Statistics",
+              "pct": 8.3
+            },
+            {
+              "label": "Social and Behavioral Sciences",
+              "pct": 6.9
+            },
+            {
+              "label": "Health",
+              "pct": 6.7
+            },
+            {
+              "label": "Humanities, Languages and Arts",
+              "pct": 5.6
+            },
+            {
+              "label": "Engineering and Manufacturing",
+              "pct": 4.8
+            },
+            {
+              "label": "Information and Communication Technologies (ICT)",
+              "pct": 4.4
+            },
+            {
+              "label": "Law",
+              "pct": 3.9
+            },
+            {
+              "label": "Journalism and Information",
+              "pct": 3.6
+            },
+            {
+              "label": "Education and Teacher Training",
+              "pct": 3.4
+            },
+            {
+              "label": "Personal and Community Services",
+              "pct": 1.3
+            },
+            {
+              "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+              "pct": 0.8
+            },
+            {
+              "label": "Welfare",
+              "pct": 0.4
+            },
+            {
+              "label": "Construction",
+              "pct": 0.3
+            }
+          ]
+        }
+      },
+      "source": "https://webfs.oecd.org/piaac/cy2-puf-data/CSV/prgusap2.csv",
+      "sha256": "f20a4677d9c4b03638f77e61bdf307fc282561bd129334ccf2179ef2b960641e",
+      "employed_valid_family_records": 1301,
+      "published_groups": 11
+    }
+  },
+  "excluded": {},
+  "codebook": {
+    "url": "https://www.oecd.org/content/dam/oecd/en/about/programmes/edu/piaac/data-materials/cycle-2/piaac-cy2-international-codebook.xlsx",
+    "sha256": "02bb30f84763ba27871daee7ee1133c3c98e26d716173272e313e596ce7908d2"
+  },
+  "method": "Within each country and ISCO-08 2-digit occupational family: weighted percentages using SPFWT0 on nonmissing education outcomes. No pooled cross-country comparisons. Not replicate-weighted variance estimates.",
+  "limitations": [
+    "Not individual career histories, proof of causal career success, or exact job qualifications.",
+    "Survey respondents are adults in participating countries, not a worldwide random sample.",
+    "Education fields and occupations are suppressed or missing in some country files.",
+    "Percentages are descriptive and do not include complex-survey uncertainty intervals.",
+    "Different categories have different valid-response denominators."
+  ]
+}

@@ -1,6 +1,20 @@
 {
   "updated_at": null,
   "provider": "OpenAlex",
-  "items": {},
-  "errors": []
+  "items": {
+    "ai": [],
+    "ds": [],
+    "software": [],
+    "cyber": [],
+    "cloud": [],
+    "product": []
+  },
+  "errors": [
+    "ai: HTTPError",
+    "ds: HTTPError",
+    "software: HTTPError",
+    "cyber: HTTPError",
+    "cloud: HTTPError",
+    "product: HTTPError"
+  ]
 }
