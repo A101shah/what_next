@@ -1,20 +1,199 @@
 {
-  "updated_at": null,
+  "updated_at": "2026-10-30T10:03:28.724112+00:00",
   "provider": "OpenAlex",
   "items": {
-    "ai": [],
-    "ds": [],
-    "software": [],
-    "cyber": [],
-    "cloud": [],
-    "product": []
+    "ai": [
+      {
+        "title": "Application and feasibility analysis of random Forest models in safety prediction for transition metal-doped Na3V2(PO4)3 sodium-ion batteries.",
+        "date": "2027-01-01",
+        "url": "https://doi.org/10.1016/j.jcis.2026.141499",
+        "venue": "PubMed"
+      },
+      {
+        "title": "Development and validation of a machine learning-based predictive model for prognosis in cerebral hemorrhage patients after hyperbaric oxygen therapy.",
+        "date": "2027-01-01",
+        "url": "https://doi.org/10.4103/mgr.medgasres-d-25-00168",
+        "venue": "PubMed"
+      },
+      {
+        "title": "Gene Selection for Breast Cancer Classification Using T-Test Filtering and Wrapper-Based Optimization",
+        "date": "2026-12-31",
+        "url": "https://doi.org/10.5281/zenodo.18112299",
+        "venue": "Libyan Journal of Informatics"
+      },
+      {
+        "title": "From Embedded Finance to Embedded Obligation: A Law-and-Economics Theory of Consumer Protection in Platform-Mediated Financial Services",
+        "date": "2026-12-31",
+        "url": "https://doi.org/10.17613/sb76m-v2e23",
+        "venue": "OpenAlex indexed publication"
+      },
+      {
+        "title": "SOAR: Smooth Online Activation Routing for Stable Neural Learning from Evolving Streams",
+        "date": "2026-12-31",
+        "url": "https://doi.org/10.17613/nzztb-q4520",
+        "venue": "OpenAlex indexed publication"
+      }
+    ],
+    "ds": [
+      {
+        "title": "Impact of cognitive processes on work performance comparative study in teachers of the Cruz del Norte Educational Unit",
+        "date": "2027-03-26",
+        "url": "https://doi.org/10.5281/zenodo.18319363",
+        "venue": "Journal of Law and Epistemic Studies"
+      },
+      {
+        "title": "Therapeutic gases and the Nrf2/Keap1 pathway: direct thiol modification vs . indirect modulation.",
+        "date": "2027-01-01",
+        "url": "https://doi.org/10.4103/mgr.medgasres-d-26-00086",
+        "venue": "PubMed Central"
+      },
+      {
+        "title": "Breathing in harm: current insights into the effects of air pollution on cardiorespiratory health.",
+        "date": "2027-01-01",
+        "url": "https://doi.org/10.4103/mgr.medgasres-d-25-00201",
+        "venue": "PubMed Central"
+      },
+      {
+        "title": "Application of medical gases in prevention and treatment of electromagnetic radiation injury.",
+        "date": "2027-01-01",
+        "url": "https://doi.org/10.4103/mgr.medgasres-d-26-00051",
+        "venue": "PubMed Central"
+      },
+      {
+        "title": "Hypoxia-responsive supramolecular systems based on macrocycles and self-assembly structures.",
+        "date": "2027-01-01",
+        "url": "https://doi.org/10.4103/mgr.medgasres-d-25-00145",
+        "venue": "PubMed Central"
+      }
+    ],
+    "software": [
+      {
+        "title": "Regulating the Frontier: Model-Level Evidence from the EU AI Act",
+        "date": "2026-12-31",
+        "url": "https://doi.org/10.17613/bqzbv-24862",
+        "venue": "PhilPapers (PhilPapers Foundation)"
+      },
+      {
+        "title": "Digital-Twin-Driven Predictive Maintenance and Fault-Tolerant Control for Electrified Agricultural Machinery: A Multiphysics and Deep Reinforcement Learning Framework for PMSM In-Wheel Drives",
+        "date": "2026-12-31",
+        "url": "https://doi.org/10.17613/765dw-e3t58",
+        "venue": "PhilPapers (PhilPapers Foundation)"
+      },
+      {
+        "title": "Beyond GDPR: The Architectural Challenge of Data Sovereignty and Confidential Computing in the Post-2024 Era",
+        "date": "2026-12-18",
+        "url": "https://doi.org/10.5281/zenodo.19918373",
+        "venue": "International Comprehensive Technology and Science Journal"
+      },
+      {
+        "title": "Sequence-based artificial intelligence-guided inhibitory peptides to counteract AAV neutralizing antibodies in gene therapy.",
+        "date": "2026-12-10",
+        "url": "https://doi.org/10.1016/j.omta.2026.201832",
+        "venue": "PubMed Central"
+      },
+      {
+        "title": "TinZr: A compact wireless ESP32-C3 platform for multi-modal physiological sensor integration and data acquisition.",
+        "date": "2026-12-01",
+        "url": "https://doi.org/10.1016/j.ohx.2026.e00833",
+        "venue": "PubMed Central"
+      }
+    ],
+    "cyber": [
+      {
+        "title": "Algorithmic Justice and Responsible AI Journalism: A Comparative Communication Policy Perspective in East Asia",
+        "date": "2026-12-31",
+        "url": "https://doi.org/10.17613/jchtw-w2z97",
+        "venue": "PhilPapers (PhilPapers Foundation)"
+      },
+      {
+        "title": "A Study on the Mechanism and Ways to Improve New-Quality Productivity of Enterprises Driven by AI and the Digital Economy",
+        "date": "2026-12-31",
+        "url": "https://doi.org/10.17613/v53h3-s4978",
+        "venue": "PhilPapers (PhilPapers Foundation)"
+      },
+      {
+        "title": "The impact of artificial intelligence on human safety and data protection in smart logistics: opportunities, risks and governance challenges",
+        "date": "2026-12-31",
+        "url": "https://doi.org/10.5281/zenodo.21909827",
+        "venue": "Scientific Journal of Safety and Logistics"
+      },
+      {
+        "title": "Measuring Activity-Space Segregation with Multi-Source Big Data: A Physical--Digital Framework with Simulation Validation and a Real-Data Proof of Concept",
+        "date": "2026-12-31",
+        "url": "https://doi.org/10.17613/3amkv-gav11",
+        "venue": "PhilPapers (PhilPapers Foundation)"
+      },
+      {
+        "title": "Block chain and Cyber security in Modern Accounting Practices",
+        "date": "2026-11-30",
+        "url": "https://doi.org/10.5281/zenodo.18206600",
+        "venue": "Zenodo (CERN European Organization for Nuclear Research)"
+      }
+    ],
+    "cloud": [
+      {
+        "title": "CLOUD SECURITY AND RESILIENCE: PRINCIPLES AND BEST PRACTICES",
+        "date": "2027-01-01",
+        "url": "https://doi.org/10.5281/zenodo.20737148",
+        "venue": "Zenodo (CERN European Organization for Nuclear Research)"
+      },
+      {
+        "title": "The functional transformation of diplomatic immunity in the digital age",
+        "date": "2027-01-01",
+        "url": "https://doi.org/10.5281/zenodo.23673365",
+        "venue": "Zenodo (CERN European Organization for Nuclear Research)"
+      },
+      {
+        "title": "Construction of an Automated Quality Control Model for Industrial Waste Gas Online Monitoring Data Based on Unsupervised Learning",
+        "date": "2026-12-31",
+        "url": "https://doi.org/10.17613/g1ft7-d9j25",
+        "venue": "PhilPapers (PhilPapers Foundation)"
+      },
+      {
+        "title": "A Study on the Mechanism and Ways to Improve New-Quality Productivity of Enterprises Driven by AI and the Digital Economy",
+        "date": "2026-12-31",
+        "url": "https://doi.org/10.17613/v53h3-s4978",
+        "venue": "PhilPapers (PhilPapers Foundation)"
+      },
+      {
+        "title": "Beyond GDPR: The Architectural Challenge of Data Sovereignty and Confidential Computing in the Post-2024 Era",
+        "date": "2026-12-18",
+        "url": "https://doi.org/10.5281/zenodo.19918373",
+        "venue": "International Comprehensive Technology and Science Journal"
+      }
+    ],
+    "product": [
+      {
+        "title": "Application of medical gases in prevention and treatment of electromagnetic radiation injury.",
+        "date": "2027-01-01",
+        "url": "https://doi.org/10.4103/mgr.medgasres-d-26-00051",
+        "venue": "PubMed Central"
+      },
+      {
+        "title": "Hypoxia-responsive supramolecular systems based on macrocycles and self-assembly structures.",
+        "date": "2027-01-01",
+        "url": "https://doi.org/10.4103/mgr.medgasres-d-25-00145",
+        "venue": "PubMed Central"
+      },
+      {
+        "title": "From Embedded Finance to Embedded Obligation: A Law-and-Economics Theory of Consumer Protection in Platform-Mediated Financial Services",
+        "date": "2026-12-31",
+        "url": "https://doi.org/10.17613/sb76m-v2e23",
+        "venue": "OpenAlex indexed publication"
+      },
+      {
+        "title": "The Role of Generative Artificial Intelligence in Korean Language Learning: Applications, Challenges, and Instructional Strategies",
+        "date": "2026-12-31",
+        "url": "https://doi.org/10.17613/g7mbr-1s626",
+        "venue": "OpenAlex indexed publication"
+      },
+      {
+        "title": "Algorithmic Justice and Responsible AI Journalism: A Comparative Communication Policy Perspective in East Asia",
+        "date": "2026-12-31",
+        "url": "https://doi.org/10.17613/jchtw-w2z97",
+        "venue": "PhilPapers (PhilPapers Foundation)"
+      }
+    ]
   },
-  "errors": [
-    "ai: HTTPError",
-    "ds: HTTPError",
-    "software: HTTPError",
-    "cyber: HTTPError",
-    "cloud: HTTPError",
-    "product: HTTPError"
-  ]
+  "errors": []
 }
