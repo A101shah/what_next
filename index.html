@@ -17,7 +17,7 @@
     <nav class="nav">
       <button class="nav-item active" data-view="overview"><span class="nav-icon">◈</span> Overview</button>
       <button class="nav-item" data-view="roadmap"><span class="nav-icon">⌁</span> Learning roadmap</button>
-      <button class="nav-item" data-view="evidence"><span class="nav-icon">◫</span> Career evidence</button>
+      <button class="nav-item" data-view="evidence"><span class="nav-icon">◫</span> Career intelligence</button>
       <button class="nav-item" data-view="pulse"><span class="nav-icon">◎</span> World pulse <span class="new-dot"></span></button>
       <button class="nav-item" data-view="career"><span class="nav-icon">▤</span> Career studio</button>
     </nav>
@@ -65,21 +65,21 @@
           <article class="panel" id="career-neighborhood"><div class="panel-title"><div><h3>Nearby career paths</h3><p>Real occupational similarity · K-Means</p></div><span class="model-pill">ML</span></div><div id="neighbors-content" class="quiet-state">Loading occupational data...</div></article>
           <article class="panel"><div class="panel-title"><div><h3>Fresh from your field</h3><p>Source-linked research, not hype</p></div><button class="small-link" data-go="pulse">View all ↗</button></div><div id="preview-research" class="quiet-state">Checking verified sources...</div></article>
         </div>
-        <article class="panel evidence-home"><div><div class="card-kicker">NEW · REAL-WORLD CAREER EVIDENCE</div><h2>Learn from people already in the workforce.</h2><p>Explore the education backgrounds of real surveyed workers across countries and broad occupation groups—not made-up success stories.</p><div id="evidence-preview" class="evidence-preview">Checking source-backed career observations...</div></div><button class="subtle-btn" data-go="evidence">Explore career evidence ↗</button></article>
+        <article class="panel evidence-home"><div><div class="card-kicker">NEW · REAL-WORLD CAREER EVIDENCE</div><h2>Learn from people already in the workforce.</h2><p>Explore real workers’ education, years of experience and seven workplace skill-use signals. No invented career success scores.</p><div id="evidence-preview" class="evidence-preview">Checking source-backed career observations...</div></div><button class="subtle-btn" data-go="evidence">Explore career evidence ↗</button></article>
       </section>
 
       <section class="view" id="view-roadmap">
         <div class="eyebrow">A ROUTE MADE FOR YOU <span class="eyebrow-line"></span></div><div class="heading-row"><div><h1>Your learning roadmap<span class="accent">.</span></h1><p class="lead">Know what comes next, why it matters, and what to build.</p></div><button class="subtle-btn" data-go="profile">Adjust direction ↗</button></div>
         <div class="roadmap-banner"><div><span class="card-kicker">CURRENT DESTINATION</span><h2 id="roadmap-role">AI / ML Engineer</h2><p id="roadmap-subtitle">A prerequisite-aware pathway built one step at a time.</p></div><div class="roadmap-progress"><strong id="roadmap-percent">0%</strong><span>completed</span></div></div>
-        <div class="roadmap-evidence"><span class="card-kicker">REAL CAREER CONTEXT</span><p id="roadmap-evidence">Checking verified education patterns for similar occupations...</p><button class="small-link" data-go="evidence">Explore career evidence ↗</button></div>
+        <div class="roadmap-evidence"><span class="card-kicker">REAL CAREER CONTEXT</span><p id="roadmap-evidence">Checking verified education patterns for similar occupations...</p><div id="roadmap-skill-signal" class="roadmap-skill-signal">Checking workplace skills evidence...</div><button class="small-link" data-go="evidence">Explore career evidence ↗</button></div>
         <div class="section-head"><div><h2>Your step-by-step path</h2><p>Finish the prerequisites before advancing. All resources link to original publishers.</p></div></div>
         <div id="roadmap-list" class="steps"></div>
       </section>
 
       <section class="view" id="view-evidence">
         <div class="eyebrow">LEARN FROM REAL WORKFORCE DATA <span class="eyebrow-line"></span></div>
-        <div class="heading-row"><div><h1>Career evidence, not guesses<span class="accent">.</span></h1><p class="lead">What do people working in different professions actually study?</p></div><span class="outlined-tag">OECD PIAAC · 2023</span></div>
-        <div class="info-banner"><span>✦</span><p>Real survey respondents, grouped by country and broad ISCO-08 occupations. These observations show educational associations, <strong>not individual career timelines</strong>, job guarantees, skill prerequisites, or what caused professional success.</p></div>
+        <div class="heading-row"><div><h1>Learn from real careers<span class="accent">.</span></h1><p class="lead">Compare reported workplace skill use, education and experience across countries and occupations.</p></div><span class="outlined-tag">OECD PIAAC · 2023</span></div>
+        <div class="info-banner"><span>✦</span><p>Real anonymized OECD survey respondents, grouped by country and broad ISCO-08 occupations. Workplace skill <strong>use is not skill proficiency</strong>; education and experience associations do not reveal individual seniority or guarantee career outcomes.</p></div>
         <div class="evidence-filters">
           <div class="field"><label for="evidence-country">COUNTRY</label><select id="evidence-country"></select></div>
           <div class="field"><label for="evidence-family">OCCUPATIONAL FAMILY</label><select id="evidence-family"></select></div>
@@ -89,8 +89,25 @@
           <article class="panel"><div class="panel-title"><div><h3>Fields people studied</h3><p>Share of valid education-field responses, survey-weighted</p></div></div><div id="evidence-fields"></div></article>
           <article class="panel"><div class="panel-title"><div><h3>Education level</h3><p>Low, medium and high; survey-weighted within this group</p></div></div><div id="evidence-levels"></div></article>
         </div>
+        <div class="section-head"><div><h2>How people actually use skills at work</h2><p>Seven real survey indicators from our merged 47-column dataset · country-and-occupation comparisons</p></div><span class="model-pill">OECD PIAAC</span></div>
+        <div class="work-skill-layout">
+          <article class="panel skill-evidence-panel">
+            <div class="panel-title"><div><h3>Workplace skill-use signals</h3><p>Weighted share of workers in higher survey use categories (4–5). This is NOT proficiency or a career-readiness score.</p></div></div>
+            <div id="evidence-work-skills" class="skill-evidence-bars"><p class="quiet-state">Loading verified survey indicators...</p></div>
+          </article>
+          <article class="panel skill-context-panel">
+            <div class="panel-title"><div><h3>Experience & learning context</h3><p>Based on observed respondents, not predicted individual outcomes</p></div></div>
+            <div id="evidence-experience" class="work-experience">Checking official data...</div>
+            <div class="separator"></div>
+            <h3>What could you practice?</h3>
+            <p class="panel-caption">These are human-curated activities inspired by reported workplace use, not courses prescribed by the survey.</p>
+            <div id="evidence-practice" class="practice-list"></div>
+            <button class="text-link" data-go="roadmap">Continue to my learning roadmap →</button>
+          </article>
+        </div>
+        <p class="skill-disclaimer">Use-category bands are derived from each OECD workplace index and should not be interpreted as personal competence, proof of essential job qualifications, or comparisons of innate traits. Small groups and missing responses are withheld.</p>
         <div class="panel evidence-provenance" id="evidence-data-note">Evidence is being validated...</div>
-        <p class="source-footnote">Primary source: <a href="https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html" target="_blank" rel="noopener noreferrer">OECD PIAAC 2nd Cycle public-use files</a>. Respondent records are processed offline; only grouped statistics are published here. Some variables are withheld in certain countries for privacy. Results are descriptive and do not include replicate-weight variance estimates.</p>
+        <p class="source-footnote">Primary source: <a href="https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html" target="_blank" rel="noopener noreferrer">OECD PIAAC 2nd Cycle public-use files</a>. Respondent records are processed offline; only grouped statistics are published here. The original 47-column merged CSV is never included in the hosted website. Some indicators are withheld because of limited or missing observations. Results are descriptive and do not include replicate-weight variance estimates.</p>
       </section>
 
       <section class="view" id="view-pulse">
