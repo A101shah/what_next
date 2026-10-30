@@ -1,7 +1,7 @@
 {
   "source": "O*NET 31.0 Database",
   "source_url": "https://www.onetcenter.org/database.html",
-  "generated_utc": "2026-10-30T14:50:41.060128+00:00",
+  "generated_utc": "2026-10-30T14:53:38.017300+00:00",
   "model": "StandardScaler → PCA (visualization) + KMeans (occupational clustering)",
   "data_note": "Real occupation-level skill ratings; NOT student-specific skill mastery or verified course sequencing.",
   "n_occupations": 231,
