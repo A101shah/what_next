@@ -39,6 +39,10 @@ jobs:
           key: piaac-cycle2-oct2026-public-use-v1
       - name: Build OECD PIAAC real-worker evidence
         run: python scripts/build_careers.py
+      - name: Reproduce the 47-column anonymous career dataset
+        run: python -m scripts.export_merged_people
+      - name: Aggregate workplace skill-use evidence
+        run: python -m scripts.build_skill_evidence
       - name: Build O*NET occupational ML dataset
         run: python scripts/build_data.py
       - name: Fetch real recent research
@@ -51,11 +55,14 @@ jobs:
         run: |
           python -m compileall -q scripts
           python -m json.tool data/careers.json > /dev/null
+          python -m json.tool data/skill_evidence.json > /dev/null
           python -m json.tool data/model.json > /dev/null
           python -m json.tool data/research.json > /dev/null
           python -m json.tool data/paths.json > /dev/null
           test -s data/model.json
           python -c 'import json; d=json.load(open("data/careers.json")); assert len(d["countries"]) >= 2; assert all(g["n"]>=25 for c in d["countries"].values() for g in c["groups"].values())'
+          python -c 'import json; d=json.load(open("data/skill_evidence.json")); assert len(d["countries"]) >= 2; assert sum(map(len,d["countries"].values())) >= 10; assert all(g["n"]>=25 for c in d["countries"].values() for g in c.values())'
+          test -s out/WhatNext_Career_Intelligence_Combined.csv
       # Vercel deploys from Git, while Pages deploys from this job's artifact.
       # Commit only the verified, aggregated JSON so both hosts serve identical data.
       # GitHub Actions token pushes do not recursively trigger another Actions run.
@@ -64,7 +71,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/model.json data/careers.json data/research.json
+          git add data/model.json data/careers.json data/skill_evidence.json data/research.json
           if ! git diff --cached --quiet; then
             git commit -m "data: publish verified career and research snapshots [skip ci]"
             git push origin HEAD:main
@@ -75,7 +82,7 @@ jobs:
         run: |
           mkdir -p site/data
           cp index.html styles.css app.js site/
-          cp data/paths.json data/model.json data/research.json data/careers.json site/data/
+          cp data/paths.json data/model.json data/research.json data/careers.json data/skill_evidence.json site/data/
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
