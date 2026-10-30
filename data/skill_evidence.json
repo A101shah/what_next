@@ -1,0 +1,6466 @@
+{
+  "source": "OECD PIAAC Cycle 2 (2023) public-use files",
+  "source_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+  "derived_from": "WhatNext_Career_Intelligence_Combined.csv (47 columns)",
+  "generated_utc": "2026-10-30T15:16:29.851445+00:00",
+  "countries": {
+    "Chile": {
+      "12": {
+        "occupation_family": "Administrative and commercial managers",
+        "n": 37,
+        "education_fields": [
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 21.3
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 19.1
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 15.1
+          },
+          {
+            "label": "Health",
+            "pct": 11.7
+          },
+          {
+            "label": "Construction",
+            "pct": 11.0
+          },
+          {
+            "label": "Law",
+            "pct": 7.8
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 5.1
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 3.6
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 2.0
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 1.5
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 1.2
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 0.6
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 87.2
+          },
+          {
+            "label": "Medium",
+            "pct": 12.8
+          }
+        ],
+        "experience_years": {
+          "mean": 22.1,
+          "valid_n": 37
+        },
+        "required_education_years": {
+          "mean": 16.2,
+          "valid_n": 28
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.492,
+            "high_use_band_pct": 67.0,
+            "index_valid_n": 37,
+            "band_valid_n": 37
+          },
+          "numeracy": {
+            "mean_use_index": 2.775,
+            "high_use_band_pct": 77.4,
+            "index_valid_n": 37,
+            "band_valid_n": 37
+          },
+          "reading": {
+            "mean_use_index": 2.804,
+            "high_use_band_pct": 79.0,
+            "index_valid_n": 37,
+            "band_valid_n": 37
+          },
+          "writing": {
+            "mean_use_index": 2.79,
+            "high_use_band_pct": 78.4,
+            "index_valid_n": 37,
+            "band_valid_n": 37
+          },
+          "learning": {
+            "mean_use_index": 2.385,
+            "high_use_band_pct": 51.4,
+            "index_valid_n": 37,
+            "band_valid_n": 37
+          },
+          "influence": {
+            "mean_use_index": 2.783,
+            "high_use_band_pct": 82.6,
+            "index_valid_n": 37,
+            "band_valid_n": 37
+          },
+          "task_discretion": {
+            "mean_use_index": 2.892,
+            "high_use_band_pct": 89.4,
+            "index_valid_n": 37,
+            "band_valid_n": 37
+          }
+        }
+      },
+      "13": {
+        "occupation_family": "Production and specialized services managers",
+        "n": 80,
+        "education_fields": [
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 28.5
+          },
+          {
+            "label": "Construction",
+            "pct": 11.7
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 11.4
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 10.3
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 8.1
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 6.4
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 5.8
+          },
+          {
+            "label": "Health",
+            "pct": 4.9
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 4.6
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 4.1
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 2.2
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 1.5
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 0.3
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 75.1
+          },
+          {
+            "label": "Medium",
+            "pct": 13.0
+          },
+          {
+            "label": "Low",
+            "pct": 11.8
+          }
+        ],
+        "experience_years": {
+          "mean": 20.9,
+          "valid_n": 80
+        },
+        "required_education_years": {
+          "mean": 15.9,
+          "valid_n": 44
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.465,
+            "high_use_band_pct": 56.0,
+            "index_valid_n": 77,
+            "band_valid_n": 77
+          },
+          "numeracy": {
+            "mean_use_index": 2.821,
+            "high_use_band_pct": 77.8,
+            "index_valid_n": 80,
+            "band_valid_n": 80
+          },
+          "reading": {
+            "mean_use_index": 2.384,
+            "high_use_band_pct": 61.7,
+            "index_valid_n": 80,
+            "band_valid_n": 80
+          },
+          "writing": {
+            "mean_use_index": 2.466,
+            "high_use_band_pct": 59.5,
+            "index_valid_n": 80,
+            "band_valid_n": 80
+          },
+          "learning": {
+            "mean_use_index": 2.533,
+            "high_use_band_pct": 53.6,
+            "index_valid_n": 80,
+            "band_valid_n": 80
+          },
+          "influence": {
+            "mean_use_index": 3.001,
+            "high_use_band_pct": 78.7,
+            "index_valid_n": 80,
+            "band_valid_n": 80
+          },
+          "task_discretion": {
+            "mean_use_index": 2.47,
+            "high_use_band_pct": 68.0,
+            "index_valid_n": 80,
+            "band_valid_n": 80
+          }
+        }
+      },
+      "21": {
+        "occupation_family": "Science and engineering professionals",
+        "n": 81,
+        "education_fields": [
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 29.2
+          },
+          {
+            "label": "Construction",
+            "pct": 18.9
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 10.5
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 10.0
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 10.0
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 7.8
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 5.2
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 4.2
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 3.2
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 0.9
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 93.1
+          },
+          {
+            "label": "Medium",
+            "pct": 6.9
+          }
+        ],
+        "experience_years": {
+          "mean": 11.7,
+          "valid_n": 81
+        },
+        "required_education_years": {
+          "mean": 16.5,
+          "valid_n": 59
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.858,
+            "high_use_band_pct": 79.1,
+            "index_valid_n": 81,
+            "band_valid_n": 81
+          },
+          "numeracy": {
+            "mean_use_index": 3.12,
+            "high_use_band_pct": 84.1,
+            "index_valid_n": 81,
+            "band_valid_n": 81
+          },
+          "reading": {
+            "mean_use_index": 2.645,
+            "high_use_band_pct": 78.7,
+            "index_valid_n": 81,
+            "band_valid_n": 81
+          },
+          "writing": {
+            "mean_use_index": 2.87,
+            "high_use_band_pct": 85.0,
+            "index_valid_n": 81,
+            "band_valid_n": 81
+          },
+          "learning": {
+            "mean_use_index": 2.426,
+            "high_use_band_pct": 49.6,
+            "index_valid_n": 81,
+            "band_valid_n": 81
+          },
+          "influence": {
+            "mean_use_index": 2.427,
+            "high_use_band_pct": 54.4,
+            "index_valid_n": 81,
+            "band_valid_n": 81
+          },
+          "task_discretion": {
+            "mean_use_index": 2.34,
+            "high_use_band_pct": 52.8,
+            "index_valid_n": 81,
+            "band_valid_n": 81
+          }
+        }
+      },
+      "22": {
+        "occupation_family": "Health professionals",
+        "n": 97,
+        "education_fields": [
+          {
+            "label": "Health",
+            "pct": 76.1
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 10.6
+          },
+          {
+            "label": "Construction",
+            "pct": 5.6
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 4.7
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 1.4
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 1.4
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 0.2
+          },
+          {
+            "label": "Law",
+            "pct": 0.1
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 97.6
+          },
+          {
+            "label": "Medium",
+            "pct": 1.4
+          },
+          {
+            "label": "Low",
+            "pct": 1.0
+          }
+        ],
+        "experience_years": {
+          "mean": 9.1,
+          "valid_n": 97
+        },
+        "required_education_years": {
+          "mean": 16.0,
+          "valid_n": 85
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.211,
+            "high_use_band_pct": 63.5,
+            "index_valid_n": 95,
+            "band_valid_n": 95
+          },
+          "numeracy": {
+            "mean_use_index": 2.326,
+            "high_use_band_pct": 59.7,
+            "index_valid_n": 97,
+            "band_valid_n": 97
+          },
+          "reading": {
+            "mean_use_index": 2.527,
+            "high_use_band_pct": 72.9,
+            "index_valid_n": 97,
+            "band_valid_n": 97
+          },
+          "writing": {
+            "mean_use_index": 2.788,
+            "high_use_band_pct": 75.5,
+            "index_valid_n": 96,
+            "band_valid_n": 96
+          },
+          "learning": {
+            "mean_use_index": 2.446,
+            "high_use_band_pct": 56.8,
+            "index_valid_n": 96,
+            "band_valid_n": 96
+          },
+          "influence": {
+            "mean_use_index": 2.866,
+            "high_use_band_pct": 83.7,
+            "index_valid_n": 97,
+            "band_valid_n": 97
+          },
+          "task_discretion": {
+            "mean_use_index": 1.974,
+            "high_use_band_pct": 44.8,
+            "index_valid_n": 97,
+            "band_valid_n": 97
+          }
+        }
+      },
+      "23": {
+        "occupation_family": "Teaching professionals",
+        "n": 165,
+        "education_fields": [
+          {
+            "label": "Education and Teacher Training",
+            "pct": 63.5
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 6.7
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 5.2
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 4.5
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 4.2
+          },
+          {
+            "label": "Welfare",
+            "pct": 3.0
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 2.4
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 2.2
+          },
+          {
+            "label": "Health",
+            "pct": 2.1
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 2.0
+          },
+          {
+            "label": "Construction",
+            "pct": 1.9
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 1.2
+          },
+          {
+            "label": "Law",
+            "pct": 0.6
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 0.3
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 0.2
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 91.1
+          },
+          {
+            "label": "Medium",
+            "pct": 8.9
+          }
+        ],
+        "experience_years": {
+          "mean": 12.0,
+          "valid_n": 165
+        },
+        "required_education_years": {
+          "mean": 16.7,
+          "valid_n": 141
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.454,
+            "high_use_band_pct": 63.4,
+            "index_valid_n": 159,
+            "band_valid_n": 159
+          },
+          "numeracy": {
+            "mean_use_index": 2.176,
+            "high_use_band_pct": 48.1,
+            "index_valid_n": 161,
+            "band_valid_n": 161
+          },
+          "reading": {
+            "mean_use_index": 2.596,
+            "high_use_band_pct": 78.3,
+            "index_valid_n": 161,
+            "band_valid_n": 161
+          },
+          "writing": {
+            "mean_use_index": 2.47,
+            "high_use_band_pct": 62.9,
+            "index_valid_n": 161,
+            "band_valid_n": 161
+          },
+          "learning": {
+            "mean_use_index": 2.64,
+            "high_use_band_pct": 69.1,
+            "index_valid_n": 161,
+            "band_valid_n": 161
+          },
+          "influence": {
+            "mean_use_index": 3.045,
+            "high_use_band_pct": 72.6,
+            "index_valid_n": 161,
+            "band_valid_n": 161
+          },
+          "task_discretion": {
+            "mean_use_index": 1.986,
+            "high_use_band_pct": 40.1,
+            "index_valid_n": 161,
+            "band_valid_n": 161
+          }
+        }
+      },
+      "24": {
+        "occupation_family": "Business and administration professionals",
+        "n": 72,
+        "education_fields": [
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 50.8
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 11.0
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 8.6
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 5.8
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 5.5
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 3.8
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 3.4
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 3.4
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 2.1
+          },
+          {
+            "label": "Law",
+            "pct": 2.0
+          },
+          {
+            "label": "Health",
+            "pct": 1.8
+          },
+          {
+            "label": "Welfare",
+            "pct": 1.4
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 0.6
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 86.1
+          },
+          {
+            "label": "Medium",
+            "pct": 13.9
+          }
+        ],
+        "experience_years": {
+          "mean": 15.8,
+          "valid_n": 72
+        },
+        "required_education_years": {
+          "mean": 15.9,
+          "valid_n": 61
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.965,
+            "high_use_band_pct": 88.0,
+            "index_valid_n": 72,
+            "band_valid_n": 72
+          },
+          "numeracy": {
+            "mean_use_index": 2.769,
+            "high_use_band_pct": 81.0,
+            "index_valid_n": 72,
+            "band_valid_n": 72
+          },
+          "reading": {
+            "mean_use_index": 2.591,
+            "high_use_band_pct": 60.0,
+            "index_valid_n": 72,
+            "band_valid_n": 72
+          },
+          "writing": {
+            "mean_use_index": 2.798,
+            "high_use_band_pct": 86.2,
+            "index_valid_n": 72,
+            "band_valid_n": 72
+          },
+          "learning": {
+            "mean_use_index": 2.445,
+            "high_use_band_pct": 67.7,
+            "index_valid_n": 72,
+            "band_valid_n": 72
+          },
+          "influence": {
+            "mean_use_index": 2.739,
+            "high_use_band_pct": 70.6,
+            "index_valid_n": 72,
+            "band_valid_n": 72
+          },
+          "task_discretion": {
+            "mean_use_index": 2.184,
+            "high_use_band_pct": 51.8,
+            "index_valid_n": 72,
+            "band_valid_n": 72
+          }
+        }
+      },
+      "25": {
+        "occupation_family": "Information and communications technology professionals",
+        "n": 34,
+        "education_fields": [
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 88.5
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 4.5
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 3.3
+          },
+          {
+            "label": "Law",
+            "pct": 2.7
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 1.0
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 98.4
+          },
+          {
+            "label": "Medium",
+            "pct": 1.6
+          }
+        ],
+        "experience_years": {
+          "mean": 17.4,
+          "valid_n": 34
+        },
+        "required_education_years": {
+          "mean": 16.6,
+          "valid_n": 29
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 3.619,
+            "high_use_band_pct": 88.1,
+            "index_valid_n": 34,
+            "band_valid_n": 34
+          },
+          "numeracy": {
+            "mean_use_index": 2.359,
+            "high_use_band_pct": 64.9,
+            "index_valid_n": 34,
+            "band_valid_n": 34
+          },
+          "reading": {
+            "mean_use_index": 2.757,
+            "high_use_band_pct": 67.3,
+            "index_valid_n": 34,
+            "band_valid_n": 34
+          },
+          "writing": {
+            "mean_use_index": 2.692,
+            "high_use_band_pct": 75.3,
+            "index_valid_n": 34,
+            "band_valid_n": 34
+          },
+          "learning": {
+            "mean_use_index": 2.337,
+            "high_use_band_pct": 51.8,
+            "index_valid_n": 34,
+            "band_valid_n": 34
+          },
+          "influence": {
+            "mean_use_index": 2.703,
+            "high_use_band_pct": 72.8,
+            "index_valid_n": 34,
+            "band_valid_n": 34
+          },
+          "task_discretion": {
+            "mean_use_index": 2.476,
+            "high_use_band_pct": 51.8,
+            "index_valid_n": 34,
+            "band_valid_n": 34
+          }
+        }
+      },
+      "26": {
+        "occupation_family": "Legal, social and cultural professionals",
+        "n": 89,
+        "education_fields": [
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 31.3
+          },
+          {
+            "label": "Law",
+            "pct": 20.4
+          },
+          {
+            "label": "Welfare",
+            "pct": 12.4
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 9.4
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 7.2
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 6.1
+          },
+          {
+            "label": "Health",
+            "pct": 5.0
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 3.9
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 3.8
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 0.5
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 93.7
+          },
+          {
+            "label": "Medium",
+            "pct": 5.7
+          },
+          {
+            "label": "Low",
+            "pct": 0.5
+          }
+        ],
+        "experience_years": {
+          "mean": 11.5,
+          "valid_n": 89
+        },
+        "required_education_years": {
+          "mean": 16.4,
+          "valid_n": 50
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.289,
+            "high_use_band_pct": 49.0,
+            "index_valid_n": 85,
+            "band_valid_n": 85
+          },
+          "numeracy": {
+            "mean_use_index": 1.843,
+            "high_use_band_pct": 27.2,
+            "index_valid_n": 87,
+            "band_valid_n": 87
+          },
+          "reading": {
+            "mean_use_index": 2.675,
+            "high_use_band_pct": 73.6,
+            "index_valid_n": 87,
+            "band_valid_n": 87
+          },
+          "writing": {
+            "mean_use_index": 2.746,
+            "high_use_band_pct": 80.4,
+            "index_valid_n": 87,
+            "band_valid_n": 87
+          },
+          "learning": {
+            "mean_use_index": 2.425,
+            "high_use_band_pct": 57.1,
+            "index_valid_n": 87,
+            "band_valid_n": 87
+          },
+          "influence": {
+            "mean_use_index": 2.758,
+            "high_use_band_pct": 77.1,
+            "index_valid_n": 87,
+            "band_valid_n": 87
+          },
+          "task_discretion": {
+            "mean_use_index": 2.28,
+            "high_use_band_pct": 50.9,
+            "index_valid_n": 87,
+            "band_valid_n": 87
+          }
+        }
+      },
+      "31": {
+        "occupation_family": "Science and engineering associate professionals",
+        "n": 114,
+        "education_fields": [
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 32.9
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 21.5
+          },
+          {
+            "label": "Construction",
+            "pct": 16.5
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 13.3
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 3.8
+          },
+          {
+            "label": "Health",
+            "pct": 3.6
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 2.4
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 1.9
+          },
+          {
+            "label": "Law",
+            "pct": 1.4
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 1.4
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 1.3
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "Medium",
+            "pct": 49.6
+          },
+          {
+            "label": "High",
+            "pct": 38.7
+          },
+          {
+            "label": "Low",
+            "pct": 11.8
+          }
+        ],
+        "experience_years": {
+          "mean": 18.4,
+          "valid_n": 114
+        },
+        "required_education_years": {
+          "mean": 13.2,
+          "valid_n": 103
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.304,
+            "high_use_band_pct": 50.1,
+            "index_valid_n": 97,
+            "band_valid_n": 97
+          },
+          "numeracy": {
+            "mean_use_index": 2.765,
+            "high_use_band_pct": 69.8,
+            "index_valid_n": 113,
+            "band_valid_n": 113
+          },
+          "reading": {
+            "mean_use_index": 2.382,
+            "high_use_band_pct": 58.1,
+            "index_valid_n": 113,
+            "band_valid_n": 113
+          },
+          "writing": {
+            "mean_use_index": 2.767,
+            "high_use_band_pct": 77.2,
+            "index_valid_n": 113,
+            "band_valid_n": 113
+          },
+          "learning": {
+            "mean_use_index": 2.744,
+            "high_use_band_pct": 75.1,
+            "index_valid_n": 111,
+            "band_valid_n": 111
+          },
+          "influence": {
+            "mean_use_index": 3.198,
+            "high_use_band_pct": 75.1,
+            "index_valid_n": 113,
+            "band_valid_n": 113
+          },
+          "task_discretion": {
+            "mean_use_index": 1.986,
+            "high_use_band_pct": 49.4,
+            "index_valid_n": 112,
+            "band_valid_n": 112
+          }
+        }
+      },
+      "32": {
+        "occupation_family": "Health associate professionals",
+        "n": 106,
+        "education_fields": [
+          {
+            "label": "Health",
+            "pct": 73.3
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 8.2
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 4.6
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 3.1
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 2.9
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 2.2
+          },
+          {
+            "label": "Construction",
+            "pct": 1.3
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 1.3
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 1.2
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 0.8
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 0.7
+          },
+          {
+            "label": "Welfare",
+            "pct": 0.3
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 83.2
+          },
+          {
+            "label": "Medium",
+            "pct": 16.2
+          },
+          {
+            "label": "Low",
+            "pct": 0.6
+          }
+        ],
+        "experience_years": {
+          "mean": 13.2,
+          "valid_n": 105
+        },
+        "required_education_years": {
+          "mean": 14.1,
+          "valid_n": 86
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 1.985,
+            "high_use_band_pct": 37.8,
+            "index_valid_n": 88,
+            "band_valid_n": 88
+          },
+          "numeracy": {
+            "mean_use_index": 1.688,
+            "high_use_band_pct": 25.3,
+            "index_valid_n": 106,
+            "band_valid_n": 106
+          },
+          "reading": {
+            "mean_use_index": 2.205,
+            "high_use_band_pct": 52.2,
+            "index_valid_n": 106,
+            "band_valid_n": 106
+          },
+          "writing": {
+            "mean_use_index": 2.121,
+            "high_use_band_pct": 42.1,
+            "index_valid_n": 106,
+            "band_valid_n": 106
+          },
+          "learning": {
+            "mean_use_index": 2.664,
+            "high_use_band_pct": 63.2,
+            "index_valid_n": 106,
+            "band_valid_n": 106
+          },
+          "influence": {
+            "mean_use_index": 2.195,
+            "high_use_band_pct": 55.0,
+            "index_valid_n": 106,
+            "band_valid_n": 106
+          },
+          "task_discretion": {
+            "mean_use_index": 1.898,
+            "high_use_band_pct": 37.7,
+            "index_valid_n": 106,
+            "band_valid_n": 106
+          }
+        }
+      },
+      "33": {
+        "occupation_family": "Business and administration associate professionals",
+        "n": 209,
+        "education_fields": [
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 47.9
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 17.3
+          },
+          {
+            "label": "Health",
+            "pct": 6.1
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 5.8
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 4.5
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 3.5
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 2.9
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 2.7
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 2.5
+          },
+          {
+            "label": "Welfare",
+            "pct": 2.0
+          },
+          {
+            "label": "Law",
+            "pct": 1.6
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 1.2
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 0.7
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 0.6
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 0.4
+          },
+          {
+            "label": "Construction",
+            "pct": 0.3
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 61.9
+          },
+          {
+            "label": "Medium",
+            "pct": 32.4
+          },
+          {
+            "label": "Low",
+            "pct": 5.7
+          }
+        ],
+        "experience_years": {
+          "mean": 16.3,
+          "valid_n": 208
+        },
+        "required_education_years": {
+          "mean": 14.0,
+          "valid_n": 183
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.496,
+            "high_use_band_pct": 61.5,
+            "index_valid_n": 206,
+            "band_valid_n": 206
+          },
+          "numeracy": {
+            "mean_use_index": 2.553,
+            "high_use_band_pct": 64.8,
+            "index_valid_n": 209,
+            "band_valid_n": 209
+          },
+          "reading": {
+            "mean_use_index": 2.48,
+            "high_use_band_pct": 53.6,
+            "index_valid_n": 209,
+            "band_valid_n": 209
+          },
+          "writing": {
+            "mean_use_index": 2.786,
+            "high_use_band_pct": 72.3,
+            "index_valid_n": 209,
+            "band_valid_n": 209
+          },
+          "learning": {
+            "mean_use_index": 2.513,
+            "high_use_band_pct": 63.6,
+            "index_valid_n": 208,
+            "band_valid_n": 208
+          },
+          "influence": {
+            "mean_use_index": 2.322,
+            "high_use_band_pct": 57.8,
+            "index_valid_n": 209,
+            "band_valid_n": 209
+          },
+          "task_discretion": {
+            "mean_use_index": 2.241,
+            "high_use_band_pct": 59.5,
+            "index_valid_n": 209,
+            "band_valid_n": 209
+          }
+        }
+      },
+      "35": {
+        "occupation_family": "Information and communications technicians",
+        "n": 27,
+        "education_fields": [
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 66.7
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 16.1
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 15.3
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 1.9
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 65.5
+          },
+          {
+            "label": "Medium",
+            "pct": 34.5
+          }
+        ],
+        "experience_years": {
+          "mean": 12.4,
+          "valid_n": 27
+        },
+        "required_education_years": {
+          "mean": 13.5,
+          "valid_n": 23
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.881,
+            "high_use_band_pct": 70.7,
+            "index_valid_n": 27,
+            "band_valid_n": 27
+          },
+          "numeracy": {
+            "mean_use_index": 2.47,
+            "high_use_band_pct": 61.8,
+            "index_valid_n": 27,
+            "band_valid_n": 27
+          },
+          "reading": {
+            "mean_use_index": 2.511,
+            "high_use_band_pct": 71.5,
+            "index_valid_n": 27,
+            "band_valid_n": 27
+          },
+          "writing": {
+            "mean_use_index": 2.783,
+            "high_use_band_pct": 93.0,
+            "index_valid_n": 27,
+            "band_valid_n": 27
+          },
+          "learning": {
+            "mean_use_index": 2.546,
+            "high_use_band_pct": 65.1,
+            "index_valid_n": 27,
+            "band_valid_n": 27
+          },
+          "influence": {
+            "mean_use_index": 2.11,
+            "high_use_band_pct": 39.5,
+            "index_valid_n": 27,
+            "band_valid_n": 27
+          },
+          "task_discretion": {
+            "mean_use_index": 2.149,
+            "high_use_band_pct": 52.2,
+            "index_valid_n": 27,
+            "band_valid_n": 27
+          }
+        }
+      }
+    },
+    "Italy": {
+      "13": {
+        "occupation_family": "Production and specialized services managers",
+        "n": 38,
+        "education_fields": [
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 31.3
+          },
+          {
+            "label": "Construction",
+            "pct": 26.3
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 9.0
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 8.9
+          },
+          {
+            "label": "Welfare",
+            "pct": 6.4
+          },
+          {
+            "label": "Law",
+            "pct": 4.5
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 3.2
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 3.2
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 2.7
+          },
+          {
+            "label": "Health",
+            "pct": 2.3
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 2.2
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "Medium",
+            "pct": 42.2
+          },
+          {
+            "label": "Low",
+            "pct": 31.9
+          },
+          {
+            "label": "High",
+            "pct": 25.9
+          }
+        ],
+        "experience_years": {
+          "mean": 23.1,
+          "valid_n": 38
+        },
+        "required_education_years": {
+          "mean": null,
+          "valid_n": 12
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.014,
+            "high_use_band_pct": 39.4,
+            "index_valid_n": 34,
+            "band_valid_n": 34
+          },
+          "numeracy": {
+            "mean_use_index": 2.413,
+            "high_use_band_pct": 51.1,
+            "index_valid_n": 38,
+            "band_valid_n": 38
+          },
+          "reading": {
+            "mean_use_index": 2.227,
+            "high_use_band_pct": 54.3,
+            "index_valid_n": 38,
+            "band_valid_n": 38
+          },
+          "writing": {
+            "mean_use_index": 1.998,
+            "high_use_band_pct": 24.8,
+            "index_valid_n": 38,
+            "band_valid_n": 38
+          },
+          "learning": {
+            "mean_use_index": 1.975,
+            "high_use_band_pct": 47.7,
+            "index_valid_n": 38,
+            "band_valid_n": 38
+          },
+          "influence": {
+            "mean_use_index": 2.376,
+            "high_use_band_pct": 53.4,
+            "index_valid_n": 38,
+            "band_valid_n": 38
+          },
+          "task_discretion": {
+            "mean_use_index": 2.729,
+            "high_use_band_pct": 65.3,
+            "index_valid_n": 38,
+            "band_valid_n": 38
+          }
+        }
+      },
+      "21": {
+        "occupation_family": "Science and engineering professionals",
+        "n": 59,
+        "education_fields": [
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 42.3
+          },
+          {
+            "label": "Construction",
+            "pct": 19.3
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 13.8
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 8.3
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 8.0
+          },
+          {
+            "label": "Health",
+            "pct": 3.1
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 2.3
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 2.2
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 0.8
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 68.5
+          },
+          {
+            "label": "Medium",
+            "pct": 28.1
+          },
+          {
+            "label": "Low",
+            "pct": 3.4
+          }
+        ],
+        "experience_years": {
+          "mean": 18.3,
+          "valid_n": 59
+        },
+        "required_education_years": {
+          "mean": 16.6,
+          "valid_n": 37
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 3.06,
+            "high_use_band_pct": 82.7,
+            "index_valid_n": 58,
+            "band_valid_n": 58
+          },
+          "numeracy": {
+            "mean_use_index": 3.067,
+            "high_use_band_pct": 87.7,
+            "index_valid_n": 59,
+            "band_valid_n": 59
+          },
+          "reading": {
+            "mean_use_index": 2.858,
+            "high_use_band_pct": 79.4,
+            "index_valid_n": 59,
+            "band_valid_n": 59
+          },
+          "writing": {
+            "mean_use_index": 2.547,
+            "high_use_band_pct": 63.0,
+            "index_valid_n": 59,
+            "band_valid_n": 59
+          },
+          "learning": {
+            "mean_use_index": 2.219,
+            "high_use_band_pct": 46.1,
+            "index_valid_n": 59,
+            "band_valid_n": 59
+          },
+          "influence": {
+            "mean_use_index": 2.133,
+            "high_use_band_pct": 41.2,
+            "index_valid_n": 59,
+            "band_valid_n": 59
+          },
+          "task_discretion": {
+            "mean_use_index": 2.168,
+            "high_use_band_pct": 44.6,
+            "index_valid_n": 59,
+            "band_valid_n": 59
+          }
+        }
+      },
+      "22": {
+        "occupation_family": "Health professionals",
+        "n": 42,
+        "education_fields": [
+          {
+            "label": "Health",
+            "pct": 83.8
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 6.7
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 4.0
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 3.3
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 1.1
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 1.0
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 87.5
+          },
+          {
+            "label": "Medium",
+            "pct": 12.5
+          }
+        ],
+        "experience_years": {
+          "mean": 19.9,
+          "valid_n": 41
+        },
+        "required_education_years": {
+          "mean": 17.1,
+          "valid_n": 32
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 1.806,
+            "high_use_band_pct": 27.9,
+            "index_valid_n": 41,
+            "band_valid_n": 41
+          },
+          "numeracy": {
+            "mean_use_index": 2.011,
+            "high_use_band_pct": 40.6,
+            "index_valid_n": 42,
+            "band_valid_n": 42
+          },
+          "reading": {
+            "mean_use_index": 2.534,
+            "high_use_band_pct": 73.8,
+            "index_valid_n": 42,
+            "band_valid_n": 42
+          },
+          "writing": {
+            "mean_use_index": 2.56,
+            "high_use_band_pct": 61.4,
+            "index_valid_n": 42,
+            "band_valid_n": 42
+          },
+          "learning": {
+            "mean_use_index": 1.718,
+            "high_use_band_pct": 28.7,
+            "index_valid_n": 41,
+            "band_valid_n": 41
+          },
+          "influence": {
+            "mean_use_index": 2.148,
+            "high_use_band_pct": 49.5,
+            "index_valid_n": 42,
+            "band_valid_n": 42
+          },
+          "task_discretion": {
+            "mean_use_index": 1.675,
+            "high_use_band_pct": 23.4,
+            "index_valid_n": 42,
+            "band_valid_n": 42
+          }
+        }
+      },
+      "23": {
+        "occupation_family": "Teaching professionals",
+        "n": 127,
+        "education_fields": [
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 26.3
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 22.1
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 17.9
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 6.6
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 5.9
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 4.3
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 3.5
+          },
+          {
+            "label": "Health",
+            "pct": 3.5
+          },
+          {
+            "label": "Construction",
+            "pct": 2.7
+          },
+          {
+            "label": "Law",
+            "pct": 2.7
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 2.1
+          },
+          {
+            "label": "Welfare",
+            "pct": 1.6
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 0.7
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 0.2
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 0.1
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 75.8
+          },
+          {
+            "label": "Medium",
+            "pct": 24.2
+          }
+        ],
+        "experience_years": {
+          "mean": 18.7,
+          "valid_n": 127
+        },
+        "required_education_years": {
+          "mean": 16.9,
+          "valid_n": 116
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 1.851,
+            "high_use_band_pct": 27.2,
+            "index_valid_n": 112,
+            "band_valid_n": 112
+          },
+          "numeracy": {
+            "mean_use_index": 1.804,
+            "high_use_band_pct": 33.2,
+            "index_valid_n": 125,
+            "band_valid_n": 125
+          },
+          "reading": {
+            "mean_use_index": 2.435,
+            "high_use_band_pct": 65.9,
+            "index_valid_n": 125,
+            "band_valid_n": 125
+          },
+          "writing": {
+            "mean_use_index": 2.303,
+            "high_use_band_pct": 50.2,
+            "index_valid_n": 125,
+            "band_valid_n": 125
+          },
+          "learning": {
+            "mean_use_index": 2.215,
+            "high_use_band_pct": 54.9,
+            "index_valid_n": 124,
+            "band_valid_n": 124
+          },
+          "influence": {
+            "mean_use_index": 2.518,
+            "high_use_band_pct": 51.6,
+            "index_valid_n": 125,
+            "band_valid_n": 125
+          },
+          "task_discretion": {
+            "mean_use_index": 1.76,
+            "high_use_band_pct": 29.6,
+            "index_valid_n": 125,
+            "band_valid_n": 125
+          }
+        }
+      },
+      "24": {
+        "occupation_family": "Business and administration professionals",
+        "n": 78,
+        "education_fields": [
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 44.2
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 30.8
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 8.0
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 6.7
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 6.6
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 1.3
+          },
+          {
+            "label": "Law",
+            "pct": 1.3
+          },
+          {
+            "label": "Health",
+            "pct": 1.2
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 0.1
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "Medium",
+            "pct": 53.4
+          },
+          {
+            "label": "High",
+            "pct": 43.7
+          },
+          {
+            "label": "Low",
+            "pct": 2.9
+          }
+        ],
+        "experience_years": {
+          "mean": 20.6,
+          "valid_n": 78
+        },
+        "required_education_years": {
+          "mean": 15.8,
+          "valid_n": 52
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.345,
+            "high_use_band_pct": 56.4,
+            "index_valid_n": 77,
+            "band_valid_n": 77
+          },
+          "numeracy": {
+            "mean_use_index": 2.516,
+            "high_use_band_pct": 64.5,
+            "index_valid_n": 77,
+            "band_valid_n": 77
+          },
+          "reading": {
+            "mean_use_index": 2.7,
+            "high_use_band_pct": 73.1,
+            "index_valid_n": 77,
+            "band_valid_n": 77
+          },
+          "writing": {
+            "mean_use_index": 2.596,
+            "high_use_band_pct": 72.3,
+            "index_valid_n": 77,
+            "band_valid_n": 77
+          },
+          "learning": {
+            "mean_use_index": 2.26,
+            "high_use_band_pct": 50.1,
+            "index_valid_n": 76,
+            "band_valid_n": 76
+          },
+          "influence": {
+            "mean_use_index": 2.386,
+            "high_use_band_pct": 59.9,
+            "index_valid_n": 77,
+            "band_valid_n": 77
+          },
+          "task_discretion": {
+            "mean_use_index": 1.945,
+            "high_use_band_pct": 37.2,
+            "index_valid_n": 77,
+            "band_valid_n": 77
+          }
+        }
+      },
+      "25": {
+        "occupation_family": "Information and communications technology professionals",
+        "n": 40,
+        "education_fields": [
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 37.3
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 27.6
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 15.7
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 6.9
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 5.1
+          },
+          {
+            "label": "Construction",
+            "pct": 4.3
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 2.9
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 0.2
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "Medium",
+            "pct": 52.8
+          },
+          {
+            "label": "High",
+            "pct": 47.2
+          }
+        ],
+        "experience_years": {
+          "mean": 14.5,
+          "valid_n": 40
+        },
+        "required_education_years": {
+          "mean": 15.6,
+          "valid_n": 30
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 3.744,
+            "high_use_band_pct": 83.7,
+            "index_valid_n": 40,
+            "band_valid_n": 40
+          },
+          "numeracy": {
+            "mean_use_index": 2.507,
+            "high_use_band_pct": 65.7,
+            "index_valid_n": 40,
+            "band_valid_n": 40
+          },
+          "reading": {
+            "mean_use_index": 2.787,
+            "high_use_band_pct": 83.4,
+            "index_valid_n": 40,
+            "band_valid_n": 40
+          },
+          "writing": {
+            "mean_use_index": 2.413,
+            "high_use_band_pct": 66.4,
+            "index_valid_n": 40,
+            "band_valid_n": 40
+          },
+          "learning": {
+            "mean_use_index": 2.183,
+            "high_use_band_pct": 55.3,
+            "index_valid_n": 40,
+            "band_valid_n": 40
+          },
+          "influence": {
+            "mean_use_index": 2.11,
+            "high_use_band_pct": 47.8,
+            "index_valid_n": 40,
+            "band_valid_n": 40
+          },
+          "task_discretion": {
+            "mean_use_index": 2.115,
+            "high_use_band_pct": 44.7,
+            "index_valid_n": 40,
+            "band_valid_n": 40
+          }
+        }
+      },
+      "26": {
+        "occupation_family": "Legal, social and cultural professionals",
+        "n": 57,
+        "education_fields": [
+          {
+            "label": "Law",
+            "pct": 36.7
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 25.6
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 16.4
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 10.1
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 4.9
+          },
+          {
+            "label": "Welfare",
+            "pct": 3.1
+          },
+          {
+            "label": "Health",
+            "pct": 2.6
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 0.8
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 82.5
+          },
+          {
+            "label": "Medium",
+            "pct": 17.3
+          },
+          {
+            "label": "Low",
+            "pct": 0.2
+          }
+        ],
+        "experience_years": {
+          "mean": 15.2,
+          "valid_n": 57
+        },
+        "required_education_years": {
+          "mean": 15.2,
+          "valid_n": 24
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.363,
+            "high_use_band_pct": 44.6,
+            "index_valid_n": 57,
+            "band_valid_n": 57
+          },
+          "numeracy": {
+            "mean_use_index": 1.77,
+            "high_use_band_pct": 17.6,
+            "index_valid_n": 57,
+            "band_valid_n": 57
+          },
+          "reading": {
+            "mean_use_index": 3.196,
+            "high_use_band_pct": 88.6,
+            "index_valid_n": 57,
+            "band_valid_n": 57
+          },
+          "writing": {
+            "mean_use_index": 2.774,
+            "high_use_band_pct": 83.9,
+            "index_valid_n": 57,
+            "band_valid_n": 57
+          },
+          "learning": {
+            "mean_use_index": 2.422,
+            "high_use_band_pct": 51.6,
+            "index_valid_n": 57,
+            "band_valid_n": 57
+          },
+          "influence": {
+            "mean_use_index": 2.388,
+            "high_use_band_pct": 57.4,
+            "index_valid_n": 57,
+            "band_valid_n": 57
+          },
+          "task_discretion": {
+            "mean_use_index": 1.993,
+            "high_use_band_pct": 38.6,
+            "index_valid_n": 57,
+            "band_valid_n": 57
+          }
+        }
+      },
+      "31": {
+        "occupation_family": "Science and engineering associate professionals",
+        "n": 57,
+        "education_fields": [
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 31.9
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 29.6
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 11.3
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 8.9
+          },
+          {
+            "label": "Construction",
+            "pct": 8.3
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 5.9
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 3.8
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 0.2
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "Medium",
+            "pct": 61.4
+          },
+          {
+            "label": "High",
+            "pct": 31.4
+          },
+          {
+            "label": "Low",
+            "pct": 7.2
+          }
+        ],
+        "experience_years": {
+          "mean": 19.8,
+          "valid_n": 57
+        },
+        "required_education_years": {
+          "mean": 14.6,
+          "valid_n": 51
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.558,
+            "high_use_band_pct": 67.6,
+            "index_valid_n": 55,
+            "band_valid_n": 55
+          },
+          "numeracy": {
+            "mean_use_index": 2.941,
+            "high_use_band_pct": 82.3,
+            "index_valid_n": 57,
+            "band_valid_n": 57
+          },
+          "reading": {
+            "mean_use_index": 2.589,
+            "high_use_band_pct": 68.5,
+            "index_valid_n": 57,
+            "band_valid_n": 57
+          },
+          "writing": {
+            "mean_use_index": 2.455,
+            "high_use_band_pct": 57.1,
+            "index_valid_n": 57,
+            "band_valid_n": 57
+          },
+          "learning": {
+            "mean_use_index": 2.04,
+            "high_use_band_pct": 47.5,
+            "index_valid_n": 57,
+            "band_valid_n": 57
+          },
+          "influence": {
+            "mean_use_index": 2.009,
+            "high_use_band_pct": 36.3,
+            "index_valid_n": 56,
+            "band_valid_n": 56
+          },
+          "task_discretion": {
+            "mean_use_index": 1.757,
+            "high_use_band_pct": 31.1,
+            "index_valid_n": 57,
+            "band_valid_n": 57
+          }
+        }
+      },
+      "32": {
+        "occupation_family": "Health associate professionals",
+        "n": 114,
+        "education_fields": [
+          {
+            "label": "Health",
+            "pct": 42.9
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 25.0
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 7.3
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 5.4
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 4.6
+          },
+          {
+            "label": "Welfare",
+            "pct": 4.4
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 3.7
+          },
+          {
+            "label": "Law",
+            "pct": 2.8
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 1.6
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 1.0
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 0.9
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 0.5
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "Medium",
+            "pct": 45.9
+          },
+          {
+            "label": "High",
+            "pct": 32.6
+          },
+          {
+            "label": "Low",
+            "pct": 21.5
+          }
+        ],
+        "experience_years": {
+          "mean": 19.4,
+          "valid_n": 113
+        },
+        "required_education_years": {
+          "mean": 13.4,
+          "valid_n": 101
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 1.413,
+            "high_use_band_pct": 14.6,
+            "index_valid_n": 69,
+            "band_valid_n": 69
+          },
+          "numeracy": {
+            "mean_use_index": 1.536,
+            "high_use_band_pct": 29.0,
+            "index_valid_n": 114,
+            "band_valid_n": 114
+          },
+          "reading": {
+            "mean_use_index": 1.734,
+            "high_use_band_pct": 32.8,
+            "index_valid_n": 114,
+            "band_valid_n": 114
+          },
+          "writing": {
+            "mean_use_index": 1.933,
+            "high_use_band_pct": 31.2,
+            "index_valid_n": 114,
+            "band_valid_n": 114
+          },
+          "learning": {
+            "mean_use_index": 1.729,
+            "high_use_band_pct": 33.7,
+            "index_valid_n": 114,
+            "band_valid_n": 114
+          },
+          "influence": {
+            "mean_use_index": 1.625,
+            "high_use_band_pct": 28.3,
+            "index_valid_n": 114,
+            "band_valid_n": 114
+          },
+          "task_discretion": {
+            "mean_use_index": 1.257,
+            "high_use_band_pct": 8.2,
+            "index_valid_n": 114,
+            "band_valid_n": 114
+          }
+        }
+      },
+      "33": {
+        "occupation_family": "Business and administration associate professionals",
+        "n": 193,
+        "education_fields": [
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 47.1
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 19.8
+          },
+          {
+            "label": "Construction",
+            "pct": 6.8
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 4.5
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 4.5
+          },
+          {
+            "label": "Law",
+            "pct": 3.7
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 3.6
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 3.2
+          },
+          {
+            "label": "Health",
+            "pct": 1.5
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 1.2
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 1.1
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 1.1
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 1.0
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 0.8
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 0.2
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "Medium",
+            "pct": 66.1
+          },
+          {
+            "label": "High",
+            "pct": 30.0
+          },
+          {
+            "label": "Low",
+            "pct": 3.8
+          }
+        ],
+        "experience_years": {
+          "mean": 20.4,
+          "valid_n": 191
+        },
+        "required_education_years": {
+          "mean": 13.8,
+          "valid_n": 163
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.087,
+            "high_use_band_pct": 42.7,
+            "index_valid_n": 189,
+            "band_valid_n": 189
+          },
+          "numeracy": {
+            "mean_use_index": 2.306,
+            "high_use_band_pct": 47.0,
+            "index_valid_n": 192,
+            "band_valid_n": 192
+          },
+          "reading": {
+            "mean_use_index": 2.318,
+            "high_use_band_pct": 48.9,
+            "index_valid_n": 193,
+            "band_valid_n": 193
+          },
+          "writing": {
+            "mean_use_index": 2.276,
+            "high_use_band_pct": 46.9,
+            "index_valid_n": 193,
+            "band_valid_n": 193
+          },
+          "learning": {
+            "mean_use_index": 1.863,
+            "high_use_band_pct": 37.2,
+            "index_valid_n": 191,
+            "band_valid_n": 191
+          },
+          "influence": {
+            "mean_use_index": 1.951,
+            "high_use_band_pct": 44.6,
+            "index_valid_n": 191,
+            "band_valid_n": 191
+          },
+          "task_discretion": {
+            "mean_use_index": 1.832,
+            "high_use_band_pct": 37.0,
+            "index_valid_n": 193,
+            "band_valid_n": 193
+          }
+        }
+      },
+      "35": {
+        "occupation_family": "Information and communications technicians",
+        "n": 26,
+        "education_fields": [
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 33.7
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 20.6
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 20.5
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 13.8
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 6.3
+          },
+          {
+            "label": "Law",
+            "pct": 5.0
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "Medium",
+            "pct": 43.7
+          },
+          {
+            "label": "High",
+            "pct": 36.0
+          },
+          {
+            "label": "Low",
+            "pct": 20.3
+          }
+        ],
+        "experience_years": {
+          "mean": 20.3,
+          "valid_n": 26
+        },
+        "required_education_years": {
+          "mean": 14.7,
+          "valid_n": 21
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 3.045,
+            "high_use_band_pct": 79.8,
+            "index_valid_n": 26,
+            "band_valid_n": 26
+          },
+          "numeracy": {
+            "mean_use_index": 2.115,
+            "high_use_band_pct": 43.0,
+            "index_valid_n": 26,
+            "band_valid_n": 26
+          },
+          "reading": {
+            "mean_use_index": 2.418,
+            "high_use_band_pct": 55.2,
+            "index_valid_n": 26,
+            "band_valid_n": 26
+          },
+          "writing": {
+            "mean_use_index": 2.249,
+            "high_use_band_pct": 42.0,
+            "index_valid_n": 26,
+            "band_valid_n": 26
+          },
+          "learning": {
+            "mean_use_index": 2.409,
+            "high_use_band_pct": 57.2,
+            "index_valid_n": 26,
+            "band_valid_n": 26
+          },
+          "influence": {
+            "mean_use_index": 1.593,
+            "high_use_band_pct": 27.2,
+            "index_valid_n": 26,
+            "band_valid_n": 26
+          },
+          "task_discretion": {
+            "mean_use_index": 1.646,
+            "high_use_band_pct": 24.6,
+            "index_valid_n": 26,
+            "band_valid_n": 26
+          }
+        }
+      }
+    },
+    "Poland": {
+      "12": {
+        "occupation_family": "Administrative and commercial managers",
+        "n": 40,
+        "education_fields": [
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 34.7
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 19.2
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 10.5
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 8.8
+          },
+          {
+            "label": "Construction",
+            "pct": 6.4
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 4.0
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 3.4
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 3.4
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 2.9
+          },
+          {
+            "label": "Health",
+            "pct": 2.5
+          },
+          {
+            "label": "Law",
+            "pct": 2.3
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 1.9
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 65.5
+          },
+          {
+            "label": "Medium",
+            "pct": 34.5
+          }
+        ],
+        "experience_years": {
+          "mean": 16.7,
+          "valid_n": 38
+        },
+        "required_education_years": {
+          "mean": 15.0,
+          "valid_n": 32
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.283,
+            "high_use_band_pct": 46.7,
+            "index_valid_n": 40,
+            "band_valid_n": 40
+          },
+          "numeracy": {
+            "mean_use_index": 2.629,
+            "high_use_band_pct": 62.5,
+            "index_valid_n": 40,
+            "band_valid_n": 40
+          },
+          "reading": {
+            "mean_use_index": 2.538,
+            "high_use_band_pct": 49.4,
+            "index_valid_n": 39,
+            "band_valid_n": 39
+          },
+          "writing": {
+            "mean_use_index": 2.744,
+            "high_use_band_pct": 69.5,
+            "index_valid_n": 40,
+            "band_valid_n": 40
+          },
+          "learning": {
+            "mean_use_index": 1.632,
+            "high_use_band_pct": 12.8,
+            "index_valid_n": 38,
+            "band_valid_n": 38
+          },
+          "influence": {
+            "mean_use_index": 2.69,
+            "high_use_band_pct": 71.5,
+            "index_valid_n": 39,
+            "band_valid_n": 39
+          },
+          "task_discretion": {
+            "mean_use_index": 2.317,
+            "high_use_band_pct": 69.7,
+            "index_valid_n": 40,
+            "band_valid_n": 40
+          }
+        }
+      },
+      "13": {
+        "occupation_family": "Production and specialized services managers",
+        "n": 85,
+        "education_fields": [
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 22.3
+          },
+          {
+            "label": "Construction",
+            "pct": 21.9
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 16.0
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 6.7
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 6.1
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 5.8
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 5.0
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 4.9
+          },
+          {
+            "label": "Health",
+            "pct": 3.4
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 2.8
+          },
+          {
+            "label": "Welfare",
+            "pct": 2.3
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 2.3
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 0.7
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 60.6
+          },
+          {
+            "label": "Medium",
+            "pct": 39.4
+          }
+        ],
+        "experience_years": {
+          "mean": 23.0,
+          "valid_n": 85
+        },
+        "required_education_years": {
+          "mean": 14.8,
+          "valid_n": 61
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 1.947,
+            "high_use_band_pct": 32.6,
+            "index_valid_n": 77,
+            "band_valid_n": 77
+          },
+          "numeracy": {
+            "mean_use_index": 2.586,
+            "high_use_band_pct": 72.4,
+            "index_valid_n": 84,
+            "band_valid_n": 84
+          },
+          "reading": {
+            "mean_use_index": 2.249,
+            "high_use_band_pct": 40.8,
+            "index_valid_n": 85,
+            "band_valid_n": 85
+          },
+          "writing": {
+            "mean_use_index": 2.424,
+            "high_use_band_pct": 61.1,
+            "index_valid_n": 84,
+            "band_valid_n": 84
+          },
+          "learning": {
+            "mean_use_index": 1.417,
+            "high_use_band_pct": 4.9,
+            "index_valid_n": 85,
+            "band_valid_n": 85
+          },
+          "influence": {
+            "mean_use_index": 2.349,
+            "high_use_band_pct": 56.7,
+            "index_valid_n": 85,
+            "band_valid_n": 85
+          },
+          "task_discretion": {
+            "mean_use_index": 2.529,
+            "high_use_band_pct": 59.2,
+            "index_valid_n": 85,
+            "band_valid_n": 85
+          }
+        }
+      },
+      "21": {
+        "occupation_family": "Science and engineering professionals",
+        "n": 70,
+        "education_fields": [
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 27.4
+          },
+          {
+            "label": "Construction",
+            "pct": 18.0
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 11.2
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 10.3
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 6.4
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 6.0
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 5.8
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 4.1
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 3.1
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 2.5
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 2.4
+          },
+          {
+            "label": "Health",
+            "pct": 1.7
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 1.0
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 88.8
+          },
+          {
+            "label": "Medium",
+            "pct": 11.2
+          }
+        ],
+        "experience_years": {
+          "mean": 16.3,
+          "valid_n": 69
+        },
+        "required_education_years": {
+          "mean": 15.6,
+          "valid_n": 61
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.329,
+            "high_use_band_pct": 58.9,
+            "index_valid_n": 69,
+            "band_valid_n": 69
+          },
+          "numeracy": {
+            "mean_use_index": 2.856,
+            "high_use_band_pct": 79.4,
+            "index_valid_n": 70,
+            "band_valid_n": 70
+          },
+          "reading": {
+            "mean_use_index": 2.321,
+            "high_use_band_pct": 57.6,
+            "index_valid_n": 70,
+            "band_valid_n": 70
+          },
+          "writing": {
+            "mean_use_index": 2.452,
+            "high_use_band_pct": 62.8,
+            "index_valid_n": 69,
+            "band_valid_n": 69
+          },
+          "learning": {
+            "mean_use_index": 1.639,
+            "high_use_band_pct": 10.8,
+            "index_valid_n": 69,
+            "band_valid_n": 69
+          },
+          "influence": {
+            "mean_use_index": 1.735,
+            "high_use_band_pct": 20.6,
+            "index_valid_n": 69,
+            "band_valid_n": 69
+          },
+          "task_discretion": {
+            "mean_use_index": 2.174,
+            "high_use_band_pct": 47.0,
+            "index_valid_n": 70,
+            "band_valid_n": 70
+          }
+        }
+      },
+      "22": {
+        "occupation_family": "Health professionals",
+        "n": 105,
+        "education_fields": [
+          {
+            "label": "Health",
+            "pct": 86.3
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 3.3
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 1.9
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 1.9
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 1.7
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 1.5
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 1.1
+          },
+          {
+            "label": "Welfare",
+            "pct": 0.9
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 0.7
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 0.6
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 75.6
+          },
+          {
+            "label": "Medium",
+            "pct": 24.4
+          }
+        ],
+        "experience_years": {
+          "mean": 19.3,
+          "valid_n": 102
+        },
+        "required_education_years": {
+          "mean": 15.4,
+          "valid_n": 90
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 1.426,
+            "high_use_band_pct": 12.9,
+            "index_valid_n": 92,
+            "band_valid_n": 92
+          },
+          "numeracy": {
+            "mean_use_index": 1.972,
+            "high_use_band_pct": 38.6,
+            "index_valid_n": 105,
+            "band_valid_n": 105
+          },
+          "reading": {
+            "mean_use_index": 2.117,
+            "high_use_band_pct": 44.5,
+            "index_valid_n": 105,
+            "band_valid_n": 105
+          },
+          "writing": {
+            "mean_use_index": 2.503,
+            "high_use_band_pct": 67.6,
+            "index_valid_n": 105,
+            "band_valid_n": 105
+          },
+          "learning": {
+            "mean_use_index": 1.563,
+            "high_use_band_pct": 20.7,
+            "index_valid_n": 101,
+            "band_valid_n": 101
+          },
+          "influence": {
+            "mean_use_index": 1.787,
+            "high_use_band_pct": 31.2,
+            "index_valid_n": 103,
+            "band_valid_n": 103
+          },
+          "task_discretion": {
+            "mean_use_index": 1.856,
+            "high_use_band_pct": 39.9,
+            "index_valid_n": 105,
+            "band_valid_n": 105
+          }
+        }
+      },
+      "23": {
+        "occupation_family": "Teaching professionals",
+        "n": 152,
+        "education_fields": [
+          {
+            "label": "Education and Teacher Training",
+            "pct": 55.4
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 18.9
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 6.9
+          },
+          {
+            "label": "Welfare",
+            "pct": 4.6
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 3.1
+          },
+          {
+            "label": "Construction",
+            "pct": 2.8
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 2.6
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 2.5
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 1.2
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 1.2
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 0.8
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 95.6
+          },
+          {
+            "label": "Medium",
+            "pct": 4.4
+          }
+        ],
+        "experience_years": {
+          "mean": 17.8,
+          "valid_n": 150
+        },
+        "required_education_years": {
+          "mean": 16.5,
+          "valid_n": 150
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 1.749,
+            "high_use_band_pct": 28.4,
+            "index_valid_n": 143,
+            "band_valid_n": 143
+          },
+          "numeracy": {
+            "mean_use_index": 1.889,
+            "high_use_band_pct": 37.3,
+            "index_valid_n": 150,
+            "band_valid_n": 150
+          },
+          "reading": {
+            "mean_use_index": 2.707,
+            "high_use_band_pct": 67.9,
+            "index_valid_n": 149,
+            "band_valid_n": 149
+          },
+          "writing": {
+            "mean_use_index": 2.461,
+            "high_use_band_pct": 55.5,
+            "index_valid_n": 149,
+            "band_valid_n": 149
+          },
+          "learning": {
+            "mean_use_index": 1.774,
+            "high_use_band_pct": 24.9,
+            "index_valid_n": 143,
+            "band_valid_n": 143
+          },
+          "influence": {
+            "mean_use_index": 2.424,
+            "high_use_band_pct": 60.5,
+            "index_valid_n": 148,
+            "band_valid_n": 148
+          },
+          "task_discretion": {
+            "mean_use_index": 2.307,
+            "high_use_band_pct": 63.0,
+            "index_valid_n": 150,
+            "band_valid_n": 150
+          }
+        }
+      },
+      "24": {
+        "occupation_family": "Business and administration professionals",
+        "n": 84,
+        "education_fields": [
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 54.6
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 9.3
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 6.6
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 5.2
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 4.1
+          },
+          {
+            "label": "Construction",
+            "pct": 3.4
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 2.8
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 2.7
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 2.6
+          },
+          {
+            "label": "Welfare",
+            "pct": 2.5
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 2.1
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 1.8
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 1.3
+          },
+          {
+            "label": "Health",
+            "pct": 1.1
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 79.3
+          },
+          {
+            "label": "Medium",
+            "pct": 19.9
+          },
+          {
+            "label": "Low",
+            "pct": 0.8
+          }
+        ],
+        "experience_years": {
+          "mean": 15.7,
+          "valid_n": 81
+        },
+        "required_education_years": {
+          "mean": 15.3,
+          "valid_n": 76
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.198,
+            "high_use_band_pct": 41.7,
+            "index_valid_n": 84,
+            "band_valid_n": 84
+          },
+          "numeracy": {
+            "mean_use_index": 2.492,
+            "high_use_band_pct": 60.1,
+            "index_valid_n": 84,
+            "band_valid_n": 84
+          },
+          "reading": {
+            "mean_use_index": 2.59,
+            "high_use_band_pct": 60.0,
+            "index_valid_n": 84,
+            "band_valid_n": 84
+          },
+          "writing": {
+            "mean_use_index": 2.691,
+            "high_use_band_pct": 72.1,
+            "index_valid_n": 84,
+            "band_valid_n": 84
+          },
+          "learning": {
+            "mean_use_index": 1.58,
+            "high_use_band_pct": 13.9,
+            "index_valid_n": 83,
+            "band_valid_n": 83
+          },
+          "influence": {
+            "mean_use_index": 2.162,
+            "high_use_band_pct": 56.1,
+            "index_valid_n": 84,
+            "band_valid_n": 84
+          },
+          "task_discretion": {
+            "mean_use_index": 2.024,
+            "high_use_band_pct": 41.7,
+            "index_valid_n": 84,
+            "band_valid_n": 84
+          }
+        }
+      },
+      "25": {
+        "occupation_family": "Information and communications technology professionals",
+        "n": 67,
+        "education_fields": [
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 71.4
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 11.7
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 9.0
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 3.2
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 2.5
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 1.1
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 1.1
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 85.0
+          },
+          {
+            "label": "Medium",
+            "pct": 15.0
+          }
+        ],
+        "experience_years": {
+          "mean": 11.4,
+          "valid_n": 63
+        },
+        "required_education_years": {
+          "mean": 15.4,
+          "valid_n": 56
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 3.468,
+            "high_use_band_pct": 78.9,
+            "index_valid_n": 64,
+            "band_valid_n": 64
+          },
+          "numeracy": {
+            "mean_use_index": 2.761,
+            "high_use_band_pct": 72.3,
+            "index_valid_n": 64,
+            "band_valid_n": 64
+          },
+          "reading": {
+            "mean_use_index": 2.625,
+            "high_use_band_pct": 62.5,
+            "index_valid_n": 65,
+            "band_valid_n": 65
+          },
+          "writing": {
+            "mean_use_index": 2.648,
+            "high_use_band_pct": 66.7,
+            "index_valid_n": 66,
+            "band_valid_n": 66
+          },
+          "learning": {
+            "mean_use_index": 2.054,
+            "high_use_band_pct": 37.3,
+            "index_valid_n": 62,
+            "band_valid_n": 62
+          },
+          "influence": {
+            "mean_use_index": 2.073,
+            "high_use_band_pct": 48.3,
+            "index_valid_n": 66,
+            "band_valid_n": 66
+          },
+          "task_discretion": {
+            "mean_use_index": 2.546,
+            "high_use_band_pct": 65.7,
+            "index_valid_n": 66,
+            "band_valid_n": 66
+          }
+        }
+      },
+      "26": {
+        "occupation_family": "Legal, social and cultural professionals",
+        "n": 44,
+        "education_fields": [
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 23.8
+          },
+          {
+            "label": "Law",
+            "pct": 22.8
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 17.4
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 10.4
+          },
+          {
+            "label": "Welfare",
+            "pct": 6.1
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 5.1
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 4.3
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 2.7
+          },
+          {
+            "label": "Health",
+            "pct": 2.7
+          },
+          {
+            "label": "Construction",
+            "pct": 1.7
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 1.7
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 1.3
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 88.7
+          },
+          {
+            "label": "Medium",
+            "pct": 11.3
+          }
+        ],
+        "experience_years": {
+          "mean": 14.6,
+          "valid_n": 43
+        },
+        "required_education_years": {
+          "mean": 16.0,
+          "valid_n": 40
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 1.964,
+            "high_use_band_pct": 46.5,
+            "index_valid_n": 40,
+            "band_valid_n": 40
+          },
+          "numeracy": {
+            "mean_use_index": 1.9,
+            "high_use_band_pct": 39.1,
+            "index_valid_n": 44,
+            "band_valid_n": 44
+          },
+          "reading": {
+            "mean_use_index": 2.845,
+            "high_use_band_pct": 77.4,
+            "index_valid_n": 44,
+            "band_valid_n": 44
+          },
+          "writing": {
+            "mean_use_index": 2.534,
+            "high_use_band_pct": 64.8,
+            "index_valid_n": 44,
+            "band_valid_n": 44
+          },
+          "learning": {
+            "mean_use_index": 1.951,
+            "high_use_band_pct": 40.3,
+            "index_valid_n": 43,
+            "band_valid_n": 43
+          },
+          "influence": {
+            "mean_use_index": 2.011,
+            "high_use_band_pct": 42.0,
+            "index_valid_n": 43,
+            "band_valid_n": 43
+          },
+          "task_discretion": {
+            "mean_use_index": 2.466,
+            "high_use_band_pct": 62.7,
+            "index_valid_n": 44,
+            "band_valid_n": 44
+          }
+        }
+      },
+      "31": {
+        "occupation_family": "Science and engineering associate professionals",
+        "n": 66,
+        "education_fields": [
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 38.5
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 14.7
+          },
+          {
+            "label": "Construction",
+            "pct": 11.7
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 11.7
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 6.7
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 4.6
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 3.8
+          },
+          {
+            "label": "Health",
+            "pct": 1.8
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 1.5
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 1.3
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 1.3
+          },
+          {
+            "label": "Law",
+            "pct": 1.3
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 1.1
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "Medium",
+            "pct": 56.0
+          },
+          {
+            "label": "High",
+            "pct": 44.0
+          }
+        ],
+        "experience_years": {
+          "mean": 18.7,
+          "valid_n": 65
+        },
+        "required_education_years": {
+          "mean": 14.0,
+          "valid_n": 63
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 1.897,
+            "high_use_band_pct": 36.5,
+            "index_valid_n": 52,
+            "band_valid_n": 52
+          },
+          "numeracy": {
+            "mean_use_index": 2.153,
+            "high_use_band_pct": 50.1,
+            "index_valid_n": 66,
+            "band_valid_n": 66
+          },
+          "reading": {
+            "mean_use_index": 1.761,
+            "high_use_band_pct": 32.8,
+            "index_valid_n": 66,
+            "band_valid_n": 66
+          },
+          "writing": {
+            "mean_use_index": 2.284,
+            "high_use_band_pct": 51.3,
+            "index_valid_n": 66,
+            "band_valid_n": 66
+          },
+          "learning": {
+            "mean_use_index": 1.269,
+            "high_use_band_pct": 10.2,
+            "index_valid_n": 66,
+            "band_valid_n": 66
+          },
+          "influence": {
+            "mean_use_index": 1.674,
+            "high_use_band_pct": 30.1,
+            "index_valid_n": 66,
+            "band_valid_n": 66
+          },
+          "task_discretion": {
+            "mean_use_index": 1.561,
+            "high_use_band_pct": 27.4,
+            "index_valid_n": 66,
+            "band_valid_n": 66
+          }
+        }
+      },
+      "32": {
+        "occupation_family": "Health associate professionals",
+        "n": 26,
+        "education_fields": [
+          {
+            "label": "Health",
+            "pct": 46.1
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 17.8
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 9.8
+          },
+          {
+            "label": "Construction",
+            "pct": 7.5
+          },
+          {
+            "label": "Welfare",
+            "pct": 5.5
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 2.9
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 2.9
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 2.6
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 2.5
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 2.4
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "Medium",
+            "pct": 51.9
+          },
+          {
+            "label": "High",
+            "pct": 48.1
+          }
+        ],
+        "experience_years": {
+          "mean": 19.0,
+          "valid_n": 24
+        },
+        "required_education_years": {
+          "mean": 14.1,
+          "valid_n": 25
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 1.524,
+            "high_use_band_pct": 12.2,
+            "index_valid_n": 20,
+            "band_valid_n": 20
+          },
+          "numeracy": {
+            "mean_use_index": 2.295,
+            "high_use_band_pct": 55.3,
+            "index_valid_n": 25,
+            "band_valid_n": 25
+          },
+          "reading": {
+            "mean_use_index": 2.02,
+            "high_use_band_pct": 40.9,
+            "index_valid_n": 25,
+            "band_valid_n": 25
+          },
+          "writing": {
+            "mean_use_index": 2.687,
+            "high_use_band_pct": 72.8,
+            "index_valid_n": 25,
+            "band_valid_n": 25
+          },
+          "learning": {
+            "mean_use_index": 1.774,
+            "high_use_band_pct": 24.3,
+            "index_valid_n": 25,
+            "band_valid_n": 25
+          },
+          "influence": {
+            "mean_use_index": 1.709,
+            "high_use_band_pct": 21.7,
+            "index_valid_n": 25,
+            "band_valid_n": 25
+          },
+          "task_discretion": {
+            "mean_use_index": 1.575,
+            "high_use_band_pct": 32.9,
+            "index_valid_n": 25,
+            "band_valid_n": 25
+          }
+        }
+      },
+      "33": {
+        "occupation_family": "Business and administration associate professionals",
+        "n": 201,
+        "education_fields": [
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 54.0
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 7.2
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 6.8
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 5.5
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 4.3
+          },
+          {
+            "label": "Law",
+            "pct": 3.1
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 3.1
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 2.8
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 2.7
+          },
+          {
+            "label": "Construction",
+            "pct": 2.5
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 2.4
+          },
+          {
+            "label": "Health",
+            "pct": 2.2
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 1.8
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 1.1
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 0.6
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 70.6
+          },
+          {
+            "label": "Medium",
+            "pct": 29.0
+          },
+          {
+            "label": "Low",
+            "pct": 0.4
+          }
+        ],
+        "experience_years": {
+          "mean": 16.3,
+          "valid_n": 199
+        },
+        "required_education_years": {
+          "mean": 14.6,
+          "valid_n": 183
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.284,
+            "high_use_band_pct": 47.7,
+            "index_valid_n": 199,
+            "band_valid_n": 199
+          },
+          "numeracy": {
+            "mean_use_index": 2.652,
+            "high_use_band_pct": 72.3,
+            "index_valid_n": 201,
+            "band_valid_n": 201
+          },
+          "reading": {
+            "mean_use_index": 2.516,
+            "high_use_band_pct": 64.9,
+            "index_valid_n": 201,
+            "band_valid_n": 201
+          },
+          "writing": {
+            "mean_use_index": 2.705,
+            "high_use_band_pct": 76.3,
+            "index_valid_n": 201,
+            "band_valid_n": 201
+          },
+          "learning": {
+            "mean_use_index": 1.677,
+            "high_use_band_pct": 16.1,
+            "index_valid_n": 197,
+            "band_valid_n": 197
+          },
+          "influence": {
+            "mean_use_index": 1.949,
+            "high_use_band_pct": 42.6,
+            "index_valid_n": 200,
+            "band_valid_n": 200
+          },
+          "task_discretion": {
+            "mean_use_index": 2.122,
+            "high_use_band_pct": 48.1,
+            "index_valid_n": 201,
+            "band_valid_n": 201
+          }
+        }
+      }
+    },
+    "Singapore": {
+      "12": {
+        "occupation_family": "Administrative and commercial managers",
+        "n": 350,
+        "education_fields": [
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 54.4
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 13.4
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 8.4
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 4.4
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 3.6
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 3.0
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 2.9
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 2.6
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 2.6
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 2.3
+          },
+          {
+            "label": "Health",
+            "pct": 1.0
+          },
+          {
+            "label": "Construction",
+            "pct": 0.8
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 0.3
+          },
+          {
+            "label": "Welfare",
+            "pct": 0.3
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 89.3
+          },
+          {
+            "label": "Medium",
+            "pct": 9.6
+          },
+          {
+            "label": "Low",
+            "pct": 1.1
+          }
+        ],
+        "experience_years": {
+          "mean": 20.1,
+          "valid_n": 350
+        },
+        "required_education_years": {
+          "mean": 15.2,
+          "valid_n": 330
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.353,
+            "high_use_band_pct": 58.4,
+            "index_valid_n": 348,
+            "band_valid_n": 348
+          },
+          "numeracy": {
+            "mean_use_index": 2.53,
+            "high_use_band_pct": 62.3,
+            "index_valid_n": 350,
+            "band_valid_n": 350
+          },
+          "reading": {
+            "mean_use_index": 2.608,
+            "high_use_band_pct": 62.5,
+            "index_valid_n": 350,
+            "band_valid_n": 350
+          },
+          "writing": {
+            "mean_use_index": 2.486,
+            "high_use_band_pct": 64.9,
+            "index_valid_n": 350,
+            "band_valid_n": 350
+          },
+          "learning": {
+            "mean_use_index": 2.087,
+            "high_use_band_pct": 41.7,
+            "index_valid_n": 350,
+            "band_valid_n": 350
+          },
+          "influence": {
+            "mean_use_index": 2.858,
+            "high_use_band_pct": 78.4,
+            "index_valid_n": 350,
+            "band_valid_n": 350
+          },
+          "task_discretion": {
+            "mean_use_index": 2.158,
+            "high_use_band_pct": 46.3,
+            "index_valid_n": 350,
+            "band_valid_n": 350
+          }
+        }
+      },
+      "13": {
+        "occupation_family": "Production and specialized services managers",
+        "n": 368,
+        "education_fields": [
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 27.8
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 26.1
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 15.2
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 10.4
+          },
+          {
+            "label": "Construction",
+            "pct": 6.3
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 3.8
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 2.3
+          },
+          {
+            "label": "Health",
+            "pct": 2.2
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 1.8
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 1.3
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 0.8
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 0.7
+          },
+          {
+            "label": "Law",
+            "pct": 0.6
+          },
+          {
+            "label": "Welfare",
+            "pct": 0.5
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 0.3
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 84.5
+          },
+          {
+            "label": "Medium",
+            "pct": 14.2
+          },
+          {
+            "label": "Low",
+            "pct": 1.3
+          }
+        ],
+        "experience_years": {
+          "mean": 22.1,
+          "valid_n": 368
+        },
+        "required_education_years": {
+          "mean": 15.1,
+          "valid_n": 332
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.539,
+            "high_use_band_pct": 65.8,
+            "index_valid_n": 368,
+            "band_valid_n": 368
+          },
+          "numeracy": {
+            "mean_use_index": 2.61,
+            "high_use_band_pct": 70.9,
+            "index_valid_n": 368,
+            "band_valid_n": 368
+          },
+          "reading": {
+            "mean_use_index": 2.709,
+            "high_use_band_pct": 67.3,
+            "index_valid_n": 368,
+            "band_valid_n": 368
+          },
+          "writing": {
+            "mean_use_index": 2.646,
+            "high_use_band_pct": 73.0,
+            "index_valid_n": 368,
+            "band_valid_n": 368
+          },
+          "learning": {
+            "mean_use_index": 2.161,
+            "high_use_band_pct": 44.4,
+            "index_valid_n": 367,
+            "band_valid_n": 367
+          },
+          "influence": {
+            "mean_use_index": 3.001,
+            "high_use_band_pct": 85.0,
+            "index_valid_n": 368,
+            "band_valid_n": 368
+          },
+          "task_discretion": {
+            "mean_use_index": 2.118,
+            "high_use_band_pct": 44.6,
+            "index_valid_n": 368,
+            "band_valid_n": 368
+          }
+        }
+      },
+      "21": {
+        "occupation_family": "Science and engineering professionals",
+        "n": 196,
+        "education_fields": [
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 37.1
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 13.9
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 11.1
+          },
+          {
+            "label": "Construction",
+            "pct": 8.7
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 8.2
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 6.2
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 5.6
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 4.1
+          },
+          {
+            "label": "Health",
+            "pct": 3.2
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 1.0
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 0.6
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 0.5
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 94.6
+          },
+          {
+            "label": "Medium",
+            "pct": 5.4
+          }
+        ],
+        "experience_years": {
+          "mean": 13.5,
+          "valid_n": 196
+        },
+        "required_education_years": {
+          "mean": 15.6,
+          "valid_n": 186
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.638,
+            "high_use_band_pct": 73.6,
+            "index_valid_n": 196,
+            "band_valid_n": 196
+          },
+          "numeracy": {
+            "mean_use_index": 2.574,
+            "high_use_band_pct": 71.2,
+            "index_valid_n": 196,
+            "band_valid_n": 196
+          },
+          "reading": {
+            "mean_use_index": 2.516,
+            "high_use_band_pct": 58.7,
+            "index_valid_n": 196,
+            "band_valid_n": 196
+          },
+          "writing": {
+            "mean_use_index": 2.453,
+            "high_use_band_pct": 59.3,
+            "index_valid_n": 196,
+            "band_valid_n": 196
+          },
+          "learning": {
+            "mean_use_index": 2.233,
+            "high_use_band_pct": 46.0,
+            "index_valid_n": 196,
+            "band_valid_n": 196
+          },
+          "influence": {
+            "mean_use_index": 2.32,
+            "high_use_band_pct": 56.7,
+            "index_valid_n": 196,
+            "band_valid_n": 196
+          },
+          "task_discretion": {
+            "mean_use_index": 2.16,
+            "high_use_band_pct": 43.7,
+            "index_valid_n": 196,
+            "band_valid_n": 196
+          }
+        }
+      },
+      "22": {
+        "occupation_family": "Health professionals",
+        "n": 78,
+        "education_fields": [
+          {
+            "label": "Health",
+            "pct": 91.8
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 2.9
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 1.7
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 1.3
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 1.2
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 1.2
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 97.1
+          },
+          {
+            "label": "Medium",
+            "pct": 2.9
+          }
+        ],
+        "experience_years": {
+          "mean": 15.3,
+          "valid_n": 78
+        },
+        "required_education_years": {
+          "mean": 15.1,
+          "valid_n": 69
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.162,
+            "high_use_band_pct": 49.0,
+            "index_valid_n": 78,
+            "band_valid_n": 78
+          },
+          "numeracy": {
+            "mean_use_index": 2.309,
+            "high_use_band_pct": 65.5,
+            "index_valid_n": 77,
+            "band_valid_n": 77
+          },
+          "reading": {
+            "mean_use_index": 2.515,
+            "high_use_band_pct": 62.0,
+            "index_valid_n": 78,
+            "band_valid_n": 78
+          },
+          "writing": {
+            "mean_use_index": 2.707,
+            "high_use_band_pct": 71.2,
+            "index_valid_n": 78,
+            "band_valid_n": 78
+          },
+          "learning": {
+            "mean_use_index": 2.345,
+            "high_use_band_pct": 52.3,
+            "index_valid_n": 78,
+            "band_valid_n": 78
+          },
+          "influence": {
+            "mean_use_index": 2.634,
+            "high_use_band_pct": 74.2,
+            "index_valid_n": 78,
+            "band_valid_n": 78
+          },
+          "task_discretion": {
+            "mean_use_index": 1.751,
+            "high_use_band_pct": 26.6,
+            "index_valid_n": 78,
+            "band_valid_n": 78
+          }
+        }
+      },
+      "23": {
+        "occupation_family": "Teaching professionals",
+        "n": 207,
+        "education_fields": [
+          {
+            "label": "Education and Teacher Training",
+            "pct": 43.2
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 15.8
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 10.5
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 6.9
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 5.3
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 4.2
+          },
+          {
+            "label": "Health",
+            "pct": 3.7
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 3.4
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 2.5
+          },
+          {
+            "label": "Welfare",
+            "pct": 1.3
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 1.2
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 0.9
+          },
+          {
+            "label": "Construction",
+            "pct": 0.6
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 0.4
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 92.7
+          },
+          {
+            "label": "Medium",
+            "pct": 7.3
+          }
+        ],
+        "experience_years": {
+          "mean": 16.8,
+          "valid_n": 205
+        },
+        "required_education_years": {
+          "mean": 15.0,
+          "valid_n": 178
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.181,
+            "high_use_band_pct": 49.3,
+            "index_valid_n": 204,
+            "band_valid_n": 204
+          },
+          "numeracy": {
+            "mean_use_index": 2.115,
+            "high_use_band_pct": 40.3,
+            "index_valid_n": 207,
+            "band_valid_n": 207
+          },
+          "reading": {
+            "mean_use_index": 2.721,
+            "high_use_band_pct": 72.4,
+            "index_valid_n": 207,
+            "band_valid_n": 207
+          },
+          "writing": {
+            "mean_use_index": 2.256,
+            "high_use_band_pct": 48.4,
+            "index_valid_n": 207,
+            "band_valid_n": 207
+          },
+          "learning": {
+            "mean_use_index": 2.208,
+            "high_use_band_pct": 46.2,
+            "index_valid_n": 207,
+            "band_valid_n": 207
+          },
+          "influence": {
+            "mean_use_index": 3.132,
+            "high_use_band_pct": 78.3,
+            "index_valid_n": 207,
+            "band_valid_n": 207
+          },
+          "task_discretion": {
+            "mean_use_index": 1.876,
+            "high_use_band_pct": 27.8,
+            "index_valid_n": 207,
+            "band_valid_n": 207
+          }
+        }
+      },
+      "24": {
+        "occupation_family": "Business and administration professionals",
+        "n": 264,
+        "education_fields": [
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 58.9
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 9.1
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 5.1
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 4.9
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 4.2
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 3.9
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 3.5
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 3.4
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 3.0
+          },
+          {
+            "label": "Construction",
+            "pct": 1.5
+          },
+          {
+            "label": "Health",
+            "pct": 1.3
+          },
+          {
+            "label": "Law",
+            "pct": 0.5
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 0.4
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 0.4
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 94.6
+          },
+          {
+            "label": "Medium",
+            "pct": 5.4
+          }
+        ],
+        "experience_years": {
+          "mean": 12.1,
+          "valid_n": 264
+        },
+        "required_education_years": {
+          "mean": 15.0,
+          "valid_n": 241
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.388,
+            "high_use_band_pct": 58.6,
+            "index_valid_n": 264,
+            "band_valid_n": 264
+          },
+          "numeracy": {
+            "mean_use_index": 2.339,
+            "high_use_band_pct": 59.2,
+            "index_valid_n": 264,
+            "band_valid_n": 264
+          },
+          "reading": {
+            "mean_use_index": 2.514,
+            "high_use_band_pct": 60.7,
+            "index_valid_n": 264,
+            "band_valid_n": 264
+          },
+          "writing": {
+            "mean_use_index": 2.486,
+            "high_use_band_pct": 59.0,
+            "index_valid_n": 264,
+            "band_valid_n": 264
+          },
+          "learning": {
+            "mean_use_index": 2.125,
+            "high_use_band_pct": 42.0,
+            "index_valid_n": 264,
+            "band_valid_n": 264
+          },
+          "influence": {
+            "mean_use_index": 2.419,
+            "high_use_band_pct": 61.2,
+            "index_valid_n": 264,
+            "band_valid_n": 264
+          },
+          "task_discretion": {
+            "mean_use_index": 2.154,
+            "high_use_band_pct": 42.0,
+            "index_valid_n": 264,
+            "band_valid_n": 264
+          }
+        }
+      },
+      "25": {
+        "occupation_family": "Information and communications technology professionals",
+        "n": 127,
+        "education_fields": [
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 53.9
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 22.3
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 13.6
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 3.6
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 2.6
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 1.5
+          },
+          {
+            "label": "Construction",
+            "pct": 1.2
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 0.7
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 0.5
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 97.1
+          },
+          {
+            "label": "Medium",
+            "pct": 2.9
+          }
+        ],
+        "experience_years": {
+          "mean": 12.6,
+          "valid_n": 127
+        },
+        "required_education_years": {
+          "mean": 15.2,
+          "valid_n": 126
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 3.211,
+            "high_use_band_pct": 84.6,
+            "index_valid_n": 127,
+            "band_valid_n": 127
+          },
+          "numeracy": {
+            "mean_use_index": 2.26,
+            "high_use_band_pct": 51.2,
+            "index_valid_n": 127,
+            "band_valid_n": 127
+          },
+          "reading": {
+            "mean_use_index": 2.558,
+            "high_use_band_pct": 60.2,
+            "index_valid_n": 127,
+            "band_valid_n": 127
+          },
+          "writing": {
+            "mean_use_index": 2.406,
+            "high_use_band_pct": 58.6,
+            "index_valid_n": 127,
+            "band_valid_n": 127
+          },
+          "learning": {
+            "mean_use_index": 2.304,
+            "high_use_band_pct": 50.8,
+            "index_valid_n": 127,
+            "band_valid_n": 127
+          },
+          "influence": {
+            "mean_use_index": 2.399,
+            "high_use_band_pct": 56.0,
+            "index_valid_n": 127,
+            "band_valid_n": 127
+          },
+          "task_discretion": {
+            "mean_use_index": 2.056,
+            "high_use_band_pct": 42.1,
+            "index_valid_n": 127,
+            "band_valid_n": 127
+          }
+        }
+      },
+      "26": {
+        "occupation_family": "Legal, social and cultural professionals",
+        "n": 59,
+        "education_fields": [
+          {
+            "label": "Law",
+            "pct": 18.9
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 16.8
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 14.1
+          },
+          {
+            "label": "Welfare",
+            "pct": 11.6
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 9.5
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 9.2
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 6.8
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 4.3
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 3.3
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 2.9
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 2.6
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 95.7
+          },
+          {
+            "label": "Medium",
+            "pct": 4.3
+          }
+        ],
+        "experience_years": {
+          "mean": 15.2,
+          "valid_n": 59
+        },
+        "required_education_years": {
+          "mean": 15.3,
+          "valid_n": 49
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.212,
+            "high_use_band_pct": 49.0,
+            "index_valid_n": 59,
+            "band_valid_n": 59
+          },
+          "numeracy": {
+            "mean_use_index": 1.795,
+            "high_use_band_pct": 30.2,
+            "index_valid_n": 59,
+            "band_valid_n": 59
+          },
+          "reading": {
+            "mean_use_index": 2.857,
+            "high_use_band_pct": 73.6,
+            "index_valid_n": 59,
+            "band_valid_n": 59
+          },
+          "writing": {
+            "mean_use_index": 2.613,
+            "high_use_band_pct": 77.1,
+            "index_valid_n": 59,
+            "band_valid_n": 59
+          },
+          "learning": {
+            "mean_use_index": 2.437,
+            "high_use_band_pct": 57.8,
+            "index_valid_n": 59,
+            "band_valid_n": 59
+          },
+          "influence": {
+            "mean_use_index": 2.726,
+            "high_use_band_pct": 79.5,
+            "index_valid_n": 59,
+            "band_valid_n": 59
+          },
+          "task_discretion": {
+            "mean_use_index": 2.404,
+            "high_use_band_pct": 46.7,
+            "index_valid_n": 59,
+            "band_valid_n": 59
+          }
+        }
+      },
+      "31": {
+        "occupation_family": "Science and engineering associate professionals",
+        "n": 228,
+        "education_fields": [
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 50.7
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 25.0
+          },
+          {
+            "label": "Construction",
+            "pct": 5.6
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 5.0
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 5.0
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 3.4
+          },
+          {
+            "label": "Health",
+            "pct": 1.2
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 1.2
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 0.9
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 0.9
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 0.4
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 0.3
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 0.3
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 53.4
+          },
+          {
+            "label": "Medium",
+            "pct": 41.3
+          },
+          {
+            "label": "Low",
+            "pct": 5.4
+          }
+        ],
+        "experience_years": {
+          "mean": 20.9,
+          "valid_n": 228
+        },
+        "required_education_years": {
+          "mean": 12.5,
+          "valid_n": 222
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 1.806,
+            "high_use_band_pct": 35.3,
+            "index_valid_n": 213,
+            "band_valid_n": 213
+          },
+          "numeracy": {
+            "mean_use_index": 2.18,
+            "high_use_band_pct": 51.9,
+            "index_valid_n": 228,
+            "band_valid_n": 228
+          },
+          "reading": {
+            "mean_use_index": 1.87,
+            "high_use_band_pct": 27.8,
+            "index_valid_n": 228,
+            "band_valid_n": 228
+          },
+          "writing": {
+            "mean_use_index": 2.373,
+            "high_use_band_pct": 57.4,
+            "index_valid_n": 228,
+            "band_valid_n": 228
+          },
+          "learning": {
+            "mean_use_index": 1.772,
+            "high_use_band_pct": 28.9,
+            "index_valid_n": 228,
+            "band_valid_n": 228
+          },
+          "influence": {
+            "mean_use_index": 2.068,
+            "high_use_band_pct": 42.5,
+            "index_valid_n": 228,
+            "band_valid_n": 228
+          },
+          "task_discretion": {
+            "mean_use_index": 1.418,
+            "high_use_band_pct": 20.0,
+            "index_valid_n": 228,
+            "band_valid_n": 228
+          }
+        }
+      },
+      "32": {
+        "occupation_family": "Health associate professionals",
+        "n": 41,
+        "education_fields": [
+          {
+            "label": "Health",
+            "pct": 33.2
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 28.1
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 11.5
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 10.5
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 9.1
+          },
+          {
+            "label": "Construction",
+            "pct": 5.5
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 2.1
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 56.4
+          },
+          {
+            "label": "Medium",
+            "pct": 39.9
+          },
+          {
+            "label": "Low",
+            "pct": 3.7
+          }
+        ],
+        "experience_years": {
+          "mean": 13.8,
+          "valid_n": 40
+        },
+        "required_education_years": {
+          "mean": 12.5,
+          "valid_n": 39
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.385,
+            "high_use_band_pct": 59.1,
+            "index_valid_n": 36,
+            "band_valid_n": 36
+          },
+          "numeracy": {
+            "mean_use_index": 2.353,
+            "high_use_band_pct": 58.4,
+            "index_valid_n": 41,
+            "band_valid_n": 41
+          },
+          "reading": {
+            "mean_use_index": 1.917,
+            "high_use_band_pct": 34.8,
+            "index_valid_n": 41,
+            "band_valid_n": 41
+          },
+          "writing": {
+            "mean_use_index": 2.246,
+            "high_use_band_pct": 51.3,
+            "index_valid_n": 41,
+            "band_valid_n": 41
+          },
+          "learning": {
+            "mean_use_index": 2.364,
+            "high_use_band_pct": 57.0,
+            "index_valid_n": 41,
+            "band_valid_n": 41
+          },
+          "influence": {
+            "mean_use_index": 2.284,
+            "high_use_band_pct": 52.3,
+            "index_valid_n": 41,
+            "band_valid_n": 41
+          },
+          "task_discretion": {
+            "mean_use_index": 1.612,
+            "high_use_band_pct": 27.6,
+            "index_valid_n": 41,
+            "band_valid_n": 41
+          }
+        }
+      },
+      "33": {
+        "occupation_family": "Business and administration associate professionals",
+        "n": 353,
+        "education_fields": [
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 45.3
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 25.2
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 10.6
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 3.1
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 3.0
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 2.7
+          },
+          {
+            "label": "Construction",
+            "pct": 2.0
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 2.0
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 1.7
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 1.2
+          },
+          {
+            "label": "Law",
+            "pct": 1.0
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 0.8
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 0.7
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 0.4
+          },
+          {
+            "label": "Health",
+            "pct": 0.3
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 65.4
+          },
+          {
+            "label": "Medium",
+            "pct": 32.8
+          },
+          {
+            "label": "Low",
+            "pct": 1.8
+          }
+        ],
+        "experience_years": {
+          "mean": 18.5,
+          "valid_n": 353
+        },
+        "required_education_years": {
+          "mean": 13.0,
+          "valid_n": 281
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.196,
+            "high_use_band_pct": 44.8,
+            "index_valid_n": 348,
+            "band_valid_n": 348
+          },
+          "numeracy": {
+            "mean_use_index": 2.441,
+            "high_use_band_pct": 59.2,
+            "index_valid_n": 351,
+            "band_valid_n": 351
+          },
+          "reading": {
+            "mean_use_index": 2.337,
+            "high_use_band_pct": 44.6,
+            "index_valid_n": 352,
+            "band_valid_n": 352
+          },
+          "writing": {
+            "mean_use_index": 2.321,
+            "high_use_band_pct": 49.8,
+            "index_valid_n": 351,
+            "band_valid_n": 351
+          },
+          "learning": {
+            "mean_use_index": 1.925,
+            "high_use_band_pct": 33.4,
+            "index_valid_n": 351,
+            "band_valid_n": 351
+          },
+          "influence": {
+            "mean_use_index": 2.28,
+            "high_use_band_pct": 58.1,
+            "index_valid_n": 352,
+            "band_valid_n": 352
+          },
+          "task_discretion": {
+            "mean_use_index": 2.059,
+            "high_use_band_pct": 41.2,
+            "index_valid_n": 352,
+            "band_valid_n": 352
+          }
+        }
+      },
+      "35": {
+        "occupation_family": "Information and communications technicians",
+        "n": 36,
+        "education_fields": [
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 35.9
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 21.6
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 18.5
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 6.6
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 4.0
+          },
+          {
+            "label": "Construction",
+            "pct": 3.1
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 2.7
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 2.7
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 2.5
+          },
+          {
+            "label": "Health",
+            "pct": 2.4
+          }
+        ],
+        "education_levels": [
+          {
+            "label": "High",
+            "pct": 70.6
+          },
+          {
+            "label": "Medium",
+            "pct": 29.4
+          }
+        ],
+        "experience_years": {
+          "mean": 14.8,
+          "valid_n": 36
+        },
+        "required_education_years": {
+          "mean": 12.8,
+          "valid_n": 33
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.311,
+            "high_use_band_pct": 43.7,
+            "index_valid_n": 36,
+            "band_valid_n": 36
+          },
+          "numeracy": {
+            "mean_use_index": 1.41,
+            "high_use_band_pct": 15.8,
+            "index_valid_n": 36,
+            "band_valid_n": 36
+          },
+          "reading": {
+            "mean_use_index": 2.053,
+            "high_use_band_pct": 30.5,
+            "index_valid_n": 36,
+            "band_valid_n": 36
+          },
+          "writing": {
+            "mean_use_index": 2.187,
+            "high_use_band_pct": 44.4,
+            "index_valid_n": 36,
+            "band_valid_n": 36
+          },
+          "learning": {
+            "mean_use_index": 2.145,
+            "high_use_band_pct": 48.5,
+            "index_valid_n": 36,
+            "band_valid_n": 36
+          },
+          "influence": {
+            "mean_use_index": 1.872,
+            "high_use_band_pct": 36.3,
+            "index_valid_n": 36,
+            "band_valid_n": 36
+          },
+          "task_discretion": {
+            "mean_use_index": 1.771,
+            "high_use_band_pct": 26.3,
+            "index_valid_n": 36,
+            "band_valid_n": 36
+          }
+        }
+      }
+    },
+    "United States": {
+      "12": {
+        "occupation_family": "Administrative and commercial managers",
+        "n": 100,
+        "education_fields": [
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 33.6
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 17.7
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 11.4
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 8.4
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 8.0
+          },
+          {
+            "label": "Law",
+            "pct": 4.3
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 4.0
+          },
+          {
+            "label": "Construction",
+            "pct": 3.1
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 2.7
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 2.3
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 2.3
+          },
+          {
+            "label": "Health",
+            "pct": 1.6
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 0.6
+          }
+        ],
+        "education_levels": [],
+        "experience_years": {
+          "mean": 25.1,
+          "valid_n": 100
+        },
+        "required_education_years": {
+          "mean": 15.9,
+          "valid_n": 93
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.661,
+            "high_use_band_pct": 77.9,
+            "index_valid_n": 99,
+            "band_valid_n": 99
+          },
+          "numeracy": {
+            "mean_use_index": 2.609,
+            "high_use_band_pct": 68.6,
+            "index_valid_n": 100,
+            "band_valid_n": 100
+          },
+          "reading": {
+            "mean_use_index": 2.712,
+            "high_use_band_pct": 69.7,
+            "index_valid_n": 100,
+            "band_valid_n": 100
+          },
+          "writing": {
+            "mean_use_index": 2.62,
+            "high_use_band_pct": 74.0,
+            "index_valid_n": 99,
+            "band_valid_n": 99
+          },
+          "learning": {
+            "mean_use_index": 2.293,
+            "high_use_band_pct": 49.1,
+            "index_valid_n": 100,
+            "band_valid_n": 100
+          },
+          "influence": {
+            "mean_use_index": 2.89,
+            "high_use_band_pct": 81.8,
+            "index_valid_n": 100,
+            "band_valid_n": 100
+          },
+          "task_discretion": {
+            "mean_use_index": 2.841,
+            "high_use_band_pct": 75.1,
+            "index_valid_n": 100,
+            "band_valid_n": 100
+          }
+        }
+      },
+      "13": {
+        "occupation_family": "Production and specialized services managers",
+        "n": 112,
+        "education_fields": [
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 21.6
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 20.9
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 10.6
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 9.1
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 7.7
+          },
+          {
+            "label": "Health",
+            "pct": 6.9
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 6.2
+          },
+          {
+            "label": "Construction",
+            "pct": 4.4
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 3.7
+          },
+          {
+            "label": "Law",
+            "pct": 2.8
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 2.4
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 2.0
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 0.8
+          },
+          {
+            "label": "Welfare",
+            "pct": 0.5
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 0.4
+          }
+        ],
+        "education_levels": [],
+        "experience_years": {
+          "mean": 25.8,
+          "valid_n": 112
+        },
+        "required_education_years": {
+          "mean": 15.0,
+          "valid_n": 95
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.784,
+            "high_use_band_pct": 77.1,
+            "index_valid_n": 111,
+            "band_valid_n": 111
+          },
+          "numeracy": {
+            "mean_use_index": 2.864,
+            "high_use_band_pct": 75.6,
+            "index_valid_n": 111,
+            "band_valid_n": 111
+          },
+          "reading": {
+            "mean_use_index": 2.631,
+            "high_use_band_pct": 72.4,
+            "index_valid_n": 112,
+            "band_valid_n": 112
+          },
+          "writing": {
+            "mean_use_index": 2.682,
+            "high_use_band_pct": 71.2,
+            "index_valid_n": 112,
+            "band_valid_n": 112
+          },
+          "learning": {
+            "mean_use_index": 2.369,
+            "high_use_band_pct": 52.7,
+            "index_valid_n": 112,
+            "band_valid_n": 112
+          },
+          "influence": {
+            "mean_use_index": 2.945,
+            "high_use_band_pct": 83.8,
+            "index_valid_n": 112,
+            "band_valid_n": 112
+          },
+          "task_discretion": {
+            "mean_use_index": 2.757,
+            "high_use_band_pct": 69.8,
+            "index_valid_n": 112,
+            "band_valid_n": 112
+          }
+        }
+      },
+      "21": {
+        "occupation_family": "Science and engineering professionals",
+        "n": 90,
+        "education_fields": [
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 38.5
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 23.3
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 10.5
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 10.4
+          },
+          {
+            "label": "Construction",
+            "pct": 5.7
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 5.3
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 2.8
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 1.4
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 1.3
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 0.9
+          }
+        ],
+        "education_levels": [],
+        "experience_years": {
+          "mean": 17.4,
+          "valid_n": 90
+        },
+        "required_education_years": {
+          "mean": 15.9,
+          "valid_n": 80
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 3.146,
+            "high_use_band_pct": 86.1,
+            "index_valid_n": 89,
+            "band_valid_n": 89
+          },
+          "numeracy": {
+            "mean_use_index": 3.021,
+            "high_use_band_pct": 86.4,
+            "index_valid_n": 90,
+            "band_valid_n": 90
+          },
+          "reading": {
+            "mean_use_index": 2.686,
+            "high_use_band_pct": 77.3,
+            "index_valid_n": 90,
+            "band_valid_n": 90
+          },
+          "writing": {
+            "mean_use_index": 2.475,
+            "high_use_band_pct": 60.2,
+            "index_valid_n": 90,
+            "band_valid_n": 90
+          },
+          "learning": {
+            "mean_use_index": 2.332,
+            "high_use_band_pct": 49.0,
+            "index_valid_n": 89,
+            "band_valid_n": 89
+          },
+          "influence": {
+            "mean_use_index": 2.204,
+            "high_use_band_pct": 51.2,
+            "index_valid_n": 89,
+            "band_valid_n": 89
+          },
+          "task_discretion": {
+            "mean_use_index": 2.401,
+            "high_use_band_pct": 55.7,
+            "index_valid_n": 90,
+            "band_valid_n": 90
+          }
+        }
+      },
+      "22": {
+        "occupation_family": "Health professionals",
+        "n": 113,
+        "education_fields": [
+          {
+            "label": "Health",
+            "pct": 72.7
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 9.8
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 4.1
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 4.0
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 3.7
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 2.6
+          },
+          {
+            "label": "Welfare",
+            "pct": 2.3
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 0.5
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 0.4
+          }
+        ],
+        "education_levels": [],
+        "experience_years": {
+          "mean": 20.2,
+          "valid_n": 112
+        },
+        "required_education_years": {
+          "mean": 15.9,
+          "valid_n": 104
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.244,
+            "high_use_band_pct": 49.0,
+            "index_valid_n": 111,
+            "band_valid_n": 111
+          },
+          "numeracy": {
+            "mean_use_index": 2.61,
+            "high_use_band_pct": 70.1,
+            "index_valid_n": 113,
+            "band_valid_n": 113
+          },
+          "reading": {
+            "mean_use_index": 2.492,
+            "high_use_band_pct": 68.6,
+            "index_valid_n": 113,
+            "band_valid_n": 113
+          },
+          "writing": {
+            "mean_use_index": 2.7,
+            "high_use_band_pct": 65.6,
+            "index_valid_n": 113,
+            "band_valid_n": 113
+          },
+          "learning": {
+            "mean_use_index": 2.471,
+            "high_use_band_pct": 55.9,
+            "index_valid_n": 113,
+            "band_valid_n": 113
+          },
+          "influence": {
+            "mean_use_index": 2.631,
+            "high_use_band_pct": 68.7,
+            "index_valid_n": 112,
+            "band_valid_n": 112
+          },
+          "task_discretion": {
+            "mean_use_index": 2.019,
+            "high_use_band_pct": 37.0,
+            "index_valid_n": 113,
+            "band_valid_n": 113
+          }
+        }
+      },
+      "23": {
+        "occupation_family": "Teaching professionals",
+        "n": 160,
+        "education_fields": [
+          {
+            "label": "Education and Teacher Training",
+            "pct": 41.4
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 14.2
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 10.3
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 7.4
+          },
+          {
+            "label": "Health",
+            "pct": 6.4
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 5.2
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 4.0
+          },
+          {
+            "label": "Welfare",
+            "pct": 3.7
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 3.0
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 2.4
+          },
+          {
+            "label": "Law",
+            "pct": 1.1
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 0.8
+          },
+          {
+            "label": "Construction",
+            "pct": 0.1
+          }
+        ],
+        "education_levels": [],
+        "experience_years": {
+          "mean": 18.4,
+          "valid_n": 160
+        },
+        "required_education_years": {
+          "mean": 15.9,
+          "valid_n": 149
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.28,
+            "high_use_band_pct": 59.5,
+            "index_valid_n": 151,
+            "band_valid_n": 151
+          },
+          "numeracy": {
+            "mean_use_index": 2.222,
+            "high_use_band_pct": 48.2,
+            "index_valid_n": 156,
+            "band_valid_n": 156
+          },
+          "reading": {
+            "mean_use_index": 2.725,
+            "high_use_band_pct": 71.5,
+            "index_valid_n": 156,
+            "band_valid_n": 156
+          },
+          "writing": {
+            "mean_use_index": 2.314,
+            "high_use_band_pct": 49.6,
+            "index_valid_n": 156,
+            "band_valid_n": 156
+          },
+          "learning": {
+            "mean_use_index": 2.418,
+            "high_use_band_pct": 56.4,
+            "index_valid_n": 156,
+            "band_valid_n": 156
+          },
+          "influence": {
+            "mean_use_index": 3.178,
+            "high_use_band_pct": 78.0,
+            "index_valid_n": 156,
+            "band_valid_n": 156
+          },
+          "task_discretion": {
+            "mean_use_index": 2.158,
+            "high_use_band_pct": 47.3,
+            "index_valid_n": 156,
+            "band_valid_n": 156
+          }
+        }
+      },
+      "24": {
+        "occupation_family": "Business and administration professionals",
+        "n": 119,
+        "education_fields": [
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 50.8
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 8.8
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 8.5
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 5.1
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 4.8
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 3.9
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 3.6
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 3.6
+          },
+          {
+            "label": "Construction",
+            "pct": 2.9
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 2.9
+          },
+          {
+            "label": "Law",
+            "pct": 1.7
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 1.2
+          },
+          {
+            "label": "Health",
+            "pct": 1.0
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 0.8
+          },
+          {
+            "label": "Welfare",
+            "pct": 0.4
+          }
+        ],
+        "education_levels": [],
+        "experience_years": {
+          "mean": 21.6,
+          "valid_n": 118
+        },
+        "required_education_years": {
+          "mean": 15.6,
+          "valid_n": 99
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.719,
+            "high_use_band_pct": 77.1,
+            "index_valid_n": 118,
+            "band_valid_n": 118
+          },
+          "numeracy": {
+            "mean_use_index": 2.655,
+            "high_use_band_pct": 66.2,
+            "index_valid_n": 119,
+            "band_valid_n": 119
+          },
+          "reading": {
+            "mean_use_index": 2.612,
+            "high_use_band_pct": 71.4,
+            "index_valid_n": 118,
+            "band_valid_n": 118
+          },
+          "writing": {
+            "mean_use_index": 2.633,
+            "high_use_band_pct": 73.8,
+            "index_valid_n": 118,
+            "band_valid_n": 118
+          },
+          "learning": {
+            "mean_use_index": 2.246,
+            "high_use_band_pct": 52.4,
+            "index_valid_n": 119,
+            "band_valid_n": 119
+          },
+          "influence": {
+            "mean_use_index": 2.467,
+            "high_use_band_pct": 61.9,
+            "index_valid_n": 119,
+            "band_valid_n": 119
+          },
+          "task_discretion": {
+            "mean_use_index": 2.377,
+            "high_use_band_pct": 60.7,
+            "index_valid_n": 119,
+            "band_valid_n": 119
+          }
+        }
+      },
+      "25": {
+        "occupation_family": "Information and communications technology professionals",
+        "n": 112,
+        "education_fields": [
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 48.5
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 16.3
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 11.7
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 8.7
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 7.2
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 2.3
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 1.8
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 1.7
+          },
+          {
+            "label": "Health",
+            "pct": 1.0
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 0.7
+          }
+        ],
+        "education_levels": [],
+        "experience_years": {
+          "mean": 17.6,
+          "valid_n": 112
+        },
+        "required_education_years": {
+          "mean": 15.9,
+          "valid_n": 106
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 3.612,
+            "high_use_band_pct": 88.1,
+            "index_valid_n": 111,
+            "band_valid_n": 111
+          },
+          "numeracy": {
+            "mean_use_index": 2.543,
+            "high_use_band_pct": 64.1,
+            "index_valid_n": 111,
+            "band_valid_n": 111
+          },
+          "reading": {
+            "mean_use_index": 2.625,
+            "high_use_band_pct": 68.5,
+            "index_valid_n": 111,
+            "band_valid_n": 111
+          },
+          "writing": {
+            "mean_use_index": 2.507,
+            "high_use_band_pct": 67.8,
+            "index_valid_n": 111,
+            "band_valid_n": 111
+          },
+          "learning": {
+            "mean_use_index": 2.561,
+            "high_use_band_pct": 60.1,
+            "index_valid_n": 111,
+            "band_valid_n": 111
+          },
+          "influence": {
+            "mean_use_index": 2.38,
+            "high_use_band_pct": 55.7,
+            "index_valid_n": 111,
+            "band_valid_n": 111
+          },
+          "task_discretion": {
+            "mean_use_index": 2.453,
+            "high_use_band_pct": 65.6,
+            "index_valid_n": 111,
+            "band_valid_n": 111
+          }
+        }
+      },
+      "26": {
+        "occupation_family": "Legal, social and cultural professionals",
+        "n": 93,
+        "education_fields": [
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 22.6
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 19.1
+          },
+          {
+            "label": "Law",
+            "pct": 14.7
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 11.1
+          },
+          {
+            "label": "Health",
+            "pct": 8.6
+          },
+          {
+            "label": "Welfare",
+            "pct": 5.4
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 5.2
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 4.7
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 2.6
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 2.3
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 1.9
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 1.1
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 0.5
+          }
+        ],
+        "education_levels": [],
+        "experience_years": {
+          "mean": 17.7,
+          "valid_n": 92
+        },
+        "required_education_years": {
+          "mean": 15.7,
+          "valid_n": 69
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.129,
+            "high_use_band_pct": 44.8,
+            "index_valid_n": 92,
+            "band_valid_n": 92
+          },
+          "numeracy": {
+            "mean_use_index": 1.855,
+            "high_use_band_pct": 39.8,
+            "index_valid_n": 93,
+            "band_valid_n": 93
+          },
+          "reading": {
+            "mean_use_index": 2.613,
+            "high_use_band_pct": 63.0,
+            "index_valid_n": 93,
+            "band_valid_n": 93
+          },
+          "writing": {
+            "mean_use_index": 2.403,
+            "high_use_band_pct": 54.4,
+            "index_valid_n": 92,
+            "band_valid_n": 92
+          },
+          "learning": {
+            "mean_use_index": 2.453,
+            "high_use_band_pct": 55.4,
+            "index_valid_n": 93,
+            "band_valid_n": 93
+          },
+          "influence": {
+            "mean_use_index": 2.428,
+            "high_use_band_pct": 59.0,
+            "index_valid_n": 92,
+            "band_valid_n": 92
+          },
+          "task_discretion": {
+            "mean_use_index": 2.325,
+            "high_use_band_pct": 56.0,
+            "index_valid_n": 93,
+            "band_valid_n": 93
+          }
+        }
+      },
+      "31": {
+        "occupation_family": "Science and engineering associate professionals",
+        "n": 88,
+        "education_fields": [
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 41.9
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 14.4
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 9.3
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 6.2
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 5.8
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 5.5
+          },
+          {
+            "label": "Security and Transport",
+            "pct": 4.8
+          },
+          {
+            "label": "Health",
+            "pct": 3.8
+          },
+          {
+            "label": "Construction",
+            "pct": 3.8
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 2.4
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 1.7
+          },
+          {
+            "label": "Law",
+            "pct": 0.6
+          }
+        ],
+        "education_levels": [],
+        "experience_years": {
+          "mean": 19.0,
+          "valid_n": 88
+        },
+        "required_education_years": {
+          "mean": 12.9,
+          "valid_n": 75
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.355,
+            "high_use_band_pct": 55.2,
+            "index_valid_n": 82,
+            "band_valid_n": 82
+          },
+          "numeracy": {
+            "mean_use_index": 2.908,
+            "high_use_band_pct": 77.4,
+            "index_valid_n": 87,
+            "band_valid_n": 87
+          },
+          "reading": {
+            "mean_use_index": 2.436,
+            "high_use_band_pct": 49.3,
+            "index_valid_n": 87,
+            "band_valid_n": 87
+          },
+          "writing": {
+            "mean_use_index": 2.609,
+            "high_use_band_pct": 62.1,
+            "index_valid_n": 87,
+            "band_valid_n": 87
+          },
+          "learning": {
+            "mean_use_index": 2.498,
+            "high_use_band_pct": 63.4,
+            "index_valid_n": 86,
+            "band_valid_n": 86
+          },
+          "influence": {
+            "mean_use_index": 2.58,
+            "high_use_band_pct": 58.5,
+            "index_valid_n": 86,
+            "band_valid_n": 86
+          },
+          "task_discretion": {
+            "mean_use_index": 2.227,
+            "high_use_band_pct": 46.2,
+            "index_valid_n": 86,
+            "band_valid_n": 86
+          }
+        }
+      },
+      "32": {
+        "occupation_family": "Health associate professionals",
+        "n": 105,
+        "education_fields": [
+          {
+            "label": "Health",
+            "pct": 51.4
+          },
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 20.9
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 7.9
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 6.0
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 3.6
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 2.5
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 2.4
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 2.2
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 1.5
+          },
+          {
+            "label": "Construction",
+            "pct": 0.9
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 0.7
+          }
+        ],
+        "education_levels": [],
+        "experience_years": {
+          "mean": 20.5,
+          "valid_n": 104
+        },
+        "required_education_years": {
+          "mean": 13.7,
+          "valid_n": 97
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.109,
+            "high_use_band_pct": 44.3,
+            "index_valid_n": 100,
+            "band_valid_n": 100
+          },
+          "numeracy": {
+            "mean_use_index": 2.394,
+            "high_use_band_pct": 56.1,
+            "index_valid_n": 105,
+            "band_valid_n": 105
+          },
+          "reading": {
+            "mean_use_index": 2.266,
+            "high_use_band_pct": 40.0,
+            "index_valid_n": 105,
+            "band_valid_n": 105
+          },
+          "writing": {
+            "mean_use_index": 2.401,
+            "high_use_band_pct": 45.9,
+            "index_valid_n": 105,
+            "band_valid_n": 105
+          },
+          "learning": {
+            "mean_use_index": 2.36,
+            "high_use_band_pct": 54.8,
+            "index_valid_n": 104,
+            "band_valid_n": 104
+          },
+          "influence": {
+            "mean_use_index": 2.417,
+            "high_use_band_pct": 58.5,
+            "index_valid_n": 103,
+            "band_valid_n": 103
+          },
+          "task_discretion": {
+            "mean_use_index": 1.826,
+            "high_use_band_pct": 29.8,
+            "index_valid_n": 104,
+            "band_valid_n": 104
+          }
+        }
+      },
+      "33": {
+        "occupation_family": "Business and administration associate professionals",
+        "n": 191,
+        "education_fields": [
+          {
+            "label": "No main area of study or emphasis, it was a general education programme",
+            "pct": 30.2
+          },
+          {
+            "label": "Economics, Business and Administration",
+            "pct": 19.6
+          },
+          {
+            "label": "Natural Sciences, Mathematics and Statistics",
+            "pct": 8.3
+          },
+          {
+            "label": "Social and Behavioral Sciences",
+            "pct": 6.9
+          },
+          {
+            "label": "Health",
+            "pct": 6.7
+          },
+          {
+            "label": "Humanities, Languages and Arts",
+            "pct": 5.6
+          },
+          {
+            "label": "Engineering and Manufacturing",
+            "pct": 4.8
+          },
+          {
+            "label": "Information and Communication Technologies (ICT)",
+            "pct": 4.4
+          },
+          {
+            "label": "Law",
+            "pct": 3.9
+          },
+          {
+            "label": "Journalism and Information",
+            "pct": 3.6
+          },
+          {
+            "label": "Education and Teacher Training",
+            "pct": 3.4
+          },
+          {
+            "label": "Personal and Community Services",
+            "pct": 1.3
+          },
+          {
+            "label": "Agriculture, Forestry, Fisheries and Environmental Studies",
+            "pct": 0.8
+          },
+          {
+            "label": "Welfare",
+            "pct": 0.4
+          },
+          {
+            "label": "Construction",
+            "pct": 0.3
+          }
+        ],
+        "education_levels": [],
+        "experience_years": {
+          "mean": 23.4,
+          "valid_n": 191
+        },
+        "required_education_years": {
+          "mean": 13.9,
+          "valid_n": 154
+        },
+        "skills": {
+          "ict": {
+            "mean_use_index": 2.413,
+            "high_use_band_pct": 61.7,
+            "index_valid_n": 189,
+            "band_valid_n": 189
+          },
+          "numeracy": {
+            "mean_use_index": 2.521,
+            "high_use_band_pct": 66.4,
+            "index_valid_n": 191,
+            "band_valid_n": 191
+          },
+          "reading": {
+            "mean_use_index": 2.415,
+            "high_use_band_pct": 56.5,
+            "index_valid_n": 191,
+            "band_valid_n": 191
+          },
+          "writing": {
+            "mean_use_index": 2.427,
+            "high_use_band_pct": 51.6,
+            "index_valid_n": 191,
+            "band_valid_n": 191
+          },
+          "learning": {
+            "mean_use_index": 2.286,
+            "high_use_band_pct": 45.8,
+            "index_valid_n": 191,
+            "band_valid_n": 191
+          },
+          "influence": {
+            "mean_use_index": 2.336,
+            "high_use_band_pct": 61.2,
+            "index_valid_n": 191,
+            "band_valid_n": 191
+          },
+          "task_discretion": {
+            "mean_use_index": 2.479,
+            "high_use_band_pct": 59.5,
+            "index_valid_n": 191,
+            "band_valid_n": 191
+          }
+        }
+      }
+    }
+  },
+  "skill_labels": {
+    "ict": "Digital / ICT use",
+    "numeracy": "Numeracy use",
+    "reading": "Reading use",
+    "writing": "Writing use",
+    "learning": "Learning at work",
+    "influence": "Influencing at work",
+    "task_discretion": "Task discretion"
+  },
+  "method": "Within-country and broad ISCO-08 occupational-family weighted descriptive statistics using SPFWT0; only groups with >=25 respondents and skill indicators with >=20 valid observations.",
+  "high_band_definition": "Survey index categories 4 or 5, measuring reported use of each skill domain at work; not a skill-mastery rating.",
+  "limitations": [
+    "Not individual job seniority or an employability score.",
+    "Occupational families are broad: an AI Engineer is not distinguished from another ICT professional.",
+    "Self-reported workplace skill-use indicators do not establish competence, good traits or causal success.",
+    "Skill indices have distinct scales; do not compare index means between different domains.",
+    "Survey-weighted descriptive estimates exclude replicate-weight confidence intervals.",
+    "Some country occupation indicators are suppressed or missing; never interpret missing as zero."
+  ]
+}
