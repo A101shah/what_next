@@ -5,7 +5,7 @@
 ## MVP
 - Student profile: field, career goal, weekly study time, interests, and existing skills.
 - Prerequisite-aware learning roadmap with clear "why next" recommendations, learning resources, mini-projects, and progress.
-- **Career evidence explorer** from **OECD PIAAC Cycle 2 (2023)** real employed respondents: choose country and broad occupation family; inspect highest-qualification field and education-level distributions. Only aggregate summaries are published; no raw microdata.
+- **Career intelligence explorer** from **OECD PIAAC Cycle 2 (2023)**: choose country and occupational family; inspect educational backgrounds, lifetime paid-work experience and seven observed workplace-skill-use indicators extracted from our real 47-column merged dataset. The app publishes grouped summaries only.
 - Career neighborhood computed by **K-Means** on real **O*NET 31.0 essential-skills ratings**; PCA provides a 2D view. No synthetic training data.
 - Daily field-related published research updates from **OpenAlex**, each with its original link and publication date.
 - Editable, evidence-first resume builder; print to PDF or export HTML.
@@ -25,6 +25,8 @@ Visit http://localhost:8000.
 pip install -r requirements.txt
 python scripts/build_data.py
 python scripts/build_careers.py
+python -m scripts.export_merged_people
+python -m scripts.build_skill_evidence
 python scripts/update_news.py
 python -m unittest discover -s tests -v
 ```
@@ -44,11 +46,21 @@ Only the grouped JSON is published. Raw PIAAC respondent files are processed by 
 
 Source: [OECD PIAAC Cycle 2 PUF and international codebook](https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html). World Bank STEP is a potential later source but **not yet integrated**.
 
+### 47-column career skill evidence (integrated)
+
+The complete, source-derived **WhatNext_Career_Intelligence_Combined.csv** is generated offline by `scripts/export_merged_people.py`. Each row is an anonymized employed respondent selected from five verified OECD country PUF files. Columns cover **education field/level, ISCO-08 occupational family/skill level, lifetime work experience, education reportedly needed for the current job, seven official workplace-skill-use indices and their 0–5 categories, and survey-weighted same-country peer benchmarks**.
+
+**The individual-level CSV is deliberately not hosted.** `scripts/build_skill_evidence.py` reads this exact 47-column file and writes `data/skill_evidence.json`: aggregated country×occupation evidence, survey-weighted high-use-band shares, index means, valid-response counts, and experience summaries. It excludes occupation groups with fewer than 25 observations and hides indicator values with fewer than 20 valid responses. GitHub Actions generates the private intermediate CSV on every build, tests the aggregate, commits only `skill_evidence.json`, and stages only JSON and static web assets. The Vercel Git deployment receives the same JSON as GitHub Pages.
+
+**Interpretation:** Higher workplace-use categories 4 and 5 describe **use of a skill domain**, NOT knowledge mastery, seniority, personal qualities, hiring probability, or validated career readiness. Index means have domain-specific scales. Mean work experience is based on the top-coded lifetime measure (47 years) and is descriptive. These observational results do not prove causality. The app's study-roadmap policy remains prerequisite-aware and uses user-reported completion; career signals supply supporting context and transparent, curated practice suggestions, not opaque scores.
+
+Use the [export workflow](https://github.com/A101shah/what_next/actions/workflows/export-merged-csv.yml) to get a downloadable merged CSV artifact when needed; public hosted endpoints intentionally contain **only aggregates**, not rows about individual respondents.
+
 ## Deploy on GitHub Pages and Vercel (same GitHub repository)
 
 - **GitHub Pages** runs `.github/workflows/deploy.yml` daily and for each push. It downloads official O*NET / OECD PIAAC / OpenAlex records, builds and validates grouped JSON, stages only the public static files, then publishes the app.
 - **Vercel** can be linked to `A101shah/what_next` with **Framework Preset: Other**, **Root Directory: .**, and **Build Command: none**. The `vercel.json` file disables framework detection for this plain HTML/CSS/JS app.
-- The GitHub workflow **commits only the three verified output files** `data/model.json`, `data/careers.json`, and `data/research.json` to `main` using the GitHub Actions bot. Therefore, Vercel's Git import receives the same real observations as the Pages build. A data refresh does not create an infinite GitHub Actions loop.
+- The GitHub workflow **commits only the four verified output files** `data/model.json`, `data/careers.json`, `data/skill_evidence.json`, and `data/research.json` to `main` using the GitHub Actions bot. Therefore, Vercel's Git import receives the same real observations as the Pages build. A data refresh does not create an infinite GitHub Actions loop.
 - The original large respondent CSVs are cached **only in CI**, never committed or hosted. No individual respondent data is published.
 - The student profile and resume remain in browser-local storage; they will **not automatically sync across the two domains or devices**.
 
