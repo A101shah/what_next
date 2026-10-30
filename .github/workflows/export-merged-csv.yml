@@ -1,0 +1,36 @@
+name: Download merged OECD career dataset
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/export_merged_people.py
+      - .github/workflows/export-merged-csv.yml
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install OECD codebook reader
+        run: pip install "openpyxl>=3.1,<4"
+      - name: Restore official public-use CSVs
+        uses: actions/cache@v4
+        with:
+          path: .cache/piaac
+          key: piaac-cycle2-oct2026-public-use-v1
+      - name: Generate one merged de-identified CSV
+        run: python -m scripts.export_merged_people
+      - name: Upload downloadable final CSV
+        uses: actions/upload-artifact@v4
+        with:
+          name: WhatNext-Merged-Career-Dataset
+          path: out/WhatNext_Merged_Career_Dataset.csv
+          retention-days: 30
+          if-no-files-found: error
