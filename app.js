@@ -12,7 +12,7 @@ const INTERESTS = [
   {id:"security",label:"Cybersecurity"}
 ];
 const state = {
-  paths: [], model: null, news: null, careers: null, evidenceCountry: null, evidenceFamily: null, view: "overview",
+  paths: [], model: null, news: null, careers: null, skillEvidence: null, evidenceCountry: null, evidenceFamily: null, view: "overview",
   profile: {name:"",career:"ai",hours:7,interests:[],completed:[],resume:{email:"",about:"",education:"",projects:""}}
 };
 const $ = selector => document.querySelector(selector);
@@ -58,8 +58,8 @@ async function loadOptional(url) {
 }
 async function start() {
   restore();
-  const [paths,model,news,careers] = await Promise.all([
-    loadOptional("data/paths.json"),loadOptional("data/model.json"),loadOptional("data/research.json"),loadOptional("data/careers.json")
+  const [paths,model,news,careers,skillEvidence] = await Promise.all([
+    loadOptional("data/paths.json"),loadOptional("data/model.json"),loadOptional("data/research.json"),loadOptional("data/careers.json"),loadOptional("data/skill_evidence.json")
   ]);
   if (!Array.isArray(paths) || !paths.length) {
     $("#next-content").innerHTML = "<h2>Unable to load learning paths.</h2><p>Open this website using a web server and check data/paths.json.</p>";
@@ -69,6 +69,7 @@ async function start() {
   state.model = model && Array.isArray(model.occupations) ? model : null;
   state.news = news && news.items ? news : null;
   state.careers = careers && careers.countries ? careers : null;
+  state.skillEvidence = skillEvidence && skillEvidence.countries ? skillEvidence : null;
   if (!state.paths.some(path=>path.id===state.profile.career)) state.profile.career=state.paths[0].id;
   bindActions();
   renderProfileForm();
@@ -85,7 +86,7 @@ function navigate(view) {
     node.classList.toggle("active",active);
     if(active)node.setAttribute("aria-current","page");else node.removeAttribute("aria-current");
   });
-  const names={overview:"Overview",roadmap:"Learning roadmap",pulse:"World pulse",evidence:"Career evidence",career:"Career studio",profile:"Your profile"};
+  const names={overview:"Overview",roadmap:"Learning roadmap",pulse:"World pulse",evidence:"Career intelligence",career:"Career studio",profile:"Your profile"};
   $("#current-view").textContent=names[view]||"Overview";
   $(".sidebar").classList.remove("open");
   if (view==="profile") renderProfileForm();
@@ -286,12 +287,14 @@ function renderCareerEvidence(path) {
     $("#evidence-stats").textContent=message;
     $("#evidence-fields").textContent="No published verified observations.";
     $("#evidence-levels").textContent="No published verified observations.";
+    showMissingSkillEvidence();
     $("#evidence-data-note").innerHTML='<a href="https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html" target="_blank" rel="noopener noreferrer">OECD PIAAC 2023 source ↗</a>';
     return;
   }
   const keys=Object.keys(countries).filter(key=>countries[key] && countries[key].groups && Object.keys(countries[key].groups).length);
   if (!keys.length) {
     $("#evidence-preview").textContent="No reportable country groups were returned by OECD.";
+    showMissingSkillEvidence();
     return;
   }
   if (!keys.includes(state.evidenceCountry)) {
@@ -338,6 +341,82 @@ function renderCareerEvidence(path) {
     'Education-field distribution is based on '+clean(selected.study_field_n)+' valid sample responses; education-level distribution on '+clean(selected.education_level_n)+
     '. Percentages use the official final survey weight within each country and occupation family, and may have different denominators. '+
     'Small samples, nonresponse and privacy suppression can limit comparisons. No uncertainty intervals were calculated.<p style="margin-top:9px">Source: <a target="_blank" rel="noopener noreferrer" href="'+safeLink(link)+'">Original OECD PIAAC country CSV ↗</a> · '+clean(familyNote)+'</p>';
+  renderSkillEvidence(path);
+}
+
+
+// The actions below are editorial examples, NOT interventions learned from PIAAC.
+const PRACTICE_IDEAS = {
+  ict: ["Digital problem-solving","Build a small reproducible app and document how you tested it."],
+  numeracy: ["Numerical reasoning","Interpret a real dataset and defend your calculations."],
+  reading: ["Research literacy","Read one primary-source paper and write a short critique."],
+  writing: ["Communication","Create clear documentation for a project you completed."],
+  learning: ["Continuous learning","Learn one concept, build a mini-example and reflect on mistakes."],
+  influence: ["Presenting ideas","Explain one technical decision to a peer and collect feedback."],
+  task_discretion: ["Independent ownership","Plan, execute and evaluate a small self-directed project."]
+};
+function showMissingSkillEvidence(){
+  const message="The combined 47-column survey analysis has not been generated yet. No skill statistics were invented.";
+  $("#evidence-work-skills").textContent=message;
+  $("#evidence-experience").textContent="Experience data unavailable.";
+  $("#evidence-practice").textContent="Practice ideas will appear after the verified data build.";
+  $("#roadmap-skill-signal").textContent=message;
+}
+function skillRows(group) {
+  if (!group || !group.skills) return [];
+  const labels=(state.skillEvidence && state.skillEvidence.skill_labels)||{};
+  return Object.entries(group.skills).filter(([key,info])=>
+    info && Number.isFinite(info.high_use_band_pct) && info.band_valid_n>=20
+  ).map(([key,info])=>({
+    key, label:labels[key]||key, percent:Math.max(0,Math.min(100,info.high_use_band_pct)),
+    n:info.band_valid_n
+  })).sort((a,b)=>b.percent-a.percent);
+}
+function renderSkillEvidence(path){
+  const country=state.evidenceCountry;
+  const code=state.evidenceFamily;
+  const groups=state.skillEvidence && state.skillEvidence.countries;
+  const group=groups && groups[country] && groups[country][code];
+  if (!group) {
+    showMissingSkillEvidence();
+    return;
+  }
+  const rows=skillRows(group);
+  $("#evidence-work-skills").innerHTML=rows.length ? rows.map(item=>
+    '<div class="skill-use-row"><div class="metric-label"><span>'+clean(item.label)+'</span><strong>'+item.percent.toFixed(1)+'%</strong></div>'+
+    '<div class="metric-track" role="meter" aria-label="'+clean(item.label)+' share in higher use categories" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+item.percent.toFixed(1)+'"><div class="metric-fill" style="width:'+item.percent.toFixed(1)+'%"></div></div>'+
+    '<small>'+clean(item.n)+' valid survey responses in this skill-use indicator</small></div>'
+  ).join("") : '<p class="quiet-state">Workplace skill-use indicators were not reportable for this group.</p>';
+  const years=group.experience_years||{};
+  const education=group.required_education_years||{};
+  $("#evidence-experience").innerHTML=
+    '<div class="work-stat"><strong>'+(Number.isFinite(years.mean)?years.mean.toFixed(1):"—")+'</strong><span>Weighted mean years of paid work (top-coded at 47; '+clean(years.valid_n||0)+' valid responses)</span></div>'+
+    '<div class="work-stat"><strong>'+(Number.isFinite(education.mean)?education.mean.toFixed(1):"—")+'</strong><span>Weighted mean years of formal education reported as needed for this job ('+clean(education.valid_n||0)+' valid responses)</span></div>'+
+    '<p class="panel-caption">'+clean(group.n)+' employed respondents in '+clean(country)+
+    '. These are group averages, not career-level predictions or universal job requirements.</p>';
+  $("#evidence-practice").innerHTML=rows.length ? rows.slice(0,3).map(item=>{
+    const example=PRACTICE_IDEAS[item.key];
+    return example?'<div class="practice-item"><strong>'+clean(example[0])+'</strong><p>'+clean(example[1])+'</p></div>':"";
+  }).join("") : '<p class="quiet-state">No interpretable signals for this occupation group.</p>';
+
+  // The student's broad ISCO occupation family may not match the selected
+  // explorer filter. For their roadmap, use their matching family instead.
+  let actualCountry=country;
+  let target=groups[country] && groups[country][path.isco2];
+  if(!target) {
+    actualCountry=Object.keys(groups).find(c=>groups[c][path.isco2]);
+    target=actualCountry && groups[actualCountry][path.isco2];
+  }
+  const signals=skillRows(target);
+  if(!signals.length) {
+    $("#roadmap-skill-signal").textContent="No reportable workplace-use indicators for the selected destination. Your roadmap continues using prerequisites.";
+    return;
+  }
+  const best=signals.slice(0,2);
+  $("#roadmap-skill-signal").textContent=
+    'Workforce context ('+actualCountry+', '+clean(target.occupation_family)+', n='+target.n+'): '+
+    best.map(item=>item.label+' '+item.percent.toFixed(1)+'% in higher survey use bands').join('; ')+
+    '. These are occupational observations, not mastery scores. Your next learning step is still chosen from your completed prerequisites and interests.';
 }
 
 function fillResumeFields() {
