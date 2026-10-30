@@ -1,4 +1,4 @@
-name: Download merged OECD career dataset
+name: Export final combined career intelligence CSV
 
 on:
   workflow_dispatch:
@@ -25,12 +25,12 @@ jobs:
         with:
           path: .cache/piaac
           key: piaac-cycle2-oct2026-public-use-v1
-      - name: Generate one merged de-identified CSV
+      - name: Generate one enriched anonymous skills and career CSV
         run: python -m scripts.export_merged_people
-      - name: Upload downloadable final CSV
+      - name: Upload final single CSV
         uses: actions/upload-artifact@v4
         with:
-          name: WhatNext-Merged-Career-Dataset
-          path: out/WhatNext_Merged_Career_Dataset.csv
+          name: WhatNext-Career-Intelligence-Combined
+          path: out/WhatNext_Career_Intelligence_Combined.csv
           retention-days: 30
           if-no-files-found: error
