@@ -15,6 +15,21 @@ OUTPUT = ROOT / "out" / "WhatNext_Merged_Career_Dataset.csv"
 
 def main():
     field_labels, _ = read_codebook()
+    # Verify the exact public-use variables before exporting expanded skill features.
+    from openpyxl import load_workbook
+    from scripts.build_careers import CODEBOOK, CACHE
+    book = load_workbook(CACHE / "piaac-cycle2-codebook.xlsx", read_only=True, data_only=True)
+    import re
+    for cells in book["PUF"].iter_rows(values_only=True):
+        code = str(cells[1] or "") if len(cells) > 1 else ""
+        desc = str(cells[2] or "") if len(cells) > 2 else ""
+        if ("work" in code.lower() and False) or re.search(r"index of use of|work experience|years.*(working|work|experience)|years.*current|tenure|literacy proficiency|numeracy proficiency|problem solving|learning at work|planning at work|readiness to learn|work autonomy", desc, re.I):
+            if any(phrase in desc.lower() for phrase in ["index of use of", "work experience", "years", "tenure", "problem solving", "planning at work", "readiness to learn", "autonomy"]):
+                print("CODEBOOK_SKILL",code,desc[:140],flush=True)
+    sample_path=download("https://webfs.oecd.org/piaac/cy2-puf-data/CSV/prgchlp2.csv", "prgchlp2.csv")
+    with sample_path.open(encoding="utf-8-sig",newline="") as inp:
+        fields=next(csv.reader(inp,delimiter=";"))
+        print("WORK_VARIABLES", [c for c in fields if re.search(r"WORKC2|JOBEXP|YRS|TENURE|ICTWORK|READWORK|WRITWORK|NUMWORK|TASK|WLE_CA|PVLIT|PVNUM|PVAPS|WORKEX|SKILLUSE|LEARN", c, re.I)][:180],flush=True)
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     headers = [
         "country", "occupation_isco2", "occupation_family",
