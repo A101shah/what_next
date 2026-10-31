@@ -498,7 +498,7 @@ function runCareerNeuralNetwork(event) {
       if(wanted){
         $("#nn-output").innerHTML+='<p class="nn-current-target">Your selected destination belongs to the broad '+clean(wanted.label)+
           ' category. It received '+(wanted.probability*100).toFixed(1)+
-          '% of the model’s class probability. Different tech roles share this category, so it cannot choose among AI, cloud or cybersecurity.</p>';
+          '% of the model’s uncalibrated class score. Different tech roles share this category, so it cannot choose among AI, cloud or cybersecurity.</p>';
       }
     }
     toast("Neural career patterns updated locally.");
