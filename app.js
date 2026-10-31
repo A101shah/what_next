@@ -501,6 +501,23 @@ function runCareerNeuralNetwork(event) {
           '% of the model’s uncalibrated class score. Different tech roles share this category, so it cannot choose among AI, cloud or cybersecurity.</p>';
       }
     }
+    // Bridge the occupational NN result to the *existing* prerequisite system
+    // without inventing training labels for "best next skill".
+    const pathOptions=state.paths.filter(route=>route.isco2===top[0].code);
+    if(pathOptions.length){
+      $("#nn-output").innerHTML+='<div class="nn-next"><strong>Learning routes in this broad occupation family</strong>'+
+        '<p>'+pathOptions.map(p=>clean(p.label)).join(' · ')+'</p>'+
+        '<p class="panel-caption">The network recognizes only the broad family. Your interests and prerequisite completion determine the specific pathway and next lesson.</p>'+
+        '<button class="text-link" type="button" id="nn-browse-paths">Compare these learning paths →</button></div>';
+      $("#nn-browse-paths").addEventListener("click",()=>navigate("profile"));
+    }
+    if(selected){
+      const nextStep=recommendations(selected)[0];
+      if(nextStep){
+        $("#nn-output").innerHTML+='<p class="nn-current-target"><strong>Your current next learning step: '+
+          clean(nextStep.title)+'</strong>. Our prerequisite-aware engine selects this from your completed topics, while the neural network supplies only exploratory career-family context.</p>';
+      }
+    }
     toast("Neural career patterns updated locally.");
   } catch(err) {
     $("#nn-output").textContent=err.message || "Unable to calculate an occupational comparison.";
