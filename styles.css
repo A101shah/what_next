@@ -53,3 +53,31 @@
 .practice-item p{font-size:11px;line-height:1.6;color:#a1aec5;margin:5px 0 0}
 .skill-disclaimer{color:#889ab1;font-size:11px;line-height:1.7;margin:15px 0 24px}
 @media(max-width:940px){.work-skill-layout{grid-template-columns:1fr}}
+
+
+/* Experimental but genuinely trained occupational-family neural exploration */
+.nn-headline{margin-top:31px;margin-bottom:17px;display:flex;align-items:end;justify-content:space-between;gap:20px}
+.nn-headline h2{font-size:24px;letter-spacing:-.6px;margin:9px 0 6px}
+.nn-headline p{font-size:12px;color:#9eacc4;line-height:1.7;max-width:760px}
+.nn-layout{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:18px}
+.nn-form label{display:block;font-size:11px;color:#bbc6df;font-weight:700;margin:0 0 7px}
+.nn-form select,.nn-form input{width:100%;background:#161f31;color:#edf0ff;border:1px solid #394561;border-radius:10px;min-height:42px;padding:9px 12px;font:inherit;font-size:12px}
+.nn-form select:focus,.nn-form input:focus{outline:2px solid #9c8ef4;outline-offset:2px}
+.nn-background{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:19px}
+.nn-background .field:nth-child(3){grid-column:1/-1}
+.nn-form h4{font-size:13px;margin:21px 0 4px}
+.nn-skill-inputs{display:grid;grid-template-columns:1fr;gap:10px;margin:17px 0 22px}
+.nn-skill-row{display:grid;grid-template-columns:minmax(0,1fr) 162px;gap:12px;align-items:center}
+.nn-skill-row label{margin:0}.nn-skill-row select{min-height:37px}
+.nn-performance{border:1px solid #403f65;border-radius:13px;background:linear-gradient(100deg,#242044,#171c31);padding:18px;margin-bottom:24px}
+.nn-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.nn-metrics div{display:flex;flex-direction:column;gap:5px}
+.nn-metrics strong{font-size:24px;color:#ded6ff;letter-spacing:-.6px;font-variant-numeric:tabular-nums}
+.nn-metrics span{font-size:10px;line-height:1.45;color:#9ca6c3}
+.nn-output{min-height:150px;font-size:13px;line-height:1.7;color:#bfcce0}
+.nn-output h3{color:#f1edff;font-size:20px;line-height:1.45;margin:10px 0}
+.nn-result-line{margin:15px 0}.nn-result-line .metric-label{font-size:11px}
+.nn-result-note,.nn-current-target{font-size:11px;line-height:1.65;color:#a0b0c8;margin:18px 0 10px}
+.nn-current-target{border-top:1px solid #39405b;padding-top:14px}
+@media(max-width:1050px){.nn-layout{grid-template-columns:1fr}}
+@media(max-width:600px){.nn-background{grid-template-columns:1fr}.nn-background .field:nth-child(3){grid-column:auto}.nn-skill-row{grid-template-columns:minmax(0,1fr) 120px}.nn-headline{align-items:flex-start;flex-direction:column}.nn-metrics strong{font-size:20px}}
