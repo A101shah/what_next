@@ -1,83 +1,84 @@
-# WhatNext AI
+# WhatNext AI — Your Knowledge GPS
 
-**Know what to learn next.** An evidence-aware, personalized learning navigator for students.
+**Personalized prerequisite-based learning paths, real workforce insights and a trained neural network.** Entirely static HTML/CSS/JavaScript, hosted from the same GitHub repository.
 
-## MVP
-- Student profile: field, career goal, weekly study time, interests, and existing skills.
-- Prerequisite-aware learning roadmap with clear "why next" recommendations, learning resources, mini-projects, and progress.
-- **Career intelligence explorer** from **OECD PIAAC Cycle 2 (2023)**: choose country and occupational family; inspect educational backgrounds, lifetime paid-work experience and seven observed workplace-skill-use indicators extracted from our real 47-column merged dataset. The app publishes grouped summaries only.
-- Career neighborhood computed by **K-Means** on real **O*NET 31.0 essential-skills ratings**; PCA provides a 2D view. No synthetic training data.
-- Daily field-related published research updates from **OpenAlex**, each with its original link and publication date.
-- Editable, evidence-first resume builder; print to PDF or export HTML.
-- No accounts, API keys, paid services, or backend required. Student entries stay in the browser's local storage.
+## Hosting — no custom GitHub Actions
 
-## Run locally
-Run a local web server (opening files directly breaks JSON loading):
+All `.github/workflows/*.yml` files have been **deleted**. The repository stores the precomputed public JSON datasets and model weights; it does not train, scrape or execute Python during deployments.
 
-```bash
-python -m http.server 8000
-```
+- **GitHub Pages:** In **Settings → Pages → Build and deployment**, select **Deploy from a branch**, choose **main**, folder **/(root)**, then Save. This is essential because the old configuration selected GitHub Actions. The platform may show its own managed Pages deployment internally, but **there is no project-authored Actions workflow**.
+- **Vercel:** Import `A101shah/what_next` through https://vercel.com/new using framework **Other**, root directory `.`, no build command. The committed `vercel.json` supports this. The Vercel workspace must be connected/authorized before its deployment can be verified.
+- All browser inputs, including resumes and profile progress, stay in local storage. They do not synchronize across domains or devices.
 
-Visit http://localhost:8000.
+Once GitHub Pages is switched to branch publishing, the expected link is https://a101shah.github.io/what_next/ .
 
-## Refresh **verified data** and train the ML model
+## Real neural network — occupation exploration
+
+**Training dataset:** the 6,517 **anonymous, employed OECD PIAAC Cycle 2** respondents from Chile, Italy, Poland, Singapore and the United States, merged into a real 47-column CSV. We use their seven *workplace skill-use bands*, lifetime paid-work experience, and education level and field. The label is a broad **two-digit ISCO-08 occupational family** (12 classes).
+
+**Model:** a scikit-learn `MLPClassifier` trained from scratch, with layers **27 → 20 → 12 → 12**. `scripts/train_career_nn.py` trains offline with an **80%/20% stratified train–test split**, fits the median imputation and StandardScaler on **train only**, and uses early stopping internally. `data/career_nn.json` contains the model preprocessing parameters, 16-bit quantized weights, and evaluation metrics. The `neural.js` browser engine runs forward propagation and softmax without a service, account or GPU.
+
+| Verified held-out occupation-classification metric | Value |
+|---|---:|
+| Accuracy | **40.49%** |
+| Macro-F1 | **33.95%** |
+| Balanced accuracy | **36.35%** |
+| Majority-class baseline accuracy | **17.60%** |
+| Training rows | 5,213 |
+| Test rows | 1,304 |
+
+**Be precise about what this means:** these are **occupation classification** results, NOT the accuracy of learning recommendations, job success predictions, or student ability scores. The model was fitted on employed adults, not outcome-verified students. Inputs students enter in the Career Intelligence page only approximate OECD skill-*use* categories, and the softmax values are **uncalibrated scores**, not employment probabilities. The random test split does not verify generalization to unseen countries. The model cannot distinguish AI, cloud, or cyber jobs when they share the same broad ICT family.
+
+### Reproduce training offline (optional)
+
+Place the authentic `WhatNext_Career_Intelligence_Combined.csv` file in `out/`, then run:
+
 ```bash
 pip install -r requirements.txt
-python scripts/build_data.py
+python -m scripts.train_career_nn
+node --test tests/test_neural.mjs
+```
+
+The dataset and `out/` directory must remain **uncommitted**: they contain individual respondent-level survey observations, whereas public `data/*.json` files contain only trained parameters or aggregated evidence. No fabricated labels, career seniority, or student learning outcomes are introduced.
+
+## How the next lesson is currently chosen
+
+The **actual student recommendation policy** is custom JavaScript in `app.js` using:
+
+1. Career destination chosen by the student.
+2. Manually curated prerequisite relationships in `data/paths.json`.
+3. Completed topics (self-reported), topic order and preferred interests.
+4. Only unfinished topics with all prerequisites complete are eligible.
+
+The neural network adds **career-family exploration**, and OECD/O*NET evidence contextualizes roadmaps, but **neither is falsely claimed to have learned the optimal next lesson**. To train and validate a neural lesson recommender, we would need consented student exercises, learning outcomes, and ground truth recommendations, followed by tests against the current rule-based baseline.
+
+## Other models and evidence sources
+
+- **O*NET occupational ML** in `scripts/build_data.py`: StandardScaler, 2D PCA and K-Means with **6 clusters**, trained on **231 genuine occupations × 10 O*NET skill-importance features**. Saved silhouette score: **0.187**. Not a classification accuracy. Generated `data/model.json` is committed.
+- **OECD career evidence**: `scripts/build_careers.py`, `scripts/export_merged_people.py`, and `scripts/build_skill_evidence.py` produce country/occupation-level weighted distributions for education, years of paid work and seven workplace skill-use indicators. At least **25 respondents** per displayed group and **20 valid observations** per displayed indicator. Published as `data/careers.json` and `data/skill_evidence.json`; individual respondent rows are not hosted.
+- **OpenAlex publications**: `scripts/update_news.py` creates `data/research.json`; after removing Actions the feed refreshes **only if run manually**. The site must show when verified research data is missing rather than invent articles.
+- **Learning syllabus** `data/paths.json`: human-curated topics, prerequisites and practical exercises, not ML training labels.
+
+### Update research or models manually
+
+```bash
+pip install -r requirements.txt
 python scripts/build_careers.py
 python -m scripts.export_merged_people
 python -m scripts.build_skill_evidence
+python scripts/build_data.py
 python scripts/update_news.py
+python -m scripts.train_career_nn
 python -m unittest discover -s tests -v
+node --check app.js
+node --check neural.js
+node --test tests/test_neural.mjs
 ```
 
-The model build fetches O*NET occupational and essential-skill CSVs **directly from the official O*NET Resource Center**, and fits scikit-learn StandardScaler, PCA and K-Means to the observed occupational ratings. The resulting `data/model.json` contains cluster membership and PCA coordinates—not fake student-learning labels. Refresh fails clearly if upstream data cannot be obtained or parsed. It never fabricates fallback observations.
+Run only the needed update scripts, inspect their results and commit the **appropriate precomputed JSON**. The original OECD microdata downloads are stored under ignored `.cache/piaac/`. Vercel and GitHub Pages only serve files you commit; no scheduled training job or Actions artifact is required.
 
-The research updater requests recent actual publications from OpenAlex. If the API cannot be reached, it preserves the last previously verified feed (or an empty feed) and indicates the issue.
+**Sources:** [OECD PIAAC](https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html) · [O*NET](https://www.onetcenter.org/database.html) · [OpenAlex](https://openalex.org/).
 
-## Verified workforce evidence
-`scripts/build_careers.py` downloads current OECD PIAAC Cycle 2 public-use country CSVs (semicolon separated) and the original international codebook, then validates the actual fields. The first version covers **Chile, Poland, Singapore, United States and Italy**, subject to availability and country-specific disclosure suppressions.
+## Limitations
 
-We filter **employed respondents** (`C2_D05 == 1`) and valid **ISCO-08 two-digit occupational families** (`ISCO2C`). We summarize **education level** (`EDLEVEL3`) and **field of study** (`EDFIELD`) using **`SPFWT0`** respondent survey weights. Only groups with at least **25 respondents** are shown, and an indicator must have at least **20 valid responses**. The published JSON includes denominators, verified country source URLs, source SHA-256 hashes, and any excluded countries.
-
-**What the statistics do not mean:** This is not a training dataset of named career histories, a longitudinal study, a causal explanation of professional success, or proof of job qualifications. Some countries suppress `ISCO2C`, `EDLEVEL3`, or detailed education fields. Weighted percentages are descriptive (no replicate-weight variance estimates). We never pool different countries or fabricate missing categories. Our curated course prerequisites remain independent of this observational evidence.
-
-Only the grouped JSON is published. Raw PIAAC respondent files are processed by GitHub Actions and kept out of the deployed website; `.cache/piaac` is not included in the publish directory.
-
-Source: [OECD PIAAC Cycle 2 PUF and international codebook](https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html). World Bank STEP is a potential later source but **not yet integrated**.
-
-### 47-column career skill evidence (integrated)
-
-The complete, source-derived **WhatNext_Career_Intelligence_Combined.csv** is generated offline by `scripts/export_merged_people.py`. Each row is an anonymized employed respondent selected from five verified OECD country PUF files. Columns cover **education field/level, ISCO-08 occupational family/skill level, lifetime work experience, education reportedly needed for the current job, seven official workplace-skill-use indices and their 0–5 categories, and survey-weighted same-country peer benchmarks**.
-
-**The individual-level CSV is deliberately not hosted.** `scripts/build_skill_evidence.py` reads this exact 47-column file and writes `data/skill_evidence.json`: aggregated country×occupation evidence, survey-weighted high-use-band shares, index means, valid-response counts, and experience summaries. It excludes occupation groups with fewer than 25 observations and hides indicator values with fewer than 20 valid responses. GitHub Actions generates the private intermediate CSV on every build, tests the aggregate, commits only `skill_evidence.json`, and stages only JSON and static web assets. The Vercel Git deployment receives the same JSON as GitHub Pages.
-
-**Interpretation:** Higher workplace-use categories 4 and 5 describe **use of a skill domain**, NOT knowledge mastery, seniority, personal qualities, hiring probability, or validated career readiness. Index means have domain-specific scales. Mean work experience is based on the top-coded lifetime measure (47 years) and is descriptive. These observational results do not prove causality. The app's study-roadmap policy remains prerequisite-aware and uses user-reported completion; career signals supply supporting context and transparent, curated practice suggestions, not opaque scores.
-
-Use the [export workflow](https://github.com/A101shah/what_next/actions/workflows/export-merged-csv.yml) to get a downloadable merged CSV artifact when needed; public hosted endpoints intentionally contain **only aggregates**, not rows about individual respondents.
-
-## Deploy on GitHub Pages and Vercel (same GitHub repository)
-
-- **GitHub Pages** runs `.github/workflows/deploy.yml` daily and for each push. It downloads official O*NET / OECD PIAAC / OpenAlex records, builds and validates grouped JSON, stages only the public static files, then publishes the app.
-- **Vercel** can be linked to `A101shah/what_next` with **Framework Preset: Other**, **Root Directory: .**, and **Build Command: none**. The `vercel.json` file disables framework detection for this plain HTML/CSS/JS app.
-- The GitHub workflow **commits only the four verified output files** `data/model.json`, `data/careers.json`, `data/skill_evidence.json`, and `data/research.json` to `main` using the GitHub Actions bot. Therefore, Vercel's Git import receives the same real observations as the Pages build. A data refresh does not create an infinite GitHub Actions loop.
-- The original large respondent CSVs are cached **only in CI**, never committed or hosted. No individual respondent data is published.
-- The student profile and resume remain in browser-local storage; they will **not automatically sync across the two domains or devices**.
-
-Verify both hosting providers after deployment; GitHub Pages and Vercel have separate URLs and deployment histories.
-
-## Deploy on GitHub Pages
-An included GitHub Actions workflow prepares the data and publishes the static website on pushes to `main`, plus a scheduled daily update. Enable **Settings → Pages → Build and deployment → GitHub Actions** once, if not already selected. After a successful deployment the expected URL is https://a101shah.github.io/what_next/ .
-
-## Source provenance
-- [O*NET Database 31.0](https://www.onetcenter.org/database.html) — U.S. Department of Labor-sponsored primary occupational research. **Not** a measurement of individual student mastery.
-- [OECD PIAAC Cycle 2](https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html) — actual sampled adults' employment and education, analyzed only in aggregates.
-- [OpenAlex](https://openalex.org/) — research metadata, links, and publication dates. Research trends are informational, not proof that a skill is mandatory.
-- `data/paths.json` — **human-curated syllabus and prerequisite dependencies** for the MVP. Not represented as an official dataset or ML output.
-
-## Methodology and boundaries
-The actionable "next step" algorithm uses explicit prerequisite rules, user-reported mastery, topic order, interests and study time. This is a deterministic and explainable MVP policy. **K-Means is used for genuine occupational similarity** using original O*NET vectors; it is not falsely claimed to have learned individual study preferences. No students' learning-outcome ground truth exists yet. To train a personalized learning ranking neural network later, collect consented student feedback and measure Precision@K / NDCG against a rule-based baseline.
-
-Research refresh depends on external endpoints and GitHub Actions. Without an official O*NET build, career-neighborhood insights are withheld rather than invented. Browser-local storage can be cleared; there is no server persistence. Resume content only includes user-provided achievements and projects.
-
-Built with simple HTML, CSS, JavaScript, Python, and scikit-learn.
+This research app is not a professional suitability exam or a verified career decision authority. Its survey cross-sections do not establish what causes professional success, personal traits or individual job seniority. O*NET occupation skill-importance values are distinct from an individual student's skills. Neural scores and raw survey-use bands must not be used to rank people, screen candidates, or imply guaranteed employment.
