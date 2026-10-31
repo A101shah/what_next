@@ -12,7 +12,7 @@ const INTERESTS = [
   {id:"security",label:"Cybersecurity"}
 ];
 const state = {
-  paths: [], model: null, news: null, careers: null, skillEvidence: null, evidenceCountry: null, evidenceFamily: null, view: "overview",
+  paths: [], model: null, news: null, careers: null, skillEvidence: null, neuralModel: null, evidenceCountry: null, evidenceFamily: null, view: "overview",
   profile: {name:"",career:"ai",hours:7,interests:[],completed:[],resume:{email:"",about:"",education:"",projects:""}}
 };
 const $ = selector => document.querySelector(selector);
@@ -58,8 +58,8 @@ async function loadOptional(url) {
 }
 async function start() {
   restore();
-  const [paths,model,news,careers,skillEvidence] = await Promise.all([
-    loadOptional("data/paths.json"),loadOptional("data/model.json"),loadOptional("data/research.json"),loadOptional("data/careers.json"),loadOptional("data/skill_evidence.json")
+  const [paths,model,news,careers,skillEvidence,neuralModel] = await Promise.all([
+    loadOptional("data/paths.json"),loadOptional("data/model.json"),loadOptional("data/research.json"),loadOptional("data/careers.json"),loadOptional("data/skill_evidence.json"),loadOptional("data/career_nn.json")
   ]);
   if (!Array.isArray(paths) || !paths.length) {
     $("#next-content").innerHTML = "<h2>Unable to load learning paths.</h2><p>Open this website using a web server and check data/paths.json.</p>";
@@ -70,8 +70,10 @@ async function start() {
   state.news = news && news.items ? news : null;
   state.careers = careers && careers.countries ? careers : null;
   state.skillEvidence = skillEvidence && skillEvidence.countries ? skillEvidence : null;
+  state.neuralModel = neuralModel && neuralModel.nn && neuralModel.metrics ? neuralModel : null;
   if (!state.paths.some(path=>path.id===state.profile.career)) state.profile.career=state.paths[0].id;
   bindActions();
+  initializeNeuralForm();
   renderProfileForm();
   fillResumeFields();
   render();
@@ -98,6 +100,7 @@ function bindActions(){
   $("#mobile-menu").addEventListener("click",()=>$(".sidebar").classList.toggle("open"));
   $("#evidence-country").addEventListener("change",event=>{state.evidenceCountry=event.target.value;state.evidenceFamily=null;renderCareerEvidence(currentPath());});
   $("#evidence-family").addEventListener("change",event=>{state.evidenceFamily=event.target.value;renderCareerEvidence(currentPath());});
+  $("#nn-form").addEventListener("submit",runCareerNeuralNetwork);
   $("#profile-form").addEventListener("submit",saveProfile);
   $("#career-select").addEventListener("change",()=>drawKnownSkills($("#career-select").value));
   $("#hours-range").addEventListener("input",()=>{
@@ -218,6 +221,7 @@ function render() {
   renderResearch(path);
   renderNeighbors(path);
   renderCareerEvidence(path);
+  renderNeuralStatus();
   renderResume();
 }
 function renderRoadmap(path) {
@@ -417,6 +421,90 @@ function renderSkillEvidence(path){
     'Workforce context ('+actualCountry+', '+clean(target.occupation_family)+', n='+target.n+'): '+
     best.map(item=>item.label+' '+item.percent.toFixed(1)+'% in higher survey use bands').join('; ')+
     '. These are occupational observations, not mastery scores. Your next learning step is still chosen from your completed prerequisites and interests.';
+}
+
+
+// A small real neural network trained on adults' occupation families, not lessons.
+// The learning-path prerequisite engine is deliberately independent: the training
+// dataset has no student-learning-outcome labels from which to learn the next step.
+function initializeNeuralForm() {
+  const engine=window.WhatNextNeural;
+  if (!engine) {
+    $("#nn-form").hidden=true;
+    $("#nn-output").textContent="Neural inference code is unavailable.";
+    return;
+  }
+  $("#nn-field").innerHTML='<option value="">Choose your field of study</option>'+
+    '<option value="0">Unavailable or prefer not to say</option>'+
+    engine.FIELDS.map(([code,label])=>'<option value="'+clean(code)+'">'+clean(label)+'</option>').join("");
+  $("#nn-skill-inputs").innerHTML=engine.SKILLS.map(([key,label])=>
+    '<div class="nn-skill-row"><label for="nn-'+clean(key)+'">'+clean(label)+'</label>'+
+    '<select id="nn-'+clean(key)+'" data-nn-skill="'+clean(key)+'" required>'+
+    '<option value="">Choose 0–5</option>'+[0,1,2,3,4,5].map(v=>
+    '<option value="'+v+'">'+v+(v===0?' · Rarely':v===5?' · Very often':'')+'</option>').join("")+
+    '</select></div>').join("");
+}
+function renderNeuralStatus() {
+  const model=state.neuralModel;
+  const panel=$("#nn-performance");
+  if (!model) {
+    panel.textContent="Trained model not available. Run the offline training script and commit data/career_nn.json.";
+    $("#nn-run").disabled=true;
+    return;
+  }
+  const m=model.metrics;
+  $("#nn-run").disabled=false;
+  panel.innerHTML='<div class="nn-metrics"><div><strong>'+clean((100*m.accuracy).toFixed(1))+
+    '%</strong><span>Unseen test accuracy</span></div><div><strong>'+clean((100*m.macro_f1).toFixed(1))+
+    '%</strong><span>Macro-F1</span></div><div><strong>'+clean((100*m.majority_baseline_accuracy).toFixed(1))+
+    '%</strong><span>Simple majority baseline</span></div></div>'+
+    '<p class="panel-caption">5,213 training and 1,304 test respondents · 12 occupational classes · 80/20 stratified split. No test records used to fit preprocessing. Career classification, not lesson recommendation accuracy.</p>';
+}
+function runCareerNeuralNetwork(event) {
+  event.preventDefault();
+  const model=state.neuralModel, engine=window.WhatNextNeural;
+  if (!model || !engine) {
+    $("#nn-output").textContent="No trained neural network is available.";
+    return;
+  }
+  const bands=engine.SKILLS.map(([key])=>{
+    const value=$("#nn-"+key).value;
+    return value===""?NaN:Number(value);
+  });
+  const educationLevel=$("#nn-level").value, educationField=$("#nn-field").value;
+  if(educationLevel==="" || educationField===""){
+    $("#nn-output").textContent="Please select your education background.";
+    return;
+  }
+  try {
+    const predictions=engine.predict(model,{
+      bands,years:Number($("#nn-years").value),
+      educationLevel:Number(educationLevel),educationField:Number(educationField)
+    });
+    const top=predictions.slice(0,4);
+    $("#nn-output").innerHTML=
+      '<div class="card-kicker">NEURAL NETWORK · BROAD OCCUPATION EXPLORATION</div>'+
+      '<h3>'+clean(top[0].label)+'</h3>'+
+      '<p class="panel-caption">Highest model score among 12 broad occupational families; not a promise of career suitability or employment.</p>'+
+      top.map((result,index)=>{
+        const pct=Math.max(0,Math.min(100,result.probability*100));
+        return '<div class="nn-result-line"><div class="metric-label"><span>'+(index+1)+'. '+clean(result.label)+
+          '</span><strong>'+pct.toFixed(1)+'%</strong></div><div class="metric-track"><div class="metric-fill" style="width:'+pct.toFixed(1)+'%"></div></div></div>';
+      }).join("")+
+      '<p class="nn-result-note">Your answers are compared with data from employed adults in five countries. A student with no work experience is outside the model’s primary training population. The score does not measure skill mastery.</p>';
+    const selected=currentPath();
+    if (selected && selected.isco2) {
+      const wanted=predictions.find(result=>result.code===selected.isco2);
+      if(wanted){
+        $("#nn-output").innerHTML+='<p class="nn-current-target">Your selected destination belongs to the broad '+clean(wanted.label)+
+          ' category. It received '+(wanted.probability*100).toFixed(1)+
+          '% of the model’s class probability. Different tech roles share this category, so it cannot choose among AI, cloud or cybersecurity.</p>';
+      }
+    }
+    toast("Neural career patterns updated locally.");
+  } catch(err) {
+    $("#nn-output").textContent=err.message || "Unable to calculate an occupational comparison.";
+  }
 }
 
 function fillResumeFields() {
