@@ -7,6 +7,7 @@
   <meta name="theme-color" content="#0b1020">
   <title>WhatNext AI — Your Knowledge GPS</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="neural.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -106,6 +107,35 @@
           </article>
         </div>
         <p class="skill-disclaimer">Use-category bands are derived from each OECD workplace index and should not be interpreted as personal competence, proof of essential job qualifications, or comparisons of innate traits. Small groups and missing responses are withheld.</p>
+        <div class="nn-headline">
+          <div><div class="eyebrow">EXPERIMENTAL NEURAL NETWORK</div><h2>Discover career-family patterns with AI</h2><p>Explore what types of existing jobs resemble your answers using an actual trained neural network. This is a workforce-pattern demonstration, not an assessment of your talent or future employment chances.</p></div>
+          <span class="outlined-tag">27 → 20 → 12 → 12 MLP</span>
+        </div>
+        <div class="nn-layout">
+          <article class="panel">
+            <div class="panel-title"><div><h3>Tell the model about your background</h3><p>All inference runs locally in your browser. No profile data is sent to a server.</p></div></div>
+            <form id="nn-form" class="nn-form">
+              <div class="nn-background">
+                <div class="field"><label for="nn-level">Education level</label><select id="nn-level" required>
+                  <option value="">Choose a level</option><option value="0">Prefer not to say / unavailable</option>
+                  <option value="1">Low (OECD classification)</option><option value="2">Medium (OECD classification)</option><option value="3">High (OECD classification)</option>
+                </select></div>
+                <div class="field"><label for="nn-field">Field of study</label><select id="nn-field" required><option value="">Choose your field</option></select></div>
+                <div class="field"><label for="nn-years">Years of paid work experience (0–47)</label><input id="nn-years" type="number" min="0" max="47" step="1" value="0" required></div>
+              </div>
+              <h4>How often do you currently use these skills?</h4>
+              <p class="panel-caption">Choose 0 (rarely) through 5 (very frequently). These answers approximate survey usage categories; they are <strong>not calibrated proficiency scores</strong>, especially for students without work experience.</p>
+              <div class="nn-skill-inputs" id="nn-skill-inputs"></div>
+              <button type="submit" class="primary-btn" id="nn-run">Analyze career patterns ↗</button>
+            </form>
+          </article>
+          <article class="panel nn-results">
+            <div class="panel-title"><div><h3>Model predictions</h3><p>Predicted occupational family within our 12 observed classes</p></div><span class="model-pill">NEURAL NETWORK</span></div>
+            <div id="nn-performance" class="nn-performance">Loading verified test-set results...</div>
+            <div id="nn-output" class="nn-output" aria-live="polite">Choose your background and task-use levels to run the trained neural network.</div>
+            <p class="panel-caption">These class probabilities measure model resemblance on its training task, not hiring probabilities, aptitude, or the best next lesson. The learning roadmap still follows your prerequisites.</p>
+          </article>
+        </div>
         <div class="panel evidence-provenance" id="evidence-data-note">Evidence is being validated...</div>
         <p class="source-footnote">Primary source: <a href="https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html" target="_blank" rel="noopener noreferrer">OECD PIAAC 2nd Cycle public-use files</a>. Respondent records are processed offline; only grouped statistics are published here. The original 47-column merged CSV is never included in the hosted website. Some indicators are withheld because of limited or missing observations. Results are descriptive and do not include replicate-weight variance estimates.</p>
       </section>
