@@ -26,6 +26,9 @@ test('CatBoost is a real 350-tree held-out evaluated model',()=>{
   assert.equal(treeModel.metrics.browser_quantized_test_accuracy,0.4225);
   assert.ok(treeModel.metrics.accuracy>neuralModel.metrics.accuracy);
   assert.ok(treeModel.train_cross_validation.every(x=>x.folds.length===3));
+  assert.equal(treeModel.country_holdout.results.length,5);
+  assert.equal(treeModel.country_holdout.weighted_pooled_accuracy_approx,0.3679);
+  assert.ok(treeModel.country_holdout.results.every(x=>x.n>=800&&x.accuracy>0&&x.accuracy<1));
 });
 
 test('browser CatBoost inference matches independently computed quantized reference',()=>{
