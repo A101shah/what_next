@@ -12,8 +12,8 @@ const INTERESTS = [
   {id:"security",label:"Cybersecurity"}
 ];
 const state = {
-  paths: [], model: null, news: null, careers: null, skillEvidence: null, neuralModel: null, catboostModel: null, searchConfig: null, searchCatalogue: [], lastHelpQuery: "", evidenceCountry: null, evidenceFamily: null, view: "overview",
-  profile: {name:"",career:"ai",hours:7,interests:[],completed:[],resume:{email:"",about:"",education:"",projects:""}}
+  paths: [], model: null, news: null, careers: null, skillEvidence: null, neuralModel: null, catboostModel: null, roleSkills: null, skillTaxonomy: null, skillListLimit: 36, searchConfig: null, searchCatalogue: [], lastHelpQuery: "", evidenceCountry: null, evidenceFamily: null, view: "overview",
+  profile: {name:"",career:"ai",hours:7,interests:[],completed:[],technicalSkills:[],resume:{email:"",about:"",education:"",projects:""}}
 };
 const $ = selector => document.querySelector(selector);
 const $$ = selector => [...document.querySelectorAll(selector)];
@@ -34,6 +34,7 @@ function restore() {
       state.profile.hours = Math.max(1,Math.min(25,Number(saved.hours)||7));
       state.profile.interests = Array.isArray(saved.interests) ? saved.interests.filter(x=>typeof x==="string") : [];
       state.profile.completed = Array.isArray(saved.completed) ? saved.completed.filter(x=>typeof x==="string") : [];
+      state.profile.technicalSkills = Array.isArray(saved.technicalSkills) ? saved.technicalSkills.filter(x=>typeof x==="string").slice(0,120) : [];
       state.profile.resume = {...state.profile.resume,...(saved.resume && typeof saved.resume==="object" ? saved.resume : {})};
     }
   } catch(err) { console.warn("Stored profile unreadable; starting fresh."); }
@@ -58,8 +59,8 @@ async function loadOptional(url) {
 }
 async function start() {
   restore();
-  const [paths,model,news,careers,skillEvidence,neuralModel,catboostModel,searchConfig] = await Promise.all([
-    loadOptional("data/paths.json"),loadOptional("data/model.json"),loadOptional("data/research.json"),loadOptional("data/careers.json"),loadOptional("data/skill_evidence.json"),loadOptional("data/career_nn.json"),loadOptional("data/career_catboost.json"),loadOptional("data/search_config.json")
+  const [paths,model,news,careers,skillEvidence,neuralModel,catboostModel,searchConfig,roleSkills,skillTaxonomy] = await Promise.all([
+    loadOptional("data/paths.json"),loadOptional("data/model.json"),loadOptional("data/research.json"),loadOptional("data/careers.json"),loadOptional("data/skill_evidence.json"),loadOptional("data/career_nn.json"),loadOptional("data/career_catboost.json"),loadOptional("data/search_config.json"),loadOptional("data/role_skills.json"),loadOptional("data/skill_taxonomy.json")
   ]);
   if (!Array.isArray(paths) || !paths.length) {
     $("#next-content").innerHTML = "<h2>Unable to load learning paths.</h2><p>Open this website using a web server and check data/paths.json.</p>";
@@ -73,11 +74,15 @@ async function start() {
   state.neuralModel = neuralModel && neuralModel.nn && neuralModel.metrics ? neuralModel : null;
   state.catboostModel = catboostModel && catboostModel.trees && catboostModel.metrics ? catboostModel : null;
   state.searchConfig = searchConfig;
+  state.roleSkills = roleSkills && roleSkills.roles && Array.isArray(roleSkills.skills) ? roleSkills : null;
+  state.skillTaxonomy = skillTaxonomy && Array.isArray(skillTaxonomy.terms) ? skillTaxonomy : null;
+  if(window.WhatNextSkills && state.skillTaxonomy)state.profile.technicalSkills=window.WhatNextSkills.normalizeUserSkills(state.profile.technicalSkills,state.skillTaxonomy);
   state.searchCatalogue = window.WhatNextSearch ? window.WhatNextSearch.catalogue(state.paths,state.news) : [];
   if (!state.paths.some(path=>path.id===state.profile.career)) state.profile.career=state.paths[0].id;
   bindActions();
   initializeNeuralForm();
   initializeHelpSearch();
+  initializeSkillsStudio();
   renderProfileForm();
   fillResumeFields();
   render();
@@ -92,7 +97,7 @@ function navigate(view) {
     node.classList.toggle("active",active);
     if(active)node.setAttribute("aria-current","page");else node.removeAttribute("aria-current");
   });
-  const names={overview:"Overview",roadmap:"Learning roadmap",search:"Learning search",pulse:"World pulse",evidence:"Career intelligence",career:"Career studio",profile:"Your profile"};
+  const names={overview:"Overview",roadmap:"Learning roadmap",skills:"Skill studio",search:"Learning search",pulse:"World pulse",evidence:"Career intelligence",career:"Career studio",profile:"Your profile"};
   $("#current-view").textContent=names[view]||"Overview";
   $(".sidebar").classList.remove("open");
   if (view==="profile") renderProfileForm();
@@ -106,6 +111,35 @@ function bindActions(){
   $("#evidence-country").addEventListener("change",event=>{state.evidenceCountry=event.target.value;state.evidenceFamily=null;renderCareerEvidence(currentPath());});
   $("#evidence-family").addEventListener("change",event=>{state.evidenceFamily=event.target.value;renderCareerEvidence(currentPath());});
   $("#nn-form").addEventListener("submit",runCareerNeuralNetwork);
+  $("#skill-scope").addEventListener("change",()=>{state.skillListLimit=36;renderSkillsStudio(currentPath());});
+  $("#skill-category").addEventListener("change",()=>{state.skillListLimit=36;renderSkillsStudio(currentPath());});
+  $("#skill-query").addEventListener("input",()=>{state.skillListLimit=36;renderSkillsStudio(currentPath());});
+  $("#skill-show-more").addEventListener("click",()=>{state.skillListLimit+=36;renderSkillsStudio(currentPath());});
+  $("#skill-list").addEventListener("click",event=>{
+    const item=event.target.closest("[data-skill-name]");
+    if(!item)return;
+    toggleDeclaredSkill(item.dataset.skillName);
+  });
+  $("#my-skill-list").addEventListener("click",event=>{
+    const item=event.target.closest("[data-remove-skill]");
+    if(!item)return;
+    toggleDeclaredSkill(item.dataset.removeSkill);
+  });
+  $("#custom-skill-form").addEventListener("submit",event=>{
+    event.preventDefault();
+    const input=$("#custom-skill-input");
+    const name=input.value.trim();
+    if(!name)return;
+    if(state.profile.technicalSkills.length>=120){
+      toast("The demo supports up to 120 self-reported skills.");return;
+    }
+    addDeclaredSkill(name);input.value="";
+  });
+  $("#skills-focus").addEventListener("click",event=>{
+    const button=event.target.closest("[data-skill-study]");
+    if(!button)return;
+    navigate("search");performHelpSearch(button.dataset.skillStudy+" tutorial");
+  });
   $("#nn-model-select").addEventListener("change",()=>{renderNeuralStatus();$("#nn-output").textContent="Model changed. Run the comparison to see updated occupational patterns.";});
   $("#quick-search-form").addEventListener("submit",event=>{
     event.preventDefault();
@@ -197,6 +231,7 @@ function saveProfile(event) {
   state.profile.name=$("#student-name").value.trim().slice(0,60);
   state.profile.career=path;
   state.evidenceFamily=null;
+  state.skillListLimit=36;
   state.profile.hours=Number($("#hours-range").value);
   state.profile.interests=$$("#interests-list .selected").map(x=>x.dataset.interest);
   persist();
@@ -249,6 +284,8 @@ function render() {
     $("#open-next").addEventListener("click",()=>navigate("profile"));
   }
   renderRoadmap(path);
+  renderRoadmapTools(path);
+  renderSkillsStudio(path);
   renderResearch(path);
   renderNeighbors(path);
   renderCareerEvidence(path);
