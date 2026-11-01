@@ -868,12 +868,24 @@ function resumeMarkup() {
   const resume=state.profile.resume;
   const portfolio=(resume.projects||"").split("\n").map(x=>x.trim()).filter(Boolean);
   const skills=path.topics.filter(topic=>completed(topic.id)).map(topic=>topic.title);
+  // Group only explicitly self-reported tools; never import the attached resume.
+  const groupedTech=new Map;
+  for(const name of state.profile.technicalSkills||[]){
+    const cat=window.WhatNextSkills?.categoryOf(name,state.roleSkills,state.skillTaxonomy)||"other";
+    if(!groupedTech.has(cat))groupedTech.set(cat,[]);
+    groupedTech.get(cat).push(name);
+  }
+  const techGroups=[...groupedTech].map(([cat,names])=>{
+    const category=(state.roleSkills?.categories||state.skillTaxonomy?.categories||[]).find(c=>c.id===cat);
+    return '<li><strong>'+clean(category?.label||"Other tools")+':</strong> '+names.map(clean).join(", ")+'</li>';
+  });
   const paragraph=value=>clean(value||"").replace(/\n/g,"<br>");
   return '<h2>'+clean(state.profile.name||"Your Name")+'</h2><div class="resume-contact">'+clean(resume.email||"Your professional email")+
     ' · Interested in '+clean(path.label)+'</div>'+
     (resume.about?'<h4>Profile</h4><p>'+paragraph(resume.about)+'</p>':"")+
     (resume.education?'<h4>Education</h4><p>'+paragraph(resume.education)+'</p>':"")+
     (skills.length?'<h4>Skills (self-reported)</h4><p>'+skills.map(clean).join(" · ")+'</p>':"")+
+    (techGroups.length?'<h4>Technical Skills (self-reported)</h4><ul>'+techGroups.join("")+'</ul>':"")+
     '<h4>Projects & achievements</h4>'+(portfolio.length?'<ul>'+portfolio.map(p=>'<li>'+clean(p)+'</li>').join("")+'</ul>':'<p>Add real work you can discuss and demonstrate.</p>')+
     '<h4>Career direction</h4><p>'+clean(path.label)+'</p>';
 }
