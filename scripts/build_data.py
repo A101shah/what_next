@@ -50,10 +50,11 @@ def build():
         provenance[filename] = info
 
     occupations = {}
+    # Expand to every official O*NET occupation, rather than selected SOC prefixes.
     for row in files["occupation_data.csv"]:
         code = row.get("O*NET-SOC Code", "").strip()
         title = row.get("Title", "").strip()
-        if code and title and code.startswith(("11-", "13-", "15-", "17-", "27-")):
+        if code and title:
             occupations[code] = title
 
     skill_ratings = {}
@@ -79,8 +80,8 @@ def build():
         raise RuntimeError("O*NET essential-skill feature extraction failed (fewer than 10 features).")
 
     codes = [code for code in sorted(skill_ratings) if len(skill_ratings[code]) >= 10]
-    if len(codes) < 30:
-        raise RuntimeError("Not enough genuine occupational observations to train K-Means.")
+    if len(codes) < 500:
+        raise RuntimeError("Not enough genuine occupational observations to train the expanded K-Means analysis.")
 
     matrix = np.array([[skill_ratings[code].get(label, np.nan) for label in all_labels] for code in codes])
     matrix = SimpleImputer(strategy="median").fit_transform(matrix)
@@ -93,7 +94,7 @@ def build():
     software = {}
     for row in files["software_skills.csv"]:
         code = row.get("O*NET-SOC Code", "").strip()
-        name = (row.get("Example") or row.get("Commodity Title") or "").strip()
+        name = (row.get("Workplace Example") or row.get("Example") or "").strip()
         if code in occupations and name and len(name) < 75:
             software.setdefault(code, set()).add(name)
 
