@@ -1,0 +1,5 @@
+{
+  "google_programmable_search_engine_id": "",
+  "note": "Optional: Insert the public Search Engine ID (cx) from programmablesearchengine.google.com to show Google results inside this page. Without an ID, WhatNext still provides internal search and opens actual Google web search in a new tab. Never place an API key or credentials here.",
+  "google_embedded_is_optional": true
+}
