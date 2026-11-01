@@ -1,0 +1,495 @@
+{
+  "version": 1,
+  "basis": "Skill categories modeled after the organization of a technical resume; not a verified person's skill profile.",
+  "categories": [
+    {
+      "id": "languages",
+      "label": "Programming & query languages",
+      "description": "Languages and syntax used to program, query or mark up systems"
+    },
+    {
+      "id": "backend",
+      "label": "Backend & APIs",
+      "description": "Server-side frameworks, web services, application servers"
+    },
+    {
+      "id": "databases",
+      "label": "Databases & data stores",
+      "description": "Relational/non-relational databases, query and warehouse tools"
+    },
+    {
+      "id": "data",
+      "label": "AI, ML & data science",
+      "description": "Data analysis, ML frameworks, scientific computing and BI"
+    },
+    {
+      "id": "devtools",
+      "label": "Developer tools, Git & cloud",
+      "description": "Version control, cloud services, deployment, IDEs, DevOps"
+    },
+    {
+      "id": "frontend",
+      "label": "Frontend & interface development",
+      "description": "Web/UI frameworks and interface implementation tools"
+    },
+    {
+      "id": "creative",
+      "label": "Creative design & media",
+      "description": "Design, image, motion and audio tools"
+    },
+    {
+      "id": "business",
+      "label": "Business & occupational software",
+      "description": "Other occupation-linked professional technologies"
+    }
+  ],
+  "terms": [
+    {
+      "name": "Python",
+      "category": "languages",
+      "aliases": []
+    },
+    {
+      "name": "SQL",
+      "category": "languages",
+      "aliases": [
+        "Structured query language SQL",
+        "Structure query language SQL"
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "category": "languages",
+      "aliases": []
+    },
+    {
+      "name": "TypeScript",
+      "category": "languages",
+      "aliases": []
+    },
+    {
+      "name": "HTML",
+      "category": "frontend",
+      "aliases": [
+        "Hypertext markup language HTML"
+      ]
+    },
+    {
+      "name": "CSS",
+      "category": "frontend",
+      "aliases": [
+        "Cascading style sheets CSS"
+      ]
+    },
+    {
+      "name": "C++",
+      "category": "languages",
+      "aliases": []
+    },
+    {
+      "name": "Java",
+      "category": "languages",
+      "aliases": []
+    },
+    {
+      "name": "R",
+      "category": "data",
+      "aliases": []
+    },
+    {
+      "name": "C#",
+      "category": "languages",
+      "aliases": []
+    },
+    {
+      "name": "PHP",
+      "category": "backend",
+      "aliases": []
+    },
+    {
+      "name": "Bash",
+      "category": "languages",
+      "aliases": []
+    },
+    {
+      "name": "Go",
+      "category": "languages",
+      "aliases": []
+    },
+    {
+      "name": "Swift",
+      "category": "languages",
+      "aliases": []
+    },
+    {
+      "name": "Kotlin",
+      "category": "languages",
+      "aliases": []
+    },
+    {
+      "name": "FastAPI",
+      "category": "backend",
+      "aliases": []
+    },
+    {
+      "name": "Flask",
+      "category": "backend",
+      "aliases": []
+    },
+    {
+      "name": "Django",
+      "category": "backend",
+      "aliases": []
+    },
+    {
+      "name": "Node.js",
+      "category": "backend",
+      "aliases": [
+        "Node JS",
+        "Node.js"
+      ]
+    },
+    {
+      "name": "Express.js",
+      "category": "backend",
+      "aliases": [
+        "Express",
+        "Express.js"
+      ]
+    },
+    {
+      "name": "REST APIs",
+      "category": "backend",
+      "aliases": [
+        "RESTful web services",
+        "REST API"
+      ]
+    },
+    {
+      "name": "ASP.NET",
+      "category": "backend",
+      "aliases": []
+    },
+    {
+      "name": "Spring Boot",
+      "category": "backend",
+      "aliases": []
+    },
+    {
+      "name": "Gunicorn",
+      "category": "backend",
+      "aliases": []
+    },
+    {
+      "name": "PostgreSQL",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "MySQL",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "MongoDB",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "SQLite",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "Redis",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "Microsoft SQL Server",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "Oracle Database",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "Apache Cassandra",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "Amazon Redshift",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "NoSQL",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "Pandas",
+      "category": "data",
+      "aliases": []
+    },
+    {
+      "name": "NumPy",
+      "category": "data",
+      "aliases": []
+    },
+    {
+      "name": "Scikit-learn",
+      "category": "data",
+      "aliases": []
+    },
+    {
+      "name": "Matplotlib",
+      "category": "data",
+      "aliases": []
+    },
+    {
+      "name": "Seaborn",
+      "category": "data",
+      "aliases": []
+    },
+    {
+      "name": "PyTorch",
+      "category": "data",
+      "aliases": []
+    },
+    {
+      "name": "TensorFlow",
+      "category": "data",
+      "aliases": []
+    },
+    {
+      "name": "Keras",
+      "category": "data",
+      "aliases": []
+    },
+    {
+      "name": "XGBoost",
+      "category": "data",
+      "aliases": []
+    },
+    {
+      "name": "Tableau",
+      "category": "data",
+      "aliases": []
+    },
+    {
+      "name": "Microsoft Power BI",
+      "category": "data",
+      "aliases": [
+        "Power BI",
+        "Microsoft Power BI"
+      ]
+    },
+    {
+      "name": "Apache Spark",
+      "category": "data",
+      "aliases": []
+    },
+    {
+      "name": "Apache Hadoop",
+      "category": "data",
+      "aliases": []
+    },
+    {
+      "name": "Microsoft Excel",
+      "category": "data",
+      "aliases": []
+    },
+    {
+      "name": "Jupyter Notebook",
+      "category": "devtools",
+      "aliases": [
+        "Jupyter software"
+      ]
+    },
+    {
+      "name": "Git",
+      "category": "devtools",
+      "aliases": []
+    },
+    {
+      "name": "GitHub",
+      "category": "devtools",
+      "aliases": []
+    },
+    {
+      "name": "Docker",
+      "category": "devtools",
+      "aliases": []
+    },
+    {
+      "name": "Kubernetes",
+      "category": "devtools",
+      "aliases": []
+    },
+    {
+      "name": "Visual Studio Code",
+      "category": "devtools",
+      "aliases": [
+        "VS Code"
+      ]
+    },
+    {
+      "name": "Microsoft Visual Studio",
+      "category": "devtools",
+      "aliases": []
+    },
+    {
+      "name": "Amazon Web Services (AWS)",
+      "category": "devtools",
+      "aliases": [
+        "Amazon Web Services AWS software"
+      ]
+    },
+    {
+      "name": "Amazon EC2",
+      "category": "devtools",
+      "aliases": [
+        "Amazon Elastic Compute Cloud EC2"
+      ]
+    },
+    {
+      "name": "Amazon S3",
+      "category": "devtools",
+      "aliases": [
+        "Amazon Simple Storage Service S3"
+      ]
+    },
+    {
+      "name": "AWS SageMaker",
+      "category": "devtools",
+      "aliases": [
+        "Amazon Web Services AWS SageMaker"
+      ]
+    },
+    {
+      "name": "Microsoft Azure",
+      "category": "devtools",
+      "aliases": [
+        "Azure"
+      ]
+    },
+    {
+      "name": "Google Cloud",
+      "category": "devtools",
+      "aliases": [
+        "Google Cloud Platform"
+      ]
+    },
+    {
+      "name": "Terraform",
+      "category": "devtools",
+      "aliases": []
+    },
+    {
+      "name": "Jenkins",
+      "category": "devtools",
+      "aliases": []
+    },
+    {
+      "name": "Linux",
+      "category": "devtools",
+      "aliases": []
+    },
+    {
+      "name": "React",
+      "category": "frontend",
+      "aliases": []
+    },
+    {
+      "name": "React Native",
+      "category": "frontend",
+      "aliases": []
+    },
+    {
+      "name": "Angular",
+      "category": "frontend",
+      "aliases": []
+    },
+    {
+      "name": "Vue.js",
+      "category": "frontend",
+      "aliases": [
+        "Vue"
+      ]
+    },
+    {
+      "name": "Bootstrap",
+      "category": "frontend",
+      "aliases": []
+    },
+    {
+      "name": "Tailwind CSS",
+      "category": "frontend",
+      "aliases": []
+    },
+    {
+      "name": "Figma",
+      "category": "creative",
+      "aliases": []
+    },
+    {
+      "name": "Adobe Photoshop",
+      "category": "creative",
+      "aliases": [
+        "Photoshop"
+      ]
+    },
+    {
+      "name": "Adobe Illustrator",
+      "category": "creative",
+      "aliases": []
+    },
+    {
+      "name": "Framer",
+      "category": "creative",
+      "aliases": []
+    },
+    {
+      "name": "Audacity",
+      "category": "creative",
+      "aliases": []
+    },
+    {
+      "name": "Adobe After Effects",
+      "category": "creative",
+      "aliases": []
+    },
+    {
+      "name": "Adobe Premiere Pro",
+      "category": "creative",
+      "aliases": []
+    },
+    {
+      "name": "Adobe XD",
+      "category": "creative",
+      "aliases": []
+    },
+    {
+      "name": "Adobe InDesign",
+      "category": "creative",
+      "aliases": []
+    },
+    {
+      "name": "Figma collaborative design",
+      "category": "creative",
+      "aliases": [
+        "Figma design software"
+      ]
+    }
+  ],
+  "notes": [
+    "Exact/canonical matching is a human-authored normalization layer over O*NET Workplace Example strings.",
+    "Technologies absent from the O*NET source remain optional self-reported skills and cannot be counted as sourced occupation requirements.",
+    "Hot Technology and In Demand are O*NET source flags, not individual proficiency scores or a guaranteed job requirement.",
+    "No resume name, identity, employer, or contact information is stored or published."
+  ]
+}
