@@ -590,7 +590,11 @@ function renderNeuralStatus() {
     '<p class="panel-caption">Active model: <strong>'+clean(selection.value==="catboost"?"CatBoost gradient-boosted trees":"Multilayer perceptron")+
     '</strong>. Stratified 80/20 split · '+clean(m.train_rows||m.train_size||5213)+
     ' train / '+clean(m.test_rows||m.test_size||1304)+
-    ' test · 12 occupation families. The holdout was explored previously, so these scores are not independent deployment validation. Classification ≠ next-lesson accuracy.</p>';
+    ' test · 12 occupation families. The holdout was explored previously, so these scores are not independent deployment validation. Classification ≠ next-lesson accuracy.</p>'+
+    (cat?.country_holdout ?
+      '<p class="panel-caption">Country-held-out CatBoost check: '+
+      (100*cat.country_holdout.weighted_pooled_accuracy_approx).toFixed(2)+
+      '% combined accuracy across five countries tested one at a time. This is lower than the 80/20 random-split result; country generalization remains a limitation.</p>' : "");
 }
 function runCareerNeuralNetwork(event) {
   event.preventDefault();
