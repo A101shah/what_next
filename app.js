@@ -12,7 +12,7 @@ const INTERESTS = [
   {id:"security",label:"Cybersecurity"}
 ];
 const state = {
-  paths: [], model: null, news: null, careers: null, skillEvidence: null, neuralModel: null, evidenceCountry: null, evidenceFamily: null, view: "overview",
+  paths: [], model: null, news: null, careers: null, skillEvidence: null, neuralModel: null, catboostModel: null, searchConfig: null, searchCatalogue: [], lastHelpQuery: "", evidenceCountry: null, evidenceFamily: null, view: "overview",
   profile: {name:"",career:"ai",hours:7,interests:[],completed:[],resume:{email:"",about:"",education:"",projects:""}}
 };
 const $ = selector => document.querySelector(selector);
@@ -58,8 +58,8 @@ async function loadOptional(url) {
 }
 async function start() {
   restore();
-  const [paths,model,news,careers,skillEvidence,neuralModel] = await Promise.all([
-    loadOptional("data/paths.json"),loadOptional("data/model.json"),loadOptional("data/research.json"),loadOptional("data/careers.json"),loadOptional("data/skill_evidence.json"),loadOptional("data/career_nn.json")
+  const [paths,model,news,careers,skillEvidence,neuralModel,catboostModel,searchConfig] = await Promise.all([
+    loadOptional("data/paths.json"),loadOptional("data/model.json"),loadOptional("data/research.json"),loadOptional("data/careers.json"),loadOptional("data/skill_evidence.json"),loadOptional("data/career_nn.json"),loadOptional("data/career_catboost.json"),loadOptional("data/search_config.json")
   ]);
   if (!Array.isArray(paths) || !paths.length) {
     $("#next-content").innerHTML = "<h2>Unable to load learning paths.</h2><p>Open this website using a web server and check data/paths.json.</p>";
@@ -71,9 +71,13 @@ async function start() {
   state.careers = careers && careers.countries ? careers : null;
   state.skillEvidence = skillEvidence && skillEvidence.countries ? skillEvidence : null;
   state.neuralModel = neuralModel && neuralModel.nn && neuralModel.metrics ? neuralModel : null;
+  state.catboostModel = catboostModel && catboostModel.trees && catboostModel.metrics ? catboostModel : null;
+  state.searchConfig = searchConfig;
+  state.searchCatalogue = window.WhatNextSearch ? window.WhatNextSearch.catalogue(state.paths,state.news) : [];
   if (!state.paths.some(path=>path.id===state.profile.career)) state.profile.career=state.paths[0].id;
   bindActions();
   initializeNeuralForm();
+  initializeHelpSearch();
   renderProfileForm();
   fillResumeFields();
   render();
@@ -88,10 +92,11 @@ function navigate(view) {
     node.classList.toggle("active",active);
     if(active)node.setAttribute("aria-current","page");else node.removeAttribute("aria-current");
   });
-  const names={overview:"Overview",roadmap:"Learning roadmap",pulse:"World pulse",evidence:"Career intelligence",career:"Career studio",profile:"Your profile"};
+  const names={overview:"Overview",roadmap:"Learning roadmap",search:"Learning search",pulse:"World pulse",evidence:"Career intelligence",career:"Career studio",profile:"Your profile"};
   $("#current-view").textContent=names[view]||"Overview";
   $(".sidebar").classList.remove("open");
   if (view==="profile") renderProfileForm();
+  if (view==="search") { $("#help-query").value=state.lastHelpQuery; }
   window.scrollTo({top:0,behavior:"smooth"});
 }
 function bindActions(){
@@ -101,6 +106,32 @@ function bindActions(){
   $("#evidence-country").addEventListener("change",event=>{state.evidenceCountry=event.target.value;state.evidenceFamily=null;renderCareerEvidence(currentPath());});
   $("#evidence-family").addEventListener("change",event=>{state.evidenceFamily=event.target.value;renderCareerEvidence(currentPath());});
   $("#nn-form").addEventListener("submit",runCareerNeuralNetwork);
+  $("#nn-model-select").addEventListener("change",()=>{renderNeuralStatus();$("#nn-output").textContent="Model changed. Run the comparison to see updated occupational patterns.";});
+  $("#quick-search-form").addEventListener("submit",event=>{
+    event.preventDefault();
+    const query=$("#quick-search-query").value.trim();
+    navigate("search");
+    performHelpSearch(query);
+  });
+  $("#help-search-form").addEventListener("submit",event=>{
+    event.preventDefault();
+    performHelpSearch($("#help-query").value);
+  });
+  $(".help-suggestions [data-help-term]").forEach(button=>button.addEventListener("click",()=>{
+    const query=button.dataset.helpTerm;
+    performHelpSearch(query);
+  }));
+  $("#help-results").addEventListener("click",event=>{
+    const button=event.target.closest("[data-help-view]");
+    if(!button)return;
+    const view=button.dataset.helpView;
+    const path=button.dataset.helpPath;
+    if(path && state.paths.some(p=>p.id===path)&&path!==state.profile.career){
+      state.profile.career=path;state.evidenceFamily=null;
+      persist();render();toast("Learning destination switched. Your completed topics are preserved.");
+    }
+    navigate(view);
+  });
   $("#profile-form").addEventListener("submit",saveProfile);
   $("#career-select").addEventListener("change",()=>drawKnownSkills($("#career-select").value));
   $("#hours-range").addEventListener("input",()=>{
