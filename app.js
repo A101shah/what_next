@@ -79,6 +79,7 @@ async function start() {
   if(window.WhatNextSkills && state.skillTaxonomy)state.profile.technicalSkills=window.WhatNextSkills.normalizeUserSkills(state.profile.technicalSkills,state.skillTaxonomy);
   state.searchCatalogue = window.WhatNextSearch ? window.WhatNextSearch.catalogue(state.paths,state.news) : [];
   if (!state.paths.some(path=>path.id===state.profile.career)) state.profile.career=state.paths[0].id;
+  refreshSkillSearch();
   bindActions();
   initializeNeuralForm();
   initializeHelpSearch();
@@ -197,6 +198,161 @@ function bindActions(){
   $("#download-resume").addEventListener("click",downloadResume);
   $("#print-resume").addEventListener("click",()=>{navigate("career");window.print();});
 }
+
+// Skill Studio uses real occupation-to-software EXAMPLES from O*NET.
+// Users' declared tools are not inferred from PIAAC respondents or an uploaded resume.
+function initializeSkillsStudio(){
+  const cats=state.roleSkills?.categories||state.skillTaxonomy?.categories||[];
+  $("#skill-category").innerHTML='<option value="all">All skill categories</option>'+
+    cats.map(category=>'<option value="'+clean(category.id)+'">'+clean(category.label)+'</option>').join("");
+  if(!state.roleSkills){
+    $("#skill-source-label").textContent="Verified O*NET catalog unavailable; manual skills can still be recorded.";
+  }
+}
+function occupationTools(path){
+  return window.WhatNextSkills?.role(state.roleSkills,path?.soc)||{title:null,items:[],n:0};
+}
+function addDeclaredSkill(raw){
+  if(!window.WhatNextSkills)return;
+  const updated=window.WhatNextSkills.normalizeUserSkills(
+    [...state.profile.technicalSkills,raw],state.skillTaxonomy
+  );
+  if(updated.length===state.profile.technicalSkills.length){
+    toast("That skill is already in your list.");return;
+  }
+  state.profile.technicalSkills=updated;
+  persist();render();
+  toast("Skill added as self-reported experience.");
+}
+function toggleDeclaredSkill(name){
+  const engine=window.WhatNextSkills;
+  if(!engine)return;
+  const key=engine.norm(name);
+  const present=state.profile.technicalSkills.some(s=>engine.norm(s)===key);
+  if(present)state.profile.technicalSkills=state.profile.technicalSkills.filter(s=>engine.norm(s)!==key);
+  else if(state.profile.technicalSkills.length<120)
+    state.profile.technicalSkills=engine.normalizeUserSkills(
+      [...state.profile.technicalSkills,name],state.skillTaxonomy
+    );
+  else{toast("120 self-reported skills is the current limit.");return;}
+  persist();render();toast(present?"Self-reported skill removed.":"Self-reported skill added.");
+}
+function renderRoadmapTools(path){
+  const node=$("#roadmap-tools"),data=state.roleSkills;
+  if(!node)return;
+  if(!data || !window.WhatNextSkills){
+    node.textContent="The occupational skill catalog is unavailable. Your prerequisite roadmap still works.";
+    return;
+  }
+  const role=occupationTools(path);
+  if(!role.title){node.textContent="No O*NET software technology examples are available for this exact occupational code.";return;}
+  const chosen=new Set(state.profile.technicalSkills.map(window.WhatNextSkills.norm));
+  node.innerHTML='<p class="panel-caption">O*NET occupation mapped to this pathway: <strong>'+clean(role.title)+
+    '</strong> ('+clean(path.soc)+'). These are source-listed examples, not a required skill checklist.</p>'+
+    '<div class="roadmap-tech-chips">'+role.items.slice(0,12).map(item=>
+      '<span class="roadmap-tech-chip '+(chosen.has(window.WhatNextSkills.norm(item.name))?"known":"")+'">'+
+      clean(item.name)+(item.inDemand?' <small>IN DEMAND</small>':"")+'</span>'
+    ).join("")+'</div>';
+}
+function renderSkillsStudio(path){
+  const data=state.roleSkills,engine=window.WhatNextSkills;
+  if(!data||!engine){
+    $("#skills-summary").textContent="No verified O*NET occupation/software file is loaded. Manual skill editing remains available.";
+    $("#skill-list").textContent="Source-linked occupation examples are unavailable.";
+    $("#skills-focus").textContent="Source not available.";
+    renderDeclaredSkillList();
+    return;
+  }
+  const profile=occupationTools(path);
+  const compare=engine.compare(profile.items,state.profile.technicalSkills);
+  $("#skills-summary").innerHTML='<div class="skill-kpi"><strong>'+clean(data.occupation_count)+'</strong><span>O*NET occupations</span></div>'+
+    '<div class="skill-kpi"><strong>'+clean(Number(data.source_rows).toLocaleString())+'</strong><span>Occupation–tool associations</span></div>'+
+    '<div class="skill-kpi"><strong>'+clean(Number(data.unique_skill_count).toLocaleString())+'</strong><span>Distinct named tools</span></div>'+
+    '<div class="skill-kpi"><strong>'+clean(state.profile.technicalSkills.length)+'</strong><span>Skills you declared</span></div>';
+  $("#skill-source-label").textContent=profile.title ?
+    'Selected destination mapped to '+profile.title+' · '+profile.n+' sourced examples' :
+    "No corresponding O*NET occupation available for this selected career";
+  const scope=$("#skill-scope").value;
+  const term=engine.norm($("#skill-query").value);
+  const cat=$("#skill-category").value;
+  let available=scope==="all"?engine.catalog(data):
+    scope==="curated"?engine.curated(data,state.skillTaxonomy):profile.items;
+  const myNames=new Set(state.profile.technicalSkills.map(engine.norm));
+  if(cat!=="all")available=available.filter(x=>x.category===cat);
+  if(term)available=available.filter(x=>engine.norm(x.name).includes(term));
+  available.sort((a,b)=>Number(b.inDemand)-Number(a.inDemand)||
+    b.demandCount-a.demandCount||Number(b.hot)-Number(a.hot)||
+    b.hotCount-a.hotCount||b.occupationCount-a.occupationCount||a.name.localeCompare(b.name));
+  const limit=state.skillListLimit||36;
+  $("#skill-list-summary").textContent=available.length+' matching named skills · '+Math.min(limit,available.length)+' displayed. Check a skill only if you can demonstrate it; source presence does not prove mastery.';
+  $("#skill-list").innerHTML=available.length?available.slice(0,limit).map(item=>{
+    const owned=myNames.has(engine.norm(item.name));
+    return '<button type="button" class="skill-pick-item '+(owned?"selected":"")+'" data-skill-name="'+clean(item.name)+
+      '" aria-pressed="'+owned+'"><span class="skill-check">'+(owned?"✓":"+")+'</span>'+
+      '<span class="skill-pick-main"><strong>'+clean(item.name)+'</strong>'+
+      '<small>'+clean((data.categories.find(c=>c.id===item.category)?.label)||"Other")+
+      (item.sourced?" · O*NET example":" · Curated example, not O*NET-linked")+'</small></span>'+
+      '<span class="skill-pick-flags">'+(item.inDemand?'<em class="flag-demand">In demand</em>':"")+
+      (item.hot?'<em class="flag-hot">Hot technology</em>':"")+
+      '</span></button>';
+  }).join(""):'<p class="quiet-state">No observed skill examples match these filters. Try another category or search the complete catalog.</p>';
+  $("#skill-show-more").hidden=available.length<=limit;
+  $("#skill-show-more").textContent='Show more ('+(available.length-limit)+' remaining) ↓';
+  renderDeclaredSkillList();
+  renderSkillFocus(profile,compare);
+}
+function renderDeclaredSkillList(){
+  const engine=window.WhatNextSkills;
+  if(!engine)return;
+  const skills=state.profile.technicalSkills;
+  $("#my-skill-count").textContent=skills.length+' skill'+(skills.length===1?"":"s")+' self-reported · not independently tested';
+  const cats=state.roleSkills?.categories||state.skillTaxonomy?.categories||[];
+  if(!skills.length){
+    $("#my-skill-list").innerHTML='<p class="quiet-state">No skills declared yet. Choose specific technologies from the catalog, or add a tool you have actually used.</p>';
+    return;
+  }
+  const groups=new Map;
+  for(const name of skills){
+    const category=engine.categoryOf(name,state.roleSkills,state.skillTaxonomy);
+    if(!groups.has(category))groups.set(category,[]);
+    groups.get(category).push(name);
+  }
+  $("#my-skill-list").innerHTML=[...groups].map(([id,names])=>{
+    const heading=cats.find(x=>x.id===id)?.label||"Other skills / manually added";
+    return '<div class="my-skill-category"><h4>'+clean(heading)+'</h4><div class="my-skill-tags">'+
+      names.map(name=>'<button type="button" data-remove-skill="'+clean(name)+
+      '" aria-label="Remove '+clean(name)+'" title="Remove this self-reported skill">'+clean(name)+' <span>×</span></button>').join("")+
+      '</div></div>';
+  }).join("");
+}
+function renderSkillFocus(role,comparison){
+  const node=$("#skills-focus"),engine=window.WhatNextSkills;
+  if(!role.title){node.textContent="Select a career goal with an O*NET occupation mapping to see source-linked examples.";return;}
+  const goal=comparison.unexplored.filter(item=>item.inDemand).slice(0,6);
+  const other=comparison.unexplored.filter(item=>!item.inDemand&&item.hot).slice(0,Math.max(0,6-goal.length));
+  const recommended=[...goal,...other];
+  node.innerHTML='<div class="skill-focus-count"><strong>'+comparison.matched.length+
+    '</strong><span>of '+comparison.observed+' source-listed tool examples also appear in your self-reported stack. This is <b>not</b> a competency or readiness score.</span></div>'+
+    (recommended.length?'<div class="focus-list">'+recommended.map(item=>
+      '<div class="focus-skill"><div><strong>'+clean(item.name)+'</strong><small>'+clean(item.inDemand?"O*NET in-demand flag":"O*NET hot technology flag")+'</small></div>'+
+      '<button type="button" class="small-link" data-skill-study="'+clean(item.name)+'">Find tutorials ↗</button></div>'
+    ).join("")+'</div>':'<p class="quiet-state">No other source-flagged tools to suggest at the moment. You can browse all tools for this occupation.</p>');
+}
+function refreshSkillSearch(){
+  if(!window.WhatNextSearch)return;
+  state.searchCatalogue=window.WhatNextSearch.catalogue(state.paths,state.news);
+  if(!state.roleSkills||!window.WhatNextSkills)return;
+  const role=occupationTools(currentPath());
+  for(const item of role.items.slice(0,180))
+    state.searchCatalogue.push({
+      type:"Occupation software skill",title:item.name,
+      description:"O*NET observed software example for "+role.title+
+        (item.inDemand?" · flagged in demand":"")+(item.hot?" · hot technology":""),
+      tags:[role.title,item.category,currentPath().label,"software skill technology"].join(" "),
+      view:"skills"
+    });
+}
+
 function renderProfileForm(){
   $("#student-name").value=state.profile.name;
   $("#career-select").innerHTML=state.paths.map(path=>
@@ -230,6 +386,7 @@ function saveProfile(event) {
   ];
   state.profile.name=$("#student-name").value.trim().slice(0,60);
   state.profile.career=path;
+  refreshSkillSearch();
   state.evidenceFamily=null;
   state.skillListLimit=36;
   state.profile.hours=Number($("#hours-range").value);
