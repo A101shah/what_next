@@ -8,6 +8,8 @@
   <title>WhatNext AI — Your Knowledge GPS</title>
   <link rel="stylesheet" href="styles.css">
   <script src="neural.js" defer></script>
+  <script src="catboost.js" defer></script>
+  <script src="search.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -18,6 +20,7 @@
     <nav class="nav">
       <button class="nav-item active" data-view="overview"><span class="nav-icon">◈</span> Overview</button>
       <button class="nav-item" data-view="roadmap"><span class="nav-icon">⌁</span> Learning roadmap</button>
+      <button class="nav-item" data-view="search"><span class="nav-icon">⌕</span> Learning search <span class="new-dot"></span></button>
       <button class="nav-item" data-view="evidence"><span class="nav-icon">◫</span> Career intelligence</button>
       <button class="nav-item" data-view="pulse"><span class="nav-icon">◎</span> World pulse <span class="new-dot"></span></button>
       <button class="nav-item" data-view="career"><span class="nav-icon">▤</span> Career studio</button>
@@ -32,7 +35,7 @@
     <header class="topbar">
       <button class="mobile-menu" id="mobile-menu" aria-label="Toggle navigation">☰</button>
       <div class="breadcrumb">MY WORKSPACE <span>/</span> <strong id="current-view">Overview</strong></div>
-      <div class="header-right"><span class="live-tag"><i></i> Learning intelligence</span><span class="avatar" id="avatar">S</span></div>
+      <div class="header-right"><form id="quick-search-form" class="quick-search" role="search"><label for="quick-search-query" class="sr-only">Search topics and learning resources</label><span aria-hidden="true">⌕</span><input id="quick-search-query" placeholder="Search skills, lessons, or Google…" maxlength="200" autocomplete="off"><button type="submit" aria-label="Search learning resources">Search</button></form><span class="live-tag"><i></i> Learning intelligence</span><span class="avatar" id="avatar">S</span></div>
     </header>
 
     <div class="content">
@@ -77,6 +80,42 @@
         <div id="roadmap-list" class="steps"></div>
       </section>
 
+      <section class="view" id="view-search">
+        <div class="eyebrow">SEARCH YOUR KNOWLEDGE GPS <span class="eyebrow-line"></span></div>
+        <div class="heading-row"><div><h1>Find your next answer<span class="accent">.</span></h1><p class="lead">Your personalized learning library, with the option to search Google for more.</p></div><span class="outlined-tag">CURATED + WEB</span></div>
+        <article class="panel help-search-panel">
+          <form id="help-search-form" class="help-search-form" role="search">
+            <label class="sr-only" for="help-query">Search learning topics and helpful resources</label>
+            <span class="help-search-symbol" aria-hidden="true">⌕</span>
+            <input id="help-query" type="search" placeholder="Try 'neural networks', 'RAG', 'statistics', 'CV'…" maxlength="200" autocomplete="off">
+            <button type="submit" class="primary-btn">Search</button>
+          </form>
+          <div class="help-suggestions"><span>Try:</span>
+            <button type="button" data-help-term="machine learning">Machine learning</button>
+            <button type="button" data-help-term="statistics">Statistics</button>
+            <button type="button" data-help-term="neural networks">Neural networks</button>
+            <button type="button" data-help-term="rag">RAG</button>
+            <button type="button" data-help-term="deployment">Deployment</button>
+          </div>
+          <div class="help-hint">Our search matches real lessons, published resources and in-app guides. It does not fabricate AI-generated answers.</div>
+        </article>
+        <div class="section-head"><div><h2>Results from WhatNext AI</h2><p id="help-search-count">Start by entering a topic above.</p></div><span class="model-pill">YOUR LIBRARY</span></div>
+        <div id="help-results" class="help-results" aria-live="polite"><div class="panel quiet-state">Search your learning paths, official documentation and verified links.</div></div>
+        <article class="panel google-help-panel">
+          <div class="google-help-header"><div><span class="card-kicker">WEB SEARCH · GOOGLE</span><h2>Want more explanations?</h2><p>Search the wider web for videos, tutorials and documentation related to your query.</p></div><span class="google-letter" aria-label="Google">G</span></div>
+          <div class="google-help-actions">
+            <a id="help-google-link" class="primary-btn google-action" href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Search Google ↗</a>
+            <a id="help-google-official" class="outline-btn google-action" href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Search official docs ↗</a>
+          </div>
+          <p class="panel-caption">Google searches open in a new tab. External results are controlled by Google and are distinct from our curated in-app results. Search terms are shared with Google only if you choose a Google search.</p>
+          <div id="google-embedded-panel" class="google-embedded-panel" hidden>
+            <h3>Google Programmable Search results</h3>
+            <p class="panel-caption">Provided by your configured Google Programmable Search Engine; results may differ from ordinary Google Search.</p>
+            <div id="google-embedded-results"></div>
+          </div>
+        </article>
+      </section>
+
       <section class="view" id="view-evidence">
         <div class="eyebrow">LEARN FROM REAL WORKFORCE DATA <span class="eyebrow-line"></span></div>
         <div class="heading-row"><div><h1>Learn from real careers<span class="accent">.</span></h1><p class="lead">Compare reported workplace skill use, education and experience across countries and occupations.</p></div><span class="outlined-tag">OECD PIAAC · 2023</span></div>
@@ -108,13 +147,17 @@
         </div>
         <p class="skill-disclaimer">Use-category bands are derived from each OECD workplace index and should not be interpreted as personal competence, proof of essential job qualifications, or comparisons of innate traits. Small groups and missing responses are withheld.</p>
         <div class="nn-headline">
-          <div><div class="eyebrow">EXPERIMENTAL NEURAL NETWORK</div><h2>Discover career-family patterns with AI</h2><p>Explore what types of existing jobs resemble your answers using an actual trained neural network. This is a workforce-pattern demonstration, not an assessment of your talent or future employment chances.</p></div>
-          <span class="outlined-tag">27 → 20 → 12 → 12 MLP</span>
+          <div><div class="eyebrow">EVALUATED ML MODELS · CATBOOST + NEURAL NETWORK</div><h2>Compare career-family patterns with AI</h2><p>Two genuinely trained models, using the same 27 real-data features. Compare how each model classifies broad occupational families. Neither can determine your talent, hiring probability or ideal next lesson.</p></div>
+          <span class="outlined-tag">12 OCCUPATION CLASSES</span>
         </div>
         <div class="nn-layout">
           <article class="panel">
             <div class="panel-title"><div><h3>Tell the model about your background</h3><p>All inference runs locally in your browser. No profile data is sent to a server.</p></div></div>
             <form id="nn-form" class="nn-form">
+              <div class="nn-model-picker field"><label for="nn-model-select">PREDICTION MODEL</label><select id="nn-model-select">
+                <option value="catboost">CatBoost · boosted decision trees (recommended)</option>
+                <option value="nn">Neural Network · multilayer perceptron (MLP)</option>
+              </select><p class="panel-caption">CatBoost is the stronger exploratory classifier on the saved 80/20 holdout; both models remain available to compare.</p></div>
               <div class="nn-background">
                 <div class="field"><label for="nn-level">Education level</label><select id="nn-level" required>
                   <option value="">Choose a level</option><option value="0">Prefer not to say / unavailable</option>
@@ -126,14 +169,14 @@
               <h4>How often do you currently use these skills?</h4>
               <p class="panel-caption">Choose 0 (rarely) through 5 (very frequently). These answers approximate survey usage categories; they are <strong>not calibrated proficiency scores</strong>, especially for students without work experience.</p>
               <div class="nn-skill-inputs" id="nn-skill-inputs"></div>
-              <button type="submit" class="primary-btn" id="nn-run">Analyze career patterns ↗</button>
+              <button type="submit" class="primary-btn" id="nn-run">Compare occupational patterns ↗</button>
             </form>
           </article>
           <article class="panel nn-results">
-            <div class="panel-title"><div><h3>Model predictions</h3><p>Predicted occupational family within our 12 observed classes</p></div><span class="model-pill">NEURAL NETWORK</span></div>
+            <div class="panel-title"><div><h3>Model predictions</h3><p>Broad occupational-family classification, not hiring likelihood</p></div><span class="model-pill">CATBOOST / MLP</span></div>
             <div id="nn-performance" class="nn-performance">Loading verified test-set results...</div>
             <div id="nn-output" class="nn-output" aria-live="polite">Choose your background and task-use levels to run the trained neural network.</div>
-            <p class="panel-caption">These class probabilities measure model resemblance on its training task, not hiring probabilities, aptitude, or the best next lesson. The learning roadmap still follows your prerequisites.</p>
+            <p class="panel-caption">These are uncalibrated model class scores—not hiring probabilities, aptitude ratings, or the best next lesson. The learning roadmap still follows your prerequisites.</p>
           </article>
         </div>
         <div class="panel evidence-provenance" id="evidence-data-note">Evidence is being validated...</div>
