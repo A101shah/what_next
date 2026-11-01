@@ -150,6 +150,34 @@ def build():
     if max_delta>.01:raise RuntimeError("Exported model probability mismatch.")
     metrics["browser_quantized_test_accuracy"]=round(quantized_accuracy,4)
     metrics["max_probability_delta_8_test_cases"]=round(max_delta,6)
+    # Robustness check: test every country as a completely unseen population.
+    # Training for each fold uses other four countries ONLY. This experiment is
+    # descriptive and does not imply that the same accuracy holds elsewhere.
+    countries=np.array([row["country"] for row in rows])
+    country_results=[]
+    all_pred=np.empty(len(rows),dtype=int)
+    for holdout in sorted(set(countries)):
+        in_train=countries!=holdout
+        in_test=countries==holdout
+        country_median=np.nanmedian(x[in_train],axis=0)
+        country_x_train=np.where(np.isfinite(x[in_train]),x[in_train],country_median)
+        country_x_test=np.where(np.isfinite(x[in_test]),x[in_test],country_median)
+        country_model=CatBoostClassifier(iterations=selected,**PARAMS)
+        country_model.fit(country_x_train,y[in_train])
+        country_predictions=country_model.predict(country_x_test).reshape(-1).astype(int)
+        all_pred[in_test]=country_predictions
+        country_results.append({
+            "country":holdout,
+            "n":int(in_test.sum()),
+            **scores(y[in_test],country_predictions)
+        })
+    country_validation={
+        "method":"Leave-one-country-out: train on other four countries, test on named fifth country; 350 trees, depth 5, band-based 27 features, training-only median fill.",
+        "rows":len(rows),
+        "weighted_pooled_accuracy_approx":round(float(accuracy_score(y,all_pred)),4),
+        "results":country_results,
+        "limitations":"Different national labor markets, educational distributions and selected cohorts limit generalization. This is not student-outcome validation."
+    }
     payload={
         "version":1,
         "model":"CatBoost multi-class symmetric gradient-boosted trees",
@@ -161,7 +189,7 @@ def build():
         "quantization":factor,"trees":exported,
         "scale":scale,"bias":bias,"n_trees":len(trees),
         "max_depth":max(len(t["splits"]) for t in trees),
-        "train_cross_validation":evaluation,"metrics":metrics,
+        "train_cross_validation":evaluation,"metrics":metrics,"country_holdout":country_validation,
         "training":{
             "params":{key:val for key,val in PARAMS.items()
                       if key not in ("thread_count","verbose","allow_writing_files")},
