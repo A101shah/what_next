@@ -12,6 +12,40 @@ All `.github/workflows/*.yml` files have been **deleted**. The repository stores
 
 Once GitHub Pages is switched to branch publishing, the expected link is https://a101shah.github.io/what_next/ .
 
+## Dataset V3 — named technologies and resume-style skill categories
+
+**Added, directly to the repository:** a source-backed O*NET software-technology relationship table with **31,821 genuine occupation-to-technology associations**, **923 distinct O*NET-SOC occupations**, and **8,751 normalized named tools/software examples**. The 8,751 count includes official software examples normalized using carefully reviewed exact aliases; it is not a count of surveyed workers or unique people.
+
+The [real source CSV](data/onet_software_skills_31_0.csv) contains the original occupation code, official occupational title, software workplace example, O*NET element name, and `Hot Technology` / `In Demand` flags. A [small downloadable analysis CSV](data/WhatNext_Expanded_Role_Skills.csv) adds a **resume-like category** for each source association; a [compressed browser index](data/role_skills.json) joins the same records to 923 occupations for performant client-side use. The occupation relationships are independently sourced at O*NET-SOC level. Attribution: [O*NET Resource Center database](https://www.onetcenter.org/database.html), license: [O*NET database terms](https://www.onetcenter.org/database.html). A public [GitHub mirror](https://github.com/Lucialululu/SkillRadar/blob/main/data/onet/software_skills.csv) supplied the bytes used in this offline build; its 31,821 rows and seven-column schema match the O*NET 31.0 official listing, but the exact official upstream-byte SHA was not independently checked. This caveat is retained in the output metadata.
+
+The resume attachment was **used only as a schema illustration**, never as an occupation-level observation. No names, email addresses, schools, employers, personal resume scores, or inferred achievements were inserted into the public data. Its general **technical-skills presentation categories** inspired the taxonomy in `data/skill_taxonomy.json`:
+
+- Programming & query languages
+- Backend & APIs
+- Databases & data stores
+- AI, ML & data science
+- Developer tools, Git & cloud
+- Frontend & interface development
+- Creative design & media
+- Business & occupational software
+
+Human-curated aliases standardize source strings, e.g. SQL and its official workplace labels. Items absent from the official software examples (for example, FastAPI or some creative tools) remain available for **optional, self-reported skill entry** but are **not fabricated as an O*NET occupational requirement**.
+
+### What the user sees
+
+The **Skill studio** allows students to choose their career, browse a verified named-technology list for the mapped O*NET occupation, filter by category and search across all sourced examples or curated resume-like categories. The **Hot Technology** and **In Demand** chips come exclusively from O*NET's genuine flags, not an invented relevance model. Students can **self-declare** tools they know, see the exact source-listed name overlap for their career, and explore unfamiliar tools with targeted learning searches. No overlap count is a proficiency, job-readiness or probability score. Their chosen technologies appear under categorized **Technical Skills (self-reported)** in the editable resume, and are stored in the browser only.
+
+**Source integrity is critical:** the earlier **6,517 OECD PIAAC individual workforce rows** remain a separate survey dataset. The new **31,821 O*NET rows are occupation-to-software reference relationships**, not extra employed adults or person-level evidence. They are linked to an individual app pathway only by its **explicit O*NET-SOC code**, and they are **never joined to OECD respondents as if the survey measured each respondent's exact tools**. The 42.25% CatBoost test accuracy and 40.49% MLP test accuracy are **unchanged**: we have not retrained those person-level classifiers on this new reference dataset.
+
+### Refresh dataset entirely offline
+
+```bash
+python -m scripts.build_role_skills
+node --test tests/test_skill_studio.mjs
+```
+
+Both custom GitHub Actions workflows remain deleted. GitHub Pages serves the checked-in static CSV and JSON directly from `main`, while Vercel can serve the same committed artifacts when connected.
+
 ## CatBoost occupational model — recommended for tabular features
 
 The same **6,517 authentic anonymous OECD PIAAC** records feed an offline-trained **CatBoost multi-class gradient-boosted decision-tree model**, now the default **Career Intelligence** classifier. It operates on 27 explicitly encoded inputs (seven observed 0–5 skill-use bands, numerical work experience, one-hot education level and field). The seven bands are ordinal, the education fields nominal and years of work numerical. This input encoding is consistent with the app's actual questionnaire: we intentionally do **not** feed the model uncollected continuous OECD latent index scores.
