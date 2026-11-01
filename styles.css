@@ -145,3 +145,60 @@
 @media(max-width:850px){.quick-search{width:clamp(180px,42vw,370px)}.header-right{flex:1;justify-content:flex-end}.quick-search{flex:1}}
 @media(max-width:640px){.quick-search{width:auto;flex:1}.quick-search input{font-size:11px}.quick-search button{padding:7px}.help-results{grid-template-columns:1fr}.help-search-form{gap:6px}.help-search-symbol{font-size:21px}.help-search-form input{font-size:12px}.google-help-header h2{font-size:19px}}
 @media(max-width:430px){.breadcrumb{display:none}.topbar{gap:9px}.avatar{display:none}.help-search-form{flex-wrap:wrap}.help-search-form input{flex-basis:calc(100% - 38px)}.help-search-form button{width:100%}.model-compare-grid{grid-template-columns:1fr}}
+
+
+/* Skill Studio · sourced occupation/technology graph and resume-style stack */
+.skills-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:19px 0 17px}
+.skill-kpi{border:1px solid #404267;background:linear-gradient(140deg,#24223e,#161d30);border-radius:13px;padding:18px;display:flex;flex-direction:column;gap:5px}
+.skill-kpi strong{color:#e8e2ff;font-size:25px;letter-spacing:-.7px;font-variant-numeric:tabular-nums}
+.skill-kpi span{font-size:11px;line-height:1.55;color:#a2b0c9}
+.skills-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,1fr);gap:15px;align-items:start}
+.skill-side{display:grid;gap:15px;min-width:0}
+.skills-explorer{min-width:0}
+.skills-filters{display:grid;grid-template-columns:1.25fr 1fr;gap:12px;margin:20px 0}
+.skills-filters .field.full{grid-column:1/-1}
+.skills-filters label,.custom-skill-form>label{display:block;color:#a5b1cd;letter-spacing:1px;font-weight:800;font-size:10px;margin-bottom:7px}
+.skills-filters select,.skills-filters input,.custom-skill-form input{width:100%;min-width:0;background:#171e30;border:1px solid #404b67;border-radius:9px;color:#eef1ff;padding:10px 12px;min-height:44px;font-size:12px}
+.skills-filters select:focus,.skills-filters input:focus,.custom-skill-form input:focus{outline:2px solid #9a8df3;outline-offset:1px}
+.skill-pick-list{display:grid;gap:8px;margin:13px 0 18px}
+.skill-pick-item{width:100%;display:flex;align-items:center;gap:12px;background:#1a2233;border:1px solid #303d54;border-radius:11px;padding:12px 14px;color:#e3e6f4;text-align:left;transition:.18s}
+.skill-pick-item:hover{border-color:#7b70bd;background:#24273f}
+.skill-pick-item.selected{border-color:#8f80e6;background:#2b2946}
+.skill-check{flex-shrink:0;display:grid;place-items:center;border-radius:8px;width:26px;height:26px;background:#32344d;color:#ccc4f3;font-weight:900}
+.skill-pick-item.selected .skill-check{background:#a89aff;color:#17172d}
+.skill-pick-main{display:flex;min-width:0;flex:1;flex-direction:column;gap:4px}
+.skill-pick-main strong{font-size:12px;line-height:1.4;overflow-wrap:anywhere}
+.skill-pick-main small{color:#889ab3;font-size:10px;line-height:1.5}
+.skill-pick-flags{display:flex;gap:5px;flex-wrap:wrap;justify-content:end}
+.skill-pick-flags em{font-style:normal;padding:4px 6px;border-radius:5px;font-size:9px;font-weight:700;white-space:nowrap}
+.flag-demand{background:#213e45;color:#96dacf;border:1px solid #386a71}
+.flag-hot{background:#45352c;color:#e8bb8f;border:1px solid #775b3d}
+.skill-count{font-size:12px;color:#d9ceff;margin-bottom:15px;font-weight:700}
+.my-skill-list{display:grid;gap:16px;max-height:550px;overflow-y:auto}
+.my-skill-category h4{color:#b2a9e7;font-size:11px;letter-spacing:.6px;margin:0 0 8px}
+.my-skill-tags{display:flex;gap:7px;flex-wrap:wrap}
+.my-skill-tags button{border:1px solid #4e496e;background:#2b2945;color:#e0dafa;padding:7px 10px;border-radius:8px;text-align:left;font-size:11px}
+.my-skill-tags button span{color:#a69ae3;font-weight:800;margin-left:6px}
+.my-skill-tags button:hover{background:#4c3455;border-color:#a07099}
+.custom-skill-form{margin:21px 0 14px}
+.custom-skill-form>div{display:flex;gap:8px}
+.custom-skill-form button{flex-shrink:0}
+.skill-focus-count{display:flex;align-items:center;gap:16px;background:#272441;border:1px solid #534b83;border-radius:11px;padding:15px;margin:17px 0}
+.skill-focus-count strong{font-size:29px;color:#dfd4ff;font-variant-numeric:tabular-nums}
+.skill-focus-count span{font-size:11px;color:#b9c3da;line-height:1.6}
+.focus-list{display:grid;gap:10px;margin:15px 0 20px}
+.focus-skill{display:flex;align-items:center;justify-content:space-between;gap:9px;padding:10px 0;border-bottom:1px solid #30394f}
+.focus-skill:last-child{border-bottom:none}
+.focus-skill>div{min-width:0;display:flex;flex-direction:column;gap:4px}
+.focus-skill strong{font-size:12px;color:#e7e6f4}
+.focus-skill small{font-size:10px;color:#8898b4}
+.focus-skill button{font-size:11px;white-space:nowrap;color:#bdb1ff}
+.roadmap-tool-brief{margin-top:16px}
+.roadmap-tools .panel-caption{margin-bottom:14px}
+.roadmap-tech-chips{display:flex;flex-wrap:wrap;gap:9px}
+.roadmap-tech-chip{font-size:11px;background:#20273b;border:1px solid #3b465f;border-radius:8px;padding:8px 10px;color:#d4dbee}
+.roadmap-tech-chip.known{border-color:#9483d4;background:#30294a;color:#ece2ff}
+.roadmap-tech-chip small{display:block;font-size:9px;color:#9dd5b8;margin-top:3px;letter-spacing:.6px;font-weight:750}
+@media(max-width:1080px){.skills-grid{grid-template-columns:1fr}.skill-side{grid-template-columns:1fr 1fr}.skill-pick-flags em{font-size:9px}}
+@media(max-width:760px){.skills-summary{grid-template-columns:1fr 1fr}.skill-side{grid-template-columns:1fr}}
+@media(max-width:480px){.skills-filters{grid-template-columns:1fr}.skills-filters .field.full{grid-column:auto}.skill-pick-item{padding:12px 10px;gap:8px}.skill-pick-flags{max-width:90px}.skills-summary{gap:8px}.skill-kpi{padding:13px}.skill-kpi strong{font-size:21px}.skill-kpi span{font-size:10px}.skill-pick-main small{font-size:9px}.custom-skill-form>div{flex-wrap:wrap}.custom-skill-form input{flex:1}.focus-skill{align-items:flex-start}.focus-skill button{font-size:10px}}
