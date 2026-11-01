@@ -20,6 +20,7 @@
     <nav class="nav">
       <button class="nav-item active" data-view="overview"><span class="nav-icon">◈</span> Overview</button>
       <button class="nav-item" data-view="roadmap"><span class="nav-icon">⌁</span> Learning roadmap</button>
+      <button class="nav-item" data-view="skills"><span class="nav-icon">▦</span> Skill studio <span class="new-dot"></span></button>
       <button class="nav-item" data-view="search"><span class="nav-icon">⌕</span> Learning search <span class="new-dot"></span></button>
       <button class="nav-item" data-view="evidence"><span class="nav-icon">◫</span> Career intelligence</button>
       <button class="nav-item" data-view="pulse"><span class="nav-icon">◎</span> World pulse <span class="new-dot"></span></button>
@@ -78,6 +79,49 @@
         <div class="roadmap-evidence"><span class="card-kicker">REAL CAREER CONTEXT</span><p id="roadmap-evidence">Checking verified education patterns for similar occupations...</p><div id="roadmap-skill-signal" class="roadmap-skill-signal">Checking workplace skills evidence...</div><button class="small-link" data-go="evidence">Explore career evidence ↗</button></div>
         <div class="section-head"><div><h2>Your step-by-step path</h2><p>Finish the prerequisites before advancing. All resources link to original publishers.</p></div></div>
         <div id="roadmap-list" class="steps"></div>
+        <article class="panel roadmap-tool-brief">
+          <div class="panel-title"><div><h3>Tools used in related occupations</h3><p>Real O*NET occupation-to-software examples, not inferred employee expertise</p></div><button class="small-link" data-go="skills">Open Skill studio ↗</button></div>
+          <div id="roadmap-tools" class="roadmap-tools">Loading verified occupational tool examples...</div>
+        </article>
+      </section>
+
+      <section class="view" id="view-skills">
+        <div class="eyebrow">FROM CAREER GOALS TO SPECIFIC TOOLS <span class="eyebrow-line"></span></div>
+        <div class="heading-row"><div><h1>Build your skill stack<span class="accent">.</span></h1><p class="lead">Move beyond broad terms like “programming” and discover real named technologies connected to occupations.</p></div><span class="outlined-tag">O*NET · VERIFIED WORKPLACE EXAMPLES</span></div>
+        <div class="info-banner"><span>✦</span><p>Skill categories follow a technical-resume format. Technologies are drawn from O*NET occupation-level software examples, <strong>not from identifiable people or individual survey responses</strong>. A technology appearing for a job does not mean every worker must know it. Your own selected skills are self-reported.</p></div>
+        <div id="skills-summary" class="skills-summary">Loading full O*NET software skill index...</div>
+        <div class="skills-grid">
+          <article class="panel skills-explorer">
+            <div class="panel-title"><div><h3>Explore named skills &amp; technologies</h3><p id="skill-source-label">Verified occupational software examples</p></div><span class="model-pill">31K+ LINKS</span></div>
+            <div class="skills-filters">
+              <div class="field"><label for="skill-scope">SHOW</label><select id="skill-scope"><option value="role">My destination's occupational tools</option><option value="curated">Resume-style technical skills</option><option value="all">All observed technologies</option></select></div>
+              <div class="field"><label for="skill-category">CATEGORY</label><select id="skill-category"><option value="all">All categories</option></select></div>
+              <div class="field full"><label for="skill-query">FIND A SPECIFIC SKILL</label><input id="skill-query" type="search" placeholder="Python, FastAPI, Docker, PostgreSQL, React, Figma..." maxlength="90" autocomplete="off"></div>
+            </div>
+            <div id="skill-list-summary" class="panel-caption">Choose real technologies to add to your self-reported stack.</div>
+            <div id="skill-list" class="skill-pick-list"></div>
+            <button id="skill-show-more" class="outline-btn" type="button" hidden>Show more technologies ↓</button>
+            <div class="source-footnote">Official dataset: <a href="https://www.onetcenter.org/database.html" target="_blank" rel="noopener noreferrer">O*NET 31.0 Software Skills</a>. Technology examples are occupation-linked, not individually validated proficiency scores. <a href="https://github.com/A101shah/what_next/blob/main/data/onet_software_skills_31_0.csv" target="_blank" rel="noopener noreferrer">See source CSV ↗</a></div>
+          </article>
+          <div class="skill-side">
+            <article class="panel my-skills-panel">
+              <div class="panel-title"><div><h3>My declared skills</h3><p>Resume-style categories, editable at any time</p></div><span class="model-pill">LOCAL ONLY</span></div>
+              <div id="my-skill-count" class="skill-count">0 self-reported skills</div>
+              <div id="my-skill-list" class="my-skill-list"></div>
+              <form id="custom-skill-form" class="custom-skill-form">
+                <label for="custom-skill-input">ADD ANOTHER TOOL OR SKILL</label>
+                <div><input id="custom-skill-input" maxlength="70" placeholder="e.g. FastAPI or a project tool" autocomplete="off"><button class="outline-btn" type="submit">Add</button></div>
+              </form>
+              <p class="panel-caption">Adding something here means you report knowing it. This is not verified mastery, certification or resume validation. Your selections stay in browser storage.</p>
+            </article>
+            <article class="panel skill-focus-panel">
+              <div class="panel-title"><div><h3>Your next technology focus</h3><p>Based on the selected occupation's actual O*NET examples</p></div></div>
+              <div id="skills-focus">Checking source-linked tools...</div>
+              <p class="panel-caption">These are practical exploration suggestions based on O*NET flags; they are NOT a learned personal skill-gap probability or a mandatory employment requirement.</p>
+              <button class="text-link" type="button" data-go="roadmap">Back to prerequisite roadmap →</button>
+            </article>
+          </div>
+        </div>
       </section>
 
       <section class="view" id="view-search">
@@ -208,7 +252,7 @@
       </section>
 
       <section class="view" id="view-profile">
-        <div class="eyebrow">LET'S FIND YOUR STARTING POINT <span class="eyebrow-line"></span></div><div class="heading-row"><div><h1>Tell us where you are<span class="accent">.</span></h1><p class="lead">A few honest inputs give your knowledge GPS a useful starting point.</p></div></div>
+        <div class="eyebrow">LET'S FIND YOUR STARTING POINT <span class="eyebrow-line"></span></div><div class="heading-row"><div><h1>Tell us where you are<span class="accent">.</span></h1><p class="lead">A few honest inputs give your knowledge GPS a useful starting point. Track named technologies separately in Skill studio.</p></div></div>
         <form id="profile-form" class="profile-panel">
           <div class="profile-grid">
             <div class="field"><label for="student-name">What should we call you?</label><input id="student-name" placeholder="First name" maxlength="60"></div>
