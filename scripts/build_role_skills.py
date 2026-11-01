@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT/"data"/"onet_software_skills_31_0.csv"
 TAXONOMY = ROOT/"data"/"skill_taxonomy.json"
 OUTPUT = ROOT/"data"/"role_skills.json"
+EXPANDED_CSV = ROOT/"data"/"WhatNext_Expanded_Role_Skills.csv"
 PRIMARY = "https://www.onetcenter.org/database.html"
 
 def normalize(s):
@@ -30,7 +31,7 @@ def classify(element):
     if re.search(r"graphics|photo imaging|video creation|music or sound|desktop publishing|computer aided design|multimedia|audio editing|drawing",item):return "creative"
     return "business"
 
-def build(source=SOURCE,taxonomy=TAXONOMY,dest=OUTPUT):
+def build(source=SOURCE,taxonomy=TAXONOMY,dest=OUTPUT,expanded_csv=EXPANDED_CSV):
     cfg=json.loads(Path(taxonomy).read_text(encoding="utf-8"))
     aliases={}
     for term in cfg["terms"]:
@@ -42,6 +43,7 @@ def build(source=SOURCE,taxonomy=TAXONOMY,dest=OUTPUT):
 
     skills={}
     roles={}
+    expanded_rows=[]
     raw_n=hot_n=demand_n=0
     with Path(source).open(encoding="utf-8-sig",newline="") as stream:
         reader=csv.DictReader(stream)
@@ -57,6 +59,7 @@ def build(source=SOURCE,taxonomy=TAXONOMY,dest=OUTPUT):
             match=aliases.get(normalize(name_raw))
             name=match["name"] if match else name_raw
             kind=match["category"] if match else classify(row["Element Name"])
+            expanded_rows.append([code,row["Title"].strip(),name,kind,row["Hot Technology"],row["In Demand"]])
             key=normalize(name)
             skills.setdefault(key,{"name":name,"category":kind,"n":0,"d":0,"h":0})
             role=roles.setdefault(code,{"title":row["Title"].strip(),"tech":{},"raw":0})
@@ -100,6 +103,12 @@ def build(source=SOURCE,taxonomy=TAXONOMY,dest=OUTPUT):
         "category_method":"Curated exact-alias resume-style labels and deterministic O*NET Element Name groups."
     }
     Path(dest).write_text(json.dumps(payload,separators=(",",":"),ensure_ascii=False)+"\n",encoding="utf-8")
+    # Smaller self-contained CSV: one original occupation-to-tool association
+    # per row, enriched only with deterministic resume-style category labels.
+    with Path(expanded_csv).open("w",encoding="utf-8",newline="") as output:
+        writer=csv.writer(output)
+        writer.writerow(["onet_soc_code","occupation","skill_name","skill_category","hot","in_demand"])
+        writer.writerows(expanded_rows)
     print(f"ROLE_SKILLS_READY occupations={len(roles)} source_associations={raw_n} distinct_named_skills={len(skills)}")
     return payload
 
