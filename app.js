@@ -455,6 +455,94 @@ function renderSkillEvidence(path){
 }
 
 
+// Learning search: curated first-party answers and independently attributed resources.
+// Google results require a separate user-triggered search or owner-provided PSE ID.
+function initializeHelpSearch(){
+  const engine=window.WhatNextSearch;
+  if(!engine){
+    $("#help-search-count").textContent="Search assets are unavailable.";
+    return;
+  }
+  $("#help-google-link").href=engine.googleUrl("");
+  $("#help-google-official").href=engine.googleUrl("");
+  const cx=String(state.searchConfig?.google_programmable_search_engine_id||"").trim();
+  if(/^[A-Za-z0-9:_-]{8,90}$/.test(cx)){
+    const panel=$("#google-embedded-panel");
+    const button=document.createElement("button");
+    button.type="button";button.className="outline-btn google-action";
+    button.textContent="Show Google results here ↗";
+    $("#help-google-official").after(button);
+    button.addEventListener("click",()=>{
+      panel.hidden=false;
+      button.disabled=true;
+      button.textContent="Google Search enabled";
+      // Loading this third-party search element is opt-in, because searches
+      // executed by Google are governed by Google's own privacy practices.
+      window.__gcse={
+        parsetags:"explicit",
+        initializationCallback:()=>{
+          try {
+            google.search.cse.element.render({
+              div:"google-embedded-results",
+              tag:"searchresults-only",
+              gname:"whatnext-help"
+            });
+            runGoogleEmbedded(state.lastHelpQuery);
+          }catch(error){
+            $("#google-embedded-results").textContent="Google embedded search couldn't initialize. Use Open Google Search instead.";
+          }
+        }
+      };
+      const script=document.createElement("script");
+      script.async=true;
+      script.src="https://cse.google.com/cse.js?cx="+encodeURIComponent(cx);
+      script.onerror=()=>{
+        $("#google-embedded-results").textContent="Google embedded search is unavailable. Use Open Google Search instead.";
+      };
+      document.head.appendChild(script);
+    });
+  }
+}
+function runGoogleEmbedded(query){
+  if(!query)return;
+  try{
+    const element=window.google?.search?.cse?.element?.getElement("whatnext-help");
+    if(element && typeof element.execute==="function")element.execute(query);
+  }catch(error){/* External Google search remains available as a normal link. */}
+}
+function performHelpSearch(raw){
+  const engine=window.WhatNextSearch;
+  const query=String(raw||"").trim().slice(0,200);
+  state.lastHelpQuery=query;
+  $("#help-query").value=query;
+  $("#quick-search-query").value=query;
+  $("#help-google-link").href=engine.googleUrl(query);
+  $("#help-google-official").href=engine.googleUrl(query,"official");
+  if(!query){
+    $("#help-search-count").textContent="Start by entering a skill, tool or learning topic.";
+    $("#help-results").innerHTML='<div class="panel quiet-state">Search our verified lesson catalogue, documentation links and in-app guidance.</div>';
+    return;
+  }
+  const matches=engine.search(state.searchCatalogue,query,14);
+  $("#help-search-count").textContent=matches.length
+    ? matches.length+" curated result"+(matches.length===1?"":"s")+" for “"+query+"”"
+    :"No matching in-app resources for “"+query+"”. Try a shorter query or use Google web search.";
+  $("#help-results").innerHTML=matches.length?matches.map((item,i)=>{
+    const url=item.url?safeLink(item.url):null;
+    const view=item.view||"search";
+    const buttonLabel=item.type==="Learning resource" ? "Open this roadmap" : "Open in WhatNext";
+    return '<article class="help-result-card"><div class="help-result-head"><span class="search-type">'+
+      clean(item.type)+'</span><span class="help-result-number">'+String(i+1).padStart(2,"0")+'</span></div>'+
+      '<h3>'+clean(item.title)+'</h3><p>'+clean(item.description)+'</p>'+
+      '<div class="help-result-actions">'+
+      (url?'<a class="small-link" target="_blank" rel="noopener noreferrer" href="'+url+'">Read original resource ↗</a>':"")+
+      '<button class="text-link" type="button" data-help-view="'+clean(view)+'"'+
+      (item.pathId?' data-help-path="'+clean(item.pathId)+'"':"")+'>'+buttonLabel+' →</button>'+
+      '</div></article>';
+  }).join(""):'<article class="panel search-empty"><h3>No exact matches yet</h3><p>Our library is curated rather than an internet crawler. Use the Google link below for additional resources; those are Google's results, not AI-generated citations.</p></article>';
+  runGoogleEmbedded(query);
+}
+
 // A small real neural network trained on adults' occupation families, not lessons.
 // The learning-path prerequisite engine is deliberately independent: the training
 // dataset has no student-learning-outcome labels from which to learn the next step.
@@ -476,29 +564,44 @@ function initializeNeuralForm() {
     '</select></div>').join("");
 }
 function renderNeuralStatus() {
-  const model=state.neuralModel;
-  const panel=$("#nn-performance");
-  if (!model) {
-    panel.textContent="Trained model not available. Run the offline training script and commit data/career_nn.json.";
+  const selection=$("#nn-model-select");
+  const cat=state.catboostModel, net=state.neuralModel;
+  if(!cat && !net){
+    $("#nn-performance").textContent="No model file is available. Check the committed model JSON assets.";
     $("#nn-run").disabled=true;
     return;
   }
-  const m=model.metrics;
-  $("#nn-run").disabled=false;
-  panel.innerHTML='<div class="nn-metrics"><div><strong>'+clean((100*m.accuracy).toFixed(1))+
-    '%</strong><span>Unseen test accuracy</span></div><div><strong>'+clean((100*m.macro_f1).toFixed(1))+
-    '%</strong><span>Macro-F1</span></div><div><strong>'+clean((100*m.majority_baseline_accuracy).toFixed(1))+
-    '%</strong><span>Simple majority baseline</span></div></div>'+
-    '<p class="panel-caption">5,213 training and 1,304 test respondents · 12 occupational classes · 80/20 stratified split. No test records used to fit preprocessing. Career classification, not lesson recommendation accuracy.</p>';
+  if(selection.value==="catboost"&&!cat)selection.value="nn";
+  if(selection.value==="nn"&&!net)selection.value="catboost";
+  const chosen=selection.value==="catboost"?cat:net;
+  $("#nn-run").disabled=!chosen;
+  const display=(item,name,key)=>{
+    if(!item)return "";
+    const m=item.metrics;
+    const selected=key===selection.value;
+    return '<div class="model-compare-card '+(selected?"selected":"")+'"><span class="model-compare-name">'+clean(name)+
+      (selected?' · ACTIVE':'')+'</span><strong>'+((m.accuracy||0)*100).toFixed(2)+'%</strong>'+
+      '<span>Held-out test accuracy</span><div class="model-compare-track"><div style="width:'+((m.accuracy||0)*100).toFixed(2)+'%"></div></div>'+
+      '<small>Macro-F1 '+((m.macro_f1||0)*100).toFixed(2)+'%</small></div>';
+  };
+  const m=chosen.metrics;
+  $("#nn-performance").innerHTML='<div class="model-compare-grid">'+display(cat,"CatBoost","catboost")+
+    display(net,"Neural Network","nn")+'</div>'+
+    '<p class="panel-caption">Active model: <strong>'+clean(selection.value==="catboost"?"CatBoost gradient-boosted trees":"Multilayer perceptron")+
+    '</strong>. Stratified 80/20 split · '+clean(m.train_rows||m.train_size||5213)+
+    ' train / '+clean(m.test_rows||m.test_size||1304)+
+    ' test · 12 occupation families. The holdout was explored previously, so these scores are not independent deployment validation. Classification ≠ next-lesson accuracy.</p>';
 }
 function runCareerNeuralNetwork(event) {
   event.preventDefault();
-  const model=state.neuralModel, engine=window.WhatNextNeural;
+  const selectedModel=$("#nn-model-select").value;
+  const model=selectedModel==="catboost"?state.catboostModel:state.neuralModel;
+  const engine=selectedModel==="catboost"?window.WhatNextCatBoost:window.WhatNextNeural;
   if (!model || !engine) {
-    $("#nn-output").textContent="No trained neural network is available.";
+    $("#nn-output").textContent="The selected trained model is unavailable.";
     return;
   }
-  const bands=engine.SKILLS.map(([key])=>{
+  const bands=window.WhatNextNeural.SKILLS.map(([key])=>{
     const value=$("#nn-"+key).value;
     return value===""?NaN:Number(value);
   });
@@ -514,7 +617,7 @@ function runCareerNeuralNetwork(event) {
     });
     const top=predictions.slice(0,4);
     $("#nn-output").innerHTML=
-      '<div class="card-kicker">NEURAL NETWORK · BROAD OCCUPATION EXPLORATION</div>'+
+      '<div class="card-kicker">'+(selectedModel==="catboost"?"CATBOOST":"NEURAL NETWORK")+' · BROAD OCCUPATION EXPLORATION</div>'+
       '<h3>'+clean(top[0].label)+'</h3>'+
       '<p class="panel-caption">Highest model score among 12 broad occupational families; not a promise of career suitability or employment.</p>'+
       top.map((result,index)=>{
@@ -549,7 +652,7 @@ function runCareerNeuralNetwork(event) {
           clean(nextStep.title)+'</strong>. Our prerequisite-aware engine selects this from your completed topics, while the neural network supplies only exploratory career-family context.</p>';
       }
     }
-    toast("Neural career patterns updated locally.");
+    toast("Career patterns updated using "+(selectedModel==="catboost"?"CatBoost":"the neural network")+".");
   } catch(err) {
     $("#nn-output").textContent=err.message || "Unable to calculate an occupational comparison.";
   }
