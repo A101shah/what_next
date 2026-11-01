@@ -539,7 +539,7 @@ function performHelpSearch(raw){
       '<button class="text-link" type="button" data-help-view="'+clean(view)+'"'+
       (item.pathId?' data-help-path="'+clean(item.pathId)+'"':"")+'>'+buttonLabel+' →</button>'+
       '</div></article>';
-  }).join(""):'<article class="panel search-empty"><h3>No exact matches yet</h3><p>Our library is curated rather than an internet crawler. Use the Google link below for additional resources; those are Google's results, not AI-generated citations.</p></article>';
+  }).join(""):'<article class="panel search-empty"><h3>No exact matches yet</h3><p>Our library is curated rather than an internet crawler. Use the Google link below for additional resources; those are results from Google, not AI-generated citations.</p></article>';
   runGoogleEmbedded(query);
 }
 
