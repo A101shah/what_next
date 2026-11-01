@@ -265,6 +265,13 @@ function renderSkillsStudio(path){
   }
   const profile=occupationTools(path);
   const compare=engine.compare(profile.items,state.profile.technicalSkills);
+  const hero=$("#skill-home-preview");
+  if(hero)hero.textContent=profile.title?
+    data.occupation_count+" occupations · "+Number(data.source_rows).toLocaleString()+
+    " sourced tool associations · "+profile.items.length+
+    " software examples for "+profile.title+" · "+state.profile.technicalSkills.length+
+    " skills you declared.":
+    "Source-backed software profiles available for "+data.occupation_count+" occupations. Choose a destination to narrow the focus.";
   $("#skills-summary").innerHTML='<div class="skill-kpi"><strong>'+clean(data.occupation_count)+'</strong><span>O*NET occupations</span></div>'+
     '<div class="skill-kpi"><strong>'+clean(Number(data.source_rows).toLocaleString())+'</strong><span>Occupation–tool associations</span></div>'+
     '<div class="skill-kpi"><strong>'+clean(Number(data.unique_skill_count).toLocaleString())+'</strong><span>Distinct named tools</span></div>'+
