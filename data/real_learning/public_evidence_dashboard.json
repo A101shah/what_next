@@ -26,9 +26,13 @@
   "model_status": {
     "recommendations": "Live: deterministic editorial prerequisite ranking; independent skill checks stored locally",
     "occupational_classification": "Existing exploratory trained classifiers, not next-lesson models",
-    "deep_knowledge_tracing": "Training code present; full source data not acquired or trained",
+    "deep_knowledge_tracing": "Real mathematics GRU pilot trained and evaluated: 53.63% on 509 held-out next-response predictions vs 59.53% majority-class baseline. Below baseline; not deployed. Full EdNet not acquired.",
     "validated_recommendation_accuracy": null,
-    "trained_gru_next_response_accuracy": null
+    "trained_gru_next_response_accuracy": null,
+    "gru_mathematics_pilot_accuracy": 0.536346,
+    "gru_mathematics_pilot_baseline_accuracy": 0.595285,
+    "gru_mathematics_pilot_data": "52 sequence histories, 2,624 observations; trace-disjoint evaluation (original student IDs unavailable)",
+    "gru_mathematics_pilot_source": "data/real_learning/assist2009_gru_pilot_metrics.json"
   },
   "sources": [
     {
@@ -86,6 +90,7 @@
     "The preview is not a random sample and must not be used to report model accuracy.",
     "English and school mathematics responses do not establish student knowledge in Python, AI, cloud, or cybersecurity.",
     "No learner-level dataset is published on the public GitHub Pages site.",
-    "Model code in the repository does not imply that full-scale training has been executed."
+    "Model code in the repository does not imply that full-scale training has been executed.",
+    "A small PyTorch GRU on independently sourced mathematics sequence histories was trained and scored. It underperformed the majority-class baseline; do not treat this as a successful recommendation model."
   ]
 }
