@@ -130,10 +130,10 @@
 .google-embedded-panel{margin-top:20px;border-top:1px solid #3c4862;padding-top:14px}
 .google-embedded-panel h3{font-size:15px;margin:0 0 6px}
 .google-embedded-panel[hidden]{display:none}
-.nn-model-picker{margin-bottom:20px;border:1px solid #3b4165;background:#1a1c33;border-radius:11px;padding:14px}
-.nn-model-picker label{letter-spacing:1px;font-size:10px;font-weight:800;color:#aaa0e5}
-.nn-model-picker p{margin:10px 0 0}
-.model-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.nn-model-intro{margin-bottom:20px;border:1px solid #3b4165;background:#1a1c33;border-radius:11px;padding:14px}
+.nn-model-intro strong{color:#e8e1ff;font-size:13px}
+.nn-model-intro p{margin:8px 0 0;color:#adb8d0;font-size:11px;line-height:1.6}
+.model-compare-grid{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:14px}
 .model-compare-card{padding:12px 11px;border:1px solid #3c415f;border-radius:11px;display:flex;flex-direction:column;gap:5px;background:#1b2136}
 .model-compare-card.selected{border-color:#a697f7;background:#2b254c;box-shadow:inset 0 0 0 1px #8675df}
 .model-compare-name{font-size:10px;line-height:1.45;color:#b0b9cd;font-weight:700}
