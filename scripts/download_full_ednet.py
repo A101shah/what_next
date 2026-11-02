@@ -61,7 +61,7 @@ def main():
         raise FileNotFoundError("Both official ZIP files must exist in "+str(args.out))
     count=extract_questions(contents,args.out/"questions.csv")
     # Import the validator only when needed so a standard Python install can download.
-    from scripts.verify_full_ednet import inspect
+    from verify_full_ednet import inspect
     report=inspect(kt1,args.out/"questions.csv")
     summary={"source":OFFICIAL_REPO,"questions":count,"readiness":report,
              "data_redistributed":False,"full_training_executed":False}
