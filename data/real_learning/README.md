@@ -53,3 +53,40 @@ All real student-level exports and trained model artifacts stay under the existi
 
 ## Honesty and safety
 No AI-generated 'students' or invented labels were included. Quiz-derived WhatNext progress is not the same population as EdNet or ASSISTments. Never use professional skill importance as a child's observed proficiency. An accuracy number for the GRU must come from the actual full-data run and held-out students, not from this pilot preview.
+
+
+## Deployment verification — research interface (2026-11-02)
+
+GitHub Pages renders an interactive **Research data lab**, sourced from
+`public_evidence_dashboard.json`. It shows aggregate preview values,
+links to official providers, current dataset acquisition status, and model
+limitations. No EdNet student-level records are published on the site.
+
+- Directly audited the original 100-row EdNet preview CSV against SHA-256
+  `4e06495418d8d3788775eadff4b08a2e5bd3d249fb334b009fbdab49e9b9087f`:
+  5 distinct learners, 91 questions, 67 observed correct and 33 incorrect.
+- Executed the offline **pilot conversion** on a locally prepared KT1-style ZIP
+  and original answer-key excerpt derived from those observed preview rows;
+  it successfully created 100 consistent interaction records for local QA.
+  This is a pilot transform, **not** full official-archive acquisition.
+- The dashboard rendering/filtering smoke test was exercised in an isolated JS
+  runtime: five source cards and two learning-behavior cards displayed correctly.
+- `scripts/import_real_learning_data.py` now uses run-local keyed HMAC
+  pseudonyms rather than hashes of predictable student IDs. They are still
+  **pseudonyms, not guaranteed anonymization**.
+- `scripts/train_knowledge_tracing.py` reports the simple majority-class
+  baseline alongside model accuracy, and refuses the corrected ASSISTments
+  dataset until a reliable temporal event-order field is established.
+- No verified neural model training accuracy is available from the 100-row
+  pilot. The full 1.2 GB EdNet data and official question metadata must first
+  be downloaded from the source and ingested.
+
+Run the repository's added tests locally:
+
+```powershell
+node --test tests/test_research_evidence.mjs
+python -m unittest tests.test_real_data_pipeline -v
+```
+
+Training is supported with **full EdNet data only**. Do not interpret the
+placeholder numerical results used by unit tests as evaluated model metrics.
