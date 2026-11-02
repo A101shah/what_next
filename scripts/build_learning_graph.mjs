@@ -124,6 +124,44 @@ export function makeLearningGraph(root = ROOT) {
     },
     validation_errors: []
   };
+
+  // The compiled CSV is deliberately a view over normalized tables.
+  // A row denotes ONE curriculum topic-to-concept association, not a student.
+  const compiledColumns = [
+    "career_id","career_name","career_field","onet_soc_code",
+    "original_topic_id","original_topic","topic_category",
+    "estimated_topic_hours","learning_resource_url","practice_project",
+    "concept_id","concept_name","concept_domain","concept_difficulty",
+    "prerequisite_concept_ids","proposed_demonstration_task",
+    "catalog_provenance","mapping_provenance","mastery_evidence_status",
+    "learning_resource_verification"
+  ];
+  const compiledRows = topicLinks.map((link) => {
+    const topic = topicById.get(link.topic_id);
+    const career = careerById.get(topic.career_id);
+    const concept = conceptById.get(link.concept_id);
+    return {
+      career_id: career.id, career_name: career.label,
+      career_field: career.field, onet_soc_code: career.soc,
+      original_topic_id: topic.id, original_topic: topic.title,
+      topic_category: topic.category, estimated_topic_hours: topic.hours,
+      learning_resource_url: topic.resource, practice_project: topic.project,
+      concept_id: concept.concept_id, concept_name: concept.name,
+      concept_domain: concept.domain, concept_difficulty: concept.level,
+      prerequisite_concept_ids: concept.prerequisite_ids.join(";"),
+      proposed_demonstration_task: concept.demonstration_task,
+      catalog_provenance: concept.provenance,
+      mapping_provenance: link.provenance,
+      mastery_evidence_status: concept.mastery_evidence,
+      learning_resource_verification: "not_live_verified"
+    };
+  });
+  const csvCell = (item) => '"' + String(item ?? "").replace(/"/g,'""').replace(/\r?\n/g," ") + '"';
+  const compiledCsv = [
+    compiledColumns.map(csvCell).join(","),
+    ...compiledRows.map((row) => compiledColumns.map((key) => csvCell(row[key])).join(","))
+  ].join("\n") + "\n";
+
   return {
     syllabus, concepts, topicLinks, careerLinks, edges, counts,
     generated: {
@@ -134,6 +172,7 @@ export function makeLearningGraph(root = ROOT) {
       [folder + "/career_concepts.csv"]: toQuotedCsv(["career_id","concept_id","provenance"], careerLinks),
       [folder + "/concept_prerequisites.csv"]: toQuotedCsv(
         ["prerequisite_concept_id","concept_id","relationship","provenance"], edges),
+      [folder + "/WhatNext_Compiled_Learning_Dataset_V2.csv"]: compiledCsv,
       [folder + "/manifest.json"]: json(manifest)
     }
   };
