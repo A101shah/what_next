@@ -17,8 +17,9 @@ const assert = (ok, description) => { if (!ok) throw Error(description); };
 
 // Input CSV fields are quoted JSON string literals. They contain no newlines.
 export function readQuotedCsv(text) {
-  const rows = text.trim().split(/\r?\n/).map((row) => JSON.parse("[" + row + "]"));
-  const columns = rows.shift();
+  const [header, ...lines] = text.trim().split(/\r?\n/);
+  const columns = header.split(",");
+  const rows = lines.map((row) => JSON.parse("[" + row + "]"));
   assert(columns && new Set(columns).size === columns.length, "Invalid CSV columns");
   return rows.map((values, line) => {
     assert(values.length === columns.length, "CSV column count mismatch at line " + (line + 2));
