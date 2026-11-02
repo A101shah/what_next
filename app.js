@@ -777,7 +777,7 @@ function renderNeuralStatus() {
   const percentage=value=>(100*Number(value||0)).toFixed(2)+"%";
   $("#nn-performance").innerHTML=
     '<div class="model-compare-grid nn-only-grid"><div class="model-compare-card selected">'+
-      '<span class="model-compare-name">MULTILAYER PERCEPTRON · ACTIVE MODEL</span>'+
+      '<span class="model-compare-name">NEURAL NETWORK · MULTILAYER PERCEPTRON</span>'+
       '<strong>'+percentage(metrics.accuracy)+'</strong><span>Held-out occupation-classification accuracy</span>'+
       '<div class="model-compare-track"><div style="width:'+percentage(metrics.accuracy)+'"></div></div>'+
       '<small>Macro-F1 '+percentage(metrics.macro_f1)+' · Balanced accuracy '+
