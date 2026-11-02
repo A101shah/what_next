@@ -34,6 +34,10 @@ The live static app includes a **Research data lab** accessible through the side
 
 The pilot importer was exercised on a locally prepared 100-record source-backed QA archive. The full EdNet KT1 archive has **not** been downloaded, and no large-data GRU training metric exists yet. Research scripts now use keyed, run-local pseudonyms; full traces and weights remain outside the public site. See [Research data documentation](data/real_learning/README.md) and [source dashboard metadata](data/real_learning/public_evidence_dashboard.json).
 
+## Executed GRU research pilot (mathematics)
+
+A real PyTorch GRU model was trained and tested on 52 preprocessed ASSISTments mathematics response sequences (2,624 attempts). It produced **53.63%** held-out next-response accuracy, **below the 59.53% majority-class baseline** (509 predictions). The model is **not deployed** for technical learning recommendations. See [actual metrics](data/real_learning/assist2009_gru_pilot_metrics.json) and [reproduction code](scripts/train_assistments_pilot.py). Full EdNet training is still uncompleted, and no verified next-Python-skill accuracy is claimed.
+
 ## Hosting — no custom GitHub Actions
 
 All `.github/workflows/*.yml` files have been **deleted**. The repository stores the precomputed public JSON datasets and model weights; it does not train, scrape or execute Python during deployments.

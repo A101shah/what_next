@@ -36,6 +36,17 @@
       (status==="active"?"In use":status==="pending"?"Not trained":"Exploratory")+
       '</span><div><strong>'+clean(title)+'</strong><p>'+clean(description)+'</p></div></div>'
     ).join("");
+    const pilot=data.model_status;
+    const metricBox=$("#research-pilot-metrics");
+    if(metricBox) {
+      const acc=pilot.gru_mathematics_pilot_accuracy, baseline=pilot.gru_mathematics_pilot_baseline_accuracy;
+      metricBox.innerHTML=typeof acc==="number" && typeof baseline==="number" ?
+        '<div class="research-pilot-metric"><strong>'+clean((acc*100).toFixed(2))+'%</strong><span>Measured GRU next-response accuracy</span></div>'+
+        '<div class="research-pilot-metric"><strong>'+clean((baseline*100).toFixed(2))+'%</strong><span>Majority-class baseline accuracy</span></div>'+
+        '<p class="research-pilot-result-note">'+clean(acc<=baseline?'Underperformed the simple baseline; not eligible for deployment.':'Experimental metric only; not validated for WhatNext subjects.')+'</p>' :
+        '<p class="quiet-state">No experimental model results yet.</p>';
+      $("#research-pilot-warning").textContent="Small research experiment: 52 preprocessed mathematics response sequences; 509 holdout predictions. Original learner identity is unavailable, so the split is trace-disjoint, not guaranteed person-disjoint. Full EdNet training remains uncompleted.";
+    }
     const sources = data.sources.filter(s => filter==="all" || s.category===filter);
     $("#research-source-list").innerHTML = sources.map(source =>
       '<article class="research-source"><div><span class="research-source-category">'+clean(source.category)+
