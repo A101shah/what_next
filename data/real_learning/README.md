@@ -178,3 +178,73 @@ Tests:
 ```bash
 node --test tests/test_technical_recommendation_contract.mjs tests/test_deployment_diagnostics.mjs
 ```
+
+
+## Full EdNet acquisition and streaming trainer (additional verified implementation)
+
+The original [EdNet repository](https://github.com/riiid/ednet) lists the
+original two official Google Drive releases: **EdNet-KT1** (~1.2 GB, 784,309
+learner files) and separate **Contents** metadata containing
+`questions.csv`. To obtain both on a networked computer, install `gdown`
+and `torch`:
+
+```powershell
+python -m pip install gdown torch
+python scripts/download_full_ednet.py
+python scripts/train_ednet_full_streaming.py --kt1 "out/real_learning/ednet_source/EdNet-KT1.zip" --questions "out/real_learning/ednet_source/questions.csv" --epochs 2
+```
+
+The downloader uses the **official Riiid published file IDs** and checks the
+metadata schema; it does not redistribute or upload raw learner records. If
+Google Drive throttles access, download the official files using the EdNet
+website links and re-run with `--skip-download`.
+
+The streaming trainer reads student CSVs **directly from the ZIP** and
+performs a hash-based 80/20 split by student file, with minibatched GRU training,
+held-out log loss, Brier score, classification accuracy and majority baseline.
+It refuses incomplete full data by default. It writes weights and evaluated
+metrics into ignored `out/real_learning/ednet_full/`. It does **not**
+predict the next Python or ML lesson: the original dataset is TOEIC English.
+
+For testing the training logic *without* making a false research claim, an
+explicit `--fixture-test` flag permits tiny synthetic fixtures. We exercised
+this mode locally with 60 generated learner files; the full streaming
+train/evaluate loop ran and **three unit tests passed**. Those synthetic
+scores are not a full EdNet result.
+
+```powershell
+python -m unittest discover -s tests -p "test_full_ednet_streaming.py" -v
+```
+
+### What would constitute validated technical-subject neural recommendations?
+
+We cannot train or validate such a model with 45 authored quiz questions or
+English/math response histories. We require **consented and longitudinal**
+technical learning attempts, recorded lesson exposure and independently
+measured post-lesson skill outcomes. The following audit fails closed on
+missing data and distinguishes data-readiness from actual model validation:
+
+```powershell
+python scripts/validate_technical_learning_outcomes.py --input "out/technical_learning_outcomes.csv"
+```
+
+Even an acceptable dataset must pass a **student-disjoint** evaluation,
+rule-based and majority baselines, useful-ranking metrics, source quality
+review and privacy review before any trained neural model is enabled in
+the student app. Current trained mathematics GRU pilot is below baseline
+and is therefore **not** integrated.
+
+### Independent remote GitHub Pages verification
+
+```powershell
+python scripts/verify_live_github_pages.py
+```
+
+The remote probe requires outgoing HTTPS access to the public Pages host.
+It checks seven real published resources, rejects missing/malformed content,
+and records a JSON report under ignored `out/`. Our current execution
+container could not resolve the host, so its live verification is still
+**not complete**. GitHub repository-asset checks and our browser-side
+self-check are separate and should not be confused with remote HTTP
+verification. Do not claim this milestone passed without a successful
+actual probe.
