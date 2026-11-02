@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "date": "2026-11-02",
+  "unit": "public source metadata and aggregate-only preview",
+  "datasets": {
+    "ednet": "real observed public third-party preview (100 interactions from 5 students), not representative",
+    "assistments": "retrieval instructions only; full data NOT in repository",
+    "onet": "31821 actual published software relationships already exist in data/onet_software_skills_31_0.csv"
+  },
+  "included_research_data_files": [
+    "data/real_learning/source_catalog.csv",
+    "data/real_learning/ednet_100_preview_aggregate.csv"
+  ],
+  "source_preview_file_local_only": "WhatNext_EdNet_100_Real_Interactions.csv (provided in conversation download, intentionally NOT committed publicly)",
+  "preview_source": "https://huggingface.co/datasets/mgor/EDNet",
+  "preview_expected_sha256": "4e06495418d8d3788775eadff4b08a2e5bd3d249fb334b009fbdab49e9b9087f",
+  "license_ednet": "CC BY-NC 4.0, attribution to Riiid / EdNet; noncommercial research only",
+  "safeguards": [
+    "No raw or pseudonymized individual student interaction rows committed",
+    "Small preview is not enough to train a meaningful model",
+    "Full dataset archives not fetched by this agent; downloader requires user-provided official files",
+    "Student-wise disjoint splits required",
+    "TOEIC and mathematics do not validate WhatNext technical-skill recommendations",
+    "No invented model metrics"
+  ]
+}
