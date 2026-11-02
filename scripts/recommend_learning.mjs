@@ -28,7 +28,7 @@ export function getNextConcepts(graph, careerId, completed = [], limit = 5, goal
   // Original curriculum order remains the tie-breaker when no diagnostic
   // evidence exists; alphabetical is used for prerequisite bridge concepts.
   for (const [index, link] of graph.topic_concepts.entries()) {
-    if (!priority.has(link.concept_id)) priority.set(link.concept_id, index);
+    if (link.topic_id.startsWith(careerId + "-") && !priority.has(link.concept_id)) priority.set(link.concept_id, index);
   }
   available.sort((a, b) => {
     const A = concepts.get(a), B = concepts.get(b);
