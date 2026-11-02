@@ -14,6 +14,7 @@
   <script src="learning.js" defer></script>
   <script src="assessment-ui.js" defer></script>
   <script src="research-evidence.js" defer></script>
+  <script src="deployment-diagnostics.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -332,6 +333,13 @@
           <button type="button" class="research-filter" data-research-filter="Learning behavior" aria-pressed="false">Learning behavior</button>
         </div>
         <div class="research-source-list" id="research-source-list"><p class="quiet-state">Fetching verified source references...</p></div>
+        <article class="panel deployment-check-panel">
+          <div class="panel-title"><div><h3>Verify this GitHub Pages deployment</h3>
+            <p>Check real resources from your own browser, not a repository snapshot.</p></div><span class="model-pill">LIVE BROWSER CHECK</span></div>
+          <p>Run this after deployment to verify the published learning graph, 45 practice questions, research metadata, compiled CSV, and recommendation script. This cannot measure predictive accuracy or verify users in other regions.</p>
+          <button class="subtle-btn" id="run-deployment-check" type="button">Run deployment check ↗</button>
+          <pre id="deployment-check-result" class="deployment-check-results" role="status" aria-live="polite">Not yet checked in this browser.</pre>
+        </article>
         <article class="panel research-downloads">
           <div><span class="card-kicker">OUR CURRENT CURRICULUM DATASET</span><h3>Download the final dataset</h3>
             <p>107 unique learning concepts across 170 career-topic mappings, plus 45 editorial practice questions. These are curated curriculum items, <strong>not</strong> observed student training labels.</p></div>

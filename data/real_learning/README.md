@@ -134,3 +134,47 @@ affect rerun results. **Full original EdNet training, live technical-topic
 knowledge-tracing, and independently verified GitHub Pages deployment
 are still separate unfinished tasks.** Do not substitute the small math
 benchmark result for production recommendation accuracy.
+
+
+## 2026-11-02: full-EdNet readiness gate and deployed-site self-check
+
+The full 1.2 GB EdNet-KT1 ZIP **has not been acquired**, so **no full EdNet GRU
+model has been trained**. The prior 52-history ASSISTments benchmark is a
+different dataset and cannot satisfy this milestone. The official EdNet
+repository documents 784,309 separate KT1 user files and the independent
+`Contents/questions.csv` answer key. Download both official releases,
+then, locally and before starting training, run:
+
+```powershell
+python scripts/verify_full_ednet.py --kt1 "D:\Datasets\EdNet-KT1.zip" --questions "D:\Datasets\questions.csv"
+```
+
+The gate checks presence, plausible full-release size, user-file count,
+KT1 header format, and correct-answer key format. It exits nonzero on an
+incomplete archive. Passing the gate **only verifies acquisition readiness**;
+it is not a model training or quality result. Use the existing import and
+GRU training scripts to train on genuine source rows; never publish learner
+traces or model artifacts with identifying data to GitHub Pages.
+
+To independently inspect the static site after GitHub Pages publishes the
+latest `main` branch, visit the **Research data lab** and click
+**Run deployment check**. The browser fetches five real same-origin
+resources with no-cache queries and checks their expected structure. A
+successful browser check is evidence that your browser received those
+assets, **not an independent, worldwide availability audit**. Remote live
+verification from the development environment was blocked by network
+access and remains unverified until a real client-side check succeeds.
+
+For technical-topic neural ranking, the outstanding requirement is
+*consented, real, temporally ordered student assessments and later
+learning outcomes in those same technical topics*. The 45 WhatNext
+questions are authored quiz content only, not real student training labels.
+Current technical recommendation validation checks **all 6 curricula**,
+all graph prerequisites, eligibility and reachability. These are tests of
+the *rule-based system*, not trained neural recommendation accuracy.
+
+Tests:
+
+```bash
+node --test tests/test_technical_recommendation_contract.mjs tests/test_deployment_diagnostics.mjs
+```

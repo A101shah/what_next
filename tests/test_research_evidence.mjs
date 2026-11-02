@@ -58,7 +58,7 @@ test("research script renders and filters source rows using actual metadata",asy
  await listeners.get("DOMContentLoaded")();
  assert.ok(element("#research-stat-grid").innerHTML.includes("31,821"));
  assert.equal((element("#research-source-list").innerHTML.match(/<article/g)||[]).length,5);
- assert.ok(element("#research-model-status").innerHTML.includes("Not trained"));
+ assert.ok(element("#research-model-status").innerHTML.includes("Math pilot only"));
  assert.equal(element("#research-accuracy-bar span").style.width,"67%");
  element(".research-filters").dispatch("click",{
    target:{closest:()=>({dataset:{researchFilter:"Learning behavior"}})}
