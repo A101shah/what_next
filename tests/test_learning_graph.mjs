@@ -51,3 +51,34 @@ test("unknown career, invalid goal and invalid limit are rejected", () => {
 test("CSV parser round-trips a pair of links", () => {
   assert.equal(readQuotedCsv('a,b\n"x","y"\n')[0].a, "x");
 });
+
+import os from "node:os";
+function requireLikeOsTmp() {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "whatnext-graph-"));
+  for (const rel of ["data/paths.json", "data/learning_v2/concepts.json",
+    "data/learning_v2/topic_concepts.csv", "data/learning_v2/manifest.json"]) {
+    fs.mkdirSync(path.dirname(path.join(dir, rel)), { recursive: true });
+    fs.copyFileSync(path.join(ROOT, rel), path.join(dir, rel));
+  }
+  return { dir };
+}
+
+test("validation rejects broken topic references", () => {
+  const os = requireLikeOsTmp();
+  try {
+    const csvPath = path.join(os.dir, "data/learning_v2/topic_concepts.csv");
+    const csv = fs.readFileSync(csvPath, "utf8");
+    fs.writeFileSync(csvPath, csv.replace('"ai-0"', '"does-not-exist"'));
+    assert.throws(() => makeLearningGraph(os.dir), /Unknown topic/);
+  } finally { fs.rmSync(os.dir, { recursive: true, force: true }); }
+});
+test("validation rejects circular prerequisites", () => {
+  const tmp = requireLikeOsTmp();
+  try {
+    const file = path.join(tmp.dir, "data/learning_v2/concepts.json");
+    const concepts = JSON.parse(fs.readFileSync(file, "utf8"));
+    concepts.find((c) => c.concept_id === "python-basics").prerequisite_ids = ["python-functions"];
+    fs.writeFileSync(file, JSON.stringify(concepts));
+    assert.throws(() => makeLearningGraph(tmp.dir), /cycle/i);
+  } finally { fs.rmSync(tmp.dir, { recursive: true, force: true }); }
+});
