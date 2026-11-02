@@ -1,6 +1,6 @@
 # WhatNext AI — Your Knowledge GPS
 
-**Personalized prerequisite-based learning paths, real workforce insights, a trained neural-network career classifier.** Entirely static HTML/CSS/JavaScript, hosted from the same GitHub repository.
+**Personalized prerequisite-based learning paths, real workforce insights, and a trained neural-network career classifier.** Entirely static HTML/CSS/JavaScript, hosted from the same GitHub repository.
 
 ## New: skill checks and evidence-aware next learning steps
 
