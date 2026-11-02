@@ -5,7 +5,7 @@ import { readFileSync, existsSync } from "node:fs";
 import { runInNewContext } from "node:vm";
 
 const read = file => readFileSync(new URL("../"+file,import.meta.url),"utf8");
-const html=read("index.html"), js=read("app.js"), weights=JSON.parse(read("data/career_nn.json"));
+const html=read("index.html"), js=read("app.js"), weights=JSON.parse(read("data/career_hybrid_nn.json"));
 
 test("Career Intelligence exposes only the MLP model without alternative model selection",()=>{
   for(const source of [html,js,read("README.md"),read("requirements.txt")]){
@@ -22,7 +22,7 @@ test("Career Intelligence exposes only the MLP model without alternative model s
   assert.doesNotMatch(read("requirements.txt"),/\bcatboost\b/i);
 });
 
-test("the actual 27→20→12→12 neural network still scores a valid input",()=>{
+test("the actual PCA/KMeans/31→20→12→12 NN still scores a valid input",()=>{
   const controls=new Map();
   const element=selector=>{
     if(!controls.has(selector))controls.set(selector,{
@@ -49,9 +49,9 @@ test("the actual 27→20→12→12 neural network still scores a valid input",()
   app.state.paths=[];
   app.renderNeuralStatus();
   assert.equal(element("#nn-run").disabled,false);
-  assert.match(element("#nn-performance").innerHTML,/40\.49%/);
+  assert.match(element("#nn-performance").innerHTML,/41\.41%/);
   assert.match(element("#nn-performance").innerHTML,/NEURAL NETWORK/);
-  assert.match(element("#nn-performance").innerHTML,/33\.95%/);
+  assert.match(element("#nn-performance").innerHTML,/35\.76%/);
   const inputs=[4,4,4,4,3,4,3];
   engine.SKILLS.forEach(([id],index)=>{element("#nn-"+id).value=String(inputs[index]);});
   element("#nn-years").value="4";
@@ -69,13 +69,13 @@ test("the actual 27→20→12→12 neural network still scores a valid input",()
 });
 
 test("model metrics are the existing documented occupational holdout, not lesson accuracy",()=>{
-  assert.deepEqual(weights.nn.shape,[27,20,12,12]);
+  assert.deepEqual(weights.nn.shape,[31,20,12,12]);
   assert.equal(weights.samples,6517);
   assert.equal(weights.training_samples,5213);
   assert.equal(weights.test_samples,1304);
-  assert.equal(weights.metrics.accuracy,.4049);
-  assert.equal(weights.metrics.macro_f1,.3395);
+  assert.equal(weights.metrics.accuracy,.41411);
+  assert.equal(weights.metrics.macro_f1,.35764);
   const dashboard=JSON.parse(read("data/real_learning/public_evidence_dashboard.json"));
-  assert.match(dashboard.model_status.occupational_classification,/Single trained MLP/);
+  assert.match(dashboard.model_status.occupational_classification,/Single deployed PCA.*K-Means.*MLP/);
   assert.equal(dashboard.model_status.validated_recommendation_accuracy,null);
 });

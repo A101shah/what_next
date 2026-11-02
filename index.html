@@ -245,14 +245,14 @@
         </div>
         <p class="skill-disclaimer">Use-category bands are derived from each OECD workplace index and should not be interpreted as personal competence, proof of essential job qualifications, or comparisons of innate traits. Small groups and missing responses are withheld.</p>
         <div class="nn-headline">
-          <div><div class="eyebrow">TRAINED NEURAL NETWORK · MLP</div><h2>Explore career-family patterns with a neural network</h2><p>One evaluated multilayer perceptron uses 27 workplace and education features to classify broad occupational families. It cannot determine your talent, hiring probability, or the best next lesson.</p></div>
+          <div><div class="eyebrow">TRAINED HYBRID MODEL · PCA + K-MEANS + MLP</div><h2>Explore career-family patterns with our hybrid neural network</h2><p>Real OECD observations are standardized, seven principal components summarize workplace task-use patterns, K-Means produces four cluster-distance features, and one MLP classifies broad occupations. This does not determine individual talent, hiring probability, or the best next lesson.</p></div>
           <span class="outlined-tag">12 OCCUPATION CLASSES</span>
         </div>
         <div class="nn-layout">
           <article class="panel">
             <div class="panel-title"><div><h3>Tell the model about your background</h3><p>All inference runs locally in your browser. No profile data is sent to a server.</p></div></div>
             <form id="nn-form" class="nn-form">
-              <div class="nn-model-intro"><strong>Neural Network (MLP)</strong><p>Single career classifier · 27 input features · trained weights evaluated on authentic OECD survey observations.</p></div>
+              <div class="nn-model-intro"><strong>PCA → K-Means → Neural Network (MLP)</strong><p>One 31-input career classifier: 27 standardized features plus four K-Means distances calculated in PCA space. Trained and evaluated using authentic OECD respondents.</p></div>
               <div class="nn-background">
                 <div class="field"><label for="nn-level">Education level</label><select id="nn-level" required>
                   <option value="">Choose a level</option><option value="0">Prefer not to say / unavailable</option>
@@ -268,7 +268,7 @@
             </form>
           </article>
           <article class="panel nn-results">
-            <div class="panel-title"><div><h3>Model predictions</h3><p>Broad occupational-family classification, not hiring likelihood</p></div><span class="model-pill">NEURAL NETWORK · MLP</span></div>
+            <div class="panel-title"><div><h3>Model predictions</h3><p>Broad occupational-family classification, not hiring likelihood</p></div><span class="model-pill">PCA · K-MEANS · MLP</span></div>
             <div id="nn-performance" class="nn-performance">Loading verified test-set results...</div>
             <div id="nn-output" class="nn-output" aria-live="polite">Choose your background and task-use levels to run the trained neural network.</div>
             <p class="panel-caption">These are uncalibrated model class scores—not hiring probabilities, aptitude ratings, or the best next lesson. The learning roadmap still follows your prerequisites.</p>

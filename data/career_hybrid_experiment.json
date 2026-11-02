@@ -1,0 +1,55 @@
+{
+  "experiment": "pca_kmeans_distance_augmented_mlp",
+  "dataset": "Original OECD PIAAC Cycle 2 respondent CSV in private library; 6517 rows",
+  "population_unit": "individual employed adults",
+  "target": "12 ISCO-08 two-digit occupation families",
+  "features": "27 encoded predictors; PCA only on seven workplace-use bands and years of paid work; PCA-derived four cluster-center distances appended to 27 original standardized inputs",
+  "split": {
+    "training": 5213,
+    "test": 1304,
+    "outer": "stratified 80/20 random_state=42",
+    "inner": "22% of training split reserved for selecting PCA components and K-Means count (random_state=104)"
+  },
+  "preprocessing": "Training-only median imputation and StandardScaler; train-only PCA, K-Means and cluster-distance scaler",
+  "candidate_grid": {
+    "pca_components": [
+      3,
+      5,
+      7
+    ],
+    "kmeans_clusters": [
+      2,
+      4,
+      6
+    ],
+    "score": "validation macro-F1, then validation accuracy"
+  },
+  "selected": {
+    "pca_components": 7,
+    "variance_retained": 0.9310724,
+    "kmeans_clusters": 4,
+    "neural_layers": [
+      31,
+      20,
+      12,
+      12
+    ],
+    "validation_accuracy": 0.40453,
+    "validation_macro_f1": 0.35602
+  },
+  "same_holdout_comparison": {
+    "original_mlp_accuracy": 0.40491,
+    "original_mlp_macro_f1": 0.33948,
+    "hybrid_quantized_accuracy": 0.41411,
+    "hybrid_quantized_macro_f1": 0.35764,
+    "hybrid_balanced_accuracy": 0.37143,
+    "accuracy_improvement_percentage_points": 0.92
+  },
+  "scope": "Occupation-family classification only; neural next-lesson recommendation is not trained",
+  "caveats": [
+    "The previous project already used the same random holdout, so improvement is NOT independently validated",
+    "Four K-Means distances are appended to the global NN, not separate NNs per cluster",
+    "No raw individual respondent data published to GitHub",
+    "Complexity requires further country-held-out and new-sample evaluation before claiming robust improvements"
+  ]
+}

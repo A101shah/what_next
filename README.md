@@ -71,7 +71,7 @@ Human-curated aliases standardize source strings, e.g. SQL and its official work
 
 The **Skill studio** allows students to choose their career, browse a verified named-technology list for the mapped O*NET occupation, filter by category and search across all sourced examples or curated resume-like categories. The **Hot Technology** and **In Demand** chips come exclusively from O*NET's genuine flags, not an invented relevance model. Students can **self-declare** tools they know, see the exact source-listed name overlap for their career, and explore unfamiliar tools with targeted learning searches. No overlap count is a proficiency, job-readiness or probability score. Their chosen technologies appear under categorized **Technical Skills (self-reported)** in the editable resume, and are stored in the browser only.
 
-**Source integrity is critical:** the earlier **6,517 OECD PIAAC individual workforce rows** remain a separate survey dataset. The new **31,821 O*NET rows are occupation-to-software reference relationships**, not extra employed adults or person-level evidence. They are linked to an individual app pathway only by its **explicit O*NET-SOC code**, and they are **never joined to OECD respondents as if the survey measured each respondent's exact tools**. The **40.49% MLP occupation-classification test accuracy** is unchanged: the neural network has not been retrained on this new occupational reference dataset.
+**Source integrity is critical:** the earlier **6,517 OECD PIAAC individual workforce rows** remain a separate survey dataset. The new **31,821 O*NET rows are occupation-to-software reference relationships**, not extra employed adults or person-level evidence. They are linked to an individual app pathway only by its **explicit O*NET-SOC code**, and they are **never joined to OECD respondents as if the survey measured each respondent's exact tools**. The O*NET occupational reference dataset does not add individual respondents to the OECD training data. The former **40.49%** MLP occupation-classification accuracy now serves as a comparison baseline to the new **41.41%** hybrid model trained on the original 6,517 OECD respondents.
 
 ### Refresh dataset entirely offline
 
@@ -90,37 +90,37 @@ The new **Learning search** section, also accessible from the top bar, shows ran
 
 Official Google integration docs: https://developers.google.com/custom-search/docs/element .
 
-**Career-classifier policy:** Only the trained MLP in `neural.js` and `data/career_nn.json` is available in the app; the alternate tree classifier and model picker are gone. Other distinct research analyses (PCA/K-Means occupational context and the non-deployed GRU mathematics pilot) are not career classifiers.
+## Unified PCA → K-Means → Neural Network occupational classifier
 
-## Real neural network — occupation exploration
+**Current production model:** one trained MLP combining PCA and K-Means as feature engineering. It uses authentic OECD PIAAC Cycle 2 respondent observations, **not** O*NET occupation-level clusters and not synthetic students. The previous standalone `data/career_nn.json` is retained **only as a historical comparison model**; the live app loads `data/career_hybrid_nn.json` and runs `neural.js`.
 
-**Training dataset:** the 6,517 **anonymous, employed OECD PIAAC Cycle 2** respondents from Chile, Italy, Poland, Singapore and the United States, merged into a real 47-column CSV. We use their seven *workplace skill-use bands*, lifetime paid-work experience, and education level and field. The label is a broad **two-digit ISCO-08 occupational family** (12 classes).
+**Training process:**
 
-**Model:** a scikit-learn `MLPClassifier` trained from scratch, with layers **27 → 20 → 12 → 12**. `scripts/train_career_nn.py` trains offline with an **80%/20% stratified train–test split**, fits the median imputation and StandardScaler on **train only**, and uses early stopping internally. `data/career_nn.json` contains the model preprocessing parameters, 16-bit quantized weights, and evaluation metrics. The `neural.js` browser engine runs forward propagation and softmax without a service, account or GPU.
+1. Use 6,517 authentic respondent rows and their 12 occupational-family labels. Assemble the original 27 encoded numeric / one-hot predictors.
+2. Split into **5,213 training** and **1,304 held-out** observations (stratified 80/20; seed 42). Impute and standardize using **training-only** values.
+3. Apply PCA to the **first eight numerical inputs** (seven skill-use bands + paid-work years), not to the education one-hot columns. Candidate dimensions **3, 5, 7**; PCA variance retained by the selected 7-dimensional projection: **93.11%**.
+4. Fit K-Means on the training PCA coordinates, selecting `k` from **2, 4, 6**. The winner was **k=4**, based on macro-F1 using an **inner 22% validation holdout** from training (seed 104). No outer test rows are used in the PCA, K-Means, scaling or candidate selection.
+5. Calculate four standardized **distances to cluster centroids** for each respondent; append these to the original 27 standardized predictors. This makes a **31-input MLP** (31 → 20 → 12 → 12). There is **one NN**, not one separate NN for each cluster.
+6. Refit selected PCA, K-Means, distance scaler and MLP using all 5,213 training rows. Save compact, quantized weights and all preprocessing parameters; browser code reproduces the transformations in `neural.js`.
 
-| Verified held-out occupation-classification metric | Value |
-|---|---:|
-| Accuracy | **40.49%** |
-| Macro-F1 | **33.95%** |
-| Balanced accuracy | **36.35%** |
-| Majority-class baseline accuracy | **17.60%** |
-| Training rows | 5,213 |
-| Test rows | 1,304 |
+**Actual same-split evaluation:**
 
-**Be precise about what this means:** these are **occupation classification** results, NOT the accuracy of learning recommendations, job success predictions, or student ability scores. The model was fitted on employed adults, not outcome-verified students. Inputs students enter in the Career Intelligence page only approximate OECD skill-*use* categories, and the softmax values are **uncalibrated scores**, not employment probabilities. The random test split does not verify generalization to unseen countries. The model cannot distinguish AI, cloud, or cyber jobs when they share the same broad ICT family.
+| Saved 80/20 occupational classifier | Accuracy | Macro-F1 | Balanced accuracy |
+|---|---:|---:|---:|
+| Original MLP (27 inputs) | 40.49% | 33.95% | 36.35% |
+| **Hybrid PCA + K-Means + MLP** | **41.41%** | **35.76%** | **37.14%** |
 
-### Reproduce training offline (optional)
+The accuracy improvement is about **0.92 percentage points**. This is the *same historical random holdout* that was used when studying the former model; it is **not independent external or student-outcome validation**. It does not establish that the NN knows which topic a student should learn next or that K-Means clusters correspond to real career groups.
 
-Place the authentic `WhatNext_Career_Intelligence_Combined.csv` file in `out/`, then run:
+**Reproducibility:** Put the original personal-level `WhatNext_Career_Intelligence_Combined.csv` under ignored `out/`; never upload respondent rows to GitHub. Then:
 
 ```bash
 pip install -r requirements.txt
-python -m scripts.train_career_nn
-node --test tests/test_neural.mjs
-node --test tests/test_search.mjs
+python -m scripts.train_career_hybrid
+node --test tests/test_hybrid_nn.mjs tests/test_nn_only.mjs tests/test_neural.mjs
 ```
 
-The dataset and `out/` directory must remain **uncommitted**: they contain individual respondent-level survey observations, whereas public `data/*.json` files contain only trained parameters or aggregated evidence. No fabricated labels, career seniority, or student learning outcomes are introduced.
+Source code: [hybrid trainer](scripts/train_career_hybrid.py). Saved results: [hybrid model](data/career_hybrid_nn.json), [experiment report](data/career_hybrid_experiment.json). Browser-only inference uses no service or keys.
 
 ## How the next lesson is currently chosen
 
@@ -149,7 +149,7 @@ python -m scripts.export_merged_people
 python -m scripts.build_skill_evidence
 python scripts/build_data.py
 python scripts/update_news.py
-python -m scripts.train_career_nn
+python -m scripts.train_career_hybrid
 python -m unittest discover -s tests -v
 node --check app.js
 node --check neural.js
