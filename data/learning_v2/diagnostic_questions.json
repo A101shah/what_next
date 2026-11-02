@@ -1,0 +1,640 @@
+{
+  "version": "1.0.0",
+  "purpose": "Small editorial practice checks; not a calibrated or validated measure of learner mastery",
+  "scoring": {
+    "items_per_concept": 3,
+    "passing_correct": 3
+  },
+  "questions": [
+    {
+      "question_id": "python-basics-q1",
+      "concept_id": "python-basics",
+      "prompt": "Which value is a Python dictionary?",
+      "options": [
+        "[1,2]",
+        "{'a':1}",
+        "(1,2)",
+        "{1,2}"
+      ],
+      "correct_index": 1,
+      "explanation": "A dictionary maps keys to values.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "python-basics-q2",
+      "concept_id": "python-basics",
+      "prompt": "What type does len('hello') return?",
+      "options": [
+        "str",
+        "bool",
+        "int",
+        "list"
+      ],
+      "correct_index": 2,
+      "explanation": "len returns a whole-number count.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "python-basics-q3",
+      "concept_id": "python-basics",
+      "prompt": "Which line assigns the number 4 to x?",
+      "options": [
+        "int x = 4",
+        "x == 4",
+        "x = 4",
+        "let x := 4"
+      ],
+      "correct_index": 2,
+      "explanation": "Python assignment uses a single equals sign.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "python-control-flow-q1",
+      "concept_id": "python-control-flow",
+      "prompt": "Which keyword starts a conditional branch in Python?",
+      "options": [
+        "if",
+        "when",
+        "switch",
+        "case"
+      ],
+      "correct_index": 0,
+      "explanation": "The if statement executes a branch when its condition is true.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "python-control-flow-q2",
+      "concept_id": "python-control-flow",
+      "prompt": "What does range(3) produce when iterated?",
+      "options": [
+        "1,2,3",
+        "0,1,2",
+        "0,1,2,3",
+        "3 only"
+      ],
+      "correct_index": 1,
+      "explanation": "range(3) starts at zero and excludes three.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "python-control-flow-q3",
+      "concept_id": "python-control-flow",
+      "prompt": "Which statement skips to the next loop iteration?",
+      "options": [
+        "return",
+        "break",
+        "continue",
+        "pass"
+      ],
+      "correct_index": 2,
+      "explanation": "continue skips the remaining loop body and begins the next iteration.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "git-basics-q1",
+      "concept_id": "git-basics",
+      "prompt": "Which Git command saves staged changes as a commit?",
+      "options": [
+        "git push",
+        "git commit",
+        "git clone",
+        "git fetch"
+      ],
+      "correct_index": 1,
+      "explanation": "git commit records the current staged snapshot in local history.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "git-basics-q2",
+      "concept_id": "git-basics",
+      "prompt": "What does git status show?",
+      "options": [
+        "Your GitHub password",
+        "Working tree and staging changes",
+        "Remote branch deletion",
+        "System memory usage"
+      ],
+      "correct_index": 1,
+      "explanation": "git status reports working-tree and staging state.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "git-basics-q3",
+      "concept_id": "git-basics",
+      "prompt": "Which command creates a local copy of an existing repository?",
+      "options": [
+        "git add",
+        "git init --bare",
+        "git clone",
+        "git rebase"
+      ],
+      "correct_index": 2,
+      "explanation": "git clone copies a repository and its history.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "sql-basics-q1",
+      "concept_id": "sql-basics",
+      "prompt": "Which SQL statement reads rows from a table?",
+      "options": [
+        "SELECT",
+        "INSERT",
+        "UPDATE",
+        "DROP"
+      ],
+      "correct_index": 0,
+      "explanation": "SELECT retrieves records.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "sql-basics-q2",
+      "concept_id": "sql-basics",
+      "prompt": "Which clause limits records to those matching a condition?",
+      "options": [
+        "GROUP BY",
+        "ORDER BY",
+        "WHERE",
+        "JOIN"
+      ],
+      "correct_index": 2,
+      "explanation": "WHERE filters rows before grouping.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "sql-basics-q3",
+      "concept_id": "sql-basics",
+      "prompt": "What does COUNT(*) calculate?",
+      "options": [
+        "The mean value",
+        "The number of rows",
+        "Distinct column names",
+        "The sum of all numbers"
+      ],
+      "correct_index": 1,
+      "explanation": "COUNT(*) counts rows including those with null column values.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "descriptive-stats-q1",
+      "concept_id": "descriptive-stats",
+      "prompt": "What is the mean of 2, 4, and 6?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_index": 1,
+      "explanation": "(2 + 4 + 6) / 3 = 4.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "descriptive-stats-q2",
+      "concept_id": "descriptive-stats",
+      "prompt": "Which statistic is usually more resistant to extreme outliers?",
+      "options": [
+        "Mean",
+        "Median",
+        "Range",
+        "Standard deviation"
+      ],
+      "correct_index": 1,
+      "explanation": "The median depends on the ordered middle observation.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "descriptive-stats-q3",
+      "concept_id": "descriptive-stats",
+      "prompt": "What does a standard deviation of zero imply?",
+      "options": [
+        "All observed values are equal",
+        "The sample is random",
+        "The mean is zero",
+        "There are no observations"
+      ],
+      "correct_index": 0,
+      "explanation": "With nonempty numeric observations, zero standard deviation means no observed spread.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "probability-basics-q1",
+      "concept_id": "probability-basics",
+      "prompt": "For equally likely outcomes on a fair six-sided die, P(rolling 2) is:",
+      "options": [
+        "1/2",
+        "1/3",
+        "1/6",
+        "2/6"
+      ],
+      "correct_index": 2,
+      "explanation": "There is one matching outcome out of six.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "probability-basics-q2",
+      "concept_id": "probability-basics",
+      "prompt": "If events A and B are independent, P(A and B) equals:",
+      "options": [
+        "P(A)+P(B)",
+        "P(A)×P(B)",
+        "P(A)/P(B)",
+        "1-P(A)"
+      ],
+      "correct_index": 1,
+      "explanation": "For independent events the joint probability is the product.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "probability-basics-q3",
+      "concept_id": "probability-basics",
+      "prompt": "A probability must lie in which interval?",
+      "options": [
+        "-1 to 1",
+        "0 to 1",
+        "0 to 100 excluding zero",
+        "Any real number"
+      ],
+      "correct_index": 1,
+      "explanation": "Probabilities fall between zero and one inclusive.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "linear-algebra-q1",
+      "concept_id": "linear-algebra",
+      "prompt": "What shape results from multiplying a 2×3 matrix by a 3×4 matrix?",
+      "options": [
+        "2×4",
+        "3×3",
+        "4×2",
+        "Not defined"
+      ],
+      "correct_index": 0,
+      "explanation": "Inner dimensions match and outer dimensions determine the result.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "linear-algebra-q2",
+      "concept_id": "linear-algebra",
+      "prompt": "The dot product of [1,2] and [3,4] is:",
+      "options": [
+        "7",
+        "10",
+        "11",
+        "14"
+      ],
+      "correct_index": 2,
+      "explanation": "1×3 + 2×4 = 11.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "linear-algebra-q3",
+      "concept_id": "linear-algebra",
+      "prompt": "Which matrix is the identity in two dimensions?",
+      "options": [
+        "[[0,1],[1,0]]",
+        "[[1,1],[1,1]]",
+        "[[1,0],[0,1]]",
+        "[[0,0],[0,0]]"
+      ],
+      "correct_index": 2,
+      "explanation": "The identity leaves a compatible vector unchanged.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "pandas-basics-q1",
+      "concept_id": "pandas-basics",
+      "prompt": "Which pandas function commonly reads a CSV file?",
+      "options": [
+        "pd.load()",
+        "pd.read_csv()",
+        "pd.import_csv()",
+        "pd.open()"
+      ],
+      "correct_index": 1,
+      "explanation": "pd.read_csv creates a DataFrame from delimited text.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "pandas-basics-q2",
+      "concept_id": "pandas-basics",
+      "prompt": "What does df.head() return by default?",
+      "options": [
+        "Last five rows",
+        "First five rows",
+        "All missing rows",
+        "Column dtypes only"
+      ],
+      "correct_index": 1,
+      "explanation": "head previews the first five rows by default.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "pandas-basics-q3",
+      "concept_id": "pandas-basics",
+      "prompt": "Which expression selects the age column as a Series?",
+      "options": [
+        "df['age']",
+        "df(row='age')",
+        "df.selectAge()",
+        "df['age',:]"
+      ],
+      "correct_index": 0,
+      "explanation": "Column indexing returns the named Series.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "ip-networking-q1",
+      "concept_id": "ip-networking",
+      "prompt": "What identifies a device interface on an IP network?",
+      "options": [
+        "File extension",
+        "IP address",
+        "Font name",
+        "Database key"
+      ],
+      "correct_index": 1,
+      "explanation": "An IP address identifies a network interface in IP communication.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "ip-networking-q2",
+      "concept_id": "ip-networking",
+      "prompt": "Which protocol provides reliable ordered byte-stream delivery?",
+      "options": [
+        "UDP",
+        "TCP",
+        "ICMP",
+        "ARP"
+      ],
+      "correct_index": 1,
+      "explanation": "TCP offers reliable ordered stream transport.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "ip-networking-q3",
+      "concept_id": "ip-networking",
+      "prompt": "What is the usual purpose of a router?",
+      "options": [
+        "Compile source code",
+        "Forward packets between networks",
+        "Store passwords",
+        "Render HTML"
+      ],
+      "correct_index": 1,
+      "explanation": "Routers use network routes to forward packets.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "linux-shell-q1",
+      "concept_id": "linux-shell",
+      "prompt": "Which command prints the current working directory?",
+      "options": [
+        "pwd",
+        "ls -a",
+        "cd ..",
+        "mkdir"
+      ],
+      "correct_index": 0,
+      "explanation": "pwd displays the current directory path.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "linux-shell-q2",
+      "concept_id": "linux-shell",
+      "prompt": "Which command lists files in a directory?",
+      "options": [
+        "cat",
+        "grep",
+        "ls",
+        "touch"
+      ],
+      "correct_index": 2,
+      "explanation": "ls lists directory entries.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "linux-shell-q3",
+      "concept_id": "linux-shell",
+      "prompt": "What does chmod change?",
+      "options": [
+        "Process priority",
+        "File permissions",
+        "Host IP address",
+        "Git branch"
+      ],
+      "correct_index": 1,
+      "explanation": "chmod changes file mode permissions.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "cloud-compute-q1",
+      "concept_id": "cloud-compute",
+      "prompt": "Which is an example of on-demand infrastructure compute?",
+      "options": [
+        "Virtual machine instance",
+        "Spreadsheet formula",
+        "Printed textbook",
+        "Static PDF only"
+      ],
+      "correct_index": 0,
+      "explanation": "Cloud virtual machines provide on-demand compute resources.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "cloud-compute-q2",
+      "concept_id": "cloud-compute",
+      "prompt": "What does serverless usually mean for developers?",
+      "options": [
+        "Code uses no servers",
+        "Cloud provider manages server provisioning",
+        "Applications never scale",
+        "Applications cannot access databases"
+      ],
+      "correct_index": 1,
+      "explanation": "Servers still exist; infrastructure management is abstracted away.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "cloud-compute-q3",
+      "concept_id": "cloud-compute",
+      "prompt": "Which cloud approach helps scale separate application components?",
+      "options": [
+        "Always one physical machine",
+        "Elastic resource allocation",
+        "Disabling monitoring",
+        "Hardcoded credentials"
+      ],
+      "correct_index": 1,
+      "explanation": "Elastic capacity can be added or removed with demand.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "spreadsheet-basics-q1",
+      "concept_id": "spreadsheet-basics",
+      "prompt": "Which spreadsheet formula sums cells A1 through A5?",
+      "options": [
+        "=SUM(A1:A5)",
+        "=TOTAL(A1-A5)",
+        "=ADD[A1,A5]",
+        "=COUNT(A1:A5)"
+      ],
+      "correct_index": 0,
+      "explanation": "SUM adds numerical values within the specified range.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "spreadsheet-basics-q2",
+      "concept_id": "spreadsheet-basics",
+      "prompt": "What is a cell reference?",
+      "options": [
+        "An email address",
+        "A location such as B3",
+        "The sheet filename",
+        "A chart title"
+      ],
+      "correct_index": 1,
+      "explanation": "Spreadsheet coordinates identify cell positions.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "spreadsheet-basics-q3",
+      "concept_id": "spreadsheet-basics",
+      "prompt": "What does sorting by a numeric column do?",
+      "options": [
+        "Delete duplicates",
+        "Order rows by that column's values",
+        "Average the column",
+        "Replace missing values"
+      ],
+      "correct_index": 1,
+      "explanation": "Sorting reorders rows while preserving each row's fields.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "customer-research-q1",
+      "concept_id": "customer-research",
+      "prompt": "Which interview prompt is least leading?",
+      "options": [
+        "You like this feature, right?",
+        "Why is our interface the best?",
+        "Tell me about the last time you faced this problem.",
+        "Would you pay double for this?"
+      ],
+      "correct_index": 2,
+      "explanation": "Specific open-ended prompts reduce pressure toward a preferred answer.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "customer-research-q2",
+      "concept_id": "customer-research",
+      "prompt": "What is an interview research sample?",
+      "options": [
+        "The people interviewed",
+        "The programming language used",
+        "A color palette",
+        "A pricing tier"
+      ],
+      "correct_index": 0,
+      "explanation": "A sample is the subset of people whose views were gathered.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "customer-research-q3",
+      "concept_id": "customer-research",
+      "prompt": "Why separate observed behavior from interpretation?",
+      "options": [
+        "To hide disagreement",
+        "To avoid treating assumptions as facts",
+        "To increase survey length",
+        "To remove quotations"
+      ],
+      "correct_index": 1,
+      "explanation": "Observations and interpretations have different evidential status.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "http-basics-q1",
+      "concept_id": "http-basics",
+      "prompt": "What does HTTP status 404 typically mean?",
+      "options": [
+        "Request successful",
+        "Resource not found",
+        "Server started",
+        "Access granted"
+      ],
+      "correct_index": 1,
+      "explanation": "404 indicates that the requested resource was not found.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "http-basics-q2",
+      "concept_id": "http-basics",
+      "prompt": "Which HTTP method is commonly used to retrieve a resource?",
+      "options": [
+        "GET",
+        "POST",
+        "PATCH",
+        "DELETE"
+      ],
+      "correct_index": 0,
+      "explanation": "GET requests a representation of a resource.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "http-basics-q3",
+      "concept_id": "http-basics",
+      "prompt": "Which is normally sent in an HTTP request header?",
+      "options": [
+        "Content-Type metadata",
+        "Only database rows",
+        "Python bytecode",
+        "CSS media queries"
+      ],
+      "correct_index": 0,
+      "explanation": "Headers carry request metadata such as content type.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "data-types-q1",
+      "concept_id": "data-types",
+      "prompt": "Which variable is nominal categorical data?",
+      "options": [
+        "Temperature in °C",
+        "Weight in kilograms",
+        "Favorite browser",
+        "Height in centimeters"
+      ],
+      "correct_index": 2,
+      "explanation": "Browser categories have labels without inherent numerical order.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "data-types-q2",
+      "concept_id": "data-types",
+      "prompt": "Which variable is ordinal?",
+      "options": [
+        "Ranking: low, medium, high",
+        "Exact time in seconds",
+        "Number of customers",
+        "Distance in kilometers"
+      ],
+      "correct_index": 0,
+      "explanation": "Ordinal values have an ordered category relationship.",
+      "provenance": "editorial_unvalidated_practice_check"
+    },
+    {
+      "question_id": "data-types-q3",
+      "concept_id": "data-types",
+      "prompt": "Which data type best represents an integer count?",
+      "options": [
+        "Categorical string",
+        "Whole-number numeric",
+        "Image pixels",
+        "Boolean only"
+      ],
+      "correct_index": 1,
+      "explanation": "Counts are usually represented with integer numeric values.",
+      "provenance": "editorial_unvalidated_practice_check"
+    }
+  ]
+}
