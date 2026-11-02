@@ -8,7 +8,6 @@
   <title>WhatNext AI — Your Knowledge GPS</title>
   <link rel="stylesheet" href="styles.css">
   <script src="neural.js" defer></script>
-  <script src="catboost.js" defer></script>
   <script src="search.js" defer></script>
   <script src="skills.js" defer></script>
   <script src="learning.js" defer></script>
@@ -246,17 +245,14 @@
         </div>
         <p class="skill-disclaimer">Use-category bands are derived from each OECD workplace index and should not be interpreted as personal competence, proof of essential job qualifications, or comparisons of innate traits. Small groups and missing responses are withheld.</p>
         <div class="nn-headline">
-          <div><div class="eyebrow">EVALUATED ML MODELS · CATBOOST + NEURAL NETWORK</div><h2>Compare career-family patterns with AI</h2><p>Two genuinely trained models, using the same 27 real-data features. Compare how each model classifies broad occupational families. Neither can determine your talent, hiring probability or ideal next lesson.</p></div>
+          <div><div class="eyebrow">TRAINED NEURAL NETWORK · MLP</div><h2>Explore career-family patterns with a neural network</h2><p>One evaluated multilayer perceptron uses 27 workplace and education features to classify broad occupational families. It cannot determine your talent, hiring probability, or the best next lesson.</p></div>
           <span class="outlined-tag">12 OCCUPATION CLASSES</span>
         </div>
         <div class="nn-layout">
           <article class="panel">
             <div class="panel-title"><div><h3>Tell the model about your background</h3><p>All inference runs locally in your browser. No profile data is sent to a server.</p></div></div>
             <form id="nn-form" class="nn-form">
-              <div class="nn-model-picker field"><label for="nn-model-select">PREDICTION MODEL</label><select id="nn-model-select">
-                <option value="catboost">CatBoost · boosted decision trees (recommended)</option>
-                <option value="nn">Neural Network · multilayer perceptron (MLP)</option>
-              </select><p class="panel-caption">CatBoost is the stronger exploratory classifier on the saved 80/20 holdout; both models remain available to compare.</p></div>
+              <div class="nn-model-intro"><strong>Neural Network (MLP)</strong><p>Single career classifier · 27 input features · trained weights evaluated on authentic OECD survey observations.</p></div>
               <div class="nn-background">
                 <div class="field"><label for="nn-level">Education level</label><select id="nn-level" required>
                   <option value="">Choose a level</option><option value="0">Prefer not to say / unavailable</option>
@@ -268,11 +264,11 @@
               <h4>How often do you currently use these skills?</h4>
               <p class="panel-caption">Choose 0 (rarely) through 5 (very frequently). These answers approximate survey usage categories; they are <strong>not calibrated proficiency scores</strong>, especially for students without work experience.</p>
               <div class="nn-skill-inputs" id="nn-skill-inputs"></div>
-              <button type="submit" class="primary-btn" id="nn-run">Compare occupational patterns ↗</button>
+              <button type="submit" class="primary-btn" id="nn-run">Run neural-network prediction ↗</button>
             </form>
           </article>
           <article class="panel nn-results">
-            <div class="panel-title"><div><h3>Model predictions</h3><p>Broad occupational-family classification, not hiring likelihood</p></div><span class="model-pill">CATBOOST / MLP</span></div>
+            <div class="panel-title"><div><h3>Model predictions</h3><p>Broad occupational-family classification, not hiring likelihood</p></div><span class="model-pill">NEURAL NETWORK · MLP</span></div>
             <div id="nn-performance" class="nn-performance">Loading verified test-set results...</div>
             <div id="nn-output" class="nn-output" aria-live="polite">Choose your background and task-use levels to run the trained neural network.</div>
             <p class="panel-caption">These are uncalibrated model class scores—not hiring probabilities, aptitude ratings, or the best next lesson. The learning roadmap still follows your prerequisites.</p>
