@@ -82,3 +82,27 @@ test("validation rejects circular prerequisites", () => {
     assert.throws(() => makeLearningGraph(tmp.dir), /cycle/i);
   } finally { fs.rmSync(tmp.dir, { recursive: true, force: true }); }
 });
+
+
+test("compiled CSV has 170 consistent topic-to-concept rows and provenance flags", () => {
+  const content = fs.readFileSync(path.join(ROOT, "data/learning_v2/WhatNext_Compiled_Learning_Dataset_V2.csv"), "utf8");
+  const [head, ...lines] = content.trimEnd().split(/\r?\n/);
+  const cols = JSON.parse("[" + head + "]");
+  const records = lines.map((line) => {
+    const values = JSON.parse("[" + line + "]");
+    assert.equal(values.length, cols.length);
+    return Object.fromEntries(cols.map((name, i) => [name, values[i]]));
+  });
+  const mapped = new Set(graph.topic_concepts.map((x) => x.topic_id + "|" + x.concept_id));
+  const catalog = new Map(graph.concepts.map((x) => [x.concept_id, x]));
+  assert.equal(records.length, 170);
+  assert.equal(cols.length, 20);
+  for (const row of records) {
+    assert.ok(mapped.has(row.original_topic_id + "|" + row.concept_id));
+    assert.equal(row.catalog_provenance, "human_curated_v2");
+    assert.equal(row.mapping_provenance, "human_curated_v2");
+    assert.equal(row.mastery_evidence_status, "not_measured");
+    assert.equal(row.learning_resource_verification, "not_live_verified");
+    assert.equal(row.prerequisite_concept_ids, catalog.get(row.concept_id).prerequisite_ids.join(";"));
+  }
+});
