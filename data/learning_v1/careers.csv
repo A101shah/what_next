@@ -1,0 +1,7 @@
+"career_id","career_name","field","onet_soc_code","isco2_code","description","evidence_type","source_file"
+"ai","AI / ML Engineer","AI & Data","15-2051.00","25","Build and deploy intelligent systems.","existing_repo_curated","data/paths.json"
+"ds","Data Scientist","Analytics","15-2051.00","25","Turn data into reliable insights and predictive decisions.","existing_repo_curated","data/paths.json"
+"software","Software Developer","Software","15-1252.00","25","Design, implement and maintain reliable software.","existing_repo_curated","data/paths.json"
+"cyber","Cybersecurity Analyst","Security","15-1212.00","25","Secure systems and investigate threats responsibly.","existing_repo_curated","data/paths.json"
+"cloud","Cloud Engineer","Cloud","15-1244.00","25","Deploy scalable, secure software infrastructure.","existing_repo_curated","data/paths.json"
+"product","Product / Business Analyst","Product","13-1111.00","24","Use customer and operational evidence to improve products.","existing_repo_curated","data/paths.json"
