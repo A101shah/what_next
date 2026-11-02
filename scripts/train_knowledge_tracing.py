@@ -94,6 +94,8 @@ def evaluation(model,loader,device):
 def train(args):
     torch.manual_seed(args.seed);random.seed(args.seed)
     histories,domain=read_histories(args.input)
+    if domain=="school_mathematics":
+        raise ValueError("ASSISTments order_id is not a verified chronological timestamp; use a source with validated event order for sequential DKT.")
     observations=sum(len(events) for _,events in histories)
     if len(histories)<args.min_students or observations<args.min_interactions:
         raise ValueError(f"Insufficient independent real data: {len(histories)} learners, "
