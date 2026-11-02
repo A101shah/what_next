@@ -24,6 +24,10 @@ node --test tests/test_learning_graph.mjs tests/test_assessment.mjs
 The two older OECD-trained classifiers still predict broad occupation families, **not** what lesson a student should study next. The new recommender is transparently rule-based; no neural recommendation accuracy is claimed.
 
 
+## Real educational outcomes research (separate from the live curriculum)
+
+We added a source-attributed **public research data pipeline**, documented in [data/real_learning/README.md](data/real_learning/README.md). It supports offline import of genuine EdNet KT1 (English) and corrected ASSISTments (mathematics) learner interactions, official O*NET 31.0 occupation-skill ratings, and a PyTorch GRU Deep Knowledge Tracing experiment with student-disjoint evaluation. It also provides a truthful non-identifying EdNet 100-record preview **aggregate** and source catalog. The full external data archives **were not downloaded into the repository**, no individual student traces were committed, and no knowledge-tracing accuracy is claimed until a proper large-data training run. The live WhatNext next-lesson recommender remains prerequisite-based; English or math response success must not be treated as verified AI/ML proficiency.
+
 ## Hosting — no custom GitHub Actions
 
 All `.github/workflows/*.yml` files have been **deleted**. The repository stores the precomputed public JSON datasets and model weights; it does not train, scrape or execute Python during deployments.

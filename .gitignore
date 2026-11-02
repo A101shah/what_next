@@ -8,3 +8,9 @@ site/
 out/
 
 .vercel/
+
+# Never publish personal or pseudonymized learning traces
+data/real_learning/private/
+data/real_learning/raw/
+data/real_learning/*.zip
+*.pt
