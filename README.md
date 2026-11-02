@@ -149,7 +149,7 @@ python -m scripts.export_merged_people
 python -m scripts.build_skill_evidence
 python scripts/build_data.py
 python scripts/update_news.py
-python -m scripts.train_career_nn
+python -m scripts.train_career_hybrid
 python -m unittest discover -s tests -v
 node --check app.js
 node --check neural.js
