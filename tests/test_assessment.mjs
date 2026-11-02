@@ -135,7 +135,7 @@ test("browser assessment view loads from public JSON and saves no answer selecti
   });
   await listeners.get("DOMContentLoaded")();
   assert.ok(element("#learning-suggestions").innerHTML.includes("python"));
-  assert.ok(element("#assessment-quiz").innerHTML.includes("practice"));
+  assert.ok(element("#assessment-quiz").innerHTML.includes('type="radio"'));
   assert.ok(element("#learning-preview").innerHTML.includes("practice checks passed"));
   assert.equal(saved.has("whatnext:learning:evidence:v1"),false);
 });
