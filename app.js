@@ -12,7 +12,7 @@ const INTERESTS = [
   {id:"security",label:"Cybersecurity"}
 ];
 const state = {
-  paths: [], model: null, news: null, careers: null, skillEvidence: null, neuralModel: null, catboostModel: null, roleSkills: null, skillTaxonomy: null, skillListLimit: 36, searchConfig: null, searchCatalogue: [], lastHelpQuery: "", evidenceCountry: null, evidenceFamily: null, view: "overview",
+  paths: [], model: null, news: null, careers: null, skillEvidence: null, neuralModel: null, roleSkills: null, skillTaxonomy: null, skillListLimit: 36, searchConfig: null, searchCatalogue: [], lastHelpQuery: "", evidenceCountry: null, evidenceFamily: null, view: "overview",
   profile: {name:"",career:"ai",hours:7,interests:[],completed:[],technicalSkills:[],resume:{email:"",about:"",education:"",projects:""}}
 };
 const $ = selector => document.querySelector(selector);
@@ -59,8 +59,8 @@ async function loadOptional(url) {
 }
 async function start() {
   restore();
-  const [paths,model,news,careers,skillEvidence,neuralModel,catboostModel,searchConfig,roleSkills,skillTaxonomy] = await Promise.all([
-    loadOptional("data/paths.json"),loadOptional("data/model.json"),loadOptional("data/research.json"),loadOptional("data/careers.json"),loadOptional("data/skill_evidence.json"),loadOptional("data/career_nn.json"),loadOptional("data/career_catboost.json"),loadOptional("data/search_config.json"),loadOptional("data/role_skills.json"),loadOptional("data/skill_taxonomy.json")
+  const [paths,model,news,careers,skillEvidence,neuralModel,searchConfig,roleSkills,skillTaxonomy] = await Promise.all([
+    loadOptional("data/paths.json"),loadOptional("data/model.json"),loadOptional("data/research.json"),loadOptional("data/careers.json"),loadOptional("data/skill_evidence.json"),loadOptional("data/career_nn.json"),loadOptional("data/search_config.json"),loadOptional("data/role_skills.json"),loadOptional("data/skill_taxonomy.json")
   ]);
   if (!Array.isArray(paths) || !paths.length) {
     $("#next-content").innerHTML = "<h2>Unable to load learning paths.</h2><p>Open this website using a web server and check data/paths.json.</p>";
@@ -72,7 +72,6 @@ async function start() {
   state.careers = careers && careers.countries ? careers : null;
   state.skillEvidence = skillEvidence && skillEvidence.countries ? skillEvidence : null;
   state.neuralModel = neuralModel && neuralModel.nn && neuralModel.metrics ? neuralModel : null;
-  state.catboostModel = catboostModel && catboostModel.trees && catboostModel.metrics ? catboostModel : null;
   state.searchConfig = searchConfig;
   state.roleSkills = roleSkills && roleSkills.roles && Array.isArray(roleSkills.skills) ? roleSkills : null;
   state.skillTaxonomy = skillTaxonomy && Array.isArray(skillTaxonomy.terms) ? skillTaxonomy : null;
@@ -142,7 +141,6 @@ function bindActions(){
     if(!button)return;
     navigate("search");performHelpSearch(button.dataset.skillStudy+" tutorial");
   });
-  $("#nn-model-select").addEventListener("change",()=>{renderNeuralStatus();$("#nn-output").textContent="Model changed. Run the comparison to see updated occupational patterns.";});
   $("#quick-search-form").addEventListener("submit",event=>{
     event.preventDefault();
     const query=$("#quick-search-query").value.trim();
@@ -768,45 +766,34 @@ function initializeNeuralForm() {
     '</select></div>').join("");
 }
 function renderNeuralStatus() {
-  const selection=$("#nn-model-select");
-  const cat=state.catboostModel, net=state.neuralModel;
-  if(!cat && !net){
-    $("#nn-performance").textContent="No model file is available. Check the committed model JSON assets.";
+  const model=state.neuralModel;
+  if(!model){
+    $("#nn-performance").textContent="Trained neural-network model unavailable. Confirm data/career_nn.json is published.";
     $("#nn-run").disabled=true;
     return;
   }
-  if(selection.value==="catboost"&&!cat)selection.value="nn";
-  if(selection.value==="nn"&&!net)selection.value="catboost";
-  const chosen=selection.value==="catboost"?cat:net;
-  $("#nn-run").disabled=!chosen;
-  const display=(item,name,key)=>{
-    if(!item)return "";
-    const m=item.metrics;
-    const selected=key===selection.value;
-    return '<div class="model-compare-card '+(selected?"selected":"")+'"><span class="model-compare-name">'+clean(name)+
-      (selected?' · ACTIVE':'')+'</span><strong>'+((m.accuracy||0)*100).toFixed(2)+'%</strong>'+
-      '<span>Held-out test accuracy</span><div class="model-compare-track"><div style="width:'+((m.accuracy||0)*100).toFixed(2)+'%"></div></div>'+
-      '<small>Macro-F1 '+((m.macro_f1||0)*100).toFixed(2)+'%</small></div>';
-  };
-  const m=chosen.metrics;
-  $("#nn-performance").innerHTML='<div class="model-compare-grid">'+display(cat,"CatBoost","catboost")+
-    display(net,"Neural Network","nn")+'</div>'+
-    '<p class="panel-caption">Active model: <strong>'+clean(selection.value==="catboost"?"CatBoost gradient-boosted trees":"Multilayer perceptron")+
-    '</strong>. Stratified 80/20 split · '+clean(m.train_rows||m.train_size||5213)+
-    ' train / '+clean(m.test_rows||m.test_size||1304)+
-    ' test · 12 occupation families. The holdout was explored previously, so these scores are not independent deployment validation. Classification ≠ next-lesson accuracy.</p>'+
-    (cat?.country_holdout ?
-      '<p class="panel-caption">Country-held-out CatBoost check: '+
-      (100*cat.country_holdout.weighted_pooled_accuracy_approx).toFixed(2)+
-      '% combined accuracy across five countries tested one at a time. This is lower than the 80/20 random-split result; country generalization remains a limitation.</p>' : "");
+  $("#nn-run").disabled=false;
+  const metrics=model.metrics;
+  const percentage=value=>(100*Number(value||0)).toFixed(2)+"%";
+  $("#nn-performance").innerHTML=
+    '<div class="model-compare-grid nn-only-grid"><div class="model-compare-card selected">'+
+      '<span class="model-compare-name">MULTILAYER PERCEPTRON · ACTIVE MODEL</span>'+
+      '<strong>'+percentage(metrics.accuracy)+'</strong><span>Held-out occupation-classification accuracy</span>'+
+      '<div class="model-compare-track"><div style="width:'+percentage(metrics.accuracy)+'"></div></div>'+
+      '<small>Macro-F1 '+percentage(metrics.macro_f1)+' · Balanced accuracy '+
+      percentage(metrics.balanced_accuracy)+'</small></div></div>'+
+    '<p class="panel-caption">Single classifier: 27 → 20 → 12 → 12 neural network. '+
+      'Stratified 80/20 holdout · '+clean(model.training_samples)+' training records / '+
+      clean(model.test_samples)+' test records · 12 broad occupational classes. '+
+      'The reported accuracy is from the original saved evaluation, not a new independent validation. '+
+      'It does not measure which technical lesson a student should learn next.</p>';
 }
 function runCareerNeuralNetwork(event) {
   event.preventDefault();
-  const selectedModel=$("#nn-model-select").value;
-  const model=selectedModel==="catboost"?state.catboostModel:state.neuralModel;
-  const engine=selectedModel==="catboost"?window.WhatNextCatBoost:window.WhatNextNeural;
+  const model=state.neuralModel;
+  const engine=window.WhatNextNeural;
   if (!model || !engine) {
-    $("#nn-output").textContent="The selected trained model is unavailable.";
+    $("#nn-output").textContent="The trained neural network is unavailable.";
     return;
   }
   const bands=window.WhatNextNeural.SKILLS.map(([key])=>{
@@ -825,7 +812,7 @@ function runCareerNeuralNetwork(event) {
     });
     const top=predictions.slice(0,4);
     $("#nn-output").innerHTML=
-      '<div class="card-kicker">'+(selectedModel==="catboost"?"CATBOOST":"NEURAL NETWORK")+' · BROAD OCCUPATION EXPLORATION</div>'+
+      '<div class="card-kicker">NEURAL NETWORK · BROAD OCCUPATION EXPLORATION</div>'+
       '<h3>'+clean(top[0].label)+'</h3>'+
       '<p class="panel-caption">Highest model score among 12 broad occupational families; not a promise of career suitability or employment.</p>'+
       top.map((result,index)=>{
@@ -860,7 +847,7 @@ function runCareerNeuralNetwork(event) {
           clean(nextStep.title)+'</strong>. Our prerequisite-aware engine selects this from your completed topics, while the neural network supplies only exploratory career-family context.</p>';
       }
     }
-    toast("Career patterns updated using "+(selectedModel==="catboost"?"CatBoost":"the neural network")+".");
+    toast("Career patterns updated using the neural network.");
   } catch(err) {
     $("#nn-output").textContent=err.message || "Unable to calculate an occupational comparison.";
   }
