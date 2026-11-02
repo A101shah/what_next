@@ -29,11 +29,11 @@
     const stages = [
       ["Live learning recommender",data.model_status.recommendations,"active"],
       ["Occupational classification",data.model_status.occupational_classification,"context"],
-      ["Neural knowledge tracing",data.model_status.deep_knowledge_tracing,"pending"]
+      ["Neural knowledge tracing",data.model_status.deep_knowledge_tracing,"experimental"]
     ];
     $("#research-model-status").innerHTML = stages.map(([title,description,status]) =>
       '<div class="research-model-item"><span class="research-stage ' + status + '">' +
-      (status==="active"?"In use":status==="pending"?"Not trained":"Exploratory")+
+      (status==="active"?"In use":status==="experimental"?"Math pilot only":"Exploratory")+
       '</span><div><strong>'+clean(title)+'</strong><p>'+clean(description)+'</p></div></div>'
     ).join("");
     const pilot=data.model_status;
