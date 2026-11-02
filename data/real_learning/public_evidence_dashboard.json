@@ -1,0 +1,91 @@
+{
+  "version": "1.1.0",
+  "as_of": "2026-11-02",
+  "title": "Public-data provenance and experimental model status",
+  "source_summary": {
+    "preview": {
+      "source": "EdNet KT1 third-party public viewer preview",
+      "source_uri": "https://huggingface.co/datasets/mgor/EDNet/viewer/kt1/train",
+      "records": 100,
+      "learners": 5,
+      "unique_questions": 91,
+      "correct": 67,
+      "incorrect": 33,
+      "sha256": "4e06495418d8d3788775eadff4b08a2e5bd3d249fb334b009fbdab49e9b9087f",
+      "representative": false,
+      "learning_domain": "TOEIC English"
+    },
+    "onet": {
+      "source": "O*NET 31.0 software associations",
+      "records": 31821,
+      "reference_file": "data/role_skills.json",
+      "domain": "Occupation-level technology examples",
+      "individual_learning_evidence": false
+    }
+  },
+  "model_status": {
+    "recommendations": "Live: deterministic editorial prerequisite ranking; independent skill checks stored locally",
+    "occupational_classification": "Existing exploratory trained classifiers, not next-lesson models",
+    "deep_knowledge_tracing": "Training code present; full source data not acquired or trained",
+    "validated_recommendation_accuracy": null,
+    "trained_gru_next_response_accuracy": null
+  },
+  "sources": [
+    {
+      "id": "onet",
+      "label": "O*NET 31.0 software skills",
+      "scope": "occupation",
+      "category": "Career evidence",
+      "status": "Included in app",
+      "detail": "31,821 occupation-to-technology associations; these are examples of workplace tools, not evidence of individual competence.",
+      "license": "CC BY 4.0",
+      "url": "https://www.onetcenter.org/database.html"
+    },
+    {
+      "id": "ednet",
+      "label": "EdNet KT1",
+      "scope": "interaction",
+      "category": "Learning behavior",
+      "status": "100-row preview only",
+      "detail": "Five pseudonymous learner histories in a nonrepresentative preview. Full original archive is not in the repository.",
+      "license": "CC BY-NC 4.0",
+      "url": "https://github.com/riiid/ednet"
+    },
+    {
+      "id": "assist",
+      "label": "ASSISTments 2009–2010 corrected",
+      "scope": "interaction",
+      "category": "Learning behavior",
+      "status": "Importer ready; download required",
+      "detail": "School mathematics student-problem logs; separate from vocational/technical skills.",
+      "license": "Check original provider terms",
+      "url": "https://sites.google.com/site/assistmentsdata/home/2009-2010-assistment-data/skill-builder-data-2009-2010"
+    },
+    {
+      "id": "o-essential",
+      "label": "O*NET 31.0 essential skills",
+      "scope": "occupation",
+      "category": "Career evidence",
+      "status": "Official downloader ready",
+      "detail": "18,200 occupation-level ratings in official release; archive not downloaded in this integration.",
+      "license": "CC BY 4.0",
+      "url": "https://www.onetcenter.org/dictionary/31.0/csv/essential_skills.html"
+    },
+    {
+      "id": "o-transfer",
+      "label": "O*NET 31.0 transferable skills",
+      "scope": "occupation",
+      "category": "Career evidence",
+      "status": "Official downloader ready",
+      "detail": "45,500 occupation-level ratings in official release; archive not downloaded in this integration.",
+      "license": "CC BY 4.0",
+      "url": "https://www.onetcenter.org/dictionary/31.0/csv/transferable_skills.html"
+    }
+  ],
+  "notes": [
+    "The preview is not a random sample and must not be used to report model accuracy.",
+    "English and school mathematics responses do not establish student knowledge in Python, AI, cloud, or cybersecurity.",
+    "No learner-level dataset is published on the public GitHub Pages site.",
+    "Model code in the repository does not imply that full-scale training has been executed."
+  ]
+}

@@ -1,12 +1,13 @@
 """Import REAL public educational interactions, retaining source provenance.
 
 Requires Python 3.10+ and only the standard library. Never commits student
-rows to GitHub: output defaults under ignored out/. No fabricated labels.
+rows to GitHub: output defaults under ignored out/. No fabricated labels. The HMAC key is
+random per import run; cross-run pseudonyms do not match by design.
 
 EdNet: official KT1 ZIP/directory + original questions.csv answer key.
 ASSISTments: locally downloaded corrected Skill Builder CSV.
 """
-import argparse, csv, hashlib, json, random, zipfile, io
+import argparse, csv, hashlib, hmac, secrets, json, random, zipfile, io
 from pathlib import Path
 from collections import Counter
 
@@ -14,9 +15,13 @@ EDNET_URL="https://github.com/riiid/ednet"
 ASSIST_URL="https://sites.google.com/site/assistmentsdata/home/2009-2010-assistment-data/skill-builder-data-2009-2010"
 COLUMNS=["student_id","timestamp_or_order","question_id","is_correct","skill_tags",
          "elapsed_time_ms","source_dataset","domain","evidence"]
+# Run-local key avoids making sequential public student IDs easily reversible.
+# It is deliberately NOT stored in GitHub or the exported CSV.
+_SESSION_KEY=secrets.token_bytes(32)
 def pseudonym(source, raw):
-    # Stable locally for longitudinal sequences; no source IDs exported.
-    return source+"_"+hashlib.sha256(("whatnext-v1|"+source+"|"+raw).encode()).hexdigest()[:20]
+    # Stable within one import invocation; NOT anonymously identifiable across runs.
+    message=("whatnext-v1|"+source+"|"+str(raw)).encode("utf-8")
+    return source+"_"+hmac.new(_SESSION_KEY,message,hashlib.sha256).hexdigest()[:20]
 def write_rows(path, rows):
     path.parent.mkdir(parents=True, exist_ok=True)
     count=Counter()
@@ -105,7 +110,7 @@ def main():
     if not totals.get("rows"):raise SystemExit("No validated genuine interaction rows found")
     metadata={"source":args.source,"source_url":EDNET_URL if args.source=="ednet" else ASSIST_URL,
               "records_exported":totals["rows"],"correct_responses":totals["correct"],
-              "unit":"real_student_question_interaction","anonymous_ids":"hashed_source_identifiers",
+              "unit":"real_student_question_interaction","identifier_privacy":"run_scoped_HMAC_pseudonyms_not_anonymous",
               "domain":"TOEIC_English" if args.source=="ednet" else "school_mathematics",
               "source_license":"CC BY-NC 4.0" if args.source=="ednet" else "consult_original_provider_terms",
               "split_policy":"student_disjoint_train_validation","restricted_to_local_output":True,

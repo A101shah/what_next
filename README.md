@@ -28,6 +28,12 @@ The two older OECD-trained classifiers still predict broad occupation families, 
 
 We added a source-attributed **public research data pipeline**, documented in [data/real_learning/README.md](data/real_learning/README.md). It supports offline import of genuine EdNet KT1 (English) and corrected ASSISTments (mathematics) learner interactions, official O*NET 31.0 occupation-skill ratings, and a PyTorch GRU Deep Knowledge Tracing experiment with student-disjoint evaluation. It also provides a truthful non-identifying EdNet 100-record preview **aggregate** and source catalog. The full external data archives **were not downloaded into the repository**, no individual student traces were committed, and no knowledge-tracing accuracy is claimed until a proper large-data training run. The live WhatNext next-lesson recommender remains prerequisite-based; English or math response success must not be treated as verified AI/ML proficiency.
 
+## Research Data Lab (GitHub Pages)
+
+The live static app includes a **Research data lab** accessible through the sidebar and Overview. It displays non-identifying EdNet preview counts (100 actual response events across 5 learners, 67 correct; nonrandom pilot), official O*NET skill sources, source licensing/acquisition status, and truthful model readiness. Use it to inspect evidence behind the WhatNext curriculum, not as a claim that EdNet English-test outcomes validate Python, ML or cloud skills.
+
+The pilot importer was exercised on a locally prepared 100-record source-backed QA archive. The full EdNet KT1 archive has **not** been downloaded, and no large-data GRU training metric exists yet. Research scripts now use keyed, run-local pseudonyms; full traces and weights remain outside the public site. See [Research data documentation](data/real_learning/README.md) and [source dashboard metadata](data/real_learning/public_evidence_dashboard.json).
+
 ## Hosting — no custom GitHub Actions
 
 All `.github/workflows/*.yml` files have been **deleted**. The repository stores the precomputed public JSON datasets and model weights; it does not train, scrape or execute Python during deployments.

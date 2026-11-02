@@ -98,7 +98,7 @@ function navigate(view) {
     node.classList.toggle("active",active);
     if(active)node.setAttribute("aria-current","page");else node.removeAttribute("aria-current");
   });
-  const names={overview:"Overview",roadmap:"Learning roadmap",assessment:"Skill checks & next steps",skills:"Skill studio",search:"Learning search",pulse:"World pulse",evidence:"Career intelligence",career:"Career studio",profile:"Your profile"};
+  const names={overview:"Overview",roadmap:"Learning roadmap",assessment:"Skill checks & next steps",skills:"Skill studio",search:"Learning search",pulse:"World pulse",evidence:"Career intelligence",research:"Research data lab",career:"Career studio",profile:"Your profile"};
   $("#current-view").textContent=names[view]||"Overview";
   $(".sidebar").classList.remove("open");
   if (view==="profile") renderProfileForm();

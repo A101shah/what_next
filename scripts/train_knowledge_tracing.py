@@ -83,13 +83,19 @@ def evaluation(model,loader,device):
     if not predictions:raise ValueError("No eligible evaluation interactions")
     accuracy=sum((p>=.5)==bool(y) for p,y in zip(predictions,outcomes))/len(predictions)
     brier=sum((p-y)**2 for p,y in zip(predictions,outcomes))/len(predictions)
+    positive_rate=sum(outcomes)/len(outcomes)
+    baseline_accuracy=max(positive_rate,1-positive_rate)
     return {"next_response_accuracy":round(accuracy,4),"log_loss":round(sum(losses)/len(losses),4),
             "brier_score":round(brier,4),"evaluated_next_responses":len(predictions),
-            "positive_rate":round(sum(outcomes)/len(outcomes),4)}
+            "positive_rate":round(positive_rate,4),
+            "majority_class_baseline_accuracy":round(baseline_accuracy,4),
+            "accuracy_lift_vs_majority_baseline":round(accuracy-baseline_accuracy,4)}
 
 def train(args):
     torch.manual_seed(args.seed);random.seed(args.seed)
     histories,domain=read_histories(args.input)
+    if domain=="school_mathematics":
+        raise ValueError("ASSISTments order_id is not a verified chronological timestamp; use a source with validated event order for sequential DKT.")
     observations=sum(len(events) for _,events in histories)
     if len(histories)<args.min_students or observations<args.min_interactions:
         raise ValueError(f"Insufficient independent real data: {len(histories)} learners, "

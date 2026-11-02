@@ -28,6 +28,15 @@ class RealDataImportTests(unittest.TestCase):
             stats=write_rows(p/"private"/"ednet_interactions.csv",rows)
             self.assertEqual(stats["rows"],4)
             self.assertEqual(stats["correct"],2)
+    def test_run_scoped_keyed_ids_are_consistent_within_an_import(self):
+        from scripts.import_real_learning_data import pseudonym
+        import hashlib
+        first=pseudonym("ednet","u123456")
+        self.assertEqual(first,pseudonym("ednet","u123456"))
+        self.assertNotEqual(first,pseudonym("ednet","u123457"))
+        plain="ednet_"+hashlib.sha256(b"whatnext-v1|ednet|u123456").hexdigest()[:20]
+        self.assertNotEqual(first,plain)
+
     def test_missing_ednet_answers_does_not_invent_correctness(self):
         with tempfile.TemporaryDirectory() as dirname:
             p=Path(dirname)
@@ -60,6 +69,20 @@ except ImportError:
 
 @unittest.skipIf(torch is None,"torch is not installed")
 class RealDataModelTests(unittest.TestCase):
+    def test_100_row_pilot_is_rejected_for_training(self):
+        from argparse import Namespace
+        from scripts.train_knowledge_tracing import train
+        with tempfile.TemporaryDirectory() as dirname:
+            path=Path(dirname)/"pilot.csv"
+            with path.open("w",newline="") as handle:
+                writer=csv.writer(handle)
+                writer.writerow(["student_id","timestamp_or_order","question_id","is_correct","domain"])
+                for i in range(5):
+                    for t in range(20):
+                        writer.writerow([f"pilot{i}",1000+t,f"q{t}",str(t%2),"TOEIC_English"])
+            with self.assertRaisesRegex(ValueError,"Insufficient independent real data"):
+                train(Namespace(seed=42,input=path,min_students=30,min_interactions=1000))
+
     def test_gru_predicts_next_question_not_current_outcome(self):
         torch.manual_seed(1)
         histories=[("research_fixture",[(1,"q1",1),(2,"q2",0),(3,"q3",1)])]
