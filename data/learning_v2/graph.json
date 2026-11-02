@@ -119,9 +119,7 @@
       "level": "beginner",
       "description": "Core learning concept: JavaScript fundamentals.",
       "demonstration_task": "Implement browser-side form validation",
-      "prerequisite_ids": [
-        "python-control-flow"
-      ],
+      "prerequisite_ids": [],
       "provenance": "human_curated_v2",
       "mastery_evidence": "not_measured"
     },
@@ -144,8 +142,7 @@
       "description": "Core learning concept: REST API design.",
       "demonstration_task": "Design consistent CRUD routes and response codes",
       "prerequisite_ids": [
-        "http-basics",
-        "python-functions"
+        "http-basics"
       ],
       "provenance": "human_curated_v2",
       "mastery_evidence": "not_measured"
@@ -3313,19 +3310,7 @@
       "provenance": "human_curated_v2"
     },
     {
-      "prerequisite_concept_id": "python-control-flow",
-      "concept_id": "javascript-basics",
-      "relationship": "recommended_before",
-      "provenance": "human_curated_v2"
-    },
-    {
       "prerequisite_concept_id": "http-basics",
-      "concept_id": "api-design",
-      "relationship": "recommended_before",
-      "provenance": "human_curated_v2"
-    },
-    {
-      "prerequisite_concept_id": "python-functions",
       "concept_id": "api-design",
       "relationship": "recommended_before",
       "provenance": "human_curated_v2"
