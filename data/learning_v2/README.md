@@ -53,3 +53,21 @@ node scripts/demo_learning.mjs ai python-basics
 \`\`\`
 
 **Important:** This dataset is suitable for rule-based learning-path planning, interactive exploration, and generating future diagnostic questions. It is **not** yet a statistically validated supervised dataset for training the neural network to predict the best next lesson. Collect consented student assessment/outcome evidence before fitting or reporting such an ML model.
+
+
+## V3 application export and practice questions
+
+- \`WhatNext_Compiled_Learning_Dataset_V3.csv\`: **170 rows × 23 columns**; the 20 V2 curriculum fields plus \`practice_question_count\`, \`practice_check_status\`, and \`practice_bank_version\`.
+- \`WhatNext_Diagnostic_Question_Bank_V1.csv\`: **45 rows × 10 columns** of explicitly authored three-question checks for 15 concepts. \`correct_option_1_based\` is 1–4, whereas the browser's JSON \`correct_index\` is 0–3.
+- \`diagnostic_questions.json\`: canonical machine-readable question bank used by the browser. It includes correct-option indices and explanations; it must **not** be used as supervised student response/outcome data.
+- \`learning.js\` and \`assessment-ui.js\` implement the evidence-aware roadmap. The original curriculum and question bank remain human-authored, **not** student response data.
+
+The generated V2 and V3 CSVs **may repeat a concept ID** because their unit of observation is the original career-path topic-to-concept mapping, not one unique skill, person, or employer. This is intentional.
+
+A correct 3/3 score signals success on a small check, **not certified mastery**. Students can separately mark any concept as learned without taking a check; the UI flags these entries as self-reported. Both influence prerequisite eligibility, with distinct evidence labels.
+
+\`\`\`bash
+node scripts/build_learning_graph.mjs
+node scripts/build_learning_graph.mjs --check
+node --test tests/test_learning_graph.mjs tests/test_assessment.mjs
+\`\`\`
