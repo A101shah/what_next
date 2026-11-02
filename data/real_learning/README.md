@@ -90,3 +90,47 @@ python -m unittest tests.test_real_data_pipeline -v
 
 Training is supported with **full EdNet data only**. Do not interpret the
 placeholder numerical results used by unit tests as evaluated model metrics.
+
+
+## Executed real-data GRU research pilot — 2026-11-02
+
+**A training experiment was actually executed on local CPU (PyTorch 2.10.0):**
+a bounded subset from published, third-party preprocessed
+[ASSISTments 2009–2010 traces](https://github.com/ranydb/EAKT/blob/master/csv/assist2009_updated/assist2009_updated_test.csv),
+with the original source git blob SHA `6ee1262b3442062c806758d718f64b877f809faf`.
+The preview contained 52 valid response sequences (2,624 observed math attempts).
+After an 80/20 **trace-disjoint** split, 41 traces were used to train a GRU for
+eight epochs and 11 traces provided 509 held-out *next-response* predictions.
+
+| Evaluation metric | Observed result |
+|---|---:|
+| GRU next-response accuracy | 53.6346% |
+| Majority-class baseline accuracy | 59.5285% |
+| Accuracy difference | **−5.8939 percentage points** |
+| GRU holdout log loss | 0.747850 |
+| GRU holdout Brier score | 0.270814 |
+
+This result is **below** a trivial baseline and is **not production-ready**.
+Only 52 sequence histories were used, and the original student IDs were not
+provided in the processed source, so splitting by sequence does not guarantee
+strict original-person disjointness. This is a **small experiment**, not full
+EdNet training. No user model, student responses, or model weights were
+published to GitHub, and the live lesson recommender remains
+human-curated and prerequisite-based.
+
+The reproducibility script is
+`scripts/train_assistments_pilot.py`. Download the source from the linked
+research repository yourself and run:
+
+```powershell
+python -m pip install torch
+python scripts/train_assistments_pilot.py --input "out/assist2009_updated_test.csv"
+```
+
+Observed metrics and audit notes are stored in
+`data/real_learning/assist2009_gru_pilot_metrics.json`. PyTorch version,
+hardware, floating-point implementation and the third-party source may
+affect rerun results. **Full original EdNet training, live technical-topic
+knowledge-tracing, and independently verified GitHub Pages deployment
+are still separate unfinished tasks.** Do not substitute the small math
+benchmark result for production recommendation accuracy.
