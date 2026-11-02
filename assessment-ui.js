@@ -237,7 +237,7 @@
     storeData();
     refresh();
     const notes = result.details.map((x, i) =>
-      (x.correct ? "✓" : "✗") + " Q" + (i + 1) + ": " + x.explanation
+      (x.correct ? "✓" : "✗") + " Q" + (i + 1) + ": " + (x.correct ? "" : "Correct answer: " + x.correct_answer + ". ") + x.explanation
     );
     setFeedback(result.score + "/3 correct. " +
       (result.passed ? "Practice check passed; this is a basic knowledge signal, not full mastery." :
