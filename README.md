@@ -2,6 +2,28 @@
 
 **Personalized prerequisite-based learning paths, real workforce insights, CatBoost occupational classification, and a trained neural network.** Entirely static HTML/CSS/JavaScript, hosted from the same GitHub repository.
 
+## New: skill checks and evidence-aware next learning steps
+
+The existing GitHub Pages UI now has a **Skill checks** workspace, backed by the offline data in `data/learning_v2/` and by `learning.js` and `assessment-ui.js`.
+
+- Recommends eligible next **concepts** using 107 granular curriculum concepts, 139 proposed prerequisite edges, and six career pathways. Transitive prerequisites are included so a career can recommend missing foundations from another domain.
+- Provides **45 authored practice questions** covering 15 foundational concepts. Each check contains three multiple-choice questions and is marked passed at 3/3 correct. Questions are editorial and **not validated measures of proficiency**.
+- Keeps **passed practice checks** distinct from **self-reported learned concepts**. Either can satisfy the app's curriculum completion rule, but self-reported prerequisites are expressly labeled as unassessed, never secretly treated as verified.
+- Stores only short assessment summaries (correct count, attempt count and check date) in the browser under `whatnext:learning:evidence:v1`. Individual answers and personal identifiers are not sent or logged to a server.
+- Updates the overview next-step card, learning snapshot, and roadmap handoff. Existing broad roadmap completion, resume editor, career classifiers, and O*NET evidence remain in place.
+- Uses only static GitHub Pages assets; no custom GitHub Actions, API secrets, or backend.
+
+**Datasets:** [WhatNext_Compiled_Learning_Dataset_V3.csv](data/learning_v2/WhatNext_Compiled_Learning_Dataset_V3.csv) (170 rows × 23 columns) and [WhatNext_Diagnostic_Question_Bank_V1.csv](data/learning_v2/WhatNext_Diagnostic_Question_Bank_V1.csv) (45 rows × 10 columns).
+
+**Rebuild and check locally:**
+```bash
+node scripts/build_learning_graph.mjs --check
+node --test tests/test_learning_graph.mjs tests/test_assessment.mjs
+```
+
+The two older OECD-trained classifiers still predict broad occupation families, **not** what lesson a student should study next. The new recommender is transparently rule-based; no neural recommendation accuracy is claimed.
+
+
 ## Hosting — no custom GitHub Actions
 
 All `.github/workflows/*.yml` files have been **deleted**. The repository stores the precomputed public JSON datasets and model weights; it does not train, scrape or execute Python during deployments.

@@ -162,6 +162,55 @@ export function makeLearningGraph(root = ROOT) {
     ...compiledRows.map((row) => compiledColumns.map((key) => csvCell(row[key])).join(","))
   ].join("\n") + "\n";
 
+  const questionBank = JSON.parse(read(root, folder + "/diagnostic_questions.json"));
+  assert(Array.isArray(questionBank.questions), "Missing question bank");
+  const questionColumns = [
+    "concept_id","question_id","question","option_1","option_2","option_3","option_4",
+    "correct_option_1_based","answer_explanation","question_provenance"
+  ];
+  const questionCounts = new Map();
+  const questionIds = new Set();
+  const questions = questionBank.questions;
+  const questionRows = questions.map((q) => {
+    assert(conceptById.has(q.concept_id), "Question references unknown concept: " + q.concept_id);
+    assert(typeof q.question_id === "string" && !questionIds.has(q.question_id),
+      "Duplicate or missing question ID");
+    questionIds.add(q.question_id);
+    assert(Array.isArray(q.options) && q.options.length === 4, "Bad options: " + q.question_id);
+    assert(Number.isInteger(q.correct_index) && q.correct_index >= 0 && q.correct_index < 4,
+      "Bad answer key: " + q.question_id);
+    assert(q.provenance === "editorial_unvalidated_practice_check", "Bad question provenance");
+    assert(q.prompt && q.explanation, "Missing prompt or explanation: " + q.question_id);
+    questionCounts.set(q.concept_id, (questionCounts.get(q.concept_id) || 0) + 1);
+    return {
+      concept_id: q.concept_id, question_id: q.question_id, question: q.prompt,
+      option_1: q.options[0], option_2: q.options[1],
+      option_3: q.options[2], option_4: q.options[3],
+      correct_option_1_based: q.correct_index + 1,
+      answer_explanation: q.explanation, question_provenance: q.provenance
+    };
+  });
+  for (const [id, count] of questionCounts)
+    assert(count === 3, "Exactly three questions required per available check: " + id);
+  const quizCsv = [
+    questionColumns.map(csvCell).join(","),
+    ...questionRows.map(row => questionColumns.map(key => csvCell(row[key])).join(","))
+  ].join("\n") + "\n";
+  const completeColumns = [...compiledColumns, "practice_question_count", "practice_check_status", "practice_bank_version"];
+  const completeCsv = [
+    completeColumns.map(csvCell).join(","),
+    ...compiledRows.map(row => {
+      const count = questionCounts.get(row.concept_id) || 0;
+      const enriched = {
+        ...row, practice_question_count: count,
+        practice_check_status: count ? "editorial_unvalidated_practice_check" : "no_check_yet",
+        practice_bank_version: count ? questionBank.version : ""
+      };
+      return completeColumns.map(key => csvCell(enriched[key])).join(",");
+    })
+  ].join("\n") + "\n";
+
+
   return {
     syllabus, concepts, topicLinks, careerLinks, edges, counts,
     generated: {
@@ -173,6 +222,8 @@ export function makeLearningGraph(root = ROOT) {
       [folder + "/concept_prerequisites.csv"]: toQuotedCsv(
         ["prerequisite_concept_id","concept_id","relationship","provenance"], edges),
       [folder + "/WhatNext_Compiled_Learning_Dataset_V2.csv"]: compiledCsv,
+      [folder + "/WhatNext_Compiled_Learning_Dataset_V3.csv"]: completeCsv,
+      [folder + "/WhatNext_Diagnostic_Question_Bank_V1.csv"]: quizCsv,
       [folder + "/manifest.json"]: json(manifest)
     }
   };
