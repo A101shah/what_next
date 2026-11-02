@@ -25,14 +25,16 @@
   },
   "model_status": {
     "recommendations": "Live: deterministic editorial prerequisite ranking; independent skill checks stored locally",
-    "occupational_classification": "Single trained MLP: 27→20→12→12, broad OECD ISCO occupational-family classifier. Original saved held-out accuracy 40.49%; not a neural next-lesson recommender.",
+    "occupational_classification": "Single deployed PCA → K-Means → MLP model (31→20→12→12): 41.41% saved holdout occupation accuracy versus 40.49% standalone NN. 7 PCs/4 clusters; not next-lesson prediction.",
     "deep_knowledge_tracing": "Real mathematics GRU pilot trained and evaluated: 53.63% on 509 held-out next-response predictions vs 59.53% majority-class baseline. Below baseline; not deployed. Full EdNet not acquired.",
     "validated_recommendation_accuracy": null,
     "trained_gru_next_response_accuracy": null,
     "gru_mathematics_pilot_accuracy": 0.536346,
     "gru_mathematics_pilot_baseline_accuracy": 0.595285,
     "gru_mathematics_pilot_data": "52 sequence histories, 2,624 observations; trace-disjoint evaluation (original student IDs unavailable)",
-    "gru_mathematics_pilot_source": "data/real_learning/assist2009_gru_pilot_metrics.json"
+    "gru_mathematics_pilot_source": "data/real_learning/assist2009_gru_pilot_metrics.json",
+    "hybrid_model": "data/career_hybrid_nn.json",
+    "hybrid_evaluation": "data/career_hybrid_experiment.json"
   },
   "sources": [
     {
