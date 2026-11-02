@@ -40,7 +40,7 @@ window.WhatNextNeural = (() => {
     if (cache.has(model)) return cache.get(model);
     if (!model || !model.nn || !Array.isArray(model.nn.shape)) throw Error("Neural model is unavailable.");
     const nn=model.nn;
-    if(nn.shape.join(",")!=="27,20,12,12" || nn.quantization!==1000) throw Error("Unexpected neural model shape.");
+    if(!["27,20,12,12","31,20,12,12"].includes(nn.shape.join(",")) || nn.quantization!==1000) throw Error("Unexpected neural model shape.");
     function unpack(encoded,expected) {
       const raw=atob(encoded);
       if(raw.length!==expected*2)throw Error("Corrupt neural weights.");
@@ -81,6 +81,30 @@ window.WhatNextNeural = (() => {
     for(let i=1;i<=16;i++)raw.push(Number(i===field));
     if(raw.length!==27)throw Error("Input length mismatch.");
     let values=raw.map((value,i)=>(value-model.prep.mean[i])/model.prep.scale[i]);
+    if(model.model_type==="PCA_KMEANS_DISTANCE_FEATURES_MLP"){
+      if(!model.pca || !model.kmeans || !Array.isArray(model.pca.components) ||
+          !Array.isArray(model.kmeans.centers) || model.pca.components.length!==model.pca.n_components ||
+          model.kmeans.centers.length!==model.kmeans.n_clusters) {
+        throw Error("Hybrid PCA/K-Means model metadata is incomplete.");
+      }
+      // Both transforms were fitted offline using only the training partition.
+      // PCA applies to the seven numeric skill-use bands and work experience.
+      const pcaInput=model.pca.input_columns.map(index=>values[index]-model.pca.mean[index]);
+      const reduced=model.pca.components.map(component=>
+        component.reduce((sum,weight,i)=>sum+weight*pcaInput[i],0)
+      );
+      const distances=model.kmeans.centers.map(center=>{
+        if(center.length!==reduced.length)throw Error("Hybrid K-Means dimension mismatch.");
+        return Math.sqrt(center.reduce((sum,c,i)=>sum+(reduced[i]-c)**2,0));
+      });
+      const extra=distances.map((d,i)=>
+        (d-model.kmeans.distance_mean[i])/model.kmeans.distance_scale[i]
+      );
+      values=[...values,...extra];
+    }
+    if(values.length!==model.nn.shape[0] || values.some(x=>!Number.isFinite(x))){
+      throw Error("Neural-network input dimensions are invalid.");
+    }
     for(const [index,layer] of decodeWeights(model).entries()) {
       const outputs=new Array(layer.output);
       for(let j=0;j<layer.output;j++){
