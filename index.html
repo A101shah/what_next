@@ -11,6 +11,8 @@
   <script src="catboost.js" defer></script>
   <script src="search.js" defer></script>
   <script src="skills.js" defer></script>
+  <script src="learning.js" defer></script>
+  <script src="assessment-ui.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -21,6 +23,7 @@
     <nav class="nav">
       <button class="nav-item active" data-view="overview"><span class="nav-icon">◈</span> Overview</button>
       <button class="nav-item" data-view="roadmap"><span class="nav-icon">⌁</span> Learning roadmap</button>
+      <button class="nav-item" data-view="assessment"><span class="nav-icon">✓</span> Skill checks <span class="new-dot"></span></button>
       <button class="nav-item" data-view="skills"><span class="nav-icon">▦</span> Skill studio <span class="new-dot"></span></button>
       <button class="nav-item" data-view="search"><span class="nav-icon">⌕</span> Learning search <span class="new-dot"></span></button>
       <button class="nav-item" data-view="evidence"><span class="nav-icon">◫</span> Career intelligence</button>
@@ -67,6 +70,10 @@
           <article class="signal-card"><span class="signal-icon mint">03</span><h3>What's changing</h3><p>Real research publications are monitored and linked to your area of interest.</p><button class="text-link" data-go="pulse">Explore discoveries →</button></article>
         </div>
 
+        <article class="panel learning-home">
+          <div><span class="card-kicker">NEW · PERSONALIZED LEARNING CHECKS</span><h2>Know what to learn next, not just which career to pick.</h2><p>Explore concept prerequisites, record your existing knowledge, and use short practice checks to refine your next learning step.</p><div id="learning-preview" class="learning-home-preview">Loading concept learning guidance...</div></div>
+          <button type="button" class="subtle-btn" data-go="assessment">Open skill checks ↗</button>
+        </article>
         <div class="lower-grid">
           <article class="panel" id="career-neighborhood"><div class="panel-title"><div><h3>Nearby career paths</h3><p>Real occupational similarity · K-Means</p></div><span class="model-pill">ML</span></div><div id="neighbors-content" class="quiet-state">Loading occupational data...</div></article>
           <article class="panel"><div class="panel-title"><div><h3>Fresh from your field</h3><p>Source-linked research, not hype</p></div><button class="small-link" data-go="pulse">View all ↗</button></div><div id="preview-research" class="quiet-state">Checking verified sources...</div></article>
@@ -86,12 +93,47 @@
         <div class="eyebrow">A ROUTE MADE FOR YOU <span class="eyebrow-line"></span></div><div class="heading-row"><div><h1>Your learning roadmap<span class="accent">.</span></h1><p class="lead">Know what comes next, why it matters, and what to build.</p></div><button class="subtle-btn" data-go="profile">Adjust direction ↗</button></div>
         <div class="roadmap-banner"><div><span class="card-kicker">CURRENT DESTINATION</span><h2 id="roadmap-role">AI / ML Engineer</h2><p id="roadmap-subtitle">A prerequisite-aware pathway built one step at a time.</p></div><div class="roadmap-progress"><strong id="roadmap-percent">0%</strong><span>completed</span></div></div>
         <div class="roadmap-evidence"><span class="card-kicker">REAL CAREER CONTEXT</span><p id="roadmap-evidence">Checking verified education patterns for similar occupations...</p><div id="roadmap-skill-signal" class="roadmap-skill-signal">Checking workplace skills evidence...</div><button class="small-link" data-go="evidence">Explore career evidence ↗</button></div>
+        <div id="learning-roadmap-bridge" class="learning-roadmap-bridge">Loading concept-level recommendations...</div>
         <div class="section-head"><div><h2>Your step-by-step path</h2><p>Finish the prerequisites before advancing. All resources link to original publishers.</p></div></div>
         <div id="roadmap-list" class="steps"></div>
         <article class="panel roadmap-tool-brief">
           <div class="panel-title"><div><h3>Tools used in related occupations</h3><p>Real O*NET occupation-to-software examples, not inferred employee expertise</p></div><button class="small-link" data-go="skills">Open Skill studio ↗</button></div>
           <div id="roadmap-tools" class="roadmap-tools">Loading verified occupational tool examples...</div>
         </article>
+      </section>
+
+
+      <section class="view" id="view-assessment">
+        <div class="eyebrow">PERSONALIZE YOUR NEXT STEP <span class="eyebrow-line"></span></div>
+        <div class="heading-row">
+          <div><h1>Skill checks &amp; next steps<span class="accent">.</span></h1><p class="lead">A practical view of what you know, what to verify, and what to explore next.</p></div>
+          <button type="button" class="subtle-btn" data-go="profile">Change career goal ↗</button>
+        </div>
+        <article class="assessment-intro">
+          <div><span class="card-kicker">YOUR LEARNING DIRECTION</span><h2 id="assessment-career">Loading your learning path...</h2>
+            <p>Recommendations follow editorial prerequisites. A completed short check is different from a self-reported skill. Neither is a certification or a prediction of career success.</p>
+          </div>
+          <div class="assessment-stats" id="assessment-stats" aria-live="polite">
+            <div><strong>—</strong><span>Practice checks passed</span></div><div><strong>—</strong><span>Self-reported concepts</span></div><div><strong>—</strong><span>Remaining concepts</span></div>
+          </div>
+        </article>
+        <p class="assessment-status" id="assessment-status" role="status" aria-live="polite"></p>
+        <div class="section-head"><div><h2>Your next learning moves</h2><p>Sorted by difficulty and prerequisite readiness; practice-check results and self-reports are visibly distinguished.</p></div></div>
+        <div id="learning-suggestions" class="learning-recommendations" aria-live="polite"><p class="quiet-state">Finding your next concepts...</p></div>
+        <div class="section-head"><div><h2>Test a foundational concept</h2><p>Three questions per available concept, with feedback and explanations. You can always revisit or retake a check.</p></div></div>
+        <div class="assessment-layout">
+          <article class="panel assessment-main">
+            <label for="assessment-concept-select" class="assessment-label">Choose a practice check</label>
+            <select id="assessment-concept-select" disabled><option>Loading available checks...</option></select>
+            <form id="assessment-quiz"><p class="quiet-state">Loading practice questions...</p></form>
+            <div class="assessment-feedback" id="assessment-feedback" role="status" aria-live="polite"></div>
+          </article>
+          <aside class="panel assessment-catalog">
+            <div class="panel-title"><div><h3>Available skill checks</h3><p>Foundation topics relevant to your selected path</p></div><span class="model-pill">LOCAL ONLY</span></div>
+            <div id="assessment-check-list" class="assessment-check-list"><p class="quiet-state">Loading concept checks...</p></div>
+            <div class="assessment-note"><strong>How progress is counted</strong><p><b>Check passed:</b> 3/3 answers correct on a short practice check. <b>Self-reported:</b> the student marked the concept learned. Only the first has a recorded basic check, and neither proves full mastery. Results stay in your browser.</p></div>
+          </aside>
+        </div>
       </section>
 
       <section class="view" id="view-skills">
