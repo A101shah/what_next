@@ -337,3 +337,12 @@
 .research-pilot-metric span{font-size:12px;color:#c0cce1}
 .research-pilot-result-note{grid-column:1/-1;color:#e5cba2;font-size:12px;margin:3px 0;line-height:1.6}
 @media(max-width:540px){.research-pilot-metrics{grid-template-columns:1fr}.research-pilot-result-note{grid-column:auto}}
+
+/* Visible live-host verification control */
+.deployment-check-panel{margin:18px 0;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.deployment-check-panel p{font-size:12px;color:#bbcae2;line-height:1.7}
+.deployment-check-results{display:block;max-width:100%;width:100%;white-space:pre-wrap;overflow-wrap:anywhere;
+  border:1px solid #42506a;background:#101d2f;color:#c5d0e4;border-radius:10px;font-size:11px;line-height:1.7;padding:14px}
+.deployment-check-results.success{border-color:#44735f;background:#173129;color:#c6f1d9}
+.deployment-check-results.warning{border-color:#986d4e;background:#332820;color:#f5dabb}
+#run-deployment-check:disabled{opacity:.6;cursor:wait}
