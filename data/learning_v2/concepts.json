@@ -1,0 +1,1416 @@
+[
+  {
+    "concept_id": "python-basics",
+    "name": "Python syntax and data types",
+    "domain": "programming",
+    "level": "beginner",
+    "description": "Core learning concept: Python syntax and data types.",
+    "demonstration_task": "Write Python expressions using strings, lists and dictionaries",
+    "prerequisite_ids": [],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "python-control-flow",
+    "name": "Python control flow",
+    "domain": "programming",
+    "level": "beginner",
+    "description": "Core learning concept: Python control flow.",
+    "demonstration_task": "Implement a loop with input validation and conditionals",
+    "prerequisite_ids": [
+      "python-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "python-functions",
+    "name": "Functions and modules",
+    "domain": "programming",
+    "level": "beginner",
+    "description": "Core learning concept: Functions and modules.",
+    "demonstration_task": "Write reusable functions and import a module",
+    "prerequisite_ids": [
+      "python-control-flow"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "python-packages",
+    "name": "Python packages and environments",
+    "domain": "programming",
+    "level": "beginner",
+    "description": "Core learning concept: Python packages and environments.",
+    "demonstration_task": "Create a virtual environment and install a dependency",
+    "prerequisite_ids": [
+      "python-functions"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "python-automation",
+    "name": "Python automation",
+    "domain": "programming",
+    "level": "intermediate",
+    "description": "Core learning concept: Python automation.",
+    "demonstration_task": "Write a script that parses and summarizes log lines",
+    "prerequisite_ids": [
+      "python-functions"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "algorithms-basics",
+    "name": "Basic algorithms and data structures",
+    "domain": "programming",
+    "level": "beginner",
+    "description": "Core learning concept: Basic algorithms and data structures.",
+    "demonstration_task": "Compare search algorithms on a small list",
+    "prerequisite_ids": [
+      "python-control-flow"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "git-basics",
+    "name": "Git fundamentals",
+    "domain": "engineering",
+    "level": "beginner",
+    "description": "Core learning concept: Git fundamentals.",
+    "demonstration_task": "Create commits and inspect history in a repository",
+    "prerequisite_ids": [],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "git-collaboration",
+    "name": "Git branches and pull requests",
+    "domain": "engineering",
+    "level": "intermediate",
+    "description": "Core learning concept: Git branches and pull requests.",
+    "demonstration_task": "Open a branch and review a proposed change",
+    "prerequisite_ids": [
+      "git-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "html-css",
+    "name": "HTML and CSS foundations",
+    "domain": "engineering",
+    "level": "beginner",
+    "description": "Core learning concept: HTML and CSS foundations.",
+    "demonstration_task": "Build an accessible responsive page",
+    "prerequisite_ids": [],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "javascript-basics",
+    "name": "JavaScript fundamentals",
+    "domain": "engineering",
+    "level": "beginner",
+    "description": "Core learning concept: JavaScript fundamentals.",
+    "demonstration_task": "Implement browser-side form validation",
+    "prerequisite_ids": [
+      "python-control-flow"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "http-basics",
+    "name": "HTTP and request-response lifecycle",
+    "domain": "engineering",
+    "level": "beginner",
+    "description": "Core learning concept: HTTP and request-response lifecycle.",
+    "demonstration_task": "Explain requests headers status codes and methods",
+    "prerequisite_ids": [],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "api-design",
+    "name": "REST API design",
+    "domain": "engineering",
+    "level": "intermediate",
+    "description": "Core learning concept: REST API design.",
+    "demonstration_task": "Design consistent CRUD routes and response codes",
+    "prerequisite_ids": [
+      "http-basics",
+      "python-functions"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "api-validation",
+    "name": "API input validation",
+    "domain": "engineering",
+    "level": "intermediate",
+    "description": "Core learning concept: API input validation.",
+    "demonstration_task": "Validate a malformed request and return a helpful error",
+    "prerequisite_ids": [
+      "api-design"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "sql-basics",
+    "name": "SQL queries",
+    "domain": "data",
+    "level": "beginner",
+    "description": "Core learning concept: SQL queries.",
+    "demonstration_task": "Retrieve filtered ordered rows from a relational table",
+    "prerequisite_ids": [],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "sql-joins",
+    "name": "SQL joins and aggregation",
+    "domain": "data",
+    "level": "intermediate",
+    "description": "Core learning concept: SQL joins and aggregation.",
+    "demonstration_task": "Join tables and calculate grouped metrics",
+    "prerequisite_ids": [
+      "sql-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "db-modeling",
+    "name": "Relational data modeling",
+    "domain": "data",
+    "level": "intermediate",
+    "description": "Core learning concept: Relational data modeling.",
+    "demonstration_task": "Design normalized tables with keys and constraints",
+    "prerequisite_ids": [
+      "sql-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "sql-performance",
+    "name": "Database indexing basics",
+    "domain": "engineering",
+    "level": "advanced",
+    "description": "Core learning concept: Database indexing basics.",
+    "demonstration_task": "Explain an index and compare query execution plans",
+    "prerequisite_ids": [
+      "db-modeling",
+      "sql-joins"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "unit-testing",
+    "name": "Unit testing and assertions",
+    "domain": "engineering",
+    "level": "intermediate",
+    "description": "Core learning concept: Unit testing and assertions.",
+    "demonstration_task": "Write automated edge-case tests for a function",
+    "prerequisite_ids": [
+      "python-functions"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "ci-basics",
+    "name": "Continuous integration basics",
+    "domain": "engineering",
+    "level": "intermediate",
+    "description": "Core learning concept: Continuous integration basics.",
+    "demonstration_task": "Configure or explain an automated test workflow",
+    "prerequisite_ids": [
+      "unit-testing",
+      "git-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "systems-design",
+    "name": "System design and components",
+    "domain": "engineering",
+    "level": "advanced",
+    "description": "Core learning concept: System design and components.",
+    "demonstration_task": "Draw a service and database architecture",
+    "prerequisite_ids": [
+      "api-design",
+      "db-modeling"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "caching-basics",
+    "name": "Caching and performance trade-offs",
+    "domain": "engineering",
+    "level": "advanced",
+    "description": "Core learning concept: Caching and performance trade-offs.",
+    "demonstration_task": "Explain a cache hit miss and invalidation strategy",
+    "prerequisite_ids": [
+      "systems-design"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "containers-basics",
+    "name": "Containers and images",
+    "domain": "cloud",
+    "level": "intermediate",
+    "description": "Core learning concept: Containers and images.",
+    "demonstration_task": "Build and run a basic container",
+    "prerequisite_ids": [
+      "linux-shell"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "docker-practice",
+    "name": "Docker image building",
+    "domain": "cloud",
+    "level": "intermediate",
+    "description": "Core learning concept: Docker image building.",
+    "demonstration_task": "Write a minimal Dockerfile and explain its layers",
+    "prerequisite_ids": [
+      "containers-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "app-deployment",
+    "name": "Application deployment",
+    "domain": "cloud",
+    "level": "advanced",
+    "description": "Core learning concept: Application deployment.",
+    "demonstration_task": "Deploy and smoke-test a small application",
+    "prerequisite_ids": [
+      "ci-basics",
+      "containers-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "spreadsheet-basics",
+    "name": "Spreadsheet data literacy",
+    "domain": "data",
+    "level": "beginner",
+    "description": "Core learning concept: Spreadsheet data literacy.",
+    "demonstration_task": "Clean a spreadsheet and spot inconsistent column types",
+    "prerequisite_ids": [],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "spreadsheet-formulas",
+    "name": "Spreadsheet formulas",
+    "domain": "data",
+    "level": "beginner",
+    "description": "Core learning concept: Spreadsheet formulas.",
+    "demonstration_task": "Use conditional counts lookups and calculations",
+    "prerequisite_ids": [
+      "spreadsheet-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "data-types",
+    "name": "Data types and measurement scales",
+    "domain": "data",
+    "level": "beginner",
+    "description": "Core learning concept: Data types and measurement scales.",
+    "demonstration_task": "Distinguish numeric ordinal nominal and text fields",
+    "prerequisite_ids": [],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "numpy-arrays",
+    "name": "NumPy arrays",
+    "domain": "data",
+    "level": "beginner",
+    "description": "Core learning concept: NumPy arrays.",
+    "demonstration_task": "Demonstrate vectorized operations on arrays",
+    "prerequisite_ids": [
+      "python-packages"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "pandas-basics",
+    "name": "Pandas DataFrames",
+    "domain": "data",
+    "level": "beginner",
+    "description": "Core learning concept: Pandas DataFrames.",
+    "demonstration_task": "Read filter and group a DataFrame",
+    "prerequisite_ids": [
+      "python-packages",
+      "data-types"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "data-joins",
+    "name": "Data merging and keys",
+    "domain": "data",
+    "level": "intermediate",
+    "description": "Core learning concept: Data merging and keys.",
+    "demonstration_task": "Join two tables and check row multiplication",
+    "prerequisite_ids": [
+      "pandas-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "missing-data",
+    "name": "Missing values and outliers",
+    "domain": "data",
+    "level": "intermediate",
+    "description": "Core learning concept: Missing values and outliers.",
+    "demonstration_task": "Explain missingness and choose an imputation strategy",
+    "prerequisite_ids": [
+      "pandas-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "eda",
+    "name": "Exploratory data analysis",
+    "domain": "data",
+    "level": "intermediate",
+    "description": "Core learning concept: Exploratory data analysis.",
+    "demonstration_task": "Find distributions anomalies and possible leakage",
+    "prerequisite_ids": [
+      "pandas-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "data-visualization",
+    "name": "Data visualization",
+    "domain": "data",
+    "level": "intermediate",
+    "description": "Core learning concept: Data visualization.",
+    "demonstration_task": "Create a chart with appropriate labels and units",
+    "prerequisite_ids": [
+      "eda"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "data-storytelling",
+    "name": "Data storytelling",
+    "domain": "communication",
+    "level": "intermediate",
+    "description": "Core learning concept: Data storytelling.",
+    "demonstration_task": "Write an evidence-based executive summary",
+    "prerequisite_ids": [
+      "data-visualization"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "linear-algebra",
+    "name": "Vectors and matrices",
+    "domain": "math",
+    "level": "beginner",
+    "description": "Core learning concept: Vectors and matrices.",
+    "demonstration_task": "Multiply matrices and explain a vector projection",
+    "prerequisite_ids": [],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "descriptive-stats",
+    "name": "Descriptive statistics",
+    "domain": "math",
+    "level": "beginner",
+    "description": "Core learning concept: Descriptive statistics.",
+    "demonstration_task": "Compute mean median variance and summarize a distribution",
+    "prerequisite_ids": [
+      "data-types"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "probability-basics",
+    "name": "Probability fundamentals",
+    "domain": "math",
+    "level": "beginner",
+    "description": "Core learning concept: Probability fundamentals.",
+    "demonstration_task": "Calculate conditional and independent event probabilities",
+    "prerequisite_ids": [
+      "descriptive-stats"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "distributions",
+    "name": "Random variables and distributions",
+    "domain": "math",
+    "level": "intermediate",
+    "description": "Core learning concept: Random variables and distributions.",
+    "demonstration_task": "Compare binomial and normal distributions",
+    "prerequisite_ids": [
+      "probability-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "sampling-inference",
+    "name": "Sampling and statistical inference",
+    "domain": "math",
+    "level": "intermediate",
+    "description": "Core learning concept: Sampling and statistical inference.",
+    "demonstration_task": "Explain sampling bias and standard error",
+    "prerequisite_ids": [
+      "distributions"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "hypothesis-testing",
+    "name": "Hypothesis testing",
+    "domain": "math",
+    "level": "intermediate",
+    "description": "Core learning concept: Hypothesis testing.",
+    "demonstration_task": "Select a test and interpret p-values and assumptions",
+    "prerequisite_ids": [
+      "sampling-inference"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "confidence-intervals",
+    "name": "Confidence intervals",
+    "domain": "math",
+    "level": "intermediate",
+    "description": "Core learning concept: Confidence intervals.",
+    "demonstration_task": "Construct and interpret an interval",
+    "prerequisite_ids": [
+      "sampling-inference"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "effect-sizes",
+    "name": "Effect sizes and practical relevance",
+    "domain": "math",
+    "level": "intermediate",
+    "description": "Core learning concept: Effect sizes and practical relevance.",
+    "demonstration_task": "Explain effect size separately from statistical significance",
+    "prerequisite_ids": [
+      "hypothesis-testing"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "experiment-design",
+    "name": "Experiment design",
+    "domain": "product",
+    "level": "intermediate",
+    "description": "Core learning concept: Experiment design.",
+    "demonstration_task": "Specify outcomes randomization and possible confounding",
+    "prerequisite_ids": [
+      "hypothesis-testing"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "ab-testing",
+    "name": "A/B testing",
+    "domain": "product",
+    "level": "advanced",
+    "description": "Core learning concept: A/B testing.",
+    "demonstration_task": "Design an experiment with a decision metric",
+    "prerequisite_ids": [
+      "experiment-design",
+      "confidence-intervals"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "train-test-split",
+    "name": "Train test and leakage prevention",
+    "domain": "ml",
+    "level": "intermediate",
+    "description": "Core learning concept: Train test and leakage prevention.",
+    "demonstration_task": "Split data without leakage and justify the split",
+    "prerequisite_ids": [
+      "eda",
+      "probability-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "cross-validation",
+    "name": "Cross-validation",
+    "domain": "ml",
+    "level": "intermediate",
+    "description": "Core learning concept: Cross-validation.",
+    "demonstration_task": "Explain stratification and out-of-fold scoring",
+    "prerequisite_ids": [
+      "train-test-split"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "model-metrics",
+    "name": "Classification and regression metrics",
+    "domain": "ml",
+    "level": "intermediate",
+    "description": "Core learning concept: Classification and regression metrics.",
+    "demonstration_task": "Interpret precision recall F1 and MAE",
+    "prerequisite_ids": [
+      "train-test-split"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "regression-basics",
+    "name": "Linear regression",
+    "domain": "ml",
+    "level": "intermediate",
+    "description": "Core learning concept: Linear regression.",
+    "demonstration_task": "Fit a regression and interpret coefficients",
+    "prerequisite_ids": [
+      "descriptive-stats",
+      "linear-algebra"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "logistic-regression",
+    "name": "Logistic regression",
+    "domain": "ml",
+    "level": "intermediate",
+    "description": "Core learning concept: Logistic regression.",
+    "demonstration_task": "Explain logits and classify with a threshold",
+    "prerequisite_ids": [
+      "regression-basics",
+      "model-metrics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "decision-trees",
+    "name": "Decision trees",
+    "domain": "ml",
+    "level": "intermediate",
+    "description": "Core learning concept: Decision trees.",
+    "demonstration_task": "Explain a split and the overfitting trade-off",
+    "prerequisite_ids": [
+      "train-test-split"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "ensemble-methods",
+    "name": "Random forests and boosting",
+    "domain": "ml",
+    "level": "advanced",
+    "description": "Core learning concept: Random forests and boosting.",
+    "demonstration_task": "Compare an ensemble against its baseline",
+    "prerequisite_ids": [
+      "decision-trees",
+      "model-metrics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "feature-engineering",
+    "name": "Feature preprocessing",
+    "domain": "ml",
+    "level": "intermediate",
+    "description": "Core learning concept: Feature preprocessing.",
+    "demonstration_task": "Build a train-only preprocessing pipeline",
+    "prerequisite_ids": [
+      "missing-data",
+      "train-test-split"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "hyperparameters",
+    "name": "Hyperparameter search",
+    "domain": "ml",
+    "level": "advanced",
+    "description": "Core learning concept: Hyperparameter search.",
+    "demonstration_task": "Tune using only training folds",
+    "prerequisite_ids": [
+      "cross-validation",
+      "model-metrics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "pca-basics",
+    "name": "Principal component analysis",
+    "domain": "ml",
+    "level": "advanced",
+    "description": "Core learning concept: Principal component analysis.",
+    "demonstration_task": "Compute and interpret explained variance",
+    "prerequisite_ids": [
+      "linear-algebra",
+      "feature-engineering"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "kmeans-basics",
+    "name": "K-Means clustering",
+    "domain": "ml",
+    "level": "intermediate",
+    "description": "Core learning concept: K-Means clustering.",
+    "demonstration_task": "Run clustering and interpret cluster assignments",
+    "prerequisite_ids": [
+      "eda"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "cluster-evaluation",
+    "name": "Clustering evaluation",
+    "domain": "ml",
+    "level": "advanced",
+    "description": "Core learning concept: Clustering evaluation.",
+    "demonstration_task": "Check silhouette and stability without invented labels",
+    "prerequisite_ids": [
+      "kmeans-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "svm-basics",
+    "name": "Support vector machines",
+    "domain": "ml",
+    "level": "advanced",
+    "description": "Core learning concept: Support vector machines.",
+    "demonstration_task": "Explain a decision boundary and scaling",
+    "prerequisite_ids": [
+      "feature-engineering",
+      "model-metrics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "gradient-descent",
+    "name": "Gradient descent",
+    "domain": "ai",
+    "level": "intermediate",
+    "description": "Core learning concept: Gradient descent.",
+    "demonstration_task": "Calculate one gradient-based update",
+    "prerequisite_ids": [
+      "linear-algebra",
+      "regression-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "nn-basics",
+    "name": "Neural network fundamentals",
+    "domain": "ai",
+    "level": "advanced",
+    "description": "Core learning concept: Neural network fundamentals.",
+    "demonstration_task": "Describe layers activations and forward pass",
+    "prerequisite_ids": [
+      "gradient-descent",
+      "model-metrics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "backpropagation",
+    "name": "Backpropagation",
+    "domain": "ai",
+    "level": "advanced",
+    "description": "Core learning concept: Backpropagation.",
+    "demonstration_task": "Explain the chain rule through one neural network layer",
+    "prerequisite_ids": [
+      "nn-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "pytorch-basics",
+    "name": "PyTorch training loops",
+    "domain": "ai",
+    "level": "advanced",
+    "description": "Core learning concept: PyTorch training loops.",
+    "demonstration_task": "Train a small model and compare train and validation loss",
+    "prerequisite_ids": [
+      "nn-basics",
+      "python-packages"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "tokenization",
+    "name": "Tokenization",
+    "domain": "ai",
+    "level": "intermediate",
+    "description": "Core learning concept: Tokenization.",
+    "demonstration_task": "Compare tokenization strategies on short text",
+    "prerequisite_ids": [
+      "python-functions"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "embeddings",
+    "name": "Vector embeddings",
+    "domain": "ai",
+    "level": "advanced",
+    "description": "Core learning concept: Vector embeddings.",
+    "demonstration_task": "Compare cosine similarity across vectors",
+    "prerequisite_ids": [
+      "linear-algebra",
+      "nn-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "attention-basics",
+    "name": "Attention mechanism",
+    "domain": "ai",
+    "level": "advanced",
+    "description": "Core learning concept: Attention mechanism.",
+    "demonstration_task": "Explain queries keys values and attention scores",
+    "prerequisite_ids": [
+      "nn-basics",
+      "linear-algebra"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "transformers-basics",
+    "name": "Transformer architecture",
+    "domain": "ai",
+    "level": "advanced",
+    "description": "Core learning concept: Transformer architecture.",
+    "demonstration_task": "Diagram transformer blocks and contextual representations",
+    "prerequisite_ids": [
+      "attention-basics",
+      "tokenization"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "vector-search",
+    "name": "Vector search",
+    "domain": "ai",
+    "level": "advanced",
+    "description": "Core learning concept: Vector search.",
+    "demonstration_task": "Retrieve similar chunks using a vector index",
+    "prerequisite_ids": [
+      "embeddings"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "rag-basics",
+    "name": "Retrieval augmented generation",
+    "domain": "ai",
+    "level": "advanced",
+    "description": "Core learning concept: Retrieval augmented generation.",
+    "demonstration_task": "Build a grounded QA flow with cited sources",
+    "prerequisite_ids": [
+      "vector-search",
+      "transformers-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "rag-evaluation",
+    "name": "RAG evaluation",
+    "domain": "ai",
+    "level": "advanced",
+    "description": "Core learning concept: RAG evaluation.",
+    "demonstration_task": "Test answer faithfulness and retrieval relevance",
+    "prerequisite_ids": [
+      "rag-basics",
+      "model-metrics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "model-serving",
+    "name": "Model serving through APIs",
+    "domain": "ml",
+    "level": "advanced",
+    "description": "Core learning concept: Model serving through APIs.",
+    "demonstration_task": "Expose a trained model with input validation",
+    "prerequisite_ids": [
+      "api-design",
+      "train-test-split"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "model-monitoring",
+    "name": "ML monitoring",
+    "domain": "ml",
+    "level": "advanced",
+    "description": "Core learning concept: ML monitoring.",
+    "demonstration_task": "Define checks for data drift and prediction quality",
+    "prerequisite_ids": [
+      "model-serving",
+      "model-metrics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "interactive-dashboards",
+    "name": "Interactive data products",
+    "domain": "data",
+    "level": "advanced",
+    "description": "Core learning concept: Interactive data products.",
+    "demonstration_task": "Create a filtering dashboard with sourced metrics",
+    "prerequisite_ids": [
+      "data-visualization",
+      "python-functions"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "ip-networking",
+    "name": "IP addresses routing and ports",
+    "domain": "security",
+    "level": "beginner",
+    "description": "Core learning concept: IP addresses routing and ports.",
+    "demonstration_task": "Explain packets ports routing and subnets",
+    "prerequisite_ids": [],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "dns-http",
+    "name": "DNS and HTTPS",
+    "domain": "security",
+    "level": "beginner",
+    "description": "Core learning concept: DNS and HTTPS.",
+    "demonstration_task": "Trace DNS resolution and a secure web request",
+    "prerequisite_ids": [
+      "ip-networking",
+      "http-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "linux-shell",
+    "name": "Linux shell commands",
+    "domain": "security",
+    "level": "beginner",
+    "description": "Core learning concept: Linux shell commands.",
+    "demonstration_task": "Navigate files and run text-processing commands",
+    "prerequisite_ids": [],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "linux-permissions",
+    "name": "Linux permissions",
+    "domain": "security",
+    "level": "intermediate",
+    "description": "Core learning concept: Linux permissions.",
+    "demonstration_task": "Explain user group and file permission settings",
+    "prerequisite_ids": [
+      "linux-shell"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "network-security",
+    "name": "Networking security basics",
+    "domain": "security",
+    "level": "intermediate",
+    "description": "Core learning concept: Networking security basics.",
+    "demonstration_task": "Explain firewalls segmentation and TLS",
+    "prerequisite_ids": [
+      "dns-http"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "authentication",
+    "name": "Authentication fundamentals",
+    "domain": "security",
+    "level": "intermediate",
+    "description": "Core learning concept: Authentication fundamentals.",
+    "demonstration_task": "Compare sessions and token-based authentication",
+    "prerequisite_ids": [
+      "http-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "authorization",
+    "name": "Authorization and least privilege",
+    "domain": "security",
+    "level": "intermediate",
+    "description": "Core learning concept: Authorization and least privilege.",
+    "demonstration_task": "Define roles and minimum permissions",
+    "prerequisite_ids": [
+      "authentication"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "owasp-basics",
+    "name": "OWASP web risks",
+    "domain": "security",
+    "level": "intermediate",
+    "description": "Core learning concept: OWASP web risks.",
+    "demonstration_task": "Describe a common web vulnerability and a mitigation",
+    "prerequisite_ids": [
+      "authorization"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "web-threats",
+    "name": "Secure application development",
+    "domain": "security",
+    "level": "advanced",
+    "description": "Core learning concept: Secure application development.",
+    "demonstration_task": "Review a sample API against security risks",
+    "prerequisite_ids": [
+      "owasp-basics",
+      "api-validation"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "log-analysis",
+    "name": "Security log analysis",
+    "domain": "security",
+    "level": "intermediate",
+    "description": "Core learning concept: Security log analysis.",
+    "demonstration_task": "Parse sample authentication events for patterns",
+    "prerequisite_ids": [
+      "python-automation",
+      "linux-shell"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "threat-modeling",
+    "name": "Threat modeling",
+    "domain": "security",
+    "level": "advanced",
+    "description": "Core learning concept: Threat modeling.",
+    "demonstration_task": "Identify assets threats and mitigations in a sample system",
+    "prerequisite_ids": [
+      "network-security",
+      "authentication"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "incident-triage",
+    "name": "Incident triage",
+    "domain": "security",
+    "level": "advanced",
+    "description": "Core learning concept: Incident triage.",
+    "demonstration_task": "Prioritize hypothetical alerts with evidence",
+    "prerequisite_ids": [
+      "log-analysis",
+      "threat-modeling"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "anomaly-detection",
+    "name": "Anomaly detection",
+    "domain": "security",
+    "level": "advanced",
+    "description": "Core learning concept: Anomaly detection.",
+    "demonstration_task": "Explain false positives for unusual system events",
+    "prerequisite_ids": [
+      "incident-triage",
+      "model-metrics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "security-reporting",
+    "name": "Security findings communication",
+    "domain": "communication",
+    "level": "advanced",
+    "description": "Core learning concept: Security findings communication.",
+    "demonstration_task": "Document a vulnerability and safe mitigation",
+    "prerequisite_ids": [
+      "web-threats"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "cloud-compute",
+    "name": "Cloud compute models",
+    "domain": "cloud",
+    "level": "beginner",
+    "description": "Core learning concept: Cloud compute models.",
+    "demonstration_task": "Compare virtual machines serverless and containers",
+    "prerequisite_ids": [
+      "ip-networking"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "cloud-storage",
+    "name": "Cloud storage models",
+    "domain": "cloud",
+    "level": "beginner",
+    "description": "Core learning concept: Cloud storage models.",
+    "demonstration_task": "Compare object and block storage use cases",
+    "prerequisite_ids": [
+      "cloud-compute"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "cloud-iam",
+    "name": "Cloud identity and access",
+    "domain": "cloud",
+    "level": "intermediate",
+    "description": "Core learning concept: Cloud identity and access.",
+    "demonstration_task": "Write a least-privilege access scenario",
+    "prerequisite_ids": [
+      "authorization",
+      "cloud-compute"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "cloud-networking",
+    "name": "Cloud networking",
+    "domain": "cloud",
+    "level": "intermediate",
+    "description": "Core learning concept: Cloud networking.",
+    "demonstration_task": "Sketch private and public cloud subnet connections",
+    "prerequisite_ids": [
+      "ip-networking",
+      "cloud-compute"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "cloud-costs",
+    "name": "Cloud monitoring and budgets",
+    "domain": "cloud",
+    "level": "intermediate",
+    "description": "Core learning concept: Cloud monitoring and budgets.",
+    "demonstration_task": "Estimate resource costs and set budget alerts",
+    "prerequisite_ids": [
+      "cloud-compute"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "infra-as-code",
+    "name": "Infrastructure as code",
+    "domain": "cloud",
+    "level": "advanced",
+    "description": "Core learning concept: Infrastructure as code.",
+    "demonstration_task": "Describe a reproducible infrastructure change",
+    "prerequisite_ids": [
+      "cloud-compute",
+      "git-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "observability",
+    "name": "Logs metrics and tracing",
+    "domain": "cloud",
+    "level": "advanced",
+    "description": "Core learning concept: Logs metrics and tracing.",
+    "demonstration_task": "Choose signals for reliability troubleshooting",
+    "prerequisite_ids": [
+      "cloud-compute",
+      "linux-shell"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "deployment-strategies",
+    "name": "Deployment strategies",
+    "domain": "cloud",
+    "level": "advanced",
+    "description": "Core learning concept: Deployment strategies.",
+    "demonstration_task": "Compare blue-green and rolling deployments",
+    "prerequisite_ids": [
+      "app-deployment",
+      "observability"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "cloud-architecture",
+    "name": "Cloud architecture",
+    "domain": "cloud",
+    "level": "advanced",
+    "description": "Core learning concept: Cloud architecture.",
+    "demonstration_task": "Design a simple secure highly available service",
+    "prerequisite_ids": [
+      "cloud-networking",
+      "cloud-storage",
+      "cloud-iam"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "business-metrics",
+    "name": "Business metrics",
+    "domain": "product",
+    "level": "beginner",
+    "description": "Core learning concept: Business metrics.",
+    "demonstration_task": "Define a clear measurable business KPI",
+    "prerequisite_ids": [
+      "spreadsheet-basics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "customer-research",
+    "name": "Customer research fundamentals",
+    "domain": "product",
+    "level": "beginner",
+    "description": "Core learning concept: Customer research fundamentals.",
+    "demonstration_task": "Create a neutral plan for understanding customer needs",
+    "prerequisite_ids": [],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "user-interviews",
+    "name": "User interviews and synthesis",
+    "domain": "product",
+    "level": "intermediate",
+    "description": "Core learning concept: User interviews and synthesis.",
+    "demonstration_task": "Write unbiased interview questions and summarize themes",
+    "prerequisite_ids": [
+      "customer-research"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "segmentation",
+    "name": "Customer segmentation",
+    "domain": "product",
+    "level": "intermediate",
+    "description": "Core learning concept: Customer segmentation.",
+    "demonstration_task": "Segment anonymized customer behavior transparently",
+    "prerequisite_ids": [
+      "sql-joins",
+      "descriptive-stats"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "cohort-analysis",
+    "name": "Cohort analysis",
+    "domain": "product",
+    "level": "intermediate",
+    "description": "Core learning concept: Cohort analysis.",
+    "demonstration_task": "Build retention cohorts and interpret limitations",
+    "prerequisite_ids": [
+      "sql-joins",
+      "business-metrics"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "product-funnels",
+    "name": "Conversion funnels",
+    "domain": "product",
+    "level": "intermediate",
+    "description": "Core learning concept: Conversion funnels.",
+    "demonstration_task": "Find drop-off across measured product steps",
+    "prerequisite_ids": [
+      "business-metrics",
+      "sql-joins"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "kpi-dashboards",
+    "name": "Product dashboards",
+    "domain": "product",
+    "level": "intermediate",
+    "description": "Core learning concept: Product dashboards.",
+    "demonstration_task": "Create a dashboard with clearly defined KPIs",
+    "prerequisite_ids": [
+      "business-metrics",
+      "data-visualization"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "product-experiments",
+    "name": "Product experimentation",
+    "domain": "product",
+    "level": "advanced",
+    "description": "Core learning concept: Product experimentation.",
+    "demonstration_task": "Formulate a product hypothesis with guardrails",
+    "prerequisite_ids": [
+      "ab-testing",
+      "user-interviews"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "product-communication",
+    "name": "Product storytelling",
+    "domain": "communication",
+    "level": "intermediate",
+    "description": "Core learning concept: Product storytelling.",
+    "demonstration_task": "Present findings and tradeoffs to stakeholders",
+    "prerequisite_ids": [
+      "business-metrics",
+      "data-storytelling"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "case-study-writing",
+    "name": "Portfolio case studies",
+    "domain": "communication",
+    "level": "advanced",
+    "description": "Core learning concept: Portfolio case studies.",
+    "demonstration_task": "Document a problem method results and limitations",
+    "prerequisite_ids": [
+      "data-storytelling"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "requirements-gathering",
+    "name": "Requirements and user stories",
+    "domain": "product",
+    "level": "intermediate",
+    "description": "Core learning concept: Requirements and user stories.",
+    "demonstration_task": "Write an acceptance-testable user story",
+    "prerequisite_ids": [
+      "customer-research"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "stakeholder-communication",
+    "name": "Stakeholder communication",
+    "domain": "communication",
+    "level": "intermediate",
+    "description": "Core learning concept: Stakeholder communication.",
+    "demonstration_task": "Summarize options and their tradeoffs",
+    "prerequisite_ids": [
+      "requirements-gathering"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  },
+  {
+    "concept_id": "ethical-data-use",
+    "name": "Ethical and privacy-aware data use",
+    "domain": "communication",
+    "level": "intermediate",
+    "description": "Core learning concept: Ethical and privacy-aware data use.",
+    "demonstration_task": "Identify privacy risks and consent requirements",
+    "prerequisite_ids": [
+      "data-types"
+    ],
+    "provenance": "human_curated_v2",
+    "mastery_evidence": "not_measured"
+  }
+]
