@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "created_utc": "2026-11-02",
+  "original_syllabus": "data/paths.json",
+  "original_syllabus_blob_sha": "150ccbb413f0759c6035770c65e115a08984475f",
+  "catalog_provenance": "editorial human-curated teaching concepts; NOT published skill importance, diagnosed proficiency, measured learning outcomes, or verified job requirements",
+  "career_links_provenance": "derived from the existing six human-curated pathway topic associations; NOT empirical O*NET skills",
+  "counts": {
+    "careers": 6,
+    "source_topics": 48,
+    "atomic_concepts": 107,
+    "prerequisite_edges": 139,
+    "topic_concept_links": 170,
+    "career_concept_links": 167
+  },
+  "verification": {
+    "structure": "passed",
+    "external_resource_urls": "no_new_urls_in_v2",
+    "education_effectiveness": "not_tested",
+    "student_outcomes": "none"
+  },
+  "validation_errors": []
+}

@@ -1,0 +1,20 @@
+{
+  "dataset_version": "1.0.0",
+  "source_repository": "A101shah/what_next",
+  "source_file": "data/paths.json",
+  "source_sha": "150ccbb413f0759c6035770c65e115a08984475f",
+  "generated_on": "2026-11-02",
+  "counts": {
+    "careers": 6,
+    "topics": 48,
+    "prerequisite_edges": 45,
+    "resources": 48
+  },
+  "validation_errors": [],
+  "notes": [
+    "Transform of existing repository-curated syllabi only; not model training labels or externally measured learning outcomes.",
+    "resource_url was imported from repository and not live-validated.",
+    "Estimated hours and prerequisites are human-curated; not empirical mastery evidence.",
+    "No real student records included."
+  ]
+}
