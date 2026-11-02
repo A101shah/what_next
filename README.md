@@ -1,6 +1,6 @@
 # WhatNext AI — Your Knowledge GPS
 
-**Personalized prerequisite-based learning paths, real workforce insights, CatBoost occupational classification, and a trained neural network.** Entirely static HTML/CSS/JavaScript, hosted from the same GitHub repository.
+**Personalized prerequisite-based learning paths, real workforce insights, a trained neural-network career classifier.** Entirely static HTML/CSS/JavaScript, hosted from the same GitHub repository.
 
 ## New: skill checks and evidence-aware next learning steps
 
@@ -10,7 +10,7 @@ The existing GitHub Pages UI now has a **Skill checks** workspace, backed by the
 - Provides **45 authored practice questions** covering 15 foundational concepts. Each check contains three multiple-choice questions and is marked passed at 3/3 correct. Questions are editorial and **not validated measures of proficiency**.
 - Keeps **passed practice checks** distinct from **self-reported learned concepts**. Either can satisfy the app's curriculum completion rule, but self-reported prerequisites are expressly labeled as unassessed, never secretly treated as verified.
 - Stores only short assessment summaries (correct count, attempt count and check date) in the browser under `whatnext:learning:evidence:v1`. Individual answers and personal identifiers are not sent or logged to a server.
-- Updates the overview next-step card, learning snapshot, and roadmap handoff. Existing broad roadmap completion, resume editor, career classifiers, and O*NET evidence remain in place.
+- Updates the overview next-step card, learning snapshot, and roadmap handoff. Existing broad roadmap completion, resume editor, neural-network classifier, and O*NET evidence remain in place.
 - Uses only static GitHub Pages assets; no custom GitHub Actions, API secrets, or backend.
 
 **Datasets:** [WhatNext_Compiled_Learning_Dataset_V3.csv](data/learning_v2/WhatNext_Compiled_Learning_Dataset_V3.csv) (170 rows × 23 columns) and [WhatNext_Diagnostic_Question_Bank_V1.csv](data/learning_v2/WhatNext_Diagnostic_Question_Bank_V1.csv) (45 rows × 10 columns).
@@ -21,7 +21,7 @@ node scripts/build_learning_graph.mjs --check
 node --test tests/test_learning_graph.mjs tests/test_assessment.mjs
 ```
 
-The two older OECD-trained classifiers still predict broad occupation families, **not** what lesson a student should study next. The new recommender is transparently rule-based; no neural recommendation accuracy is claimed.
+The OECD-trained neural network predicts broad occupation families, **not** what lesson a student should study next. The new recommender is transparently rule-based; no neural recommendation accuracy is claimed.
 
 
 ## Real educational outcomes research (separate from the live curriculum)
@@ -71,7 +71,7 @@ Human-curated aliases standardize source strings, e.g. SQL and its official work
 
 The **Skill studio** allows students to choose their career, browse a verified named-technology list for the mapped O*NET occupation, filter by category and search across all sourced examples or curated resume-like categories. The **Hot Technology** and **In Demand** chips come exclusively from O*NET's genuine flags, not an invented relevance model. Students can **self-declare** tools they know, see the exact source-listed name overlap for their career, and explore unfamiliar tools with targeted learning searches. No overlap count is a proficiency, job-readiness or probability score. Their chosen technologies appear under categorized **Technical Skills (self-reported)** in the editable resume, and are stored in the browser only.
 
-**Source integrity is critical:** the earlier **6,517 OECD PIAAC individual workforce rows** remain a separate survey dataset. The new **31,821 O*NET rows are occupation-to-software reference relationships**, not extra employed adults or person-level evidence. They are linked to an individual app pathway only by its **explicit O*NET-SOC code**, and they are **never joined to OECD respondents as if the survey measured each respondent's exact tools**. The 42.25% CatBoost test accuracy and 40.49% MLP test accuracy are **unchanged**: we have not retrained those person-level classifiers on this new reference dataset.
+**Source integrity is critical:** the earlier **6,517 OECD PIAAC individual workforce rows** remain a separate survey dataset. The new **31,821 O*NET rows are occupation-to-software reference relationships**, not extra employed adults or person-level evidence. They are linked to an individual app pathway only by its **explicit O*NET-SOC code**, and they are **never joined to OECD respondents as if the survey measured each respondent's exact tools**. The **40.49% MLP occupation-classification test accuracy** is unchanged: the neural network has not been retrained on this new occupational reference dataset.
 
 ### Refresh dataset entirely offline
 
@@ -82,22 +82,6 @@ node --test tests/test_skill_studio.mjs
 
 Both custom GitHub Actions workflows remain deleted. GitHub Pages serves the checked-in static CSV and JSON directly from `main`, while Vercel can serve the same committed artifacts when connected.
 
-## CatBoost occupational model — recommended for tabular features
-
-The same **6,517 authentic anonymous OECD PIAAC** records feed an offline-trained **CatBoost multi-class gradient-boosted decision-tree model**, now the default **Career Intelligence** classifier. It operates on 27 explicitly encoded inputs (seven observed 0–5 skill-use bands, numerical work experience, one-hot education level and field). The seven bands are ordinal, the education fields nominal and years of work numerical. This input encoding is consistent with the app's actual questionnaire: we intentionally do **not** feed the model uncollected continuous OECD latent index scores.
-
-**Evaluation:** train/test split 80/20, random_state 42; train-only median imputation; three-fold stratified CV on the training partition selected 350 iterations over a 220-iteration baseline by macro-F1. Test accuracy **42.25%**, macro-F1 **37.76%**, balanced accuracy **38.15%**. The previous neural network has **40.49%** test accuracy on the same split. Mean macro-F1 across training folds for the selected CatBoost variant: **35.89%**. In an additional **leave-one-country-out** check, combined held-out-country accuracy was approximately **36.79%** (Chile 42.21%, Italy 37.10%, Poland 43.99%, Singapore 33.46%, United States 32.59%). These separate checks evaluate transfer to an unseen country's workforce. Since the random 20% test set was explored earlier, do not treat its 42.25% accuracy as fresh independent model-selection evidence. Results may weaken on new countries.
-
-The production artifact `data/career_catboost.json` contains 350 symmetric trees and quantized leaf values, **not individual OECD records**. `catboost.js` executes the exact numeric tree inference in the browser; reference predictions and the quantized test accuracy are checked during offline export. **Both models remain selectable** in Career Intelligence for transparent comparison. This predicts broad *current occupation families*, not skill mastery, a student's future success, or the best study intervention.
-
-**Offline reproduction** after placing the original CSV in the ignored `out/` directory:
-
-```bash
-pip install -r requirements.txt
-python -m scripts.train_catboost
-node --test tests/test_catboost_search.mjs
-```
-
 ## Learning search + Google web search
 
 The new **Learning search** section, also accessible from the top bar, shows ranked, clickable results **inside the app** from our actual curated learning paths, official resource URLs, selected dated research items and in-app guides. Relevant results include original resource links and a way back to the corresponding roadmap.
@@ -105,6 +89,8 @@ The new **Learning search** section, also accessible from the top bar, shows ran
 **Google Search** and **Search official docs** buttons open a real Google web search for the same query in a new tab. We do not scrape Google, generate fictitious web results, or expose a Google API key in client code. A more integrated option is also built: to embed Google Programmable Search results inside the page, create your own search engine at https://programmablesearchengine.google.com/ and put its **public search engine ID (`cx`)** in `data/search_config.json`, key `google_programmable_search_engine_id`. The "Show Google results here" button appears automatically; Google scripts and search terms are sent to Google only when the visitor deliberately activates this option. Google PSE results can differ from ordinary Google.com results and availability/configuration are controlled by Google.
 
 Official Google integration docs: https://developers.google.com/custom-search/docs/element .
+
+**Career-classifier policy:** Only the trained MLP in `neural.js` and `data/career_nn.json` is available in the app; the alternate tree classifier and model picker are gone. Other distinct research analyses (PCA/K-Means occupational context and the non-deployed GRU mathematics pilot) are not career classifiers.
 
 ## Real neural network — occupation exploration
 
@@ -131,7 +117,7 @@ Place the authentic `WhatNext_Career_Intelligence_Combined.csv` file in `out/`, 
 pip install -r requirements.txt
 python -m scripts.train_career_nn
 node --test tests/test_neural.mjs
-node --test tests/test_catboost_search.mjs
+node --test tests/test_search.mjs
 ```
 
 The dataset and `out/` directory must remain **uncommitted**: they contain individual respondent-level survey observations, whereas public `data/*.json` files contain only trained parameters or aggregated evidence. No fabricated labels, career seniority, or student learning outcomes are introduced.
@@ -145,7 +131,7 @@ The **actual student recommendation policy** is custom JavaScript in `app.js` us
 3. Completed topics (self-reported), topic order and preferred interests.
 4. Only unfinished topics with all prerequisites complete are eligible.
 
-CatBoost and the neural network add **career-family exploration**, and OECD/O*NET evidence contextualizes roadmaps, but **neither is falsely claimed to have learned the optimal next lesson**. To train and validate a neural lesson recommender, we would need consented student exercises, learning outcomes, and ground truth recommendations, followed by tests against the current rule-based baseline.
+The neural network adds **career-family exploration**, while OECD/O*NET data contextualizes roadmaps. **It has not learned the optimal next lesson.** To train and validate a neural lesson recommender, we would need consented student exercises, learning outcomes, and ground truth recommendations, followed by tests against the current rule-based baseline.
 
 ## Other models and evidence sources
 
