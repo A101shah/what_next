@@ -49,5 +49,5 @@ test("unknown career, invalid goal and invalid limit are rejected", () => {
   assert.throws(() => getNextConcepts(graph, "ai", [], 0));
 });
 test("CSV parser round-trips a pair of links", () => {
-  assert.equal(readQuotedCsv('"a","b"\n"x","y"\n')[0].a, "x");
+  assert.equal(readQuotedCsv('a,b\n"x","y"\n')[0].a, "x");
 });
