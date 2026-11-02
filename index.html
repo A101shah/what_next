@@ -13,6 +13,7 @@
   <script src="skills.js" defer></script>
   <script src="learning.js" defer></script>
   <script src="assessment-ui.js" defer></script>
+  <script src="research-evidence.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -27,6 +28,7 @@
       <button class="nav-item" data-view="skills"><span class="nav-icon">▦</span> Skill studio <span class="new-dot"></span></button>
       <button class="nav-item" data-view="search"><span class="nav-icon">⌕</span> Learning search <span class="new-dot"></span></button>
       <button class="nav-item" data-view="evidence"><span class="nav-icon">◫</span> Career intelligence</button>
+      <button class="nav-item" data-view="research"><span class="nav-icon">◉</span> Research data lab <span class="new-dot"></span></button>
       <button class="nav-item" data-view="pulse"><span class="nav-icon">◎</span> World pulse <span class="new-dot"></span></button>
       <button class="nav-item" data-view="career"><span class="nav-icon">▤</span> Career studio</button>
     </nav>
@@ -74,6 +76,7 @@
           <div><span class="card-kicker">NEW · PERSONALIZED LEARNING CHECKS</span><h2>Know what to learn next, not just which career to pick.</h2><p>Explore concept prerequisites, record your existing knowledge, and use short practice checks to refine your next learning step.</p><div id="learning-preview" class="learning-home-preview">Loading concept learning guidance...</div></div>
           <button type="button" class="subtle-btn" data-go="assessment">Open skill checks ↗</button>
         </article>
+        <article class="panel real-data-home"><div><span class="card-kicker">RESEARCH · VERIFIED SOURCE TRANSPARENCY</span><h2>Explore the data behind the direction.</h2><p>Review actual occupational sources, genuine student interaction research, and what our models have—and have not—learned.</p></div><button class="subtle-btn" type="button" data-go="research">Open research lab ↗</button></article>
         <div class="lower-grid">
           <article class="panel" id="career-neighborhood"><div class="panel-title"><div><h3>Nearby career paths</h3><p>Real occupational similarity · K-Means</p></div><span class="model-pill">ML</span></div><div id="neighbors-content" class="quiet-state">Loading occupational data...</div></article>
           <article class="panel"><div class="panel-title"><div><h3>Fresh from your field</h3><p>Source-linked research, not hype</p></div><button class="small-link" data-go="pulse">View all ↗</button></div><div id="preview-research" class="quiet-state">Checking verified sources...</div></article>
@@ -284,6 +287,54 @@
         <div class="section-head"><div><h2 id="pulse-heading">Research that may interest you</h2><p id="pulse-updated">Latest verified refresh: checking...</p></div></div>
         <div id="research-list" class="research-grid"></div>
         <div class="source-footnote">Research metadata: <a href="https://openalex.org/" target="_blank" rel="noopener noreferrer">OpenAlex</a>. Your roadmap only changes when your prerequisites and goals support that decision.</div>
+      </section>
+
+      <section class="view" id="view-research">
+        <div class="eyebrow">PROVENANCE BEFORE PREDICTIONS <span class="eyebrow-line"></span></div>
+        <div class="heading-row"><div><h1>Real-data research lab<span class="accent">.</span></h1>
+          <p class="lead">Inspect genuine research sources, data limitations, and the status of our learning models.</p></div>
+          <button class="subtle-btn" type="button" data-go="assessment">Try skill checks ↗</button></div>
+        <div class="research-status-top">
+          <span class="card-kicker">PUBLIC, NON-IDENTIFYING RESEARCH SUMMARY</span>
+          <p>These published observations help us study how learning models work. They are <strong>not</strong> measurements of WhatNext students or verified technical-skill mastery.</p>
+          <div id="research-load-status" class="panel-caption" role="status" aria-live="polite">Loading source-verified research metadata...</div>
+        </div>
+        <div class="research-stat-grid" id="research-stat-grid" aria-label="Public research data counts">
+          <div class="research-stat"><strong>—</strong><span>O*NET occupation–technology links</span></div>
+          <div class="research-stat"><strong>—</strong><span>Observed EdNet preview attempts</span></div>
+          <div class="research-stat"><strong>—</strong><span>Learners in non-random preview</span></div>
+          <div class="research-stat"><strong>—</strong><span>Unique preview questions</span></div>
+        </div>
+        <div class="research-panels">
+          <article class="panel">
+            <div class="panel-title"><div><h3>Actual student responses · EdNet preview</h3><p id="research-preview-caption">Checking preview provenance...</p></div><span class="model-pill">RESEARCH</span></div>
+            <div class="research-bar-label"><span>Correct responses in 100 observed attempts</span><strong id="research-accuracy-label">—</strong></div>
+            <div id="research-accuracy-bar" class="research-bar" role="img" aria-label="Observed correct versus incorrect responses">
+              <span></span></div>
+            <div class="research-bar-legend"><span><i class="correct"></i>Correct answers</span><span><i class="incorrect"></i>Incorrect answers</span></div>
+            <p class="research-caveat">This figure describes only the non-random sample; it is not prediction accuracy, learner proficiency, or an evaluation of the WhatNext recommender.</p>
+          </article>
+          <article class="panel">
+            <div class="panel-title"><div><h3>What our models actually do</h3><p>Evidence-backed distinctions rather than overstated AI accuracy</p></div></div>
+            <div id="research-model-status" class="research-model-list"><p class="quiet-state">Loading model stages...</p></div>
+          </article>
+        </div>
+        <div class="section-head"><div><h2>Official datasets &amp; original sources</h2><p>Every source is named, licensed, and tagged with the actual acquisition status.</p></div></div>
+        <div class="research-filters" role="group" aria-label="Filter dataset sources">
+          <button type="button" class="research-filter active" data-research-filter="all" aria-pressed="true">All sources</button>
+          <button type="button" class="research-filter" data-research-filter="Career evidence" aria-pressed="false">Career evidence</button>
+          <button type="button" class="research-filter" data-research-filter="Learning behavior" aria-pressed="false">Learning behavior</button>
+        </div>
+        <div class="research-source-list" id="research-source-list"><p class="quiet-state">Fetching verified source references...</p></div>
+        <article class="panel research-downloads">
+          <div><span class="card-kicker">OUR CURRENT CURRICULUM DATASET</span><h3>Download the final dataset</h3>
+            <p>107 unique learning concepts across 170 career-topic mappings, plus 45 editorial practice questions. These are curated curriculum items, <strong>not</strong> observed student training labels.</p></div>
+          <div class="research-link-group">
+            <a target="_blank" rel="noopener noreferrer" href="data/learning_v2/WhatNext_Compiled_Learning_Dataset_V3.csv">Learning Dataset V3 · CSV ↗</a>
+            <a target="_blank" rel="noopener noreferrer" href="data/learning_v2/WhatNext_Diagnostic_Question_Bank_V1.csv">Question Bank · CSV ↗</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/A101shah/what_next/tree/main/data/real_learning">Data provenance &amp; research scripts ↗</a>
+          </div>
+        </article>
       </section>
 
       <section class="view" id="view-career">
