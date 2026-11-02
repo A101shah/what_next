@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-02",
+  "project": "WhatNext AI",
+  "repository": "A101shah/what_next",
+  "checks": {
+    "full_ednet_1_2gb_training": {
+      "complete": false,
+      "status": "blocked_official_dataset_not_downloaded",
+      "evidence": "Original full 784309-learner KT1 archive and official content/answer key absent. Only a 100-record preview and small ASSISTments pilot were locally available.",
+      "preflight": "scripts/verify_full_ednet.py",
+      "published_metrics": null
+    },
+    "validated_neural_technical_recommendations": {
+      "complete": false,
+      "status": "blocked_missing_real_technical_assessment_outcomes",
+      "evidence": "No real learner trajectories or longitudinal outcomes in Python, ML, cloud, etc. Curated 45-question bank does not constitute supervised training observations.",
+      "validated_current_system": "Rule-based curriculum prerequisite eligibility and reachability across six career tracks; not NN accuracy."
+    },
+    "independent_live_github_pages_verification": {
+      "complete": false,
+      "status": "external_fetch_blocked",
+      "evidence": "Live HTTPS request to https://a101shah.github.io/what_next/ was unavailable from this environment. GitHub repository main assets verified independently through GitHub API, which does not prove live host response.",
+      "self_check": "Visit Research data lab and select Run deployment check on the published site."
+    },
+    "static_resource_contracts": {
+      "complete": true,
+      "status": "passed_in_isolated_runtime",
+      "scope": "Five real repository resources passed schema checks, including negative-case missing asset behavior."
+    },
+    "technical_prerequisites": {
+      "complete": true,
+      "status": "passed_in_isolated_runtime",
+      "scope": "All six career tracks reached all prerequisite concepts without premature recommendations.",
+      "tracked_subject_model_type": "editorial_rules_not_neural"
+    },
+    "mathematics_knowledge_tracing_pilot": {
+      "complete": true,
+      "status": "executed_prior_pilot_underperformed_baseline",
+      "accuracy": 0.536346,
+      "baseline_accuracy": 0.595285,
+      "not_production_ready": true
+    }
+  },
+  "notes": [
+    "This is a factual status report, not a claim that unfinished tasks were completed.",
+    "GitHub Pages supports static client-side resources; a GRU trained in PyTorch cannot execute as a backend on GitHub Pages without external inference hosting or an explicit browser-compatible model.",
+    "Never publish student-level records or the EdNet noncommercial training data to the public repository without the necessary license/privacy assessment."
+  ]
+}
