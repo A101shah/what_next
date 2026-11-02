@@ -60,7 +60,7 @@ async function loadOptional(url) {
 async function start() {
   restore();
   const [paths,model,news,careers,skillEvidence,neuralModel,searchConfig,roleSkills,skillTaxonomy] = await Promise.all([
-    loadOptional("data/paths.json"),loadOptional("data/model.json"),loadOptional("data/research.json"),loadOptional("data/careers.json"),loadOptional("data/skill_evidence.json"),loadOptional("data/career_nn.json"),loadOptional("data/search_config.json"),loadOptional("data/role_skills.json"),loadOptional("data/skill_taxonomy.json")
+    loadOptional("data/paths.json"),loadOptional("data/model.json"),loadOptional("data/research.json"),loadOptional("data/careers.json"),loadOptional("data/skill_evidence.json"),loadOptional("data/career_hybrid_nn.json"),loadOptional("data/search_config.json"),loadOptional("data/role_skills.json"),loadOptional("data/skill_taxonomy.json")
   ]);
   if (!Array.isArray(paths) || !paths.length) {
     $("#next-content").innerHTML = "<h2>Unable to load learning paths.</h2><p>Open this website using a web server and check data/paths.json.</p>";
@@ -768,7 +768,7 @@ function initializeNeuralForm() {
 function renderNeuralStatus() {
   const model=state.neuralModel;
   if(!model){
-    $("#nn-performance").textContent="Trained neural-network model unavailable. Confirm data/career_nn.json is published.";
+    $("#nn-performance").textContent="Trained hybrid neural-network model unavailable. Confirm data/career_hybrid_nn.json is published.";
     $("#nn-run").disabled=true;
     return;
   }
@@ -777,12 +777,12 @@ function renderNeuralStatus() {
   const percentage=value=>(100*Number(value||0)).toFixed(2)+"%";
   $("#nn-performance").innerHTML=
     '<div class="model-compare-grid nn-only-grid"><div class="model-compare-card selected">'+
-      '<span class="model-compare-name">NEURAL NETWORK · MULTILAYER PERCEPTRON</span>'+
+      '<span class="model-compare-name">PCA + K-MEANS + NEURAL NETWORK</span>'+
       '<strong>'+percentage(metrics.accuracy)+'</strong><span>Held-out occupation-classification accuracy</span>'+
       '<div class="model-compare-track"><div style="width:'+percentage(metrics.accuracy)+'"></div></div>'+
       '<small>Macro-F1 '+percentage(metrics.macro_f1)+' · Balanced accuracy '+
       percentage(metrics.balanced_accuracy)+'</small></div></div>'+
-    '<p class="panel-caption">Single classifier: 27 → 20 → 12 → 12 neural network. '+
+    '<p class="panel-caption">Single classifier: 8 numerical inputs → 7 PCA components → 4 K-Means distances → 31 → 20 → 12 → 12 neural network. '+
       'Stratified 80/20 holdout · '+clean(model.training_samples)+' training records / '+
       clean(model.test_samples)+' test records · 12 broad occupational classes. '+
       'The reported accuracy is from the original saved evaluation, not a new independent validation. '+
@@ -812,7 +812,7 @@ function runCareerNeuralNetwork(event) {
     });
     const top=predictions.slice(0,4);
     $("#nn-output").innerHTML=
-      '<div class="card-kicker">NEURAL NETWORK · BROAD OCCUPATION EXPLORATION</div>'+
+      '<div class="card-kicker">PCA + K-MEANS + NEURAL NETWORK · BROAD OCCUPATION EXPLORATION</div>'+
       '<h3>'+clean(top[0].label)+'</h3>'+
       '<p class="panel-caption">Highest model score among 12 broad occupational families; not a promise of career suitability or employment.</p>'+
       top.map((result,index)=>{
@@ -847,7 +847,7 @@ function runCareerNeuralNetwork(event) {
           clean(nextStep.title)+'</strong>. Our prerequisite-aware engine selects this from your completed topics, while the neural network supplies only exploratory career-family context.</p>';
       }
     }
-    toast("Career patterns updated using the neural network.");
+    toast("Career patterns updated using the hybrid neural network.");
   } catch(err) {
     $("#nn-output").textContent=err.message || "Unable to calculate an occupational comparison.";
   }
