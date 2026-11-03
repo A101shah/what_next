@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-03",
+  "project": "WhatNext AI",
+  "repository": "A101shah/what_next",
+  "status": "Retired GRU research and Career Studio removed",
+  "checks": {
+    "technical_neural_lesson_recommendation": {
+      "complete": false,
+      "model_type": "editorial_rules_not_neural",
+      "explanation": "Technical-topic recommendations remain prerequisite-based; no validated neural next-topic predictor exists."
+    },
+    "prerequisite_learning_graph": {
+      "complete": true,
+      "scope": "Six career tracks, 107 prerequisite concepts and 45 editorial practice questions."
+    },
+    "occupational_hybrid_classifier": {
+      "complete": true,
+      "scope": "PCA→K-Means centroid distances→MLP; saved historical occupation classification accuracy 41.41%, not next-lesson accuracy."
+    },
+    "browser_deployment_check": {
+      "complete": true,
+      "scope": "Client code checks 15 same-origin assets on demand; real remote site cannot be verified by this result."
+    },
+    "independent_live_github_pages_verification": {
+      "complete": false,
+      "status": "Requires external live-origin request",
+      "probe": "scripts/verify_live_github_pages.py"
+    }
+  },
+  "privacy": "No student answer histories or original OECD microdata published in the GitHub repository."
+}
