@@ -212,7 +212,9 @@
     feedback = null;
     storeData();
     refresh();
-    toast(before.has(id) ? "Self-report removed." : "Concept marked as self-reported, not assessed.");
+    // The Set was already toggled above: its current membership is the new state.
+    const isNowSelfReported = before.has(id);
+    toast(isNowSelfReported ? "Concept marked as self-reported, not assessed." : "Self-report removed.");
   }
   function onSubmit(event) {
     event.preventDefault();
