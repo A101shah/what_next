@@ -30,7 +30,6 @@
       <button class="nav-item" data-view="evidence"><span class="nav-icon">◫</span> Career intelligence</button>
       <button class="nav-item" data-view="research"><span class="nav-icon">◉</span> Research data lab</button>
       <button class="nav-item" data-view="pulse"><span class="nav-icon">◎</span> World pulse</button>
-      <button class="nav-item" data-view="career"><span class="nav-icon">▤</span> Career studio</button>
     </nav>
     <div class="sidebar-bottom">
       <div class="side-note"><div class="side-note-head">✦ Small steps, big direction.</div><p>One meaningful skill at a time. Your path adapts as you grow.</p></div>
@@ -85,7 +84,7 @@
         <article class="panel skill-home">
           <div><div class="card-kicker">EXPANDED · REAL OCCUPATIONAL TECHNOLOGY DATA</div>
             <h2>Know which exact tools to explore.</h2>
-            <p>Resume-style skills, verified software examples and focused suggestions for your selected career—not a generic checklist for everyone.</p>
+            <p>Technical skills, verified software examples and focused suggestions for your selected career—not a generic checklist for everyone.</p>
             <div id="skill-home-preview" class="skill-home-preview">Loading full occupation skill index...</div>
           </div>
           <button type="button" class="subtle-btn" data-go="skills">Explore your Skill studio ↗</button>
@@ -142,13 +141,13 @@
       <section class="view" id="view-skills">
         <div class="eyebrow">FROM CAREER GOALS TO SPECIFIC TOOLS <span class="eyebrow-line"></span></div>
         <div class="heading-row"><div><h1>Build your skill stack<span class="accent">.</span></h1><p class="lead">Move beyond broad terms like “programming” and discover real named technologies connected to occupations.</p></div><span class="outlined-tag">O*NET · VERIFIED WORKPLACE EXAMPLES</span></div>
-        <div class="info-banner"><span>✦</span><p>Skill categories follow a technical-resume format. Technologies are drawn from O*NET occupation-level software examples, <strong>not from identifiable people or individual survey responses</strong>. A technology appearing for a job does not mean every worker must know it. Your own selected skills are self-reported.</p></div>
+        <div class="info-banner"><span>✦</span><p>Skill categories follow a technical skill format. Technologies are drawn from O*NET occupation-level software examples, <strong>not from identifiable people or individual survey responses</strong>. A technology appearing for a job does not mean every worker must know it. Your own selected skills are self-reported.</p></div>
         <div id="skills-summary" class="skills-summary">Loading full O*NET software skill index...</div>
         <div class="skills-grid">
           <article class="panel skills-explorer">
             <div class="panel-title"><div><h3>Explore named skills &amp; technologies</h3><p id="skill-source-label">Verified occupational software examples</p></div><span class="model-pill">31K+ LINKS</span></div>
             <div class="skills-filters">
-              <div class="field"><label for="skill-scope">SHOW</label><select id="skill-scope"><option value="role">My destination's occupational tools</option><option value="curated">Resume-style technical skills</option><option value="all">All observed technologies</option></select></div>
+              <div class="field"><label for="skill-scope">SHOW</label><select id="skill-scope"><option value="role">My destination's occupational tools</option><option value="curated">Curated technical skill categories</option><option value="all">All observed technologies</option></select></div>
               <div class="field"><label for="skill-category">CATEGORY</label><select id="skill-category"><option value="all">All categories</option></select></div>
               <div class="field full"><label for="skill-query">FIND A SPECIFIC SKILL</label><input id="skill-query" type="search" placeholder="Python, FastAPI, Docker, PostgreSQL, React, Figma..." maxlength="90" autocomplete="off"></div>
             </div>
@@ -159,14 +158,14 @@
           </article>
           <div class="skill-side">
             <article class="panel my-skills-panel">
-              <div class="panel-title"><div><h3>My declared skills</h3><p>Resume-style categories, editable at any time</p></div><span class="model-pill">LOCAL ONLY</span></div>
+              <div class="panel-title"><div><h3>My declared skills</h3><p>Technical skill categories, editable at any time</p></div><span class="model-pill">LOCAL ONLY</span></div>
               <div id="my-skill-count" class="skill-count">0 self-reported skills</div>
               <div id="my-skill-list" class="my-skill-list"></div>
               <form id="custom-skill-form" class="custom-skill-form">
                 <label for="custom-skill-input">ADD ANOTHER TOOL OR SKILL</label>
                 <div><input id="custom-skill-input" maxlength="70" placeholder="e.g. FastAPI or a project tool" autocomplete="off"><button class="outline-btn" type="submit">Add</button></div>
               </form>
-              <p class="panel-caption">Adding something here means you report knowing it. This is not verified mastery, certification or resume validation. Your selections stay in browser storage.</p>
+              <p class="panel-caption">Adding something here means you report knowing it. This is not verified mastery, certification or credential validation. Your selections stay in browser storage.</p>
             </article>
             <article class="panel skill-focus-panel">
               <div class="panel-title"><div><h3>Your next technology focus</h3><p>Based on the selected occupation's actual O*NET examples</p></div></div>
@@ -316,12 +315,6 @@
             <div id="research-model-status" class="research-model-list"><p class="quiet-state">Loading model stages...</p></div>
           </article>
         </div>
-        <article class="panel research-pilot-result">
-          <div class="panel-title"><div><h3>GRU knowledge-tracing experiment · Mathematics</h3><p>Actual small-sample evaluation, not WhatNext recommendation accuracy</p></div><span class="model-pill">EXPERIMENT</span></div>
-          <div class="research-pilot-metrics" id="research-pilot-metrics"><p class="quiet-state">Loading experimental metrics...</p></div>
-          <p class="research-caveat" id="research-pilot-warning">The experiment remains separate from production learning recommendations.</p>
-          <a class="text-link" target="_blank" rel="noopener noreferrer" href="https://github.com/A101shah/what_next/blob/main/data/real_learning/assist2009_gru_pilot_metrics.json">View provenance and evaluation details ↗</a>
-        </article>
         <div class="section-head"><div><h2>Official datasets &amp; original sources</h2><p>Every source is named, licensed, and tagged with the actual acquisition status.</p></div></div>
         <div class="research-filters" role="group" aria-label="Filter dataset sources">
           <button type="button" class="research-filter active" data-research-filter="all" aria-pressed="true">All sources</button>
@@ -345,22 +338,6 @@
             <a target="_blank" rel="noopener noreferrer" href="https://github.com/A101shah/what_next/tree/main/data/real_learning">Data provenance &amp; research scripts ↗</a>
           </div>
         </article>
-      </section>
-
-      <section class="view" id="view-career">
-        <div class="eyebrow">FROM LEARNING TO PROOF <span class="eyebrow-line"></span></div><div class="heading-row"><div><h1>Make your progress count<span class="accent">.</span></h1><p class="lead">Create an honest, editable resume from the work you've actually done.</p></div></div>
-        <div class="career-layout">
-          <article class="panel resume-editor"><div class="panel-title"><div><h3>Resume details</h3><p>Only what you enter will appear; no invented achievements.</p></div></div>
-            <label for="resume-name">Full name</label><input id="resume-name" placeholder="Your full name" maxlength="90" autocomplete="name">
-            <label for="resume-email">Email</label><input id="resume-email" type="email" placeholder="you@example.com" maxlength="120" autocomplete="email">
-            <label for="resume-about">Professional summary</label><textarea id="resume-about" rows="3" maxlength="500" placeholder="Describe your interests, experience and direction in your own words."></textarea>
-            <label for="resume-education">Education</label><textarea id="resume-education" rows="2" maxlength="300" placeholder="Degree, university, dates"></textarea>
-            <label for="resume-projects">Real projects and achievements <small>(one per line)</small></label><textarea id="resume-projects" rows="5" maxlength="1600" placeholder="Project — what you built, your contribution, and measurable outcomes"></textarea>
-            <p class="input-hint">Completed pathway topics are self-reported. Only add skills you can genuinely demonstrate.</p>
-            <div class="button-row"><button class="primary-btn" id="download-resume">Export resume HTML ↗</button><button class="outline-btn" id="print-resume">Print / Save PDF</button></div>
-          </article>
-          <article class="panel resume-preview-panel"><div class="panel-title"><div><h3>Live preview</h3><p>Clean, readable, recruiter-friendly layout</p></div></div><div id="resume-preview" class="resume-paper"></div></article>
-        </div>
       </section>
 
       <section class="view" id="view-profile">
