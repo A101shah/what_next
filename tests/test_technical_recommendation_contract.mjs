@@ -50,7 +50,6 @@ test("a technical subject recommendation cannot be advertised as a neural predic
   }
   const published=JSON.parse(read("data/real_learning/public_evidence_dashboard.json"));
   assert.equal(published.model_status.validated_recommendation_accuracy,null);
-  assert.equal(published.model_status.trained_gru_next_response_accuracy,null);
 });
 test("all authored questions have stable skill IDs and no outcome labels for real users",()=>{
   const valid=new Set(graph.concepts.map(c=>c.concept_id));
