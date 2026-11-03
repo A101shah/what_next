@@ -212,7 +212,7 @@
     feedback = null;
     storeData();
     refresh();
-    toast(before.has(id) ? "Concept marked as self-reported, not assessed." : "Self-report removed.");
+    toast(before.has(id) ? "Self-report removed." : "Concept marked as self-reported, not assessed.");
   }
   function onSubmit(event) {
     event.preventDefault();
