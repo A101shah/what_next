@@ -384,3 +384,6 @@ body{background:var(--bg)}
 .step-meta a,.research-source a,.research-link-group a{color:#8dece8}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline-color:#4eece7}
 /* Sidebar menu badges were decorative and have been removed from HTML. */
+
+/* Preserve clean resume printouts with the new dark theme. */
+@media print{body{background:#fff!important;color:#111!important}}
