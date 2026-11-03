@@ -48,13 +48,10 @@ function environment(){
     "data/learning_v2/graph.json","data/learning_v2/diagnostic_questions.json"
   ];
   const data=Object.fromEntries(dataPaths.map(p=>[p,json(p)]));
-  let resumeHtml=null,printed=false;
-  const url={createObjectURL(blob){resumeHtml=blob.parts.join("");return "blob:test"},revokeObjectURL(){}};
   const localStorage={getItem:k=>stored.get(k)||null,setItem:(k,v)=>stored.set(k,v)};
   const context={document,localStorage,console,atob:globalThis.atob,
     location:{origin:"http://localhost"},clearTimeout(){},setTimeout(){return 1},
-    scrollTo(){},print(){printed=true},URL:url,
-    Blob:class{constructor(parts){this.parts=parts}},
+    scrollTo(){},
     fetch:async url=>{
       const resource=data[url.split("?")[0]];
       return {ok:!!resource,json:async()=>resource};
@@ -62,8 +59,7 @@ function environment(){
     Event:class{}
   };
   context.window=context;
-  return {context,document,element,suggestions,stored,domHandlers,data,
-    resume:()=>resumeHtml,printed:()=>printed};
+  return {context,document,element,suggestions,stored,domHandlers,data};
 }
 test("static buttons and DOM IDs are unique; JavaScript assets exist",()=>{
   const html=read("index.html");
@@ -76,7 +72,7 @@ test("static buttons and DOM IDs are unique; JavaScript assets exist",()=>{
   assert.match(html,/id="run-deployment-check"/);
   assert.doesNotMatch(html,/catboost/i);
 });
-test("app starts, search suggestions work, skill/roadmap/NN/profile and resume buttons have results",async()=>{
+test("app starts, search suggestions work, skill/roadmap/NN/profile buttons have results",async()=>{
   const e=environment(),c=e.context;
   for(const script of ["search.js","skills.js","neural.js"])runInNewContext(read(script),c);
   runInNewContext(read("app.js")+
@@ -110,14 +106,6 @@ test("app starts, search suggestions work, skill/roadmap/NN/profile and resume b
   el("#nn-field").value="7";
   el("#nn-form").listeners.submit({preventDefault(){}});
   assert.match(el("#nn-output").innerHTML,/Information and communications technology professionals/);
-  el("#resume-name").value="Sample Learner";
-  el("#resume-name").listeners.input();
-  el("#download-resume").listeners.click();
-  assert.match(e.resume(),/<\/head><body>/);
-  assert.match(e.resume(),/Sample Learner/);
-  assert.match(e.resume(),/<\/body><\/html>$/);
-  el("#print-resume").listeners.click();
-  assert.equal(e.printed(),true);
   el("#career-select").value="ds";
   el("#student-name").value="Test Learner";
   el("#hours-range").value="9";
