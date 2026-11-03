@@ -1,250 +1,44 @@
-# Real public educational data — reproducible research pipeline
+# Public educational data — source provenance
 
-This directory separates **actual external observations** from WhatNext's human-curated career-learning curriculum. This integration does not fabricate student interactions, merge English/math performance into Python skill ratings, or claim neural next-lesson accuracy.
+This directory contains source provenance and **non-identifying aggregates** of external educational data, not live WhatNext students' learning histories or technical-topic training labels.
 
-## What is actually included in GitHub
-- `source_catalog.csv`: verified official source pages, data types, terms, and acquisition state.
-- `ednet_100_preview_aggregate.csv`: non-identifying **aggregate only** (100 English practice interactions; 67 correct; 5 source learners; 91 questions), calculated from a public third-party EdNet preview. A non-random first-page preview is **not a model training dataset**.
-- `manifest.json`: provenance, original dataset URLs, caveats, and preview checksum.
-- The existing `data/onet_software_skills_31_0.csv` remains authentic **occupation-level** reference data (31,821 source associations); it is *not* per-person skill data.
-- Full EdNet, ASSISTments and additional O*NET rating tables are **not in this repository**. This environment could not download them. Download them from the respective official providers before running importers.
+## Included public assets
 
-### Obtain the actual data for model development
+- `source_catalog.csv`: official and verified data-source URLs, populations and licence limitations.
+- `ednet_100_preview_aggregate.csv`: non-random sample of 100 English question attempts from five source histories (67 correct; 91 distinct questions).
+- `manifest.json`: preview provenance, source URL and checksum.
+- `public_evidence_dashboard.json`: source summaries, live prerequisite policy status and deployed occupational classifier metadata.
 
-1. EdNet official KT1 ZIP and content metadata are linked from [Riiid EdNet](https://github.com/riiid/ednet). The author's compressed KT1 archive is approximately **1.2 GB** and requires disk space for extraction. The content archive contains `questions.csv`.
-2. To obtain genuine, answer-validated EdNet rows, from the repository root use:
+Raw learner histories and original OECD respondent-level files are **not** distributed through the public site. EdNet and ASSISTments question attempts do not measure the ability to learn Python, ML, cloud or cybersecurity.
 
-```powershell
-python scripts/import_real_learning_data.py ednet --input "D:\Datasets\EdNet-KT1.zip" --questions "D:\Datasets\questions.csv" --max-students 5000 --max-rows 100000 --out "out/real_learning"
-```
+## Optional data import, not a model-training pipeline
 
-3. For corrected [ASSISTments 2009–2010 Skill Builder](https://sites.google.com/site/assistmentsdata/home/2009-2010-assistment-data/skill-builder-data-2009-2010), follow its **corrected** link (the original release contained duplicated records).
+The independent `scripts/import_real_learning_data.py` utility parses authentic EdNet KT1 (TOEIC English) and corrected ASSISTments (mathematics) records for offline provenance research. It does not train or deploy a neural learning model. Obtain datasets from original providers, observe their licence terms and retain individual histories in ignored `out/` directories.
 
-```powershell
-python scripts/import_real_learning_data.py assist --input "D:\Datasets\skill_builder_data_corrected.csv" --max-rows 100000 --out "out/real_learning"
-```
-
-4. Official O*NET 31.0 Essential and Transferable Skills — **18,200** and **45,500** source rows:
-
-```powershell
-python scripts/download_onet_31_skills.py --out "out/real_learning"
-```
-
-The script validates the advertised row counts and source headers before exporting source-attributed skill ratings. These are career-level occupational rating rows, never an individual's skill proficiency.
-
-### Train a genuine Deep Knowledge Tracing GRU
-
-Only after importing a sufficiently large EdNet/ASSISTments dataset:
-
-```powershell
-python -m pip install torch
-python scripts/train_knowledge_tracing.py --input "out/real_learning/ednet_interactions.csv" --epochs 3 --out "out/real_learning/ednet_dkt"
-python -m unittest tests.test_real_data_pipeline -v
-```
-
-The GRU conditions on **previous question and answer correctness**, predicts **correctness on the next question**, and evaluates on a **student-disjoint 80/20 holdout**. This is real knowledge-tracing methodology, but the resulting metric is **TOEIC/mathematics next-response prediction**, not next-career-lesson recommendation accuracy. The importer refuses EdNet rows without a verified official question answer key. Training refuses fewer than 30 learners or 1,000 interactions by default; the included pilot sample is too small.
-
-All real student-level exports and trained model artifacts stay under the existing git-ignored `out/` directory; **do not commit them to your public repository**. The app remains a static GitHub Pages curriculum recommender with locally stored practice-check results. Its current recommendation engine is still **rule-based**.
-
-## License / attribution
-- **EdNet** © original Riiid authors, [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). Noncommercial research only; attribute the source; no redistribution of raw student traces by this repository.
-- **ASSISTments**: [official data page](https://sites.google.com/site/assistmentsdata/home/2009-2010-assistment-data). Confirm and follow source-specific conditions, and acknowledge the original research in publications.
-- **O*NET 31.0**: [O*NET Database](https://www.onetcenter.org/database.html), U.S. Department of Labor / Employment and Training Administration, licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Cite version and modifications.
-
-## Honesty and safety
-No AI-generated 'students' or invented labels were included. Quiz-derived WhatNext progress is not the same population as EdNet or ASSISTments. Never use professional skill importance as a child's observed proficiency. An accuracy number for the GRU must come from the actual full-data run and held-out students, not from this pilot preview.
-
-
-## Deployment verification — research interface (2026-11-02)
-
-GitHub Pages renders an interactive **Research data lab**, sourced from
-`public_evidence_dashboard.json`. It shows aggregate preview values,
-links to official providers, current dataset acquisition status, and model
-limitations. No EdNet student-level records are published on the site.
-
-- Directly audited the original 100-row EdNet preview CSV against SHA-256
-  `4e06495418d8d3788775eadff4b08a2e5bd3d249fb334b009fbdab49e9b9087f`:
-  5 distinct learners, 91 questions, 67 observed correct and 33 incorrect.
-- Executed the offline **pilot conversion** on a locally prepared KT1-style ZIP
-  and original answer-key excerpt derived from those observed preview rows;
-  it successfully created 100 consistent interaction records for local QA.
-  This is a pilot transform, **not** full official-archive acquisition.
-- The dashboard rendering/filtering smoke test was exercised in an isolated JS
-  runtime: five source cards and two learning-behavior cards displayed correctly.
-- `scripts/import_real_learning_data.py` now uses run-local keyed HMAC
-  pseudonyms rather than hashes of predictable student IDs. They are still
-  **pseudonyms, not guaranteed anonymization**.
-- `scripts/train_knowledge_tracing.py` reports the simple majority-class
-  baseline alongside model accuracy, and refuses the corrected ASSISTments
-  dataset until a reliable temporal event-order field is established.
-- No verified neural model training accuracy is available from the 100-row
-  pilot. The full 1.2 GB EdNet data and official question metadata must first
-  be downloaded from the source and ingested.
-
-Run the repository's added tests locally:
-
-```powershell
-node --test tests/test_research_evidence.mjs
-python -m unittest tests.test_real_data_pipeline -v
-```
-
-Training is supported with **full EdNet data only**. Do not interpret the
-placeholder numerical results used by unit tests as evaluated model metrics.
-
-
-## Executed real-data GRU research pilot — 2026-11-02
-
-**A training experiment was actually executed on local CPU (PyTorch 2.10.0):**
-a bounded subset from published, third-party preprocessed
-[ASSISTments 2009–2010 traces](https://github.com/ranydb/EAKT/blob/master/csv/assist2009_updated/assist2009_updated_test.csv),
-with the original source git blob SHA `6ee1262b3442062c806758d718f64b877f809faf`.
-The preview contained 52 valid response sequences (2,624 observed math attempts).
-After an 80/20 **trace-disjoint** split, 41 traces were used to train a GRU for
-eight epochs and 11 traces provided 509 held-out *next-response* predictions.
-
-| Evaluation metric | Observed result |
-|---|---:|
-| GRU next-response accuracy | 53.6346% |
-| Majority-class baseline accuracy | 59.5285% |
-| Accuracy difference | **−5.8939 percentage points** |
-| GRU holdout log loss | 0.747850 |
-| GRU holdout Brier score | 0.270814 |
-
-This result is **below** a trivial baseline and is **not production-ready**.
-Only 52 sequence histories were used, and the original student IDs were not
-provided in the processed source, so splitting by sequence does not guarantee
-strict original-person disjointness. This is a **small experiment**, not full
-EdNet training. No user model, student responses, or model weights were
-published to GitHub, and the live lesson recommender remains
-human-curated and prerequisite-based.
-
-The reproducibility script is
-`scripts/train_assistments_pilot.py`. Download the source from the linked
-research repository yourself and run:
-
-```powershell
-python -m pip install torch
-python scripts/train_assistments_pilot.py --input "out/assist2009_updated_test.csv"
-```
-
-Observed metrics and audit notes are stored in
-`data/real_learning/assist2009_gru_pilot_metrics.json`. PyTorch version,
-hardware, floating-point implementation and the third-party source may
-affect rerun results. **Full original EdNet training, live technical-topic
-knowledge-tracing, and independently verified GitHub Pages deployment
-are still separate unfinished tasks.** Do not substitute the small math
-benchmark result for production recommendation accuracy.
-
-
-## 2026-11-02: full-EdNet readiness gate and deployed-site self-check
-
-The full 1.2 GB EdNet-KT1 ZIP **has not been acquired**, so **no full EdNet GRU
-model has been trained**. The prior 52-history ASSISTments benchmark is a
-different dataset and cannot satisfy this milestone. The official EdNet
-repository documents 784,309 separate KT1 user files and the independent
-`Contents/questions.csv` answer key. Download both official releases,
-then, locally and before starting training, run:
-
-```powershell
-python scripts/verify_full_ednet.py --kt1 "D:\Datasets\EdNet-KT1.zip" --questions "D:\Datasets\questions.csv"
-```
-
-The gate checks presence, plausible full-release size, user-file count,
-KT1 header format, and correct-answer key format. It exits nonzero on an
-incomplete archive. Passing the gate **only verifies acquisition readiness**;
-it is not a model training or quality result. Use the existing import and
-GRU training scripts to train on genuine source rows; never publish learner
-traces or model artifacts with identifying data to GitHub Pages.
-
-To independently inspect the static site after GitHub Pages publishes the
-latest `main` branch, visit the **Research data lab** and click
-**Run deployment check**. The browser fetches five real same-origin
-resources with no-cache queries and checks their expected structure. A
-successful browser check is evidence that your browser received those
-assets, **not an independent, worldwide availability audit**. Remote live
-verification from the development environment was blocked by network
-access and remains unverified until a real client-side check succeeds.
-
-For technical-topic neural ranking, the outstanding requirement is
-*consented, real, temporally ordered student assessments and later
-learning outcomes in those same technical topics*. The 45 WhatNext
-questions are authored quiz content only, not real student training labels.
-Current technical recommendation validation checks **all 6 curricula**,
-all graph prerequisites, eligibility and reachability. These are tests of
-the *rule-based system*, not trained neural recommendation accuracy.
-
-Tests:
+- [Official EdNet](https://github.com/riiid/ednet) — original data under CC BY-NC 4.0.
+- [ASSISTments](https://sites.google.com/site/assistmentsdata/home/2009-2010-assistment-data) — confirm original provider terms.
 
 ```bash
-node --test tests/test_technical_recommendation_contract.mjs tests/test_deployment_diagnostics.mjs
+python scripts/import_real_learning_data.py ednet --input "out/EdNet-KT1.zip" --questions "out/questions.csv" --max-students 5000 --max-rows 100000 --out "out/real_learning"
+python scripts/import_real_learning_data.py assist --input "out/assistments_corrected.csv" --max-rows 100000 --out "out/real_learning"
 ```
 
+## Learning recommendation evidence
 
-## Full EdNet acquisition and streaming trainer (additional verified implementation)
+WhatNext's 45 short practice questions are authored curriculum material, not scientific measurements of long-term student proficiency. The live next-concept recommender remains **rule-based**, constrained by the 107-concept prerequisite graph. Real technical learning outcomes would be required to evaluate any future ML recommendation system.
 
-The original [EdNet repository](https://github.com/riiid/ednet) lists the
-original two official Google Drive releases: **EdNet-KT1** (~1.2 GB, 784,309
-learner files) and separate **Contents** metadata containing
-`questions.csv`. To obtain both on a networked computer, install `gdown`
-and `torch`:
-
-```powershell
-python -m pip install gdown torch
-python scripts/download_full_ednet.py
-python scripts/train_ednet_full_streaming.py --kt1 "out/real_learning/ednet_source/EdNet-KT1.zip" --questions "out/real_learning/ednet_source/questions.csv" --epochs 2
+```bash
+python scripts/validate_technical_learning_outcomes.py --input out/technical_learning_outcomes.csv
 ```
 
-The downloader uses the **official Riiid published file IDs** and checks the
-metadata schema; it does not redistribute or upload raw learner records. If
-Google Drive throttles access, download the official files using the EdNet
-website links and re-run with `--skip-download`.
+This research-only validator checks some necessary input fields. Passing it would not prove recommendation accuracy.
 
-The streaming trainer reads student CSVs **directly from the ZIP** and
-performs a hash-based 80/20 split by student file, with minibatched GRU training,
-held-out log loss, Brier score, classification accuracy and majority baseline.
-It refuses incomplete full data by default. It writes weights and evaluated
-metrics into ignored `out/real_learning/ednet_full/`. It does **not**
-predict the next Python or ML lesson: the original dataset is TOEIC English.
+## Public deployment verification
 
-For testing the training logic *without* making a false research claim, an
-explicit `--fixture-test` flag permits tiny synthetic fixtures. We exercised
-this mode locally with 60 generated learner files; the full streaming
-train/evaluate loop ran and **three unit tests passed**. Those synthetic
-scores are not a full EdNet result.
+On the published site, open **Research Data Lab** and select **Run deployment check** for 15 same-origin asset checks. Independent HTTPS availability can be tested with:
 
-```powershell
-python -m unittest discover -s tests -p "test_full_ednet_streaming.py" -v
-```
-
-### What would constitute validated technical-subject neural recommendations?
-
-We cannot train or validate such a model with 45 authored quiz questions or
-English/math response histories. We require **consented and longitudinal**
-technical learning attempts, recorded lesson exposure and independently
-measured post-lesson skill outcomes. The following audit fails closed on
-missing data and distinguishes data-readiness from actual model validation:
-
-```powershell
-python scripts/validate_technical_learning_outcomes.py --input "out/technical_learning_outcomes.csv"
-```
-
-Even an acceptable dataset must pass a **student-disjoint** evaluation,
-rule-based and majority baselines, useful-ranking metrics, source quality
-review and privacy review before any trained neural model is enabled in
-the student app. Current trained mathematics GRU pilot is below baseline
-and is therefore **not** integrated.
-
-### Independent remote GitHub Pages verification
-
-```powershell
+```bash
 python scripts/verify_live_github_pages.py
 ```
 
-The remote probe requires outgoing HTTPS access to the public Pages host.
-It checks seven real published resources, rejects missing/malformed content,
-and records a JSON report under ignored `out/`. Our current execution
-container could not resolve the host, so its live verification is still
-**not complete**. GitHub repository-asset checks and our browser-side
-self-check are separate and should not be confused with remote HTTP
-verification. Do not claim this milestone passed without a successful
-actual probe.
+Neither check establishes recommendation model performance.

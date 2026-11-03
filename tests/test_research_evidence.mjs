@@ -14,7 +14,6 @@ test("public counts match signed preview provenance and source catalog",()=>{
  assert.equal(sample.sha256,provenance.preview_expected_sha256);
  assert.equal(summary.source_summary.onet.records,31821);
  assert.ok(summary.model_status.validated_recommendation_accuracy===null);
- assert.ok(summary.model_status.trained_gru_next_response_accuracy===null);
  assert.equal(summary.sources.length,5);
 });
 test("research page and navigation are present without learner-level data",()=>{
@@ -58,36 +57,10 @@ test("research script renders and filters source rows using actual metadata",asy
  await listeners.get("DOMContentLoaded")();
  assert.ok(element("#research-stat-grid").innerHTML.includes("31,821"));
  assert.equal((element("#research-source-list").innerHTML.match(/<article/g)||[]).length,5);
- assert.ok(element("#research-model-status").innerHTML.includes("Math pilot only"));
+ assert.ok(element("#research-model-status").innerHTML.includes("Exploratory"));
  assert.equal(element("#research-accuracy-bar span").style.width,"67%");
  element(".research-filters").dispatch("click",{
    target:{closest:()=>({dataset:{researchFilter:"Learning behavior"}})}
  });
  assert.equal((element("#research-source-list").innerHTML.match(/<article/g)||[]).length,2);
-});
-
-
-test("actual GRU holdout is reported below the simple baseline, never as recommendation accuracy",()=>{
- const m=JSON.parse(read("data/real_learning/assist2009_gru_pilot_metrics.json"));
- const dashboard=JSON.parse(read("data/real_learning/public_evidence_dashboard.json"));
- assert.equal(m.interactions_total,2624);
- assert.equal(m.learners_total,52);
- assert.equal(m.learners_holdout,11);
- assert.equal(m.holdout_next_response_events,509);
- assert.equal(m.gru_accuracy,0.536346);
- assert.equal(m.majority_class_accuracy_baseline,0.595285);
- assert.ok(m.gru_accuracy < m.majority_class_accuracy_baseline);
- assert.equal(dashboard.model_status.gru_mathematics_pilot_accuracy,m.gru_accuracy);
- assert.equal(dashboard.model_status.gru_mathematics_pilot_baseline_accuracy,m.majority_class_accuracy_baseline);
- assert.equal(dashboard.model_status.trained_gru_next_response_accuracy,null);
- assert.equal(m.not_production_ready,true);
- assert.equal(m.not_whatnext_next_lesson_accuracy,true);
-});
-test("research interface clearly distinguishes small math pilot from model deployed for next lessons",()=>{
- const html=read("index.html"),script=read("research-evidence.js");
- assert.ok(html.includes('id="research-pilot-metrics"'));
- assert.ok(html.includes('id="research-pilot-warning"'));
- assert.ok(script.includes("Underperformed the simple baseline"));
- assert.ok(script.includes("trace-disjoint"));
- assert.ok(html.includes("assist2009_gru_pilot_metrics.json"));
 });

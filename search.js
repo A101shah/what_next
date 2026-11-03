@@ -58,7 +58,6 @@ window.WhatNextSearch = (() => {
       {title:"How to check your career model result",description:"Inspect the 80/20 held-out evaluation, the PCA → K-Means → neural architecture and model limitations in Career Intelligence.",tags:"help accuracy neural network pca kmeans hybrid f1 model evaluation",view:"evidence"},
       {title:"Update my completed learning skills",description:"Set your existing skills, goals and weekly study time in your student profile.",tags:"profile skills completed study hours",view:"profile"},
       {title:"Explore verified workforce skills",description:"See OECD PIAAC observations about education, work experience and workplace skill use in the career explorer.",tags:"oecd PIAAC career skills evidence occupations",view:"evidence"},
-      {title:"Create an evidence-based resume",description:"Export a resume using only your own achievements and declared skills.",tags:"resume portfolio cv job application",view:"career"}
     ];
     for(const e of help)results.push({...e,type:"In-app guide"});
     for(const path of paths||[]){

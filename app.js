@@ -13,7 +13,7 @@ const INTERESTS = [
 ];
 const state = {
   paths: [], model: null, news: null, careers: null, skillEvidence: null, neuralModel: null, roleSkills: null, skillTaxonomy: null, skillListLimit: 36, searchConfig: null, searchCatalogue: [], lastHelpQuery: "", evidenceCountry: null, evidenceFamily: null, view: "overview",
-  profile: {name:"",career:"ai",hours:7,interests:[],completed:[],technicalSkills:[],resume:{email:"",about:"",education:"",projects:""}}
+  profile: {name:"",career:"ai",hours:7,interests:[],completed:[],technicalSkills:[]}
 };
 const $ = selector => document.querySelector(selector);
 const $$ = selector => [...document.querySelectorAll(selector)];
@@ -35,7 +35,6 @@ function restore() {
       state.profile.interests = Array.isArray(saved.interests) ? saved.interests.filter(x=>typeof x==="string") : [];
       state.profile.completed = Array.isArray(saved.completed) ? saved.completed.filter(x=>typeof x==="string") : [];
       state.profile.technicalSkills = Array.isArray(saved.technicalSkills) ? saved.technicalSkills.filter(x=>typeof x==="string").slice(0,120) : [];
-      state.profile.resume = {...state.profile.resume,...(saved.resume && typeof saved.resume==="object" ? saved.resume : {})};
     }
   } catch(err) { console.warn("Stored profile unreadable; starting fresh."); }
 }
@@ -84,7 +83,6 @@ async function start() {
   initializeHelpSearch();
   initializeSkillsStudio();
   renderProfileForm();
-  fillResumeFields();
   render();
 }
 
@@ -97,7 +95,7 @@ function navigate(view) {
     node.classList.toggle("active",active);
     if(active)node.setAttribute("aria-current","page");else node.removeAttribute("aria-current");
   });
-  const names={overview:"Overview",roadmap:"Learning roadmap",assessment:"Skill checks & next steps",skills:"Skill studio",search:"Learning search",pulse:"World pulse",evidence:"Career intelligence",research:"Research data lab",career:"Career studio",profile:"Your profile"};
+  const names={overview:"Overview",roadmap:"Learning roadmap",assessment:"Skill checks & next steps",skills:"Skill studio",search:"Learning search",pulse:"World pulse",evidence:"Career intelligence",research:"Research data lab",profile:"Your profile"};
   $("#current-view").textContent=names[view]||"Overview";
   $(".sidebar").classList.remove("open");
   $("#mobile-menu").setAttribute("aria-expanded","false");
@@ -185,25 +183,11 @@ function bindActions(){
     render();
     toast("Your roadmap has been updated.");
   });
-  ["resume-name","resume-email","resume-about","resume-education","resume-projects"].forEach(id=>{
-    $("#"+id).addEventListener("input",()=>{
-      state.profile.name=$("#resume-name").value.slice(0,60);
-      state.profile.resume={
-        email:$("#resume-email").value,
-        about:$("#resume-about").value,
-        education:$("#resume-education").value,
-        projects:$("#resume-projects").value
-      };
-      persist();renderResume();
-      $("#avatar").textContent=state.profile.name.trim().charAt(0).toUpperCase()||"S";
-    });
-  });
-  $("#download-resume").addEventListener("click",downloadResume);
-  $("#print-resume").addEventListener("click",()=>{navigate("career");window.print();});
+
 }
 
 // Skill Studio uses real occupation-to-software EXAMPLES from O*NET.
-// Users' declared tools are not inferred from PIAAC respondents or an uploaded resume.
+// Users' declared tools are not inferred from PIAAC respondents or a user-submitted document.
 function initializeSkillsStudio(){
   const cats=state.roleSkills?.categories||state.skillTaxonomy?.categories||[];
   $("#skill-category").innerHTML='<option value="all">All skill categories</option>'+
@@ -402,7 +386,6 @@ function saveProfile(event) {
   state.profile.hours=Number($("#hours-range").value);
   state.profile.interests=$$("#interests-list .selected").map(x=>x.dataset.interest);
   persist();
-  fillResumeFields();
   render();
   navigate("overview");
   toast("Your personal route is ready.");
@@ -457,7 +440,6 @@ function render() {
   renderNeighbors(path);
   renderCareerEvidence(path);
   renderNeuralStatus();
-  renderResume();
   // Keep the additional evidence-aware concept navigator synchronized with profile changes.
   window.WhatNextAssessment?.refresh();
 }
@@ -857,46 +839,4 @@ function runCareerNeuralNetwork(event) {
   }
 }
 
-function fillResumeFields() {
-  $("#resume-name").value=state.profile.name||"";
-  $("#resume-email").value=state.profile.resume.email||"";
-  $("#resume-about").value=state.profile.resume.about||"";
-  $("#resume-education").value=state.profile.resume.education||"";
-  $("#resume-projects").value=state.profile.resume.projects||"";
-}
-function resumeMarkup() {
-  const path=currentPath();
-  const resume=state.profile.resume;
-  const portfolio=(resume.projects||"").split("\n").map(x=>x.trim()).filter(Boolean);
-  const skills=path.topics.filter(topic=>completed(topic.id)).map(topic=>topic.title);
-  // Group only explicitly self-reported tools; never import the attached resume.
-  const groupedTech=new Map;
-  for(const name of state.profile.technicalSkills||[]){
-    const cat=window.WhatNextSkills?.categoryOf(name,state.roleSkills,state.skillTaxonomy)||"other";
-    if(!groupedTech.has(cat))groupedTech.set(cat,[]);
-    groupedTech.get(cat).push(name);
-  }
-  const techGroups=[...groupedTech].map(([cat,names])=>{
-    const category=(state.roleSkills?.categories||state.skillTaxonomy?.categories||[]).find(c=>c.id===cat);
-    return '<li><strong>'+clean(category?.label||"Other tools")+':</strong> '+names.map(clean).join(", ")+'</li>';
-  });
-  const paragraph=value=>clean(value||"").replace(/\n/g,"<br>");
-  return '<h2>'+clean(state.profile.name||"Your Name")+'</h2><div class="resume-contact">'+clean(resume.email||"Your professional email")+
-    ' · Interested in '+clean(path.label)+'</div>'+
-    (resume.about?'<h4>Profile</h4><p>'+paragraph(resume.about)+'</p>':"")+
-    (resume.education?'<h4>Education</h4><p>'+paragraph(resume.education)+'</p>':"")+
-    (skills.length?'<h4>Skills (self-reported)</h4><p>'+skills.map(clean).join(" · ")+'</p>':"")+
-    (techGroups.length?'<h4>Technical Skills (self-reported)</h4><ul>'+techGroups.join("")+'</ul>':"")+
-    '<h4>Projects & achievements</h4>'+(portfolio.length?'<ul>'+portfolio.map(p=>'<li>'+clean(p)+'</li>').join("")+'</ul>':'<p>Add real work you can discuss and demonstrate.</p>')+
-    '<h4>Career direction</h4><p>'+clean(path.label)+'</p>';
-}
-function renderResume() {$("#resume-preview").innerHTML=resumeMarkup();}
-function downloadResume() {
-  const content='<!doctype html><html lang="en"><meta charset="utf-8"><title>Resume</title><style>body{font:14px/1.6 Arial,sans-serif;color:#222;max-width:740px;margin:45px auto;padding:0 20px}h2{font-size:28px;margin-bottom:4px}h4{text-transform:uppercase;border-bottom:1px solid #ddd;padding-bottom:5px;margin:24px 0 8px;letter-spacing:1px}.resume-contact{color:#666}li{margin:7px 0}@media print{body{margin:0;max-width:none}}</style></head><body>'+resumeMarkup()+'</body></html>';
-  const url=URL.createObjectURL(new Blob([content],{type:"text/html;charset=utf-8"}));
-  const a=document.createElement("a");
-  a.href=url;a.download="WhatNext_Resume.html";document.body.append(a);a.click();a.remove();
-  setTimeout(()=>URL.revokeObjectURL(url),1000);
-  toast("Resume exported. Open the HTML file or print it as PDF.");
-}
 document.addEventListener("DOMContentLoaded",start);
