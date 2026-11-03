@@ -13,7 +13,7 @@ test("all sidebar notification dots are removed, while navigation labels survive
   assert.doesNotMatch(html,/class="new-dot"/);
   assert.doesNotMatch(css,/\.new-dot\s*\{/);
   const routes=[...html.matchAll(/class="nav-item(?: active)?"\s+data-view="([^"]+)"/g)].map(m=>m[1]);
-  assert.deepEqual(routes,["overview","roadmap","assessment","skills","search","evidence","research","pulse","career"]);
+  assert.deepEqual(routes,["overview","roadmap","assessment","skills","search","evidence","research","pulse"]);
   assert.match(html,/whatnext<span class="brand-dot">\.<\/span>/);
 });
 
@@ -26,7 +26,7 @@ test("teal/cyan theme applies to root, sidebar, active navigation and controls",
   assert.match(css,/\.brand-icon\{background:linear-gradient\(135deg,#4bf3ec,#04a9a8/);
   assert.match(css,/\.nav-item\.active\{background:linear-gradient\(110deg,#0b3d47,#0e333f/);
   assert.match(css,/\.primary-btn\{background:#35d6d3/);
-  assert.match(css,/@media print\{body\{background:#fff!important;color:#111!important\}\}/);
+  assert.doesNotMatch(css,/#view-career|\.resume-paper/);
   assert.doesNotMatch(css,/#a797ff|#a99bff|#9d90ff|rgba\(165,136,255/);
 });
 
@@ -36,7 +36,7 @@ test("the cosmetic update does not remove application scripts, model, or buttons
     "neural.js","search.js","skills.js","learning.js","assessment-ui.js",
     "research-evidence.js","deployment-diagnostics.js","app.js"
   ]);
-  assert.equal([...html.matchAll(/<button\b/g)].length,43);
+  assert.equal([...html.matchAll(/<button\b/g)].length,40);
   const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
   assert.equal(ids.length,new Set(ids).size);
   assert.equal([...css].reduce((depth,c)=>depth+(c==="{")-(c==="}"),0),0);
