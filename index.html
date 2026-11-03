@@ -18,7 +18,7 @@
 </head>
 <body>
 <div class="shell">
-  <aside class="sidebar" aria-label="Main navigation">
+  <aside class="sidebar" id="sidebar-nav" aria-label="Main navigation">
     <a class="brand" href="#overview"><span class="brand-icon">↗</span><span>whatnext<span class="brand-dot">.</span><small>YOUR KNOWLEDGE GPS</small></span></a>
     <div class="nav-label">WORKSPACE</div>
     <nav class="nav">
@@ -40,7 +40,7 @@
 
   <main class="main">
     <header class="topbar">
-      <button class="mobile-menu" id="mobile-menu" aria-label="Toggle navigation">☰</button>
+      <button class="mobile-menu" id="mobile-menu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar-nav">☰</button>
       <div class="breadcrumb">MY WORKSPACE <span>/</span> <strong id="current-view">Overview</strong></div>
       <div class="header-right"><form id="quick-search-form" class="quick-search" role="search"><label for="quick-search-query" class="sr-only">Search topics and learning resources</label><span aria-hidden="true">⌕</span><input id="quick-search-query" placeholder="Search skills, lessons, or Google…" maxlength="200" autocomplete="off"><button type="submit" aria-label="Search learning resources">Search</button></form><span class="live-tag"><i></i> Learning intelligence</span><span class="avatar" id="avatar">S</span></div>
     </header>
