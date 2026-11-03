@@ -155,7 +155,7 @@ function bindActions(){
     event.preventDefault();
     performHelpSearch($("#help-query").value);
   });
-  $(".help-suggestions [data-help-term]").forEach(button=>button.addEventListener("click",()=>{
+  $$(".help-suggestions [data-help-term]").forEach(button=>button.addEventListener("click",()=>{
     const query=button.dataset.helpTerm;
     performHelpSearch(query);
   }));
