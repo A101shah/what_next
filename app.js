@@ -100,6 +100,7 @@ function navigate(view) {
   const names={overview:"Overview",roadmap:"Learning roadmap",assessment:"Skill checks & next steps",skills:"Skill studio",search:"Learning search",pulse:"World pulse",evidence:"Career intelligence",research:"Research data lab",career:"Career studio",profile:"Your profile"};
   $("#current-view").textContent=names[view]||"Overview";
   $(".sidebar").classList.remove("open");
+  $("#mobile-menu").setAttribute("aria-expanded","false");
   if (view==="profile") renderProfileForm();
   if (view==="assessment") window.WhatNextAssessment?.refresh();
   if (view==="search") { $("#help-query").value=state.lastHelpQuery; }
@@ -108,7 +109,10 @@ function navigate(view) {
 function bindActions(){
   $$("[data-view]").forEach(node=>node.addEventListener("click",()=>navigate(node.dataset.view)));
   $$("[data-go]").forEach(node=>node.addEventListener("click",()=>navigate(node.dataset.go)));
-  $("#mobile-menu").addEventListener("click",()=>$(".sidebar").classList.toggle("open"));
+  $("#mobile-menu").addEventListener("click",()=>{
+    const isOpen=$(".sidebar").classList.toggle("open");
+    $("#mobile-menu").setAttribute("aria-expanded",String(isOpen));
+  });
   $("#evidence-country").addEventListener("change",event=>{state.evidenceCountry=event.target.value;state.evidenceFamily=null;renderCareerEvidence(currentPath());});
   $("#evidence-family").addEventListener("change",event=>{state.evidenceFamily=event.target.value;renderCareerEvidence(currentPath());});
   $("#nn-form").addEventListener("submit",runCareerNeuralNetwork);
@@ -151,7 +155,7 @@ function bindActions(){
     event.preventDefault();
     performHelpSearch($("#help-query").value);
   });
-  $(".help-suggestions [data-help-term]").forEach(button=>button.addEventListener("click",()=>{
+  $$(".help-suggestions [data-help-term]").forEach(button=>button.addEventListener("click",()=>{
     const query=button.dataset.helpTerm;
     performHelpSearch(query);
   }));
@@ -494,7 +498,7 @@ function renderResearch(path){
   $("#pulse-updated").textContent=state.news && state.news.updated_at ?
     "Last successful OpenAlex refresh: "+new Date(state.news.updated_at).toLocaleDateString() :
     "No verified research refresh available yet.";
-  const empty='<div class="quiet-state">No verified articles are available for this field at the moment. The scheduled OpenAlex refresh will populate this section when records can be retrieved. <a href="https://openalex.org/" target="_blank" rel="noopener noreferrer">Original source ↗</a></div>';
+  const empty='<div class="quiet-state">No verified articles are available for this field at the moment. Research updates are refreshed manually from OpenAlex; no automatic background refresh is enabled. <a href="https://openalex.org/" target="_blank" rel="noopener noreferrer">Original source ↗</a></div>';
   $("#preview-research").innerHTML=papers.length ? papers.slice(0,3).map(p=>
     '<div class="mini-research"><a target="_blank" rel="noopener noreferrer" href="'+safeLink(p.url)+'">'+clean(p.title)+'</a><span>'+clean(p.date)+' · '+clean(p.venue||"OpenAlex")+'</span></div>'
   ).join("") : empty;
@@ -888,7 +892,7 @@ function resumeMarkup() {
 }
 function renderResume() {$("#resume-preview").innerHTML=resumeMarkup();}
 function downloadResume() {
-  const content='<!doctype html><html lang="en"><meta charset="utf-8"><title>Resume</title><style>body{font:14px/1.6 Arial,sans-serif;color:#222;max-width:740px;margin:45px auto;padding:0 20px}h2{font-size:28px;margin-bottom:4px}h4{text-transform:uppercase;border-bottom:1px solid #ddd;padding-bottom:5px;margin:24px 0 8px;letter-spacing:1px}.resume-contact{color:#666}li{margin:7px 0}@media print{body{margin:0;max-width:none}}</style><body>'+resumeMarkup()+'</body></html>';
+  const content='<!doctype html><html lang="en"><meta charset="utf-8"><title>Resume</title><style>body{font:14px/1.6 Arial,sans-serif;color:#222;max-width:740px;margin:45px auto;padding:0 20px}h2{font-size:28px;margin-bottom:4px}h4{text-transform:uppercase;border-bottom:1px solid #ddd;padding-bottom:5px;margin:24px 0 8px;letter-spacing:1px}.resume-contact{color:#666}li{margin:7px 0}@media print{body{margin:0;max-width:none}}</style></head><body>'+resumeMarkup()+'</body></html>';
   const url=URL.createObjectURL(new Blob([content],{type:"text/html;charset=utf-8"}));
   const a=document.createElement("a");
   a.href=url;a.download="WhatNext_Resume.html";document.body.append(a);a.click();a.remove();
