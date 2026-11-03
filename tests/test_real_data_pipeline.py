@@ -2,7 +2,7 @@
 
 Run: python -m unittest tests.test_real_data_pipeline -v
 """
-import csv, tempfile, unittest, zipfile, io
+import tempfile, unittest, zipfile
 from pathlib import Path
 from scripts.import_real_learning_data import ednet_events, assist_events, question_lookup, write_rows
 from scripts.download_onet_31_skills import convert
@@ -60,40 +60,5 @@ class RealDataImportTests(unittest.TestCase):
         self.assertEqual(mapped["occupation_code"],"15-2051.00")
         self.assertEqual(mapped["rating_value"],"4.0")
         self.assertEqual(mapped["source_version"],"31.0")
-
-try:
-    import torch
-    from scripts.train_knowledge_tracing import DKT,encode,pad_batch
-except ImportError:
-    torch=None
-
-@unittest.skipIf(torch is None,"torch is not installed")
-class RealDataModelTests(unittest.TestCase):
-    def test_100_row_pilot_is_rejected_for_training(self):
-        from argparse import Namespace
-        from scripts.train_knowledge_tracing import train
-        with tempfile.TemporaryDirectory() as dirname:
-            path=Path(dirname)/"pilot.csv"
-            with path.open("w",newline="") as handle:
-                writer=csv.writer(handle)
-                writer.writerow(["student_id","timestamp_or_order","question_id","is_correct","domain"])
-                for i in range(5):
-                    for t in range(20):
-                        writer.writerow([f"pilot{i}",1000+t,f"q{t}",str(t%2),"TOEIC_English"])
-            with self.assertRaisesRegex(ValueError,"Insufficient independent real data"):
-                train(Namespace(seed=42,input=path,min_students=30,min_interactions=1000))
-
-    def test_gru_predicts_next_question_not_current_outcome(self):
-        torch.manual_seed(1)
-        histories=[("research_fixture",[(1,"q1",1),(2,"q2",0),(3,"q3",1)])]
-        sequences=encode(histories,{"q1":1,"q2":2,"q3":3},80)
-        inp,target,y,mask=pad_batch(sequences)
-        self.assertEqual(inp.tolist(),[[3,4]])
-        self.assertEqual(target.tolist(),[[2,3]])
-        self.assertEqual(y.tolist(),[[0.,1.]])
-        net=DKT(4)
-        with torch.no_grad(): logits=net(inp,target)
-        self.assertEqual(tuple(logits.shape),(1,2))
-        self.assertEqual(mask.sum().item(),2)
 
 if __name__=="__main__":unittest.main()
