@@ -1,5 +1,7 @@
 # WhatNext AI — Your Knowledge GPS
 
+**UI interaction QA (3 Nov 2026):** [Read verified fixes, simulated button outcomes and live-site checks](QA_STATUS.md). The 15-asset deployment self-check now covers the production hybrid model and primary app scripts. External GitHub Pages and cross-browser interaction verification remain pending.
+
 **Personalized prerequisite-based learning paths, real workforce insights, and a trained neural-network career classifier.** Entirely static HTML/CSS/JavaScript, hosted from the same GitHub repository.
 
 ## New: skill checks and evidence-aware next learning steps
