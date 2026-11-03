@@ -55,7 +55,7 @@ window.WhatNextSearch = (() => {
     const results=[];
     const help=[
       {title:"How WhatNext chooses your next lesson",description:"Roadmap uses career destination, completed prerequisites, topic order and your interests. The neural network does not train on learning outcomes.",tags:"help recommendation accuracy roadmap prerequisites",view:"roadmap"},
-      {title:"How to check your career model result",description:"Inspect the 80/20 held-out evaluation, model comparisons and limitations in the Career Intelligence workspace.",tags:"help accuracy neural network catboost f1 model comparison",view:"evidence"},
+      {title:"How to check your career model result",description:"Inspect the 80/20 held-out evaluation, the PCA → K-Means → neural architecture and model limitations in Career Intelligence.",tags:"help accuracy neural network pca kmeans hybrid f1 model evaluation",view:"evidence"},
       {title:"Update my completed learning skills",description:"Set your existing skills, goals and weekly study time in your student profile.",tags:"profile skills completed study hours",view:"profile"},
       {title:"Explore verified workforce skills",description:"See OECD PIAAC observations about education, work experience and workplace skill use in the career explorer.",tags:"oecd PIAAC career skills evidence occupations",view:"evidence"},
       {title:"Create an evidence-based resume",description:"Export a resume using only your own achievements and declared skills.",tags:"resume portfolio cv job application",view:"career"}
